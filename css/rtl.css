@@ -45,6 +45,14 @@
   transform: translateX(50%) translateY(0);
 }
 
+[dir="rtl"] .profile-dropdown {
+  right: auto;
+  left: 0;
+  text-align: right;
+}
+[dir="rtl"] .profile-dropdown-head,
+[dir="rtl"] .profile-dropdown a { flex-direction: row-reverse; }
+
 [dir="rtl"] .mobile-menu ul { text-align: right; }
 [dir="rtl"] .mobile-nav-link { text-align: right; }
 

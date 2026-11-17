@@ -112,6 +112,9 @@
 
   .container { padding-inline: 1rem; }
 
+  /* Make room for the profile menu on small phones. */
+  .nav-actions .dir-toggle { display: none; }
+
   .grid-4 { grid-template-columns: 1fr; }
 
   .stats-grid { grid-template-columns: 1fr; }

@@ -226,6 +226,164 @@
   padding: 0.65rem 1.5rem;
 }
 
+/* ── Profile Menu ────────────────────────────────────────── */
+.profile-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-circle);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.profile-toggle:hover,
+.profile-menu.open .profile-toggle {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+  background: var(--color-beige);
+}
+
+.profile-toggle > svg:first-child {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.profile-chevron {
+  width: 0.7rem !important;
+  height: 0.7rem !important;
+  opacity: 0.7;
+  transition: transform var(--transition-fast);
+}
+
+.profile-menu.open .profile-chevron {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 0.85rem);
+  right: 0;
+  z-index: 1002;
+  width: 250px;
+  padding: 0.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity var(--transition-fast),
+              transform var(--transition-fast),
+              visibility var(--transition-fast);
+}
+
+.profile-menu.open .profile-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.profile-dropdown-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0.85rem 0.9rem;
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.profile-dropdown-avatar {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-circle);
+  background: var(--color-beige);
+  color: var(--color-champagne-dark);
+  flex-shrink: 0;
+}
+
+.profile-dropdown-avatar svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.profile-dropdown-meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+  min-width: 0;
+}
+
+.profile-dropdown-meta strong {
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.profile-dropdown-meta small {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.profile-dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.profile-dropdown a svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: var(--color-champagne-dark);
+  flex-shrink: 0;
+}
+
+.profile-dropdown a:hover {
+  background: var(--color-beige);
+  color: var(--color-champagne-dark);
+}
+
+/* Keep the dropdown inside the viewport on small phones. */
+@media (max-width: 480px) {
+  .profile-dropdown {
+    position: fixed;
+    top: calc(var(--nav-height) + 0.5rem);
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+  }
+  .maint-topbar .profile-dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: auto;
+    right: 0;
+    width: 250px;
+  }
+}
+
 /* ── Hamburger Toggle ────────────────────────────────────── */
 .nav-toggle {
   display: none;

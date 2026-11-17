@@ -13,6 +13,43 @@ document.addEventListener('DOMContentLoaded', () => {
     SiteNav.init();
   }
 
+  // 2b. Account Profile Dropdown (User / Admin dashboards)
+  const profileMenus = document.querySelectorAll('.profile-menu');
+  const closeProfileMenus = (except) => {
+    profileMenus.forEach((menu) => {
+      if (menu === except) return;
+      menu.classList.remove('open');
+      const button = menu.querySelector('.profile-toggle');
+      if (button) button.setAttribute('aria-expanded', 'false');
+    });
+  };
+
+  profileMenus.forEach((menu) => {
+    const button = menu.querySelector('.profile-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const shouldOpen = !menu.classList.contains('open');
+      closeProfileMenus(menu);
+      menu.classList.toggle('open', shouldOpen);
+      button.setAttribute('aria-expanded', String(shouldOpen));
+    });
+
+    menu.querySelectorAll('.profile-dropdown a').forEach((link) => {
+      link.addEventListener('click', () => closeProfileMenus());
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.profile-menu')) closeProfileMenus();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeProfileMenus();
+  });
+
   // 3. Initialize Shared Interactivity Helpers
   if (typeof initScrollReveal === 'function') {
     initScrollReveal();
