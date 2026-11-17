@@ -74,7 +74,7 @@ const ThemeManager = {
       btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
       const labelSpan = btn.querySelector('.dir-label');
       if (labelSpan) {
-        labelSpan.textContent = dir === 'rtl' ? 'LTR Layout' : 'RTL Layout';
+        labelSpan.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
       }
     });
 

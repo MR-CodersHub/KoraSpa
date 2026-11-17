@@ -177,8 +177,7 @@
 }
 
 /* Theme Toggle */
-.theme-toggle,
-.dir-toggle {
+.theme-toggle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,18 +193,47 @@
   overflow: hidden;
 }
 
-.theme-toggle:hover,
+.theme-toggle:hover {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+  background: var(--color-beige);
+}
+
+.theme-toggle svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+/* Direction Toggle — readable text instead of an icon */
+.dir-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
 .dir-toggle:hover {
   border-color: var(--color-champagne);
   color: var(--color-champagne);
   background: var(--color-beige);
 }
 
-.theme-toggle svg,
-.dir-toggle svg {
-  width: 1.125rem;
-  height: 1.125rem;
-  flex-shrink: 0;
+.dir-label {
+  white-space: nowrap;
 }
 
 .icon-sun,
@@ -582,7 +610,6 @@
   .nav-container { gap: 1rem; }
   .nav-actions { gap: 0.5rem; }
   .theme-toggle,
-  .dir-toggle,
   .nav-toggle {
     width: 2.25rem;
     height: 2.25rem;
