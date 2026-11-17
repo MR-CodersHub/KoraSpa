@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="380" height="100" viewBox="0 0 380 100" role="img" aria-labelledby="logoTitle logoDesc">
   <title id="logoTitle">Kora Spa</title>
-  <desc id="logoDesc">Kora Spa luxury wellness — where serenity meets sophistication</desc>
+  <desc id="logoDesc">Kora Spa luxury wellness — serenity, elevated.</desc>
   <g transform="translate(10 12) scale(1.05)" fill="#C9A96E">
     <path d="M40 76c-11-7-17-18-13-29 5 6 9 11 13 16 4-5 8-10 13-16 4 11-2 22-13 29z"/>
     <path d="M40 78c-14-3-22-13-22-25 8 4 16 12 22 20 6-8 14-16 22-20 0 12-8 22-22 25z" opacity="0.5"/>
     <circle cx="40" cy="58" r="2.6" fill="#FAF8F3"/>
   </g>
   <text x="96" y="48" font-family="'Playfair Display', Georgia, serif" font-size="34" font-weight="700" letter-spacing="1" fill="#FAF8F3">KORA SPA</text>
-  <text x="98" y="70" font-family="Inter, Arial, sans-serif" font-size="9.5" letter-spacing="2.4" fill="#E8D5B0">WHERE SERENITY MEETS SOPHISTICATION</text>
+  <text x="114" y="70" font-family="Inter, Arial, sans-serif" font-size="9.5" letter-spacing="2.4" fill="#E8D5B0">SERENITY, ELEVATED.</text>
 </svg>
