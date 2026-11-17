@@ -257,7 +257,7 @@
   backdrop-filter: blur(12px);
 }
 .portal-menu-toggle {
-  display: grid;
+  display: none;
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
@@ -896,6 +896,7 @@ section.portal-card,
 }
 
 @media (max-width: 1024px) {
+  .portal-menu-toggle { display: grid; }
   .portal-sidebar { transform: translateX(-100%); }
   .portal-sidebar.open { transform: translateX(0); }
   .portal-main { margin-inline-start: 0; }
