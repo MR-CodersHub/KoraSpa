@@ -80,27 +80,31 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.9rem;
       text-decoration: none;
       line-height: 1;
       min-width: 0;
     }
+    .nav-logo-mark {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
     .nav-logo-name {
       font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 600;
+      font-size: 2.3rem;
+      font-weight: 700;
       color: #fff;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       transition: color var(--transition-fast);
     }
     .site-nav.scrolled .nav-logo-name { color: var(--color-forest); }
     .nav-logo-tagline {
       font-family: var(--font-sans);
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--color-champagne);
-      margin-top: 2px;
+      margin-top: 3px;
     }
     .nav-links {
       display: flex;
@@ -1223,6 +1227,12 @@
     .reveal-delay-5 { transition-delay: 0.5s; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1200px) {
+      .nav-logo { gap: 0.75rem; }
+      .nav-logo-mark { width: 2.55rem; height: 2.55rem; }
+      .nav-logo-name { font-size: 2rem; }
+      .nav-logo-tagline { font-size: 0.62rem; }
+    }
     @media (max-width: 1024px) {
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -1273,8 +1283,8 @@
     }
     @media (max-width: 480px) {
       .nav-logo { gap: 0.5rem; }
-      .nav-logo-mark { width: 1.65rem; height: 1.65rem; }
-      .nav-logo-name { font-size: 1.5rem; }
+      .nav-logo-mark { width: 2.15rem; height: 2.15rem; }
+      .nav-logo-name { font-size: 1.6rem; }
       .hero h1 { font-size: 2.4rem; }
       .hero-cta-row { flex-direction: column; align-items: flex-start; }
       .section-title { font-size: 1.75rem; }
