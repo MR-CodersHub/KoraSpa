@@ -58,7 +58,7 @@
     /* Countdown Widget */
     .countdown-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0.5rem;
       margin: 1rem 0;
     }
@@ -312,7 +312,7 @@
     /* Responsive layout tweaks */
     @media (max-width: 992px) {
       .overview-grid-2col {
-        grid-template-columns: 1fr !important;
+        grid-template-columns: minmax(0, 1fr) !important;
       }
     }
   </style>
@@ -598,14 +598,14 @@
                 <!-- Decorative background accent -->
                 <div style="position:absolute; top:0; right:0; width:120px; height:120px; background:radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%); pointer-events:none;"></div>
 
-                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:1.25rem;">
+                <div class="session-card-head">
                   <span class="badge badge-confirmed">Confirmed Reservation</span>
                   <span style="font-size:0.8rem; color:var(--color-text-muted); font-weight:600;">Ref: KSP-849201</span>
                 </div>
 
-                <div style="display:flex; align-items:flex-start; gap:1.25rem; margin-bottom:1.25rem;">
+                <div class="session-card-media">
                   <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="Signature Relaxation Massage" style="width:5rem; height:5rem; border-radius:var(--radius-lg); object-fit:cover; border:2px solid var(--color-champagne-light); flex-shrink:0;">
-                  <div style="flex:1;">
+                  <div>
                     <h3 style="font-family:var(--font-serif); font-size:1.35rem; color:var(--color-text); margin-bottom:0.25rem;">Signature Relaxation Massage</h3>
                     <div style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem; color:var(--color-text-muted);">
                       <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Sarah Chen" style="width:1.4rem; height:1.4rem; border-radius:50%; object-fit:cover;">
@@ -615,7 +615,7 @@
                 </div>
 
                 <!-- Session Meta -->
-                <div style="background:var(--color-beige); border-radius:var(--radius-md); padding:0.875rem 1rem; display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem; margin-bottom:1.25rem; font-size:0.85rem;">
+                <div class="session-meta">
                   <div>
                     <div style="font-size:0.7rem; text-transform:uppercase; color:var(--color-text-muted); font-weight:700;">Date</div>
                     <div style="font-weight:600; color:var(--color-text); margin-top:0.2rem;">Sat, Nov 28, 2026</div>

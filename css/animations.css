@@ -39,6 +39,20 @@
   transform: translateX(0);
 }
 
+/* On smaller screens, reveal vertically so animated elements
+   never create horizontal overflow or get clipped. */
+@media (max-width: 1024px) {
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(30px);
+  }
+
+  .reveal-left.visible,
+  .reveal-right.visible {
+    transform: translateY(0);
+  }
+}
+
 .reveal-scale {
   opacity: 0;
   transform: scale(0.9);

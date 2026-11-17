@@ -356,7 +356,7 @@
   .nav-cta    { display: none; }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   .mobile-menu { display: none; }
 }
 
@@ -384,4 +384,18 @@
 }
 @media (max-width: 900px) {
   .nav-logo-tagline { display: none; }
+}
+
+@media (max-width: 480px) {
+  .nav-logo { gap: 0.5rem; }
+  .nav-logo-mark { width: 1.65rem; height: 1.65rem; }
+  .nav-logo-name { font-size: 1.25rem; }
+  .nav-container { gap: 1rem; }
+  .nav-actions { gap: 0.5rem; }
+  .theme-toggle,
+  .dir-toggle,
+  .nav-toggle {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
 }

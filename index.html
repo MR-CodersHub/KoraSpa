@@ -78,9 +78,12 @@
     }
     .nav-logo {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.65rem;
       text-decoration: none;
       line-height: 1;
+      min-width: 0;
     }
     .nav-logo-name {
       font-family: var(--font-serif);
@@ -1221,6 +1224,17 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .nav-btn-book { display: none; }
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(30px);
+      }
+      .reveal-left.visible,
+      .reveal-right.visible {
+        transform: translateY(0);
+      }
       .treatments-grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1254,16 +1268,29 @@
         gap: 1rem;
       }
       .hero-trust-divider { display: none; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .nav-btn-book { display: none; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .cta-buttons { flex-direction: column; align-items: center; }
     }
     @media (max-width: 480px) {
+      .nav-logo { gap: 0.5rem; }
+      .nav-logo-mark { width: 1.65rem; height: 1.65rem; }
+      .nav-logo-name { font-size: 1.5rem; }
       .hero h1 { font-size: 2.4rem; }
       .hero-cta-row { flex-direction: column; align-items: flex-start; }
       .section-title { font-size: 1.75rem; }
+      .section-tag { padding: 0; }
+      .section-tag::before,
+      .section-tag::after { display: none; }
+      .cta-buttons { width: 100%; }
+      .btn-primary,
+      .btn-secondary,
+      .btn-outline {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+      }
     }
   </style>
 </head>

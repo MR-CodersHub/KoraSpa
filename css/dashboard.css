@@ -1092,6 +1092,47 @@
   gap: 1.25rem 1.5rem;
 }
 
+/* ── Upcoming Session Card ───────────────────────────────── */
+.session-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.session-card-media {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.session-card-media > div {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Upcoming Session Meta ───────────────────────────────── */
+.session-meta {
+  background: var(--color-beige);
+  border-radius: var(--radius-md);
+  padding: 0.875rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .session-meta {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
 /* ── Mobile Dashboard ────────────────────────────────────── */
 @media (max-width: 768px) {
   .dashboard-layout { grid-template-columns: 1fr; }
@@ -1107,12 +1148,50 @@
   .history-table-header > *:nth-child(6),
   .history-row > *:nth-child(5),
   .history-row > *:nth-child(6) { display: none; }
+
+  .dashboard-main { min-width: 0; }
+  .dashboard-topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+  }
+  .dashboard-topbar > div:first-child { min-width: 0; }
+  .topbar-title {
+    font-size: 1.05rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dashboard-topbar .topbar-search {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100%;
+  }
+  .dashboard-topbar .topbar-actions {
+    grid-column: 2;
+    gap: 0.5rem;
+  }
+  .topbar-user { padding: 0.35rem; }
+  .topbar-user-name { display: none; }
 }
 
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr; }
-  .dashboard-topbar { padding: 0.75rem 1rem; }
+  .dashboard-topbar { padding: 0.75rem; }
   .dashboard-content { padding: 1rem; }
+  .topbar-title { font-size: 0.95rem; }
+  .topbar-actions .dir-toggle { display: none; }
+  .topbar-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .topbar-title { display: none; }
 }
 
 /* ── Bottom Navigation (mobile dashboard) ────────────────── */

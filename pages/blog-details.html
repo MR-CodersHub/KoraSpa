@@ -339,13 +339,15 @@
     .frequency-table-wrapper {
       margin: 2rem 0;
       border-radius: var(--radius-md);
-      overflow: hidden;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--color-border);
       box-shadow: var(--shadow-sm);
     }
 
     .frequency-table {
       width: 100%;
+      min-width: 560px;
       border-collapse: collapse;
       background: var(--color-white);
       text-align: left;
@@ -708,10 +710,10 @@
         grid-template-columns: repeat(2, 1fr);
       }
       .details-cta-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
       .related-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .article-hero-media {
         height: 380px;
@@ -733,7 +735,14 @@
         height: 260px;
       }
       .cta-action-card {
-        padding: 1.75rem;
+        padding: 1.5rem;
+      }
+      .section-tag {
+        padding: 0;
+      }
+      .section-tag::before,
+      .section-tag::after {
+        display: none;
       }
     }
   </style>
