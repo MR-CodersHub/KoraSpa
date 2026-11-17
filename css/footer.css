@@ -5,7 +5,7 @@
 /* ── Site Footer ─────────────────────────────────────────── */
 .site-footer {
   background: var(--color-forest);
-  color: var(--color-ivory);
+  color: #FAF8F3;
   padding: 5rem 0 2rem;
   position: relative;
   overflow: hidden;
@@ -151,10 +151,26 @@
 .footer-newsletter h4 {
   font-family: var(--font-serif);
   font-size: 1.5rem;
-  color: var(--color-ivory);
+  color: #FAF8F3 !important;
   font-weight: 600;
   flex-shrink: 0;
   max-width: 20ch;
+  margin: 0 0 0.35rem;
+}
+
+.footer-newsletter p {
+  color: rgba(250, 248, 243, 0.82) !important;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+[data-theme="dark"] .footer-newsletter h4 {
+  color: #FAF8F3 !important;
+}
+
+[data-theme="dark"] .footer-newsletter p {
+  color: rgba(250, 248, 243, 0.85) !important;
 }
 
 .newsletter-form {
@@ -170,11 +186,17 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-pill);
-  color: var(--color-ivory);
+  color: #FAF8F3 !important;
   font-size: 0.9rem;
   outline: none;
   transition: border-color var(--transition-fast);
   min-width: 0;
+}
+
+[data-theme="dark"] .newsletter-form input[type="email"] {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #FAF8F3 !important;
 }
 
 .newsletter-form input[type="email"]::placeholder {
