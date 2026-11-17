@@ -242,3 +242,12 @@
   .newsletter-form { flex-direction: column; }
   .newsletter-form .btn-primary { width: 100%; }
 }
+
+/* ── Footer Logo Lockup ──────────────────────────────────── */
+.footer-logo-img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}

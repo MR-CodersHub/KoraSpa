@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maintenance — Kora Spa</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <meta name="theme-color" content="#2D4A32">
   <meta name="description" content="Kora Spa is temporarily unavailable while we refresh your sanctuary. We will be back soon.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,6 +51,12 @@
       text-decoration: none;
     }
     [data-theme="dark"] .maint-brand { color: var(--color-champagne); }
+    .maint-logo {
+      display: block;
+      width: 190px;
+      max-width: 60vw;
+      height: auto;
+    }
     .maint-stage {
       flex: 1;
       display: grid;
@@ -138,8 +147,7 @@
      ============================================================ -->
 <header class="maint-topbar">
   <a href="../index.html" class="maint-brand">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
-    Kora Spa
+    <img class="maint-logo" src="../logo.svg" alt="Kora Spa — Where serenity meets sophistication">
   </a>
   <button class="theme-toggle" aria-label="Toggle dark mode">
     <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
