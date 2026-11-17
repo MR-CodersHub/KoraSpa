@@ -1096,8 +1096,8 @@
     function simulateQuickLogin() {
       if (typeof Auth !== 'undefined') {
         Auth.login('alexandra@example.com', 'demo');
-        showToast('Password reset authenticated. Entering your sanctuary...', 'success');
-        setTimeout(() => { window.location.href = 'dashboard.html'; }, 900);
+        showToast('Password reset authenticated. Redirecting to home page...', 'success');
+        setTimeout(() => { window.location.href = '../index.html'; }, 900);
       }
     }
 
@@ -1148,11 +1148,11 @@
             loginAlert.style.background = 'rgba(143,168,135,0.2)';
             loginAlert.style.border = '1px solid var(--color-sage)';
             loginAlert.style.color = 'var(--color-forest)';
-            loginAlert.textContent = 'Welcome back, Alexandra! Redirecting to your personal sanctuary...';
+            loginAlert.textContent = 'Welcome back, Alexandra! Redirecting to home page...';
 
             showToast('Authentication verified. Welcome to Kora Spa!', 'success');
             setTimeout(() => {
-              window.location.href = 'dashboard.html';
+              window.location.href = '../index.html';
             }, 1000);
           }, 800);
         });
@@ -1219,7 +1219,7 @@
             }
             showToast('Welcome back to Kora Spa! Entering sanctuary...', 'success');
             setTimeout(() => {
-              window.location.href = 'dashboard.html';
+              window.location.href = '../index.html';
             }, 850);
           }, 900);
         });
@@ -1421,11 +1421,11 @@
             regAlert.style.background = 'rgba(143,168,135,0.2)';
             regAlert.style.border = '1px solid var(--color-sage)';
             regAlert.style.color = 'var(--color-forest)';
-            regAlert.textContent = `Welcome to Kora Spa, ${newUser.name}! Your account is active. Loading dashboard...`;
+            regAlert.textContent = `Welcome to Kora Spa, ${newUser.name}! Your account is active. Redirecting to home page...`;
 
-            showToast('Account registered successfully! Entering dashboard...', 'success');
+            showToast('Account registered successfully! Redirecting to home page...', 'success');
             setTimeout(() => {
-              window.location.href = 'dashboard.html';
+              window.location.href = '../index.html';
             }, 1000);
           }, 950);
         });
