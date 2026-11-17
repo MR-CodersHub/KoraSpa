@@ -84,10 +84,10 @@ const SiteNav = {
 
     if (Auth.isLoggedIn()) {
       authBtn.textContent = 'Dashboard';
-      authBtn.href = 'dashboard.html';
+      authBtn.href = pageUrl('dashboard.html');
     } else {
       authBtn.textContent = 'Book Now';
-      authBtn.href = 'booking.html';
+      authBtn.href = pageUrl('login.html');
     }
   }
 };

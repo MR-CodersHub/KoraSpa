@@ -39,7 +39,7 @@ const Auth = {
       Storage.remove('spa-user');
       Storage.remove('spa-auth');
     }
-    window.location.href = 'login.html';
+    window.location.href = pageUrl('login.html');
   },
 
   register(userData = {}) {
@@ -85,7 +85,7 @@ const Auth = {
   requireAuth() {
     if (!this.isLoggedIn()) {
       const currentUrl = window.location.href;
-      window.location.href = 'login.html?redirect=' + encodeURIComponent(currentUrl);
+      window.location.href = pageUrl('login.html') + '?redirect=' + encodeURIComponent(currentUrl);
     }
   }
 };

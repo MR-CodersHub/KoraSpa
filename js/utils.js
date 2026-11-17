@@ -2,6 +2,12 @@
  * KORA SPA — Shared Utility Functions
  */
 
+// Resolve a page URL from either the site root or the /pages/ directory.
+function pageUrl(page) {
+  const inPages = /(^|\/)pages\//.test(window.location.pathname);
+  return (inPages ? '' : 'pages/') + page;
+}
+
 // Storage helper with fallback handling
 const Storage = {
   get(key) {
