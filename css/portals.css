@@ -132,7 +132,7 @@
 .portal-profile-name {
   font-size: 0.9rem;
   font-weight: 600;
-  color: var(--color-ivory);
+  color: #FAF8F3;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -194,7 +194,7 @@
 }
 .side-nav-item:hover {
   background: rgba(255, 255, 255, 0.07);
-  color: var(--color-ivory);
+  color: #FAF8F3;
 }
 .side-nav-item.active {
   background: rgba(201, 169, 110, 0.15);
@@ -223,7 +223,7 @@
   margin-bottom: 0.5rem;
 }
 .side-help svg { width: 1.1rem; height: 1.1rem; color: var(--color-champagne); flex-shrink: 0; margin-top: 0.1rem; }
-.side-help strong { display: block; color: var(--color-ivory); font-size: 0.82rem; margin-bottom: 0.15rem; }
+.side-help strong { display: block; color: #FAF8F3; font-size: 0.82rem; margin-bottom: 0.15rem; }
 .side-logout {
   display: flex;
   align-items: center;
@@ -527,7 +527,7 @@ section.portal-card,
   overflow: hidden;
   border-radius: var(--radius-xl);
   background: linear-gradient(135deg, #2D4A32 0%, #3D6142 58%, #4D7050 100%);
-  color: var(--color-ivory);
+  color: #FAF8F3;
   padding: clamp(1.6rem, 4vw, 3rem);
   margin-bottom: 1.5rem;
   display: flex;
@@ -555,7 +555,11 @@ section.portal-card,
   line-height: 1.1;
   margin: 0 0 0.7rem;
   font-weight: 500;
-  color: var(--color-ivory);
+  color: #FAF8F3 !important;
+}
+[data-theme="dark"] .portal-hero,
+[data-theme="dark"] .portal-hero h2 {
+  color: #FAF8F3 !important;
 }
 .portal-hero h2 em { color: var(--color-champagne-light); font-style: italic; }
 .portal-hero p { color: rgba(250, 248, 243, 0.9); line-height: 1.7; margin: 0 0 1.4rem; max-width: 540px; }
@@ -563,9 +567,9 @@ section.portal-card,
 .portal-hero .portal-btn.secondary {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-ivory);
+  color: #FAF8F3;
 }
-[data-current-plan-name] { color: var(--color-ivory); }
+[data-current-plan-name] { color: #FAF8F3; }
 .portal-hero-mark {
   position: relative;
   z-index: 1;
