@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Treatments — Kora Spa</title>
+  <meta name="description" content="Explore Kora Spa's signature treatments — from relaxation massage to hot stone therapy. Book your session today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* =============================================
+       SERVICES PAGE — INLINE STYLES
+       ============================================= */
+
+    /* Hero */
+    .services-hero {
+      background: var(--color-beige);
+      padding: 8rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(143,168,135,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(201,169,110,0.10) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .services-hero .botanical-bg {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .services-hero .botanical-bg-left {
+      position: absolute;
+      left: -60px;
+      bottom: 0;
+      opacity: 0.06;
+      pointer-events: none;
+      transform: scaleX(-1);
+    }
+    .services-hero .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+    }
+    .services-hero .breadcrumb a { color: var(--color-champagne); text-decoration: none; }
+    .services-hero .breadcrumb a:hover { text-decoration: underline; }
+    .services-hero .breadcrumb-sep { color: var(--color-border); }
+    .services-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--color-forest);
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+    .services-hero .hero-subtitle {
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-scroll-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .hero-scroll-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      font-size: 0.8rem;
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      text-decoration: none;
+      background: rgba(255,255,255,0.6);
+      transition: all var(--transition-fast);
+      backdrop-filter: blur(4px);
+    }
+    .hero-scroll-links a:hover {
+      border-color: var(--color-champagne);
+      color: var(--color-champagne);
+      background: rgba(201,169,110,0.08);
+    }
+
+    /* Services Layout */
+    .services-wrapper {
+      position: relative;
+    }
+
+    /* Sticky Sidebar */
+    .services-sidebar {
+      position: sticky;
+      top: calc(var(--nav-height) + 2rem);
+      width: 220px;
+      flex-shrink: 0;
+      align-self: flex-start;
+      padding: 1.5rem;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+    }
+    .sidebar-title {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+    .sidebar-nav a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--color-text);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+      border-left: 2px solid transparent;
+    }
+    .sidebar-nav a:hover,
+    .sidebar-nav a.active {
+      color: var(--color-champagne);
+      background: rgba(201,169,110,0.08);
+      border-left-color: var(--color-champagne);
+    }
+    .sidebar-book {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .sidebar-book a {
+      display: block;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      background: var(--color-champagne);
+      color: white;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition-fast);
+    }
+    .sidebar-book a:hover { background: var(--color-champagne-dark); }
+
+    .services-with-sidebar {
+      display: flex;
+      gap: 3rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      align-items: flex-start;
+    }
+    .services-main { flex: 1; min-width: 0; }
+
+    /* Treatment Sections */
+    .treatment-section {
+      padding: 6rem 0;
+    }
+    .treatment-section.bg-white { background: var(--color-white); }
+    .treatment-section.bg-beige { background: var(--color-beige); }
+
+    .treatment-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .treatment-layout.reverse { direction: rtl; }
+    .treatment-layout.reverse > * { direction: ltr; }
+
+    .treatment-image-wrap {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-xl);
+    }
+    .treatment-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .treatment-image-wrap:hover img { transform: scale(1.04); }
+    .treatment-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(45,74,50,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .treatment-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(201,169,110,0.15);
+      color: var(--color-champagne-dark);
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    .treatment-tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-champagne);
+    }
+
+    .treatment-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3vw, 2.6rem);
+      color: var(--color-forest);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+    .treatment-content p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: 1rem;
+    }
+
+    .treatment-details-row {
+      display: flex;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .detail-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--color-ivory);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--color-text);
+    }
+    .detail-chip svg { color: var(--color-champagne); flex-shrink: 0; }
+    .detail-chip strong { color: var(--color-forest); }
+
+    .treatment-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin: 1.5rem 0;
+    }
+    .treatment-benefits li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
+    .benefit-icon {
+      width: 20px; height: 20px;
+      flex-shrink: 0;
+      color: var(--color-sage);
+    }
+
+    .treatment-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--color-champagne);
+      color: white;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      letter-spacing: 0.03em;
+    }
+    .btn-primary:hover {
+      background: var(--color-champagne-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(201,169,110,0.3);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: transparent;
+      color: var(--color-forest);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      border: 1.5px solid var(--color-forest);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .btn-secondary:hover {
+      background: var(--color-forest);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Body Treatments Grid Section */
+    .body-treatments-section {
+      padding: 6rem 0;
+      background: var(--color-beige);
+    }
+    .body-treatments-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .body-treatments-header p {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      max-width: 560px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+    .body-treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .body-treatment-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-base);
+      border: 1px solid var(--color-border);
+    }
+    .body-treatment-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+    .body-card-image {
+      position: relative;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .body-card-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .body-treatment-card:hover .body-card-image img { transform: scale(1.06); }
+    .body-card-body {
+      padding: 1.5rem;
+    }
+    .body-card-body h3 {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--color-forest);
+      margin-bottom: 0.5rem;
+    }
+    .body-card-body p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    .body-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.2rem;
+    }
+    .body-card-duration {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-sans);
+    }
+    .body-card-price {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--color-champagne);
+      font-weight: 600;
+    }
+    .body-card-cta {
+      display: block;
+      text-align: center;
+      padding: 0.6rem 1.2rem;
+      background: var(--color-champagne);
+      color: white;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background var(--transition-fast);
+    }
+    .body-card-cta:hover { background: var(--color-champagne-dark); }
+
+    /* Sidebar on desktop only */
+    @media (max-width: 1100px) {
+      .services-sidebar { display: none; }
+      .services-with-sidebar { padding: 0; }
+    }
+
+    /* Mobile treatment layout */
+    @media (max-width: 768px) {
+      .treatment-layout {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .treatment-layout.reverse { direction: ltr; }
+      .body-treatments-grid {
+        grid-template-columns: 1fr;
+      }
+      .treatment-section { padding: 4rem 0; }
+      .services-hero { padding: 6rem 0 4rem; }
+    }
+    @media (max-width: 600px) {
+      .treatment-ctas { flex-direction: column; }
+      .treatment-ctas a { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body data-page="services">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Wellness Focus</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ==============================
+         HERO
+         ============================== -->
+    <header class="services-hero" aria-label="Services hero">
+      <!-- Botanical SVG decorations -->
+      <svg class="botanical-bg" width="420" height="520" viewBox="0 0 420 520" fill="none" aria-hidden="true">
+        <ellipse cx="210" cy="260" rx="120" ry="200" fill="#8FA887" opacity="0.5" transform="rotate(-20 210 260)"/>
+        <ellipse cx="210" cy="260" rx="60" ry="150" fill="#8FA887" opacity="0.4" transform="rotate(10 210 260)"/>
+        <path d="M210 460 Q230 350 280 220 Q320 120 360 60" stroke="#8FA887" stroke-width="3" fill="none" opacity="0.5"/>
+        <path d="M210 460 Q190 360 150 240 Q120 140 90 70" stroke="#8FA887" stroke-width="2" fill="none" opacity="0.3"/>
+        <circle cx="310" cy="140" r="30" fill="#C9A96E" opacity="0.25"/>
+        <circle cx="130" cy="200" r="20" fill="#C9A96E" opacity="0.2"/>
+      </svg>
+      <svg class="botanical-bg-left" width="300" height="400" viewBox="0 0 300 400" fill="none" aria-hidden="true">
+        <ellipse cx="150" cy="200" rx="80" ry="150" fill="#8FA887" opacity="0.5" transform="rotate(-15 150 200)"/>
+        <path d="M150 380 Q170 280 220 180" stroke="#8FA887" stroke-width="2" fill="none" opacity="0.4"/>
+      </svg>
+
+      <div class="container" style="position:relative; z-index:1;">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Services</span>
+        </nav>
+        <h1>Our Signature Treatments</h1>
+        <p class="hero-subtitle">Six thoughtfully crafted therapies for body, mind, and spirit</p>
+
+        <div class="hero-scroll-links">
+          <a href="#relaxation">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+            Relaxation
+          </a>
+          <a href="#deep-tissue">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Deep Tissue
+          </a>
+          <a href="#aromatherapy">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.5 4.5L18 8l-3.5 3 1 4.5L12 13l-3.5 2.5 1-4.5L6 8l4.5-1.5z"/></svg>
+            Aromatherapy
+          </a>
+          <a href="#hot-stone">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 4 7 4 12s3 8 8 8 8-3 8-8-2.5-10-8-10z" fill="currentColor" opacity="0.5"/></svg>
+            Hot Stone
+          </a>
+          <a href="#swedish">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="12" cy="12" r="2"/></svg>
+            Swedish
+          </a>
+          <a href="#body">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            Body Treatments
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==============================
+         SIDEBAR + MAIN WRAPPER
+         ============================== -->
+    <div class="services-wrapper">
+      <div class="services-with-sidebar">
+
+        <!-- Sticky Sidebar (desktop only) -->
+        <aside class="services-sidebar" aria-label="Quick navigation">
+          <p class="sidebar-title">Treatments</p>
+          <ul class="sidebar-nav" id="sidebarNav">
+            <li><a href="#relaxation">Relaxation Massage</a></li>
+            <li><a href="#deep-tissue">Deep Tissue</a></li>
+            <li><a href="#aromatherapy">Aromatherapy</a></li>
+            <li><a href="#hot-stone">Hot Stone Therapy</a></li>
+            <li><a href="#swedish">Swedish Massage</a></li>
+            <li><a href="#body">Body Treatments</a></li>
+          </ul>
+          <div class="sidebar-book">
+            <a href="login.html">Book a Treatment</a>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="services-main">
+
+          <!-- ==============================
+               SECTION 1: RELAXATION MASSAGE
+               ============================== -->
+          <section id="relaxation" class="treatment-section bg-white" aria-labelledby="relaxation-title">
+            <div class="container">
+              <div class="treatment-layout">
+                <!-- Image -->
+                <div class="treatment-image-wrap animate-on-scroll">
+                  <img
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                    alt="Relaxation massage at Kora Spa — peaceful candlelit session"
+                    loading="lazy"
+                    width="800" height="600"
+                  >
+                </div>
+                <!-- Content -->
+                <div class="treatment-content animate-on-scroll">
+                  <span class="treatment-tag">Signature Treatment</span>
+                  <h2 id="relaxation-title">Relaxation Massage</h2>
+                  <p>Drift into a state of pure serenity with our signature Relaxation Massage — a gentle, full-body experience crafted to quieten the mind and restore harmony to the body. Using long, flowing effleurage strokes and carefully selected botanically-infused oils, our therapists work at a soothing rhythm designed to ease surface tension and invite profound calm.</p>
+                  <p>Whether you're seeking a mid-week reset or a restorative weekend escape, this treatment adapts to your body's needs. Expect to emerge feeling lighter, centred, and renewed — a feeling that often lingers long after you leave our spa sanctuary.</p>
+
+                  <div class="treatment-details-row">
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span><strong>Duration:</strong> 60 or 90 min</span>
+                    </div>
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.31-8.86c-1.77-.45-2.34-.94-2.34-1.67 0-.84.79-1.43 2.1-1.43 1.38 0 1.9.66 1.94 1.64h1.71c-.05-1.34-.87-2.57-2.49-2.97V5H10.9v1.69c-1.51.32-2.72 1.3-2.72 2.81 0 1.79 1.49 2.69 3.66 3.21 1.95.46 2.34 1.15 2.34 1.86 0 .53-.39 1.39-2.1 1.39-1.6 0-2.23-.72-2.32-1.64H8.04c.1 1.7 1.36 2.66 2.86 2.97V19h2.34v-1.67c1.52-.29 2.72-1.16 2.73-2.77-.01-2.2-1.9-2.96-3.66-3.42z"/></svg>
+                      <span><strong>From:</strong> $85</span>
+                    </div>
+                  </div>
+
+                  <ul class="treatment-benefits" aria-label="Key benefits">
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Melts away surface tension and muscular tightness
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Calms the nervous system and reduces cortisol levels
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Promotes deeper, more restful sleep
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Improves circulation and nourishes the skin
+                    </li>
+                  </ul>
+
+                  <div class="treatment-ctas">
+                    <a href="login.html" class="btn-primary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      Book This Treatment
+                    </a>
+                    <a href="service-details.html" class="btn-secondary">
+                      View Details
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==============================
+               SECTION 2: DEEP TISSUE MASSAGE
+               ============================== -->
+          <section id="deep-tissue" class="treatment-section bg-beige" aria-labelledby="deep-tissue-title">
+            <div class="container">
+              <div class="treatment-layout reverse">
+                <!-- Content -->
+                <div class="treatment-content animate-on-scroll">
+                  <span class="treatment-tag">Targeted Relief</span>
+                  <h2 id="deep-tissue-title">Deep Tissue Massage</h2>
+                  <p>For those carrying the weight of chronic tension or recovering from physical exertion, our Deep Tissue Massage delivers firm, purposeful pressure to reach the deeper layers of muscle and connective tissue. This treatment is especially beneficial for athletes, those with desk-related postural strain, or anyone holding persistent muscular knots.</p>
+                  <p>Your therapist will apply sustained, focused strokes and cross-fibre friction techniques to break down adhesions and restore freedom of movement. The result: meaningful relief that lasts for days, not hours.</p>
+
+                  <div class="treatment-details-row">
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span><strong>Duration:</strong> 60 or 90 min</span>
+                    </div>
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <span><strong>From:</strong> $95</span>
+                    </div>
+                  </div>
+
+                  <ul class="treatment-benefits">
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Releases deep-seated muscular tension and knots
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Improves posture and corrects muscular imbalances
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Reduces joint stiffness and restores range of motion
+                    </li>
+                  </ul>
+
+                  <div class="treatment-ctas">
+                    <a href="login.html" class="btn-primary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="treatment-image-wrap animate-on-scroll">
+                  <img
+                    src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80"
+                    alt="Deep tissue massage therapy at Kora Spa"
+                    loading="lazy"
+                    width="800" height="600"
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==============================
+               SECTION 3: AROMATHERAPY MASSAGE
+               ============================== -->
+          <section id="aromatherapy" class="treatment-section bg-white" aria-labelledby="aromatherapy-title">
+            <div class="container">
+              <div class="treatment-layout">
+                <!-- Image -->
+                <div class="treatment-image-wrap animate-on-scroll">
+                  <img
+                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"
+                    alt="Aromatherapy massage with essential oils at Kora Spa"
+                    loading="lazy"
+                    width="800" height="600"
+                  >
+                </div>
+                <!-- Content -->
+                <div class="treatment-content animate-on-scroll">
+                  <span class="treatment-tag">Sensory Journey</span>
+                  <h2 id="aromatherapy-title">Aromatherapy Massage</h2>
+                  <p>Transport your senses to a world of botanical beauty with our Aromatherapy Massage — a multi-sensory experience that pairs the healing power of touch with the transformative properties of pure essential oils. At the start of each session, your therapist will invite you to select a custom scent profile tailored to your mood: calming lavender and chamomile, uplifting citrus and bergamot, or grounding cedarwood and frankincense.</p>
+                  <p>The gentle massage strokes encourage the essential oils to penetrate the skin while their aromatic molecules work through the olfactory system to elevate mood, ease anxiety, and gently rebalance body and mind. A truly holistic ritual from first breath to last.</p>
+
+                  <div class="treatment-details-row">
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span><strong>Duration:</strong> 60 or 90 min</span>
+                    </div>
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <span><strong>From:</strong> $90</span>
+                    </div>
+                  </div>
+
+                  <ul class="treatment-benefits">
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Elevates mood and lifts emotional wellbeing
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Reduces anxiety and quietens the restless mind
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Nourishes and softens the skin with botanical extracts
+                    </li>
+                  </ul>
+
+                  <div class="treatment-ctas">
+                    <a href="login.html" class="btn-primary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==============================
+               SECTION 4: HOT STONE THERAPY
+               ============================== -->
+          <section id="hot-stone" class="treatment-section bg-beige" aria-labelledby="hot-stone-title">
+            <div class="container">
+              <div class="treatment-layout reverse">
+                <!-- Content -->
+                <div class="treatment-content animate-on-scroll">
+                  <span class="treatment-tag">Heat Therapy</span>
+                  <h2 id="hot-stone-title">Hot Stone Therapy</h2>
+                  <p>Experience the ancient healing power of heat with our Hot Stone Therapy — one of the most deeply relaxing treatments in our collection. Smooth, hand-selected basalt stones are heated to the perfect temperature and placed along the body's key energy points, while your therapist uses them to deliver flowing strokes that penetrate far deeper than hands alone.</p>
+                  <p>The sustained warmth from the stones dilates blood vessels, dramatically increasing circulation while melting away layers of tension that conventional massage simply cannot reach. This is a treatment for those who crave true depth of relaxation — and those who have never experienced anything like it.</p>
+
+                  <div class="treatment-details-row">
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span><strong>Duration:</strong> 90 min</span>
+                    </div>
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <span><strong>From:</strong> $115</span>
+                    </div>
+                  </div>
+
+                  <ul class="treatment-benefits">
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Achieves a depth of relaxation unlike any other treatment
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Improves circulation and lymphatic drainage
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Provides profound and lasting stress relief
+                    </li>
+                  </ul>
+
+                  <div class="treatment-ctas">
+                    <a href="login.html" class="btn-primary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+                <!-- Image -->
+                <div class="treatment-image-wrap animate-on-scroll">
+                  <img
+                    src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=800&q=80"
+                    alt="Hot stone therapy session at Kora Spa"
+                    loading="lazy"
+                    width="800" height="600"
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ==============================
+               SECTION 5: SWEDISH MASSAGE
+               ============================== -->
+          <section id="swedish" class="treatment-section bg-white" aria-labelledby="swedish-title">
+            <div class="container">
+              <div class="treatment-layout">
+                <!-- Image -->
+                <div class="treatment-image-wrap animate-on-scroll">
+                  <img
+                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
+                    alt="Swedish massage at Kora Spa"
+                    loading="lazy"
+                    width="800" height="600"
+                  >
+                </div>
+                <!-- Content -->
+                <div class="treatment-content animate-on-scroll">
+                  <span class="treatment-tag">Classic Favourite</span>
+                  <h2 id="swedish-title">Swedish Massage</h2>
+                  <p>The Swedish Massage is the gold standard of therapeutic bodywork — a timeless classic that has endured for good reason. Using a carefully choreographed sequence of effleurage (long gliding strokes), petrissage (kneading), tapotement (rhythmic tapping), and gentle stretching, this treatment covers the entire body systematically, leaving no area of tension untouched.</p>
+                  <p>Scientifically shown to reduce cortisol, increase serotonin, and promote deeper sleep, the Swedish Massage is the ideal starting point for new spa guests and a beloved ritual for returning clients. If you're looking for comprehensive whole-body relaxation, this is your treatment.</p>
+
+                  <div class="treatment-details-row">
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      <span><strong>Duration:</strong> 60 or 90 min</span>
+                    </div>
+                    <div class="detail-chip">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                      <span><strong>From:</strong> $80</span>
+                    </div>
+                  </div>
+
+                  <ul class="treatment-benefits">
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Delivers total full-body relaxation and tension release
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Promotes better, deeper sleep and mental clarity
+                    </li>
+                    <li>
+                      <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor" opacity="0.3"/></svg>
+                      Enhances overall sense of wellbeing and vitality
+                    </li>
+                  </ul>
+
+                  <div class="treatment-ctas">
+                    <a href="login.html" class="btn-primary">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                      Book Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /.services-main -->
+      </div><!-- /.services-with-sidebar -->
+    </div><!-- /.services-wrapper -->
+
+    <!-- ==============================
+         SECTION 6: BODY & WELLNESS TREATMENTS
+         (Full-width, outside sidebar layout)
+         ============================== -->
+    <section id="body" class="body-treatments-section" aria-labelledby="body-title">
+      <div class="container">
+        <div class="body-treatments-header animate-on-scroll">
+          <span class="treatment-tag" style="margin:0 auto 1rem; display:inline-flex;">Luxury Rituals</span>
+          <h2 id="body-title" style="font-family:var(--font-serif); font-size:clamp(1.9rem,3vw,2.6rem); color:var(--color-forest); margin-bottom:1rem;">Body &amp; Wellness Treatments</h2>
+          <p>Beyond massage, our body care collection offers transformative rituals that nourish from skin to soul. Each treatment is thoughtfully curated using the finest natural ingredients — sea salts, mineral-rich clays, and botanical extracts — to leave you feeling profoundly renewed.</p>
+        </div>
+
+        <div class="body-treatments-grid">
+
+          <!-- Card 1: Luxe Body Scrub -->
+          <article class="body-treatment-card animate-on-scroll">
+            <div class="body-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80"
+                alt="Luxe Body Scrub treatment at Kora Spa"
+                loading="lazy"
+                width="600" height="450"
+              >
+            </div>
+            <div class="body-card-body">
+              <h3>Luxe Body Scrub</h3>
+              <p>An invigorating exfoliating ritual combining fine sea salt crystals with hand-harvested botanicals. Polishes away dullness, leaving skin silky-smooth and radiant.</p>
+              <div class="body-card-meta">
+                <span class="body-card-duration">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:3px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  60 min
+                </span>
+                <span class="body-card-price">From $100</span>
+              </div>
+              <a href="login.html" class="body-card-cta">Book This Treatment</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Nourishing Body Wrap -->
+          <article class="body-treatment-card animate-on-scroll">
+            <div class="body-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1608181831688-8e2e5b4b02dc?w=600&q=80"
+                alt="Nourishing Body Wrap treatment at Kora Spa"
+                loading="lazy"
+                width="600" height="450"
+              >
+            </div>
+            <div class="body-card-body">
+              <h3>Nourishing Body Wrap</h3>
+              <p>A deeply hydrating cocoon experience using nutrient-dense natural clays and botanical extracts. Wraps the body in warmth while infusing the skin with lasting moisture.</p>
+              <div class="body-card-meta">
+                <span class="body-card-duration">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:3px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  90 min
+                </span>
+                <span class="body-card-price">From $120</span>
+              </div>
+              <a href="login.html" class="body-card-cta">Book This Treatment</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Wellness Ritual -->
+          <article class="body-treatment-card animate-on-scroll">
+            <div class="body-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80"
+                alt="Wellness Ritual at Kora Spa"
+                loading="lazy"
+                width="600" height="450"
+              >
+            </div>
+            <div class="body-card-body">
+              <h3>Wellness Ritual</h3>
+              <p>Our most personalised offering — a fully customized full-body wellness journey designed around your specific intentions, from pure relaxation to revitalization and renewal.</p>
+              <div class="body-card-meta">
+                <span class="body-card-duration">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:3px;"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                  90 min
+                </span>
+                <span class="body-card-price">From $130</span>
+              </div>
+              <a href="login.html" class="body-card-cta">Book This Treatment</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+            <li><a href="services.html#swedish">Swedish Massage</a></li>
+            <li><a href="services.html#body">Body Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+            <p>Mon–Fri: 9AM–8PM | Sat–Sun: 10AM–6PM</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success');">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved. · <em>Demo Website</em></p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Sidebar active state on scroll
+    (function() {
+      const sections = ['relaxation', 'deep-tissue', 'aromatherapy', 'hot-stone', 'swedish', 'body'];
+      const navLinks = document.querySelectorAll('#sidebarNav a');
+
+      function updateActive() {
+        let current = sections[0];
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && window.scrollY >= el.offsetTop - 160) {
+            current = id;
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+        });
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      updateActive();
+    })();
+  </script>
+
+</body>
+</html>

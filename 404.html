@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanctuary Page Not Found — Kora Spa</title>
+  <meta name="description" content="Even in moments of wandering, peace can be found. Explore our signature treatments, wellness journal, or return to the Kora Spa sanctuary homepage.">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ============================================================
+       404 ERROR PAGE SPECIFIC STYLES
+       ============================================================ */
+
+    /* Section 1: Serene 404 Hero */
+    .hero-404 {
+      position: relative;
+      padding: 8.5rem 0 3.5rem;
+      background: radial-gradient(ellipse at 50% 30%, rgba(201,169,110,0.14) 0%, var(--color-beige) 60%, var(--color-ivory) 100%);
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .hero-404-artistic-wrap {
+      position: relative;
+      display: inline-block;
+      margin: 0 auto 1rem;
+    }
+    .hero-404-number {
+      font-family: var(--font-serif);
+      font-size: clamp(6.5rem, 16vw, 12rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--color-forest) 20%, var(--color-champagne) 70%, var(--color-sage) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      user-select: none;
+      position: relative;
+      z-index: 2;
+    }
+    [data-theme="dark"] .hero-404-number {
+      background: linear-gradient(135deg, var(--color-ivory) 20%, var(--color-champagne) 65%, var(--color-sage-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .botanical-accent-svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 140%;
+      max-width: 520px;
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 1;
+    }
+    [data-theme="dark"] .botanical-accent-svg {
+      opacity: 0.15;
+    }
+    .hero-404-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      border-radius: var(--radius-pill);
+      background: rgba(45,74,50,0.08);
+      border: 1px solid rgba(45,74,50,0.15);
+      color: var(--color-forest);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 3;
+    }
+    [data-theme="dark"] .hero-404-badge {
+      background: rgba(201,169,110,0.15);
+      border-color: rgba(201,169,110,0.3);
+      color: var(--color-champagne-light);
+    }
+
+    /* Section 2: Friendly Error Message */
+    .message-404-section {
+      padding: 4.5rem 0 3.5rem;
+      background: var(--color-ivory);
+      text-align: center;
+    }
+    .message-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 3rem;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    [data-theme="dark"] .message-card {
+      background: var(--color-beige);
+    }
+    .message-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 2.5vw, 1.95rem);
+      line-height: 1.5;
+      color: var(--color-forest);
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+    [data-theme="dark"] .message-quote {
+      color: var(--color-champagne-light);
+    }
+    .message-text {
+      font-size: 1.05rem;
+      color: var(--color-text-muted);
+      line-height: 1.8;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* Section 3: Website Search */
+    .search-404-section {
+      padding: 4.5rem 0;
+      background: var(--color-beige);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .search-box-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .search-input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-input-group input {
+      width: 100%;
+      padding: 1.15rem 1.4rem 1.15rem 3.5rem;
+      font-size: 1.05rem;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--color-border);
+      background: var(--color-white);
+      color: var(--color-text);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+    [data-theme="dark"] .search-input-group input {
+      background: var(--color-ivory);
+    }
+    .search-input-group input:focus {
+      border-color: var(--color-champagne);
+      box-shadow: 0 0 0 4px rgba(201,169,110,0.2), var(--shadow-lg);
+    }
+    .search-icon-fixed {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-champagne-dark);
+      pointer-events: none;
+    }
+    .search-clear-btn {
+      position: absolute;
+      right: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      display: none;
+      padding: 0.35rem;
+    }
+    .search-clear-btn:hover {
+      color: var(--color-dark);
+    }
+
+    /* Autocomplete Dropdown List */
+    .search-autocomplete-dropdown {
+      position: absolute;
+      top: calc(100% + 0.6rem);
+      left: 0;
+      right: 0;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      max-height: 380px;
+      overflow-y: auto;
+      z-index: 100;
+      display: none;
+      padding: 0.6rem 0;
+    }
+    [data-theme="dark"] .search-autocomplete-dropdown {
+      background: var(--color-ivory);
+    }
+    .search-result-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.4rem;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: background var(--transition-fast);
+      border-bottom: 1px solid rgba(232,221,212,0.5);
+    }
+    .search-result-item:last-child {
+      border-bottom: none;
+    }
+    .search-result-item:hover,
+    .search-result-item.selected {
+      background: rgba(201,169,110,0.12);
+    }
+    .search-result-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .search-result-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--color-forest);
+    }
+    [data-theme="dark"] .search-result-name {
+      color: var(--color-champagne-light);
+    }
+    .search-result-sub {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+    .search-tag-chips {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+    .tag-chip {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    [data-theme="dark"] .tag-chip {
+      background: var(--color-ivory);
+    }
+    .tag-chip:hover {
+      background: var(--color-champagne);
+      border-color: var(--color-champagne);
+      color: #fff;
+    }
+
+    /* Section 4: Popular Links */
+    .popular-links-section {
+      padding: 5.5rem 0;
+      background: var(--color-ivory);
+    }
+    .popular-links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 2.75rem;
+    }
+    .popular-link-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="dark"] .popular-link-card {
+      background: var(--color-beige);
+    }
+    .popular-link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--color-champagne);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+    .popular-link-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-champagne);
+    }
+    .popular-link-card:hover::before {
+      opacity: 1;
+    }
+    .popular-link-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+    .popular-link-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-circle);
+      background: rgba(201,169,110,0.12);
+      color: var(--color-champagne-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .popular-link-icon {
+      color: var(--color-champagne-light);
+    }
+    .popular-link-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-forest);
+      margin: 0;
+    }
+    [data-theme="dark"] .popular-link-title {
+      color: var(--color-ivory);
+    }
+    .popular-link-desc {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .popular-link-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-champagne-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    [data-theme="dark"] .popular-link-action {
+      color: var(--color-champagne);
+    }
+
+    /* Section 5: Featured Spa Treatment */
+    .featured-treatment-section {
+      padding: 5.5rem 0;
+      background: var(--color-beige);
+      border-top: 1px solid var(--color-border);
+    }
+    .featured-treatment-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      box-shadow: var(--shadow-xl);
+      max-width: 1060px;
+      margin: 2.5rem auto 0;
+      align-items: center;
+    }
+    [data-theme="dark"] .featured-treatment-card {
+      background: var(--color-ivory);
+    }
+    .featured-treatment-media {
+      position: relative;
+      height: 100%;
+      min-height: 380px;
+      overflow: hidden;
+    }
+    .featured-treatment-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .featured-treatment-card:hover .featured-treatment-media img {
+      transform: scale(1.04);
+    }
+    .featured-treatment-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(45,74,50,0.9);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(4px);
+    }
+    .featured-treatment-content {
+      padding: 3rem 2.75rem;
+    }
+    .treatment-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+    .treatment-rating {
+      color: var(--color-champagne-dark);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .treatment-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .treatment-price-wrap .price-amount {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--color-forest);
+    }
+    [data-theme="dark"] .treatment-price-wrap .price-amount {
+      color: var(--color-champagne-light);
+    }
+
+    /* Section 6: Return Home CTA */
+    .return-home-cta-section {
+      padding: 5.5rem 0;
+      background: linear-gradient(135deg, var(--color-forest) 0%, #1c3221 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .return-home-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(201,169,110,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .return-cta-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .return-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .return-cta-desc {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
+      margin-bottom: 2.25rem;
+    }
+    .return-cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 992px) {
+      .popular-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .featured-treatment-card {
+        grid-template-columns: 1fr;
+      }
+      .featured-treatment-media {
+        min-height: 280px;
+      }
+    }
+    @media (max-width: 640px) {
+      .popular-links-grid {
+        grid-template-columns: 1fr;
+      }
+      .message-card {
+        padding: 2rem 1.5rem;
+      }
+      .featured-treatment-content {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="404">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta" id="navAuthBtn">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Wellness Focus</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         SECTION 1: SERENE 404 HERO
+         ======================================================== -->
+    <section class="hero-404" id="section-404-hero" aria-label="Serene 404 Hero">
+      <div class="container">
+        <div class="hero-404-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Moment of Pause
+        </div>
+
+        <div class="hero-404-artistic-wrap">
+          <!-- Artistic 404 Display -->
+          <div class="hero-404-number" aria-hidden="true">404</div>
+
+          <!-- Botanical Flourish SVG -->
+          <svg class="botanical-accent-svg" viewBox="0 0 500 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 180 C120 80, 220 50, 310 110 C380 160, 440 120, 470 60" stroke="#8FA887" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M110 135 C150 100, 180 110, 210 145 C170 160, 130 155, 110 135 Z" fill="#C9A96E" opacity="0.45"/>
+            <path d="M260 90 C300 65, 330 75, 350 115 C310 125, 280 115, 260 90 Z" fill="#8FA887" opacity="0.5"/>
+            <circle cx="380" cy="140" r="12" fill="#C9A96E" opacity="0.3"/>
+            <circle cx="90" cy="160" r="16" fill="#8FA887" opacity="0.25"/>
+          </svg>
+        </div>
+
+        <p style="font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--color-champagne-dark); font-weight:600; margin-bottom:0.5rem;">
+          The Pathway Has Shifted
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: FRIENDLY ERROR MESSAGE
+         ======================================================== -->
+    <section class="message-404-section" id="section-404-message" aria-label="Mindful Error Guidance">
+      <div class="container">
+        <div class="message-card">
+          <blockquote class="message-quote">
+            &ldquo;Even in moments of wandering, peace can be found. The page you are looking for has been moved or does not exist.&rdquo;
+          </blockquote>
+          <p class="message-text">
+            In our sanctuary, every detour is merely an invitation to breathe, re-center, and discover a new restorative ritual. Allow us to gently guide you back onto your path of wellness and rejuvenation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: WEBSITE SEARCH
+         ======================================================== -->
+    <section class="search-404-section" id="section-404-search" aria-label="Sanctuary Search &amp; Autocomplete">
+      <div class="container text-center">
+        <div style="max-width:620px; margin:0 auto 1.75rem;">
+          <span class="section-tag">Find Your Treatment</span>
+          <h2 class="section-title" style="font-size:clamp(1.75rem, 3vw, 2.3rem); margin-bottom:0.5rem;">Where Would You Like to Go?</h2>
+          <p class="section-subtitle">Search treatments, rituals, therapists, memberships, or sanctuary pages.</p>
+        </div>
+
+        <!-- Search input box -->
+        <div class="search-box-wrap">
+          <form id="spaSearchForm" onsubmit="handleSearchSubmit(event)">
+            <div class="search-input-group">
+              <svg class="search-icon-fixed" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="spaSearchInput" placeholder="Try 'Relaxation Massage', 'Aromatherapy', or 'Membership'..." autocomplete="off" aria-label="Search Kora Spa">
+              <button type="button" class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <!-- Autocomplete results dropdown -->
+          <div class="search-autocomplete-dropdown" id="searchDropdown" role="listbox">
+            <!-- Dynamically populated via JS -->
+          </div>
+
+          <!-- Suggested quick-tag chips -->
+          <div class="search-tag-chips">
+            <span style="font-size:0.8rem; color:var(--color-text-muted); margin-right:0.3rem;">Popular Searches:</span>
+            <button type="button" class="tag-chip" onclick="applySearchTag('Relaxation Massage')">Relaxation Massage</button>
+            <button type="button" class="tag-chip" onclick="applySearchTag('Hot Stone')">Hot Stone</button>
+            <button type="button" class="tag-chip" onclick="applySearchTag('Aromatherapy')">Aromatherapy</button>
+            <button type="button" class="tag-chip" onclick="applySearchTag('Membership')">Membership</button>
+            <button type="button" class="tag-chip" onclick="applySearchTag('Contact')">Contact &amp; Hours</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: POPULAR LINKS
+         ======================================================== -->
+    <section class="popular-links-section" id="section-404-links" aria-label="Popular Sanctuary Destinations">
+      <div class="container">
+        <div class="section-header text-center" style="max-width:640px; margin:0 auto;">
+          <span class="section-tag">Quick Navigation</span>
+          <h2 class="section-title">Popular Sanctuary Destinations</h2>
+          <p class="section-subtitle">Reorient your visit with our most frequently explored sanctuary spaces.</p>
+        </div>
+
+        <div class="popular-links-grid">
+          <!-- 1. Home General -->
+          <a href="index.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3 class="popular-link-title">Home General</h3>
+              </div>
+              <p class="popular-link-desc">Our flagship entryway showcasing signature therapy philosophies, featured spa rituals, and awards.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>Explore Homepage</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 2. Home Wellness -->
+          <a href="home2.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z"/></svg>
+                </div>
+                <h3 class="popular-link-title">Home Wellness</h3>
+              </div>
+              <p class="popular-link-desc">Curated somatic health, holistic mindfulness routines, meditation gardens, and bio-frequency balancing.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>View Wellness</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 3. All Services -->
+          <a href="services.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+                </div>
+                <h3 class="popular-link-title">All Services</h3>
+              </div>
+              <p class="popular-link-desc">Explore our complete therapeutic menu: deep tissue, hot stones, organic body polishes, and custom rituals.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>Browse Treatments</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 4. Pricing & Memberships -->
+          <a href="pricing.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <h3 class="popular-link-title">Pricing &amp; Memberships</h3>
+              </div>
+              <p class="popular-link-desc">Discover our Radiance and Essence monthly tiers, guest passes, and seasonal ritual packages.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>View Privileges</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 5. Contact Us -->
+          <a href="contact.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <h3 class="popular-link-title">Contact Us</h3>
+              </div>
+              <p class="popular-link-desc">Directions to our Tribeca sanctuary, direct phone concierge, valet details, and operating hours.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>Find Sanctuary</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+
+          <!-- 6. Client Portal -->
+          <a href="login.html" class="popular-link-card">
+            <div>
+              <div class="popular-link-header">
+                <div class="popular-link-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h3 class="popular-link-title">Client Portal</h3>
+              </div>
+              <p class="popular-link-desc">Sign in to manage active reservations, view personalized therapist recommendations, and redeem credits.</p>
+            </div>
+            <div class="popular-link-action">
+              <span>Client Sign In</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 5: FEATURED SPA TREATMENT
+         ======================================================== -->
+    <section class="featured-treatment-section" id="section-404-featured" aria-label="Signature Relaxation Massage Feature">
+      <div class="container">
+        <div class="section-header text-center" style="max-width:600px; margin:0 auto;">
+          <span class="section-tag">Sanctuary Highlight</span>
+          <h2 class="section-title">Recommended While You Wander</h2>
+          <p class="section-subtitle">Our most beloved ritual designed to dissolve somatic fatigue and restore calm.</p>
+        </div>
+
+        <div class="featured-treatment-card">
+          <!-- Image -->
+          <div class="featured-treatment-media">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Signature Relaxation Massage Therapy at Kora Spa" loading="lazy">
+            <div class="featured-treatment-badge">Signature Ritual</div>
+          </div>
+
+          <!-- Content -->
+          <div class="featured-treatment-content">
+            <div class="treatment-meta-bar">
+              <span class="treatment-rating">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                4.9 (128 verified reviews)
+              </span>
+              <span>•</span>
+              <span>Duration: 60 or 90 min</span>
+            </div>
+
+            <h3 style="font-family:var(--font-serif); font-size:1.85rem; color:var(--color-forest); margin-bottom:0.75rem;">
+              Signature Relaxation Massage
+            </h3>
+            <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.7; margin-bottom:1.25rem;">
+              A gentle full-body experience utilizing rhythmic Swedish strokes to release deep muscular tension, soothe the central nervous system, and restore your inner equilibrium with organic botanical oils.
+            </p>
+
+            <ul style="list-style:none; padding:0; margin:0 0 1.5rem; display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; font-size:0.85rem; color:var(--color-text);">
+              <li style="display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--color-sage-dark);">✓</span> Calms nervous system</li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--color-sage-dark);">✓</span> Lowers cortisol</li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--color-sage-dark);">✓</span> Custom aromatherapy oil</li>
+              <li style="display:flex; align-items:center; gap:0.4rem;"><span style="color:var(--color-sage-dark);">✓</span> Steam suite access</li>
+            </ul>
+
+            <div class="treatment-price-wrap">
+              <span style="font-size:0.9rem; color:var(--color-text-muted);">Starting from</span>
+              <span class="price-amount">$140</span>
+              <span style="font-size:0.85rem; color:var(--color-text-muted);">/ session</span>
+            </div>
+
+            <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+              <a href="services.html#relaxation" class="btn-primary" style="padding:0.85rem 1.75rem;">
+                Book This Treatment
+              </a>
+              <a href="service-details.html" class="btn-secondary" style="padding:0.85rem 1.5rem;">
+                View Ritual Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 6: RETURN HOME CTA
+         ======================================================== -->
+    <section class="return-home-cta-section" id="section-404-return-cta" aria-label="Return to Sanctuary Homepage">
+      <div class="container">
+        <div class="return-cta-wrap">
+          <h2 class="return-cta-title">Your Sanctuary Awaits</h2>
+          <p class="return-cta-desc">
+            Whenever you feel adrift, remember that relaxation and quiet luxury are always right around the corner. Our dedicated concierge team is standing by to guide your journey.
+          </p>
+          <div class="return-cta-actions">
+            <a href="index.html" class="btn-primary" style="background:var(--color-champagne); color:#1A1A1A; border:none; padding:1rem 2rem; font-weight:600; font-size:1rem; display:inline-flex; align-items:center; gap:0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Return to Homepage
+            </a>
+            <a href="contact.html" class="btn-secondary" style="border-color:rgba(255,255,255,0.45); color:#fff; padding:1rem 1.85rem; font-size:1rem; display:inline-flex; align-items:center; gap:0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Speak with Our Concierge
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+            <li><a href="services.html#swedish">Swedish Massage</a></li>
+            <li><a href="services.html#body">Body Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+            <p>Mon–Fri: 9AM–8PM | Sat–Sun: 10AM–6PM</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved. · <em>Sanctuary 404 Guide</em></p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- PAGE-SPECIFIC SEARCH AUTOCOMPLETE LOGIC -->
+  <script>
+    const searchableItems = [
+      { name: 'Signature Relaxation Massage', category: 'Massage Therapy', url: 'services.html#relaxation', price: '$140' },
+      { name: 'Deep Tissue Therapeutic Massage', category: 'Therapeutic Bodywork', url: 'services.html#deep-tissue', price: '$165' },
+      { name: 'Botanical Aromatherapy Ritual', category: 'Aromatherapy', url: 'services.html#aromatherapy', price: '$155' },
+      { name: 'Himalayan Hot Stone Therapy', category: 'Therapeutic Bodywork', url: 'services.html#hot-stone', price: '$185' },
+      { name: 'Swedish Vitality Flow', category: 'Classic Massage', url: 'services.html#swedish', price: '$135' },
+      { name: 'Organic Herbal Body Polish', category: 'Body Rituals', url: 'services.html#body', price: '$130' },
+      { name: 'Membership Tiers & Radiance Privileges', category: 'Memberships', url: 'pricing.html', price: 'Tiers' },
+      { name: 'Client Portal & Account Access', category: 'Guest Portal', url: 'login.html', price: 'Portal' },
+      { name: 'About Our Founders & Holistic Heritage', category: 'About Sanctuary', url: 'about.html', price: 'Story' },
+      { name: 'Holistic Wellness & Mindfulness Portal', category: 'Sanctuary Experience', url: 'home2.html', price: 'Wellness' },
+      { name: 'Sanctuary Contact, Location & Valet', category: 'Visit Us', url: 'contact.html', price: 'Concierge' },
+      { name: 'Sanctuary Journal & Wellness Articles', category: 'Journal', url: 'blog.html', price: 'Reads' }
+    ];
+
+    const searchInput = document.getElementById('spaSearchInput');
+    const searchDropdown = document.getElementById('searchDropdown');
+    const clearBtn = document.getElementById('searchClearBtn');
+
+    function renderSearchResults(query) {
+      if (!query || query.trim().length === 0) {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+        clearBtn.style.display = 'none';
+        return;
+      }
+
+      clearBtn.style.display = 'block';
+      const clean = query.trim().toLowerCase();
+      const matches = searchableItems.filter(item =>
+        item.name.toLowerCase().includes(clean) ||
+        item.category.toLowerCase().includes(clean)
+      );
+
+      if (matches.length === 0) {
+        searchDropdown.innerHTML = `
+          <div style="padding:1.25rem 1.5rem; text-align:center; color:var(--color-text-muted); font-size:0.9rem;">
+            No sanctuary matches found for "<strong>${sanitizeHTML(query)}</strong>".<br>
+            <a href="services.html" style="color:var(--color-champagne); font-weight:600; text-decoration:underline; margin-top:0.5rem; display:inline-block;">
+              Browse all treatments &rarr;
+            </a>
+          </div>
+        `;
+        searchDropdown.style.display = 'block';
+        return;
+      }
+
+      searchDropdown.innerHTML = matches.map(item => `
+        <a href="${item.url}" class="search-result-item" role="option">
+          <div class="search-result-info">
+            <span class="search-result-name">${item.name}</span>
+            <span class="search-result-sub">${item.category}</span>
+          </div>
+          <span style="font-size:0.85rem; font-weight:600; color:var(--color-champagne-dark);">${item.price}</span>
+        </a>
+      `).join('');
+
+      searchDropdown.style.display = 'block';
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        renderSearchResults(e.target.value);
+      });
+
+      searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim().length > 0) {
+          searchDropdown.style.display = 'block';
+        }
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        renderSearchResults('');
+        searchInput.focus();
+      });
+    }
+
+    // Close autocomplete on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-box-wrap')) {
+        if (searchDropdown) searchDropdown.style.display = 'none';
+      }
+    });
+
+    function applySearchTag(tag) {
+      if (!searchInput) return;
+      searchInput.value = tag;
+      renderSearchResults(tag);
+      searchInput.focus();
+    }
+
+    function handleSearchSubmit(e) {
+      e.preventDefault();
+      const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+      if (!query) return;
+
+      const firstMatch = searchableItems.find(item =>
+        item.name.toLowerCase().includes(query) ||
+        item.category.toLowerCase().includes(query)
+      );
+
+      if (firstMatch) {
+        window.location.href = firstMatch.url;
+      } else {
+        window.location.href = 'services.html';
+      }
+    }
+  </script>
+</body>
+</html>

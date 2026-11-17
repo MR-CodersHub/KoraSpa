@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relaxation Massage — Service Details | Kora Spa</title>
+  <meta name="description" content="Discover our signature Relaxation Massage at Kora Spa. A deeply soothing full-body experience designed to melt away tension and restore calm.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* =============================================
+       SERVICE DETAILS PAGE — SPECIFIC STYLES
+       ============================================= */
+
+    /* Section 1: Hero */
+    .detail-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      padding: 8rem 1.5rem 5rem;
+      background: linear-gradient(rgba(26, 32, 22, 0.65), rgba(26, 32, 22, 0.75)),
+                  url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=85') center/cover no-repeat;
+    }
+    .detail-hero-content {
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .detail-breadcrumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+    }
+    .detail-breadcrumb a {
+      color: var(--color-champagne-light);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .detail-breadcrumb a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .detail-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+      font-weight: 600;
+    }
+    .detail-hero-subtitle {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.7;
+      margin: 0 auto 2.5rem;
+      max-width: 680px;
+    }
+    .quick-facts-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .fact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    .scroll-indicator {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-family: var(--font-sans);
+      transition: color var(--transition-fast);
+      animation: bounce 2s infinite;
+    }
+    .scroll-indicator:hover { color: #ffffff; }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+    /* Section 2: Experience */
+    .experience-section {
+      padding: 6rem 0;
+      background: var(--color-ivory);
+    }
+    .section-eyebrow {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-champagne-dark);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .experience-narrative p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+    }
+    .experience-steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .experience-steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--color-text);
+    }
+    .experience-steps-list li svg {
+      color: var(--color-sage-dark);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .experience-cards-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .exp-highlight-card {
+      background: var(--color-white);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .exp-highlight-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .exp-icon-box {
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-beige);
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
+    }
+    .exp-text h4 {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-forest);
+      margin-bottom: 0.25rem;
+    }
+    .exp-text p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .lifestyle-img-wrap {
+      margin-top: 1rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      box-shadow: var(--shadow-md);
+    }
+    .lifestyle-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Section 3: Session Details */
+    .session-section {
+      padding: 6rem 0;
+      background: var(--color-beige);
+    }
+    .duration-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2.5rem 0 4rem;
+    }
+    .duration-card {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      transition: all var(--transition-base);
+    }
+    .duration-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-xl);
+    }
+    .duration-card.recommended {
+      border: 2px solid var(--color-champagne);
+    }
+    .duration-badge-top {
+      position: absolute;
+      top: -12px;
+      right: 24px;
+      background: var(--color-champagne);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+    }
+    .duration-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--color-forest);
+      margin-bottom: 0.5rem;
+    }
+    .duration-price {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--color-champagne-dark);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .duration-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+    }
+    .what-to-expect-box {
+      background: var(--color-white);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .what-to-expect-box h3 {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--color-forest);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .steps-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .step-item {
+      text-align: center;
+      position: relative;
+    }
+    .step-number {
+      width: 44px;
+      height: 44px;
+      background: var(--color-ivory);
+      border: 2px solid var(--color-champagne);
+      color: var(--color-champagne-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 auto 1rem;
+    }
+    .step-item h5 {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--color-forest);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .step-item p {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+    .customization-callout {
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--color-ivory);
+      border-left: 3px solid var(--color-champagne);
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+    .customization-callout strong { color: var(--color-forest); }
+
+    /* Section 4: Therapist Profile */
+    .therapist-section {
+      padding: 6rem 0;
+      background: var(--color-white);
+    }
+    .therapist-feature-card {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 3.5rem;
+      background: var(--color-ivory);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      border: 1px solid var(--color-border);
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      margin-top: 2rem;
+    }
+    .therapist-photo-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+    }
+    .therapist-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .therapist-info h3 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-forest);
+      margin-bottom: 0.25rem;
+    }
+    .therapist-title {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--color-champagne-dark);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .therapist-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-white);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--color-border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-forest);
+      margin-bottom: 1.25rem;
+    }
+    .therapist-specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .specialty-chip {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      color: var(--color-text);
+      font-family: var(--font-sans);
+    }
+    .therapist-bio {
+      font-size: 0.98rem;
+      line-height: 1.8;
+      color: var(--color-text);
+      margin-bottom: 1.75rem;
+    }
+    .other-therapists-box {
+      margin-top: 3.5rem;
+      padding: 2rem;
+      background: var(--color-beige);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .other-therapists-left h4 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--color-forest);
+      margin-bottom: 0.35rem;
+    }
+    .other-therapists-left p {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+    .therapist-avatars {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .avatar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--color-forest);
+      font-weight: 500;
+    }
+    .avatar-item img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-champagne);
+    }
+
+    /* Section 5: Important Info */
+    .info-section {
+      padding: 6rem 0;
+      background: var(--color-beige);
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 2.5rem 0 3rem;
+    }
+    .info-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .info-icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .info-card h4 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--color-forest);
+      margin-bottom: 0.5rem;
+    }
+    .info-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .disclaimer-box {
+      background: rgba(143, 168, 135, 0.12);
+      border: 1px solid var(--color-sage);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .disclaimer-box svg {
+      color: var(--color-forest);
+      flex-shrink: 0;
+    }
+    .disclaimer-box p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--color-forest);
+      line-height: 1.6;
+    }
+
+    /* Section 6: FAQ + CTA */
+    .faq-section {
+      padding: 6rem 0 7rem;
+      background: var(--color-ivory);
+    }
+    .faq-container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .faq-accordion {
+      margin: 2.5rem 0 4.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .faq-item {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition-fast);
+    }
+    .faq-item.active {
+      border-color: var(--color-champagne);
+    }
+    .faq-question-btn {
+      width: 100%;
+      text-align: left;
+      padding: 1.25rem 1.75rem;
+      background: none;
+      border: none;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--color-forest);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 1rem;
+    }
+    .faq-question-btn:hover {
+      color: var(--color-champagne-dark);
+    }
+    .faq-arrow {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+      color: var(--color-champagne);
+    }
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-base), padding var(--transition-base);
+      padding: 0 1.75rem;
+      background: var(--color-white);
+    }
+    .faq-item.active .faq-answer {
+      max-height: 250px;
+      padding: 0 1.75rem 1.5rem;
+    }
+    .faq-answer p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+    }
+    .final-cta-card {
+      background: linear-gradient(135deg, var(--color-forest) 0%, #1a2e20 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 4rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(201,169,110,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta-card h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+    .final-cta-card p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: transparent;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      border-radius: var(--radius-pill);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: #ffffff;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .experience-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .therapist-feature-card { grid-template-columns: 1fr; text-align: center; }
+      .therapist-photo-wrap { max-width: 300px; margin: 0 auto; }
+      .therapist-specialties { justify-content: center; }
+      .steps-timeline { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .duration-cards-grid { grid-template-columns: 1fr; }
+      .info-grid { grid-template-columns: 1fr; }
+      .other-therapists-box { flex-direction: column; text-align: center; }
+      .therapist-avatars { justify-content: center; flex-wrap: wrap; }
+      .detail-hero { min-height: 75vh; }
+    }
+  </style>
+</head>
+<body data-page="service-details">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Wellness Focus</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link active">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ==============================
+         SECTION 1: TREATMENT HERO
+         ============================== -->
+    <section class="detail-hero" id="treatment-hero" aria-label="Relaxation massage hero">
+      <div class="detail-hero-content animate-on-scroll">
+        <nav class="detail-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">›</span>
+          <a href="services.html">Services</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Relaxation Massage</span>
+        </nav>
+
+        <h1>Relaxation Massage</h1>
+        <p class="detail-hero-subtitle">A deeply soothing full-body experience designed to melt away tension and restore your natural sense of calm.</p>
+
+        <div class="quick-facts-row">
+          <div class="fact-badge">
+            <span>⏱</span> 60–90 Minutes
+          </div>
+          <div class="fact-badge">
+            <span>💫</span> From $85
+          </div>
+          <div class="fact-badge">
+            <span>🌿</span> All Skill Levels Welcome
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="login.html" class="btn-primary" style="padding:0.9rem 2.2rem; font-size:0.95rem;">
+            Book This Treatment
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div>
+          <a href="#experience" class="scroll-indicator" aria-label="Scroll to experience details">
+            <span>Discover Experience</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 2: TREATMENT EXPERIENCE
+         ============================== -->
+    <section id="experience" class="experience-section" aria-labelledby="experience-title">
+      <div class="container">
+        <div class="text-center" style="max-width:700px; margin:0 auto;">
+          <span class="section-eyebrow">The Experience</span>
+          <h2 id="experience-title" style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 2.75rem); color:var(--color-forest); margin-bottom:1rem;">A Sanctuary for Your Senses</h2>
+          <p style="color:var(--color-text-muted); font-size:1.05rem; line-height:1.7;">From the moment you cross our threshold, every detail has been arranged to encourage complete surrender to tranquility.</p>
+        </div>
+
+        <div class="experience-grid">
+          <!-- Left Column -->
+          <div class="experience-narrative animate-on-scroll">
+            <p>Our Relaxation Massage is more than an appointment — it is a deliberate pause in an over-stimulated world. Upon arrival, you will be invited to decompress in our lounge while enjoying warm botanical water and conferring briefly with your therapist to understand your intentions for the day.</p>
+            <p>Once inside your private, softly candlelit room, the treatment begins with rhythmic, flowing strokes that gently awaken circulation and prepare muscle fibers for release. There are no sudden movements or painful pressures here; only continuous, harmonious gliding strokes calibrated to soothe your parasympathetic nervous system.</p>
+
+            <ul class="experience-steps-list">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Warm welcome &amp; bespoke personal consultation</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Private candlelit suite with organic linen &amp; ambient acoustic resonance</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Selection of pure, cold-pressed natural massage oils</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Gentle, rhythmic full-body coverage from neck to toes</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Calming closing sequence with guided grounding breathwork</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Column -->
+          <div class="experience-cards-col animate-on-scroll">
+            <div class="exp-highlight-card">
+              <div class="exp-icon-box">🛁</div>
+              <div class="exp-text">
+                <h4>Pre-Treatment</h4>
+                <p>Arrive 10 minutes prior to unwind in our lounge, sip herbal tea, and slip into an organic plush robe and slippers.</p>
+              </div>
+            </div>
+
+            <div class="exp-highlight-card">
+              <div class="exp-icon-box">💆</div>
+              <div class="exp-text">
+                <h4>During Treatment</h4>
+                <p>Immerse yourself in 55 or 85 continuous minutes of rhythmic touch, peaceful melodies, and pure restorative comfort.</p>
+              </div>
+            </div>
+
+            <div class="exp-highlight-card">
+              <div class="exp-icon-box">☕</div>
+              <div class="exp-text">
+                <h4>Post-Treatment</h4>
+                <p>Gently awaken with artisanal botanical tea, organic dried fruit, and quiet time in our garden relaxation solarium.</p>
+              </div>
+            </div>
+
+            <div class="lifestyle-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=800&q=80"
+                alt="Spa relaxation sanctuary and botanical ambience"
+                loading="lazy"
+                width="800" height="450"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 3: SESSION DETAILS
+         ============================== -->
+    <section class="session-section" aria-labelledby="session-title">
+      <div class="container">
+        <div class="text-center" style="max-width:700px; margin:0 auto;">
+          <span class="section-eyebrow">Session Options</span>
+          <h2 id="session-title" style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 2.75rem); color:var(--color-forest); margin-bottom:1rem;">Tailored Duration &amp; Flow</h2>
+          <p style="color:var(--color-text-muted); font-size:1.05rem; line-height:1.7;">Select the timeframe that suits your schedule and depth of relaxation desired.</p>
+        </div>
+
+        <div class="duration-cards-grid">
+          <!-- 60 Min -->
+          <div class="duration-card animate-on-scroll">
+            <h3>60-Minute Session</h3>
+            <div class="duration-price">From $85</div>
+            <p>An ideal introduction to holistic bodywork. Focuses on back, shoulders, neck, and limbs to release accumulated day-to-day strain and reset your equilibrium.</p>
+            <ul class="experience-steps-list" style="margin-bottom:2rem;">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Focused upper &amp; lower body flow</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Signature aromatherapy scent selection</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Post-session herbal infusion</li>
+            </ul>
+            <a href="login.html" class="btn-secondary" style="width:100%; justify-content:center;">Book 60 Minutes</a>
+          </div>
+
+          <!-- 90 Min -->
+          <div class="duration-card recommended animate-on-scroll">
+            <span class="duration-badge-top">Recommended</span>
+            <h3>90-Minute Session</h3>
+            <div class="duration-price">From $110</div>
+            <p>Our most complete and restorative experience. The extended duration allows for unhurried pacing, deeper parasympathetic stillness, and extensive focus on stubborn tension points.</p>
+            <ul class="experience-steps-list" style="margin-bottom:2rem;">
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive head-to-toe coverage</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Warm towel compression for back &amp; feet</li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Extended closing meditation moment</li>
+            </ul>
+            <a href="login.html" class="btn-primary" style="width:100%; justify-content:center;">Book 90 Minutes</a>
+          </div>
+        </div>
+
+        <!-- What to Expect List -->
+        <div class="what-to-expect-box animate-on-scroll">
+          <h3>What to Expect During Your Appointment</h3>
+          <div class="steps-timeline">
+            <div class="step-item">
+              <div class="step-number">1</div>
+              <h5>Welcome &amp; Consultation</h5>
+              <p>5-minute check-in discussing your stress areas, pressure wishes, and aromatherapy oil choices.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-number">2</div>
+              <h5>Preparation</h5>
+              <p>Settle onto a heated plush therapy bed in your private suite while relaxing ambient music plays.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-number">3</div>
+              <h5>The Treatment</h5>
+              <p>Long, rhythmic effleurage strokes and gentle rhythmic kneading melt away tension layer by layer.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-number">4</div>
+              <h5>Focus Areas</h5>
+              <p>Dedicated attention dedicated to your shoulders, spine, hips, or lower back as requested.</p>
+            </div>
+            <div class="step-item">
+              <div class="step-number">5</div>
+              <h5>Closing &amp; Awakening</h5>
+              <p>Guided slow deep breathing, a warm towel compress, and artisanal herbal tea in the recovery lounge.</p>
+            </div>
+          </div>
+
+          <div class="customization-callout">
+            <strong>Bespoke Customization Options:</strong> Every session can be tailored to your liking. Feel free to request your desired pressure level (featherlight to moderate), focus zones (e.g. shoulders, feet, scalp), choice of nourishing essential oils (lavender, sweet almond, or rosehip), and ambient music preferences.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 4: MEET YOUR THERAPIST
+         ============================== -->
+    <section class="therapist-section" aria-labelledby="therapist-title">
+      <div class="container">
+        <div class="text-center" style="max-width:700px; margin:0 auto;">
+          <span class="section-eyebrow">Your Therapist</span>
+          <h2 id="therapist-title" style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 2.75rem); color:var(--color-forest); margin-bottom:1rem;">Mastery in Every Touch</h2>
+          <p style="color:var(--color-text-muted); font-size:1.05rem; line-height:1.7;">Our therapists are licensed professionals with extensive clinical certifications and a deep intuitive understanding of bodywork.</p>
+        </div>
+
+        <div class="therapist-feature-card animate-on-scroll">
+          <div class="therapist-photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+              alt="Sarah Chen — Senior Wellness Therapist at Kora Spa"
+              loading="lazy"
+              width="600" height="750"
+            >
+          </div>
+          <div class="therapist-info">
+            <div class="therapist-rating">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#C9A96E" stroke="#C9A96E"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <span>4.9 / 5.0 (120 Verified Reviews)</span>
+            </div>
+            <h3>Sarah Chen</h3>
+            <div class="therapist-title">Senior Wellness Therapist · 8 Years Experience</div>
+
+            <div class="therapist-specialties">
+              <span class="specialty-chip">Deep Tissue</span>
+              <span class="specialty-chip">Hot Stone</span>
+              <span class="specialty-chip">Swedish</span>
+              <span class="specialty-chip">Relaxation Massage</span>
+            </div>
+
+            <p class="therapist-bio">
+              "Sarah brings a calm, intuitive approach to every session, harmonizing traditional eastern acupressure principles with western rhythmic effleurage. With over eight years dedicated to therapeutic touch, she has mastered the subtle art of reading muscular strain and gently releasing it without causing fatigue or discomfort."
+            </p>
+
+            <a href="login.html" class="btn-primary">
+              Book with Sarah
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Other therapists teaser -->
+        <div class="other-therapists-box animate-on-scroll">
+          <div class="other-therapists-left">
+            <h4>Also Available for This Treatment</h4>
+            <p>Select your favorite practitioner when booking your desired date and time.</p>
+          </div>
+          <div class="therapist-avatars">
+            <div class="avatar-item">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="Maya Patel" loading="lazy">
+              <span>Maya Patel</span>
+            </div>
+            <div class="avatar-item">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="James Okafor" loading="lazy">
+              <span>James Okafor</span>
+            </div>
+            <div class="avatar-item">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&q=80" alt="Lisa Tanaka" loading="lazy">
+              <span>Lisa Tanaka</span>
+            </div>
+            <a href="login.html" class="btn-secondary" style="padding:0.5rem 1.25rem; font-size:0.8rem;">View All Staff</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 5: IMPORTANT INFORMATION
+         ============================== -->
+    <section class="info-section" aria-labelledby="info-title">
+      <div class="container">
+        <div class="text-center" style="max-width:700px; margin:0 auto;">
+          <span class="section-eyebrow">Before Your Visit</span>
+          <h2 id="info-title" style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 2.75rem); color:var(--color-forest); margin-bottom:1rem;">Essential Guest Guidelines</h2>
+          <p style="color:var(--color-text-muted); font-size:1.05rem; line-height:1.7;">A few thoughtful preparations to ensure you receive the utmost benefit from your appointment.</p>
+        </div>
+
+        <div class="info-grid">
+          <!-- Box 1 -->
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">📋</div>
+            <div>
+              <h4>Preparation</h4>
+              <p>We recommend avoiding heavy meals for at least 2 hours prior to your session. Please arrive 10 minutes early so you can transition gracefully into our serene atmosphere without rushing.</p>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">👗</div>
+            <div>
+              <h4>What to Wear</h4>
+              <p>We provide ultra-soft robes, plush slippers, and disposable undergarments. During your massage, you will be professionally draped at all times with only the active area exposed.</p>
+            </div>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">⚕️</div>
+            <div>
+              <h4>General Suitability</h4>
+              <p>This gentle therapy is suitable for most adults seeking decompression. If you are pregnant, undergoing medical treatment, or have acute injuries, kindly notify our team when scheduling.</p>
+            </div>
+          </div>
+
+          <!-- Box 4 -->
+          <div class="info-card animate-on-scroll">
+            <div class="info-icon">❌</div>
+            <div>
+              <h4>Cancellations</h4>
+              <p>Should your schedule shift, please notify us at least 24 hours in advance to reschedule without penalty. Appointments cancelled with less than 24 hours notice may incur a 50% courtesy fee.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wellness Disclaimer -->
+        <div class="disclaimer-box animate-on-scroll">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p><strong>Wellness Disclaimer:</strong> Kora Spa treatments are curated wellness, relaxation, and rejuvenation services. We do not provide medical diagnosis, physiotherapy, or curative clinical interventions. Consult your primary healthcare physician for treatment of acute or chronic medical conditions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SECTION 6: FAQ + BOOKING CTA
+         ============================== -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-container">
+          <div class="text-center">
+            <span class="section-eyebrow">Frequently Asked</span>
+            <h2 id="faq-title" style="font-family:var(--font-serif); font-size:clamp(2rem, 3.5vw, 2.75rem); color:var(--color-forest); margin-bottom:1rem;">Questions &amp; Answers</h2>
+            <p style="color:var(--color-text-muted); font-size:1.05rem; line-height:1.7;">Everything you need to know about your Relaxation Massage experience.</p>
+          </div>
+
+          <div class="faq-accordion">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>How should I prepare for my Relaxation Massage?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>We suggest taking a warm shower beforehand if possible, hydrating well, and avoiding high doses of caffeine. Arrive wearing comfortable, loose clothing to slip back into after your treatment.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>Can I specify my pressure preferences?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely. Your therapist will check in with you before starting and during the session. If at any time you prefer lighter or firmer touch, please speak up — your comfort is our sole objective.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>What oils are used during the treatment?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>We use a hypoallergenic selection of cold-pressed carrier oils such as sweet almond, jojoba, and grapeseed, infused with pure botanical essential oil blends. Unscented options and nut-free alternatives are readily available upon request.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>Can I talk during my session?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>This is entirely your choice. Many guests prefer restful silence to disconnect, while others enjoy light conversation. Your therapist will gladly follow your cue throughout.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>How often should I book a Relaxation Massage?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>For sustainable stress reduction and musculoskeletal harmony, a monthly session is ideal. For those managing high periods of stress or demanding workloads, bi-weekly visits can provide tremendous restorative relief.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+              <button class="faq-question-btn" aria-expanded="false">
+                <span>Is this treatment suitable during pregnancy?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-answer">
+                <p>We recommend our dedicated Prenatal Massage protocol, specifically formulated for expecting mothers past their first trimester, and advise consulting your OB-GYN or primary healthcare provider prior to scheduling.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom CTA Box -->
+          <div class="final-cta-card animate-on-scroll">
+            <h2>Ready to experience the Kora Spa difference?</h2>
+            <p>Allow our master therapists to guide you into a state of profound peace. Reservations are available online 24/7.</p>
+            <div class="final-cta-actions">
+              <a href="login.html" class="btn-primary" style="padding:0.85rem 2rem;">
+                Book Your Relaxation Massage
+              </a>
+              <a href="services.html" class="btn-outline-white">
+                Browse All Treatments
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+            <li><a href="services.html#swedish">Swedish Massage</a></li>
+            <li><a href="services.html#body">Body Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+            <p>Mon–Fri: 9AM–8PM | Sat–Sun: 10AM–6PM</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!','success');">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved. · <em>Demo Website</em></p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // FAQ Accordion Toggle
+    document.querySelectorAll('.faq-question-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isActive = item.classList.contains('active');
+
+        // Close other items
+        document.querySelectorAll('.faq-item').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('active');
+            other.querySelector('.faq-question-btn').setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle clicked item
+        item.classList.toggle('active', !isActive);
+        btn.setAttribute('aria-expanded', !isActive);
+      });
+    });
+  </script>
+
+</body>
+</html>

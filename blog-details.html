@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Transformative Benefits of Regular Massage Therapy — Kora Spa Journal</title>
+  <meta name="description" content="Discover how incorporating regular massage therapy into your wellness routine profoundly transforms physical recovery, nervous system calm, and mental clarity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ============================================================
+       BLOG DETAILS PAGE SPECIFIC STYLES
+       ============================================================ */
+
+    /* ── Breadcrumb & Hero Header ────────────────────────────── */
+    .article-header {
+      background: linear-gradient(180deg, var(--color-beige) 0%, var(--color-ivory) 100%);
+      padding: calc(var(--nav-height) + 3rem) 0 3.5rem;
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+    }
+
+    .article-header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      font-size: 0.8125rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-sans);
+    }
+
+    .breadcrumb a {
+      color: var(--color-champagne-dark);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--color-champagne);
+    }
+
+    .breadcrumb-sep {
+      color: var(--color-border);
+      user-select: none;
+    }
+
+    .article-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background: var(--color-forest);
+      color: #ffffff;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-pill);
+      margin-bottom: 1.25rem;
+    }
+
+    [data-theme="dark"] .article-badge {
+      background: var(--color-champagne);
+      color: #111810;
+    }
+
+    .article-main-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.25rem, 4.5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-meta-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .author-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+
+    .author-pill-img {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-circle);
+      object-fit: cover;
+      border: 2px solid var(--color-champagne);
+    }
+
+    /* ── Social Share Strip ──────────────────────────────────── */
+    .social-share-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+    }
+
+    .share-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-muted);
+      margin-right: 0.25rem;
+    }
+
+    .share-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-circle);
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .share-btn:hover {
+      background: var(--color-forest);
+      color: #ffffff;
+      border-color: var(--color-forest);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    [data-theme="dark"] .share-btn:hover {
+      background: var(--color-champagne);
+      color: #111810;
+      border-color: var(--color-champagne);
+    }
+
+    /* ── Large Featured Hero Image ───────────────────────────── */
+    .article-hero-media-wrapper {
+      max-width: var(--container-max);
+      margin: -2rem auto 3.5rem;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .article-hero-media {
+      width: 100%;
+      height: 520px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--color-border);
+    }
+
+    .article-hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+
+    /* ── Editorial Narrow Container ──────────────────────────── */
+    .editorial-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── Pull Quote ──────────────────────────────────────────── */
+    .editorial-pullquote {
+      position: relative;
+      font-family: var(--font-serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--color-forest);
+      text-align: center;
+      padding: 2.5rem 2rem;
+      margin: 2rem 0 2.5rem;
+      background: rgba(143, 168, 135, 0.12);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--color-champagne);
+    }
+
+    [data-theme="dark"] .editorial-pullquote {
+      color: var(--color-champagne);
+      background: rgba(201, 169, 110, 0.08);
+    }
+
+    .lead-paragraph {
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: var(--color-text);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Table of Contents ───────────────────────────────────── */
+    .toc-card {
+      background: var(--color-beige);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2.5rem 0 3.5rem;
+      border: 1px solid var(--color-border);
+    }
+
+    .toc-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .toc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      counter-reset: toc-counter;
+    }
+
+    .toc-item {
+      counter-increment: toc-counter;
+    }
+
+    .toc-link {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      color: var(--color-text);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .toc-link::before {
+      content: counter(toc-counter) ".";
+      font-family: var(--font-serif);
+      font-weight: 600;
+      color: var(--color-champagne-dark);
+      font-size: 1rem;
+    }
+
+    .toc-link:hover {
+      color: var(--color-champagne-dark);
+      transform: translateX(4px);
+    }
+
+    /* ── Editorial Content Sections ──────────────────────────── */
+    .article-body-content {
+      font-size: 1.0625rem;
+      line-height: 1.85;
+      color: var(--color-text);
+    }
+
+    .article-body-content h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.65rem, 2.5vw, 2.1rem);
+      font-weight: 600;
+      color: var(--color-text);
+      margin: 3.5rem 0 1.25rem;
+      line-height: 1.35;
+      scroll-margin-top: 100px;
+    }
+
+    .article-body-content p {
+      margin-bottom: 1.5rem;
+      color: var(--color-text);
+      opacity: 0.92;
+    }
+
+    .highlight-box {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-sage);
+      margin: 2rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .highlight-box strong {
+      color: var(--color-forest);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+    }
+
+    [data-theme="dark"] .highlight-box strong {
+      color: var(--color-champagne);
+    }
+
+    /* ── Schedule Guidance Table ─────────────────────────────── */
+    .frequency-table-wrapper {
+      margin: 2rem 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .frequency-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--color-white);
+      text-align: left;
+    }
+
+    .frequency-table th {
+      background: var(--color-beige);
+      padding: 1rem 1.25rem;
+      font-family: var(--font-serif);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-text);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .frequency-table td {
+      padding: 1rem 1.25rem;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-text);
+    }
+
+    .frequency-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .frequency-tag {
+      display: inline-block;
+      font-weight: 600;
+      color: var(--color-forest);
+      background: rgba(143, 168, 135, 0.2);
+      padding: 0.2rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.8125rem;
+    }
+
+    [data-theme="dark"] .frequency-tag {
+      color: var(--color-champagne);
+      background: rgba(201, 169, 110, 0.15);
+    }
+
+    /* ── Inline Image With Caption ───────────────────────────── */
+    .editorial-inline-media {
+      margin: 3rem 0;
+    }
+
+    .editorial-inline-img {
+      width: 100%;
+      max-height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .editorial-caption {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* ── Section 4: Wellness Tips / Visual Guide ─────────────── */
+    .tips-section {
+      background: var(--color-beige);
+      padding: var(--space-3xl) 0;
+      margin-top: 4.5rem;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .tip-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .tip-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tip-number {
+      font-family: var(--font-serif);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--color-champagne);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .tip-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+    }
+
+    .tip-text {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--color-text-muted);
+    }
+
+    /* Ambient Overlay Banner */
+    .ambient-banner {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .ambient-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .ambient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(45, 74, 50, 0.4) 0%, rgba(26, 26, 26, 0.75) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+    }
+
+    .ambient-overlay h3 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+    }
+
+    .ambient-overlay p {
+      font-size: 1.1rem;
+      max-width: 580px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.6;
+    }
+
+    /* ── Section 5: Related Articles ─────────────────────────── */
+    .related-section {
+      padding: var(--space-3xl) 0;
+      background: var(--color-ivory);
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .related-card {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .related-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .related-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+    }
+
+    .related-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .related-card:hover .related-media img {
+      transform: scale(1.06);
+    }
+
+    .related-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .related-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0.75rem 0;
+      line-height: 1.4;
+      color: var(--color-text);
+    }
+
+    .related-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .related-title a:hover {
+      color: var(--color-champagne-dark);
+    }
+
+    /* ── Section 6: Treatment / Booking CTA + Author Bio ─────── */
+    .details-cta-section {
+      background: var(--color-forest);
+      color: #ffffff;
+      padding: var(--space-3xl) 0;
+      position: relative;
+    }
+
+    .details-cta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .cta-action-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+    }
+
+    .cta-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+
+    .cta-card-desc {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 2rem;
+    }
+
+    .cta-treatment-thumbs {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .thumb-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.75rem;
+      text-align: center;
+      transition: transform var(--transition-fast);
+    }
+
+    .thumb-item:hover {
+      transform: translateY(-3px);
+      color: var(--color-champagne);
+    }
+
+    .thumb-item img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Author Bio Box */
+    .author-bio-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 169, 110, 0.35);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .author-bio-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: var(--radius-circle);
+      object-fit: cover;
+      border: 3px solid var(--color-champagne);
+      flex-shrink: 0;
+    }
+
+    .author-bio-details {
+      flex-grow: 1;
+    }
+
+    .author-bio-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+
+    .author-bio-role {
+      font-size: 0.85rem;
+      color: var(--color-champagne);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .author-bio-text {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Responsive Refinements ──────────────────────────────── */
+    @media (max-width: 992px) {
+      .tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .details-cta-grid {
+        grid-template-columns: 1fr;
+      }
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .article-hero-media {
+        height: 380px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+      .author-bio-box {
+        flex-direction: column;
+        text-align: center;
+      }
+      .article-hero-media {
+        height: 260px;
+      }
+      .cta-action-card {
+        padding: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="blog-details">
+
+  <!-- Scroll Progress & Navigation -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link active">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link active">Journal</a></li>
+        <li><a href="blog-details.html" class="mobile-nav-link active">Blog Article</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==========================================================
+       SECTION 1: ARTICLE HERO
+       ========================================================== -->
+  <section class="article-header" id="articleHero">
+    <div class="container">
+      <div class="article-header-inner">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="blog.html">Journal</a>
+          <span class="breadcrumb-sep">/</span>
+          <span>Article</span>
+        </nav>
+
+        <!-- Category Badge -->
+        <span class="article-badge">Wellness Guide</span>
+
+        <!-- Article H1 -->
+        <h1 class="article-main-title">The Transformative Benefits of Regular Massage Therapy</h1>
+
+        <!-- Article Meta -->
+        <div class="article-meta-bar">
+          <div class="author-pill">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Sarah Chen" class="author-pill-img">
+            <span>By Sarah Chen</span>
+          </div>
+          <span>&bull;</span>
+          <time datetime="2026-11-10">November 10, 2026</time>
+          <span>&bull;</span>
+          <span>8 min read</span>
+        </div>
+
+        <!-- Social Share Buttons -->
+        <div class="social-share-strip">
+          <span class="share-label">Share Article:</span>
+          <button class="share-btn" aria-label="Share on X" onclick="if(typeof showToast==='function'){showToast('Share link ready!','info');}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </button>
+          <button class="share-btn" aria-label="Share on Facebook" onclick="if(typeof showToast==='function'){showToast('Share link ready!','info');}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </button>
+          <button class="share-btn" aria-label="Share on Pinterest" onclick="if(typeof showToast==='function'){showToast('Share link ready!','info');}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-4.37 23.18c-.06-.97-.1-2.45.02-3.51.11-.96.72-6.14.72-6.14s-.18-.37-.18-.92c0-.86.5-1.5 1.12-1.5.53 0 .78.4.78.88 0 .53-.34 1.33-.51 2.07-.15.61.31 1.11.91 1.11 1.1 0 1.94-1.16 1.94-2.83 0-1.48-1.06-2.52-2.58-2.52-1.76 0-2.79 1.32-2.79 2.68 0 .53.2.1.1 1.25-.03.11-.08.15-.2.1-.47-.19-.76-.79-.76-1.28 0-1.87 1.36-3.59 3.92-3.59 2.06 0 3.66 1.47 3.66 3.43 0 2.05-1.29 3.7-3.08 3.7-.6 0-1.17-.31-1.36-.68l-.37 1.41c-.13.52-.49 1.17-.73 1.56A11.97 11.97 0 0 0 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>
+          </button>
+          <button class="share-btn" id="copyLinkBtn" aria-label="Copy article link" onclick="navigator.clipboard.writeText(window.location.href); if(typeof showToast==='function'){showToast('Link copied to clipboard!','success');}else{alert('Link copied to clipboard!');}">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Large Featured Image -->
+  <div class="article-hero-media-wrapper">
+    <div class="article-hero-media">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=85" alt="Serene massage therapy session with warm aromatherapy oils" loading="eager">
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       SECTION 2: ARTICLE INTRODUCTION & TOC
+       ========================================================== -->
+  <main class="article-body-content">
+    <div class="editorial-container">
+      <section class="article-intro-section" id="articleIntro">
+        <!-- Pull Quote -->
+        <blockquote class="editorial-pullquote">
+          &ldquo;Regular massage therapy isn't a luxury — it's one of the most effective ways to care for your body and mind.&rdquo;
+        </blockquote>
+
+        <!-- Lead Paragraph -->
+        <p class="lead-paragraph">
+          In our fast-paced modern world, constant stress and physical immobility gradually strain our bodies and minds without warning. Muscular knots tighten, sleep quality erodes, and chronic elevated cortisol quietly dampens our daily zest for life. Committing to consistent therapeutic bodywork isn't an occasional indulgence; it is an evidence-backed restorative ritual that resets the autonomic nervous system and restores harmonious vitality.
+        </p>
+
+        <!-- Table of Contents -->
+        <nav class="toc-card" aria-label="Table of contents">
+          <h2 class="toc-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-champagne)" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+            In This Article
+          </h2>
+          <ol class="toc-list">
+            <li class="toc-item"><a href="#physical-benefits" class="toc-link">The Physical Benefits of Regular Massage</a></li>
+            <li class="toc-item"><a href="#mental-benefits" class="toc-link">The Mental &amp; Emotional Benefits</a></li>
+            <li class="toc-item"><a href="#how-often" class="toc-link">How Often Should You Book a Massage?</a></li>
+            <li class="toc-item"><a href="#choosing-treatment" class="toc-link">Choosing the Right Treatment for You</a></li>
+            <li class="toc-item"><a href="#getting-started" class="toc-link">Getting Started at Kora Spa</a></li>
+          </ol>
+        </nav>
+      </section>
+
+      <!-- ======================================================
+           SECTION 3: MAIN ARTICLE CONTENT
+           ====================================================== -->
+      <section class="main-article-content" id="mainArticleContent">
+        <div id="physical-benefits" class="article-sub-block">
+          <h2>The Physical Benefits of Regular Massage</h2>
+          <p>
+            Musculoskeletal tension accumulates through repetitive motion, sedentary desk postures, and unconscious holding patterns. When skilled hands apply intentional, rhythmic friction and myofascial kneading, tight muscle fibers expand, releasing restricted adhesions in surrounding fascia.
+          </p>
+          <p>
+            Simultaneously, regular bodywork accelerates vascular circulation. The physical pressure strokes mechanically propel deoxygenated blood through the venous system, speeding up lymphatic drainage and cellular waste expulsion. Fresh, oxygenated blood floods newly softened tissue beds, delivering vital micronutrients that dramatically shorten post-exercise recovery windows.
+          </p>
+        </div>
+
+        <!-- Inline Pull Quote / Highlight Box -->
+        <div class="highlight-box">
+          <strong>Clinical Insight: The Lymphatic Connection</strong>
+          <p>
+            Gentle rhythmic massage strokes stimulate lymphatic valves that cannot pump themselves, eliminating metabolic byproducts up to 30% faster than passive sedentary rest.
+          </p>
+        </div>
+
+        <p>
+          Beyond pain reduction, consistent therapeutic touch preserves joint mobility and spinal alignment. By easing hypertonic tension across the hip flexors, cervical spine, and lumbar erectors, massage corrects compensatory movement flaws before they degenerate into chronic postural pain.
+        </p>
+      </section>
+
+      <!-- Inline Image with Caption -->
+      <figure class="editorial-inline-media">
+        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Specialist massage therapist performing neck and shoulder acupressure" class="editorial-inline-img" loading="lazy">
+        <figcaption class="editorial-caption">
+          Gentle acupressure and essential oil blends enhance somatic relaxation during a Kora Signature treatment.
+        </figcaption>
+      </figure>
+
+      <div id="mental-benefits" class="article-sub-block">
+        <h2>The Mental &amp; Emotional Benefits</h2>
+        <p>
+          While the somatic relief of massage is immediate, its profound neurobiological impact may be even more transformative. Tactile stimulation stimulates nerve receptors nestled in the dermal layer, sending calming signals directly through the vagus nerve to down-regulate the sympathetic &ldquo;fight or flight&rdquo; mechanism.
+        </p>
+        <p>
+          Clinical studies demonstrate that a single 60-minute massage session reduces circulating salivary cortisol by up to 31% while elevating dopamine and serotonin levels by over 28%. Clients frequently describe leaving the treatment chamber feeling grounded, emotionally resilient, and enveloped by deep psychological quietude.
+        </p>
+        <p>
+          Furthermore, chronic stress severely disrupts slow-wave delta sleep cycles. By easing neuromuscular guarding, regular massage enables the brain to enter prolonged deep sleep stages, where cellular repair, memory consolidation, and hormonal balance naturally flourish.
+        </p>
+      </div>
+
+      <div id="how-often" class="article-sub-block">
+        <h2>How Often Should You Book a Massage?</h2>
+        <p>
+          Optimal frequency depends on your lifestyle demands, physical exertion levels, and wellness objectives. Rather than waiting until pain becomes debilitating, establishing a proactive schedule yields compounding benefits.
+        </p>
+
+        <!-- Frequency Table -->
+        <div class="frequency-table-wrapper">
+          <table class="frequency-table">
+            <thead>
+              <tr>
+                <th>Wellness Goal</th>
+                <th>Recommended Rhythm</th>
+                <th>Ideal Modality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Stress Relief &amp; Prevention</strong></td>
+                <td><span class="frequency-tag">Monthly</span></td>
+                <td>Relaxation or Swedish Massage</td>
+              </tr>
+              <tr>
+                <td><strong>Chronic Tension &amp; Desk Posture</strong></td>
+                <td><span class="frequency-tag">Bi-Weekly</span></td>
+                <td>Deep Tissue &amp; Trigger Point</td>
+              </tr>
+              <tr>
+                <td><strong>Athletic Training Recovery</strong></td>
+                <td><span class="frequency-tag">Weekly or Bi-Weekly</span></td>
+                <td>Sports Therapy &amp; Hot Stone</td>
+              </tr>
+              <tr>
+                <td><strong>Total Nervous System Reset</strong></td>
+                <td><span class="frequency-tag">Every 3–4 Weeks</span></td>
+                <td>Botanical Aromatherapy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="choosing-treatment" class="article-sub-block">
+        <h2>Choosing the Right Treatment for You</h2>
+        <p>
+          Selecting the treatment suited to your present state ensures the most rewarding restorative experience:
+        </p>
+        <ul style="list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; line-height: 1.8;">
+          <li><strong>Overstimulated &amp; Mentally Fatigued:</strong> Choose our <em>Relaxation Massage</em> with soothing Swedish strokes and soft ambient warmth to gently recalibrate your nervous system.</li>
+          <li><strong>Deep Knots &amp; Neck/Shoulder Rigidity:</strong> Opt for our <em>Deep Tissue Massage</em>, utilizing targeted slow friction and elbow pressure to resolve chronic myofascial adhesions.</li>
+          <li><strong>Emotional Exhaustion &amp; Low Energy:</strong> Our <em>Aromatherapy Treatment</em> infuses high-grade wildcrafted essential oils like bergamot, frankincense, and lavender directly into the skin.</li>
+          <li><strong>Cold Weather Stiffness &amp; Joint Aches:</strong> Experience <em>Hot Stone Therapy</em>, where heated basalt minerals transfer deep thermal relief directly into underlying muscular layers.</li>
+        </ul>
+      </div>
+
+      <div id="getting-started" class="article-sub-block">
+        <h2>Getting Started at Kora Spa</h2>
+        <p>
+          Beginning your regular wellness rhythm is seamless. During your initial consultation, our licensed practitioners conduct an intuitive intake assessment, tailoring pressure gradients, aromatherapy notes, and target muscle groups to your unique physical constitution.
+        </p>
+        <p>
+          Whether you visit us for monthly preventative care or seek weekly recovery, we are honored to walk beside you on your journey toward sustained peace and vitality.
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
+
+  <!-- ==========================================================
+       SECTION 4: WELLNESS TIPS / VISUAL GUIDE
+       ========================================================== -->
+  <section class="tips-section" id="visualTips">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Essential Rituals</div>
+        <h2 class="section-title">5 Tips for Maximizing Your Massage Experience</h2>
+        <div class="section-ornament">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-champagne)" stroke-width="1.5"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z"/></svg>
+        </div>
+        <p class="section-subtitle">Simple, intentional steps to deepen the restorative effects of your therapy before, during, and after each appointment.</p>
+      </div>
+
+      <div class="tips-grid">
+        <!-- Tip 1 -->
+        <div class="tip-card">
+          <span class="tip-number">01</span>
+          <h3 class="tip-title">Hydrate Well</h3>
+          <p class="tip-text">Drink plenty of fresh water before and after your session to assist cellular flushing and accelerate lymphatic detoxification.</p>
+        </div>
+
+        <!-- Tip 2 -->
+        <div class="tip-card">
+          <span class="tip-number">02</span>
+          <h3 class="tip-title">Arrive Early</h3>
+          <p class="tip-text">Allow yourself 15–20 minutes to settle into our tea lounge, sip calming herbal infusions, and quiet mental turbulence.</p>
+        </div>
+
+        <!-- Tip 3 -->
+        <div class="tip-card">
+          <span class="tip-number">03</span>
+          <h3 class="tip-title">Communicate Freely</h3>
+          <p class="tip-text">Your therapist tunes pressure, ambient temperature, and focus areas to your real-time feedback throughout the session.</p>
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="tip-card">
+          <span class="tip-number">04</span>
+          <h3 class="tip-title">Avoid Rushing</h3>
+          <p class="tip-text">Carve out 20–30 minutes of gentle post-treatment stillness instead of jumping immediately back into busy digital schedules.</p>
+        </div>
+
+        <!-- Tip 5 -->
+        <div class="tip-card">
+          <span class="tip-number">05</span>
+          <h3 class="tip-title">Book Regularly</h3>
+          <p class="tip-text">The physiological gains compound with steady recurrence, preventing postural knots from reforming into chronic tension.</p>
+        </div>
+      </div>
+
+      <!-- Ambient Banner Image with Text Overlay -->
+      <div class="ambient-banner">
+        <img src="https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=1920&q=80" alt="Botanical spa ambiance with subtle steam and warm candlelight" loading="lazy">
+        <div class="ambient-overlay">
+          <div class="section-tag" style="color: var(--color-champagne); margin-bottom: 0.5rem;">Sanctuary of Peace</div>
+          <h3>Embrace the Art of Stillness</h3>
+          <p>Give yourself permission to pause, breathe deeply, and reconnect with your inner serenity in an atmosphere crafted solely for your restoration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SECTION 5: RELATED ARTICLES
+       ========================================================== -->
+  <section class="related-section" id="relatedArticles">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Continue Reading</div>
+        <h2 class="section-title">Related Wellness Guides</h2>
+        <div class="section-ornament">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-champagne)" stroke-width="1.5"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z"/></svg>
+        </div>
+        <p class="section-subtitle">Deepen your knowledge with additional holistic health insights curated by our master therapists.</p>
+      </div>
+
+      <div class="related-grid">
+        <!-- Related 1 -->
+        <article class="related-card">
+          <div class="related-media">
+            <img src="https://images.unsplash.com/photo-1608181831688-8e2e5b4b02dc?w=600&q=80" alt="Essential aromatherapy botanicals" loading="lazy">
+          </div>
+          <div class="related-body">
+            <div class="article-meta-row" style="margin-bottom: 0.5rem;">
+              <span class="category-chip">Treatment Guide</span>
+              <span>&bull;</span>
+              <time datetime="2026-11-05">Nov 5, 2026</time>
+            </div>
+            <h3 class="related-title">
+              <a href="blog-details.html">An Introduction to Aromatherapy: Scents That Heal</a>
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Discover how essential oils stimulate olfactory pathways to ease nervous tension and inspire emotional equilibrium.
+            </p>
+            <a href="blog-details.html" class="article-link">
+              Read Guide
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Related 2 -->
+        <article class="related-card">
+          <div class="related-media">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="Spa preparation lounge" loading="lazy">
+          </div>
+          <div class="related-body">
+            <div class="article-meta-row" style="margin-bottom: 0.5rem;">
+              <span class="category-chip">Spa Guide</span>
+              <span>&bull;</span>
+              <time datetime="2026-10-12">Oct 12, 2026</time>
+            </div>
+            <h3 class="related-title">
+              <a href="blog-details.html">How to Prepare for Your Spa Visit: A Complete Guide</a>
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Mindful arrival etiquette, hydration tips, and breathing techniques to enhance your holistic spa experience.
+            </p>
+            <a href="blog-details.html" class="article-link">
+              Read Guide
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Related 3 -->
+        <article class="related-card">
+          <div class="related-media">
+            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Mindful morning self-care" loading="lazy">
+          </div>
+          <div class="related-body">
+            <div class="article-meta-row" style="margin-bottom: 0.5rem;">
+              <span class="category-chip">Self-Care</span>
+              <span>&bull;</span>
+              <time datetime="2026-10-28">Oct 28, 2026</time>
+            </div>
+            <h3 class="related-title">
+              <a href="blog-details.html">Building a Mindful Self-Care Routine That Actually Works</a>
+            </h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+              Craft a grounded daily framework focused on mindful boundaries, nervous system recovery, and joyful rituals.
+            </p>
+            <a href="blog-details.html" class="article-link">
+              Read Guide
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       SECTION 6: TREATMENT / BOOKING CTA & AUTHOR BIO
+       ========================================================== -->
+  <section class="details-cta-section" id="bookingCta">
+    <div class="container">
+      <!-- Side by Side Action Cards -->
+      <div class="details-cta-grid">
+        <!-- Card 1 -->
+        <div class="cta-action-card">
+          <div>
+            <div class="section-tag" style="color: var(--color-champagne); margin-bottom: 0.5rem;">Personal Renewal</div>
+            <h3 class="cta-card-title">Ready to Experience the Benefits?</h3>
+            <p class="cta-card-desc">
+              Step away from the demands of everyday life and immerse yourself in a tailored massage experience that reclaims your inner calm and vitality.
+            </p>
+          </div>
+          <div>
+            <a href="login.html" class="btn-primary" style="display: inline-block;">
+              Book Your First Session
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem; display: inline-block; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cta-action-card">
+          <div>
+            <div class="section-tag" style="color: var(--color-champagne); margin-bottom: 0.5rem;">Signature Offerings</div>
+            <h3 class="cta-card-title">Explore Our Treatments</h3>
+            <p class="cta-card-desc">
+              From deeply restoring Swedish bodywork to therapeutic volcanic stone treatments, discover the ideal match for your body's needs.
+            </p>
+
+            <!-- Treatment Thumbnails -->
+            <div class="cta-treatment-thumbs">
+              <a href="services.html" class="thumb-item">
+                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=140&q=80" alt="Relaxation massage">
+                <span>Relaxation</span>
+              </a>
+              <a href="services.html" class="thumb-item">
+                <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=140&q=80" alt="Deep tissue massage">
+                <span>Deep Tissue</span>
+              </a>
+              <a href="services.html" class="thumb-item">
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=140&q=80" alt="Aromatherapy massage">
+                <span>Aromatherapy</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <a href="services.html" class="btn-secondary" style="display: inline-block; border-color: rgba(255,255,255,0.4); color: #ffffff;">
+              View All Services
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.5rem; display: inline-block; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Author Bio Box -->
+      <div class="author-bio-box">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&q=80" alt="Sarah Chen, Lead Therapist" class="author-bio-photo">
+        <div class="author-bio-details">
+          <h3 class="author-bio-name">Sarah Chen, LMT</h3>
+          <div class="author-bio-role">Lead Holistic Therapist &amp; Wellness Director</div>
+          <p class="author-bio-text">
+            With over 12 years of clinical bodywork and botanical wellness practice, Sarah specializes in integrative restorative therapy, myofascial release, and mindfulness-based stress reduction. She designs tailored care plans to help guests cultivate enduring serenity.
+          </p>
+          <a href="login.html" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.875rem; display: inline-block;">
+            Book with Sarah
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left: 0.35rem; display: inline-block; vertical-align: middle;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       STANDARD FOOTER
+       ========================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html">Deep Tissue Massage</a></li>
+            <li><a href="services.html">Aromatherapy Massage</a></li>
+            <li><a href="services.html">Hot Stone Therapy</a></li>
+            <li><a href="services.html">Swedish Massage</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); if(typeof showToast === 'function') { showToast('Thank you for subscribing!','success'); } else { alert('Thank you for subscribing!'); }">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

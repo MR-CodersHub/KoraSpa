@@ -1,0 +1,211 @@
+/* ============================================================
+   KORA SPA — Dark Mode Overrides
+   ============================================================ */
+
+/* ── Visibility Helpers ──────────────────────────────────── */
+.dark-only  { display: none; }
+.light-only { display: block; }
+
+[data-theme="dark"] .dark-only  { display: block; }
+[data-theme="dark"] .light-only { display: none; }
+
+.dark-flex   { display: none; }
+.light-flex  { display: flex; }
+
+[data-theme="dark"] .dark-flex  { display: flex; }
+[data-theme="dark"] .light-flex { display: none; }
+
+/* ── Navigation Dark ─────────────────────────────────────── */
+[data-theme="dark"] .site-nav.nav-scrolled {
+  background: rgba(17, 24, 16, 0.94);
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .nav-link { color: var(--color-text); }
+[data-theme="dark"] .nav-dropdown { background: #1E2A1E; border-color: var(--color-border); }
+[data-theme="dark"] .nav-dropdown a { color: var(--color-text); }
+[data-theme="dark"] .nav-dropdown a:hover { background: rgba(255, 255, 255, 0.07); }
+
+[data-theme="dark"] .mobile-menu { background: #1A2016; border-color: var(--color-border); }
+[data-theme="dark"] .mobile-nav-link { color: var(--color-text); }
+[data-theme="dark"] .mobile-nav-link:hover { background: rgba(255, 255, 255, 0.07); }
+
+[data-theme="dark"] .theme-toggle,
+[data-theme="dark"] .dir-toggle {
+  background: #1E2A1E;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .nav-toggle { border-color: var(--color-border); }
+[data-theme="dark"] .nav-toggle span { background: var(--color-text); }
+
+/* ── Cards Dark ──────────────────────────────────────────── */
+[data-theme="dark"] .treatment-card,
+[data-theme="dark"] .therapist-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .booking-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .membership-card,
+[data-theme="dark"] .notification-item,
+[data-theme="dark"] .history-table,
+[data-theme="dark"] .profile-section,
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .faq-item {
+  background: var(--color-white);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .membership-card.featured {
+  background: linear-gradient(135deg, #1a3020 0%, #243d28 100%);
+}
+
+/* ── Form Inputs Dark ────────────────────────────────────── */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-textarea {
+  background: #1A2016;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] .form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+  border-color: var(--color-champagne);
+  background: #1E2A1E;
+  box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.12);
+}
+
+/* ── Modal Dark ──────────────────────────────────────────── */
+[data-theme="dark"] .modal-container {
+  background: #1E2A1E;
+  border: 1px solid var(--color-border);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer {
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .modal-close {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--color-text-muted);
+}
+
+[data-theme="dark"] .modal-close:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ── Dashboard Dark ──────────────────────────────────────── */
+[data-theme="dark"] .dashboard-main { background: var(--color-ivory); }
+
+[data-theme="dark"] .dashboard-topbar {
+  background: #1E2A1E;
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .topbar-search-input {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .topbar-search-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--color-champagne);
+}
+
+[data-theme="dark"] .topbar-btn {
+  background: #1E2A1E;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .topbar-user {
+  background: #1E2A1E;
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .history-table-header,
+[data-theme="dark"] .profile-section-header {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] .history-row:hover { background: rgba(255, 255, 255, 0.04); }
+
+[data-theme="dark"] .calendar-wrapper { background: var(--color-white); border-color: var(--color-border); }
+[data-theme="dark"] .calendar-day { color: var(--color-text); }
+[data-theme="dark"] .calendar-day:hover:not(.unavailable):not(.empty) { background: rgba(255, 255, 255, 0.07); }
+
+[data-theme="dark"] .time-slot {
+  background: var(--color-white);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+[data-theme="dark"] .time-slot:hover:not(.unavailable) {
+  border-color: var(--color-champagne);
+  background: rgba(201, 169, 110, 0.1);
+}
+
+[data-theme="dark"] .time-slot.unavailable { background: rgba(255, 255, 255, 0.04); }
+
+[data-theme="dark"] .therapist-pick-card {
+  background: var(--color-white);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .therapist-pick-card.selected { background: rgba(201, 169, 110, 0.1); }
+
+/* ── Lightbox Dark ───────────────────────────────────────── */
+[data-theme="dark"] .lightbox-overlay { background: rgba(0, 0, 0, 0.96); }
+
+/* ── Skeleton Dark ───────────────────────────────────────── */
+[data-theme="dark"] .skeleton {
+  background: linear-gradient(90deg, #1A2016 25%, #243020 50%, #1A2016 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+/* ── Images Dark ─────────────────────────────────────────── */
+[data-theme="dark"] img:not([src*="unsplash"]):not(.user-avatar):not(.therapist-pick-photo):not(.topbar-user-avatar):not(.sidebar-user-avatar) {
+  opacity: 0.9;
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* ── Toast Dark ──────────────────────────────────────────── */
+[data-theme="dark"] .toast { background: #1E2A1E; }
+
+/* ── Accordion / FAQ Dark ────────────────────────────────── */
+[data-theme="dark"] .accordion-trigger:hover,
+[data-theme="dark"] .faq-question:hover { background: rgba(255, 255, 255, 0.05); }
+
+/* ── Page/Section backgrounds Dark ──────────────────────── */
+[data-theme="dark"] .bg-beige { background-color: #1A2016; }
+[data-theme="dark"] .bg-white { background-color: #1E2A1E; }
+[data-theme="dark"] .bg-ivory { background-color: var(--color-ivory); }
+
+/* ── Sections with beige bg ──────────────────────────────── */
+[data-theme="dark"] section.bg-beige,
+[data-theme="dark"] .section-bg-beige { background-color: #1A2016; }
+
+/* ── Topbar search icon ──────────────────────────────────── */
+[data-theme="dark"] .topbar-search-icon { color: var(--color-text-muted); }
+
+/* ── Bottom Nav Dark ─────────────────────────────────────── */
+[data-theme="dark"] .dashboard-bottom-nav {
+  background: #1E2A1E;
+  border-color: var(--color-border);
+}
+
+/* ── Specialty tags dark ─────────────────────────────────── */
+[data-theme="dark"] .specialty-tag { background: rgba(255, 255, 255, 0.07); color: var(--color-sage-light); }
+
+/* ── Scroll progress bar dark ────────────────────────────── */
+[data-theme="dark"] #scroll-progress {
+  background: linear-gradient(to right, var(--color-champagne), var(--color-sage-light));
+}

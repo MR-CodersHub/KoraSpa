@@ -1,0 +1,109 @@
+<!-- ============================================================
+     KORA SPA — Global Navigation Snippet (components/nav.html)
+     Copy or include this component inside any page.
+     ============================================================ -->
+
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+  <div class="nav-container container">
+    <!-- Brand Logo -->
+    <a href="index.html" class="nav-logo" aria-label="Kora Spa - Home">
+      <svg class="nav-logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2C6.5 2 2 6.5 2 12c0 3.5 1.8 6.6 4.5 8.4C6.2 19 6 17.5 6 16c0-4.4 3.6-8 8-8 1.5 0 3 .2 4.4.5C18.6 4.8 15.5 2 12 2z"></path>
+        <path d="M14 8c-4.4 0-8 3.6-8 8 0 1.5.2 3 .5 4.4C8.3 21.8 10.1 22 12 22c5.5 0 10-4.5 10-10 0-1.9-.2-3.7-.6-5.5C20 7.8 17.1 8 14 8z"></path>
+      </svg>
+      <span>Kora Spa</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <ul class="nav-links" role="list">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link" aria-haspopup="true">
+          Pages
+          <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <ul class="nav-dropdown" role="menu">
+          <li><a href="home2.html" role="menuitem">Wellness Focus</a></li>
+          <li><a href="about.html" role="menuitem">About Us</a></li>
+          <li><a href="pricing.html" role="menuitem">Membership</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a href="services.html" class="nav-link">Services</a>
+      </li>
+      <li class="nav-item">
+        <a href="blog.html" class="nav-link">Journal</a>
+      </li>
+      <li class="nav-item">
+        <a href="contact.html" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Nav Actions (Theme, Direction & Booking CTA) -->
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button class="dir-toggle" type="button" aria-label="Toggle text direction" title="Toggle RTL/LTR">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="8 7 3 12 8 17"></polyline>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <polyline points="16 7 21 12 16 17"></polyline>
+        </svg>
+      </button>
+
+      <a href="booking.html" class="btn-primary nav-cta" id="navAuthBtn">Book Now</a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="home2.html" class="mobile-nav-link">Wellness Focus</a></li>
+      <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+      <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+      <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+      <li><a href="blog-details.html" class="mobile-nav-link">Article</a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+      <li><a href="booking.html" class="mobile-nav-link btn-primary" style="margin-top:1rem;display:inline-block;">Book Now</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <button class="theme-toggle" type="button" aria-label="Toggle theme">
+        <span class="theme-label">🌙 Dark Mode</span>
+      </button>
+      <button class="dir-toggle" type="button" aria-label="Toggle direction">
+        <span class="dir-label">↔ RTL / LTR</span>
+      </button>
+    </div>
+  </div>
+</nav>

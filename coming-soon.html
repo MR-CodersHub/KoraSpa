@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Sanctuary in the Making — Kora Spa</title>
+  <meta name="description" content="A sanctuary in the making. We are meticulously refining our new hydrotherapy suites, couples botanical sanctuaries, and digital wellness portal. Opening Spring 2026.">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    /* ============================================================
+       COMING SOON / MAINTENANCE PAGE SPECIFIC STYLES
+       ============================================================ */
+
+    /* Section 1: Hero */
+    .coming-hero-section {
+      position: relative;
+      padding: 9rem 0 4.5rem;
+      background: radial-gradient(circle at 50% 25%, rgba(201,169,110,0.18) 0%, var(--color-beige) 55%, var(--color-ivory) 100%);
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .coming-hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(143,168,135,0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(201,169,110,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .coming-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.3rem;
+      border-radius: var(--radius-pill);
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.35);
+      color: var(--color-champagne-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    [data-theme="dark"] .coming-badge {
+      color: var(--color-champagne-light);
+      background: rgba(201,169,110,0.2);
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-champagne);
+      display: inline-block;
+      box-shadow: 0 0 0 0 rgba(201,169,110,0.6);
+      animation: pulseGlow 2s infinite;
+    }
+    @keyframes pulseGlow {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,169,110,0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(201,169,110,0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+    }
+    .coming-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      color: var(--color-forest);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+    [data-theme="dark"] .coming-hero-title {
+      color: var(--color-ivory);
+    }
+    .coming-hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* Section 2: Maintenance Message */
+    .maint-message-section {
+      padding: 5rem 0;
+      background: var(--color-ivory);
+    }
+    .maint-message-card {
+      max-width: 840px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 3rem 3.5rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    [data-theme="dark"] .maint-message-card {
+      background: var(--color-beige);
+    }
+    .maint-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.3vw, 1.75rem);
+      line-height: 1.6;
+      color: var(--color-forest);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    [data-theme="dark"] .maint-quote {
+      color: var(--color-champagne-light);
+    }
+    .maint-body-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+    }
+    .maint-body-grid strong {
+      color: var(--color-text);
+    }
+
+    /* Section 3: Progress / Status */
+    .status-countdown-section {
+      padding: 5.5rem 0;
+      background: var(--color-beige);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      max-width: 680px;
+      margin: 2.5rem auto;
+    }
+    .countdown-box {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-fast);
+    }
+    [data-theme="dark"] .countdown-box {
+      background: var(--color-ivory);
+    }
+    .countdown-box:hover {
+      transform: translateY(-3px);
+    }
+    .countdown-num {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--color-forest);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    [data-theme="dark"] .countdown-num {
+      color: var(--color-champagne-light);
+    }
+    .countdown-lbl {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-text-muted);
+    }
+
+    /* Upgrade Progress Bar */
+    .upgrade-progress-wrap {
+      max-width: 720px;
+      margin: 3rem auto 0;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    [data-theme="dark"] .upgrade-progress-wrap {
+      background: var(--color-ivory);
+    }
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+    .progress-bar-outer {
+      height: 10px;
+      background: var(--color-border);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+    .progress-bar-inner {
+      height: 100%;
+      width: 92%;
+      background: linear-gradient(90deg, var(--color-sage) 0%, var(--color-champagne) 60%, var(--color-forest) 100%);
+      border-radius: var(--radius-pill);
+      transition: width 1s ease-in-out;
+    }
+    .progress-milestones {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      font-size: 0.8rem;
+    }
+    .milestone-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .milestone-name {
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    .milestone-status {
+      font-size: 0.72rem;
+      color: var(--color-sage-dark);
+      font-weight: 500;
+    }
+
+    /* Section 4: Upcoming Spa Features */
+    .upcoming-features-section {
+      padding: 6rem 0;
+      background: var(--color-ivory);
+    }
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .feature-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+    [data-theme="dark"] .feature-card {
+      background: var(--color-beige);
+    }
+    .feature-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow-xl);
+    }
+    .feature-card-media {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    .feature-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+    .feature-card:hover .feature-card-media img {
+      transform: scale(1.06);
+    }
+    .feature-badge-tag {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(45,74,50,0.88);
+      backdrop-filter: blur(4px);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-pill);
+    }
+    .feature-card-body {
+      padding: 2.25rem 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .feature-title {
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--color-forest);
+      margin-bottom: 0.75rem;
+    }
+    [data-theme="dark"] .feature-title {
+      color: var(--color-champagne-light);
+    }
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .feature-highlight-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .feature-pill {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      background: rgba(201,169,110,0.12);
+      color: var(--color-champagne-dark);
+      font-weight: 500;
+    }
+    [data-theme="dark"] .feature-pill {
+      color: var(--color-champagne-light);
+    }
+
+    /* Section 5: Email Notification Form */
+    .notify-form-section {
+      padding: 5.5rem 0;
+      background: var(--color-beige);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .notify-card {
+      max-width: 660px;
+      margin: 0 auto;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    [data-theme="dark"] .notify-card {
+      background: var(--color-ivory);
+    }
+    .notify-input-row {
+      display: flex;
+      gap: 0.75rem;
+      margin: 1.75rem 0 1rem;
+    }
+    .notify-input-row .form-control {
+      flex: 1;
+      padding: 0.95rem 1.25rem;
+      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+    }
+    .notify-input-row .btn-primary {
+      padding: 0.95rem 1.85rem;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+    }
+    .notify-success-box {
+      display: none;
+      background: rgba(143,168,135,0.18);
+      border: 1px solid var(--color-sage);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+      text-align: left;
+    }
+
+    /* Section 6: Contact / Support CTA */
+    .coming-support-section {
+      padding: 5.5rem 0;
+      background: var(--color-forest);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .coming-support-section::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(201,169,110,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .coming-support-wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      backdrop-filter: blur(8px);
+    }
+    .coming-support-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .coming-support-desc {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .coming-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .coming-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .coming-contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-circle);
+      background: rgba(201,169,110,0.22);
+      color: var(--color-champagne-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .coming-contact-item a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-fast);
+    }
+    .coming-contact-item a:hover {
+      color: var(--color-champagne-light);
+    }
+
+    @media (max-width: 992px) {
+      .upcoming-grid {
+        grid-template-columns: 1fr;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .coming-support-wrap {
+        grid-template-columns: 1fr;
+        padding: 2.25rem;
+      }
+      .maint-body-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .maint-message-card {
+        padding: 2rem 1.5rem;
+      }
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+      .progress-milestones {
+        grid-template-columns: 1fr 1fr;
+      }
+      .notify-input-row {
+        flex-direction: column;
+      }
+      .notify-card {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="coming-soon">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta" id="navAuthBtn">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Wellness Focus</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ========================================================
+         SECTION 1: HERO
+         ======================================================== -->
+    <section class="coming-hero-section" id="section-coming-hero" aria-label="Sanctuary in the Making Hero">
+      <div class="container">
+        <div class="coming-badge">
+          <span class="pulse-dot"></span>
+          A Sanctuary in the Making
+        </div>
+        <h1 class="coming-hero-title">Refining the Art of Serenity</h1>
+        <p class="coming-hero-subtitle">
+          We are currently expanding our Tribeca sanctuary with state-of-the-art hydrotherapy suites, artisanal botanical blending bars, and enhanced private wellness portals.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 2: MAINTENANCE MESSAGE
+         ======================================================== -->
+    <section class="maint-message-section" id="section-coming-message" aria-label="Sanctuary Refinement Philosophy">
+      <div class="container">
+        <div class="maint-message-card">
+          <blockquote class="maint-quote">
+            &ldquo;True restoration requires intentional craftsmanship. We are curating every sensory detail with patient devotion.&rdquo;
+          </blockquote>
+          <div class="maint-body-grid">
+            <div>
+              <p>
+                Our historic sanctuary wing and digital guest systems are undergoing a purposeful elevation. Hand-carved Hinoki cedar soaking tubs, imported Italian magnesium thermal pools, and custom acoustic soundproofing are being meticulously installed by master artisans.
+              </p>
+            </div>
+            <div>
+              <p>
+                <strong>Current Guests &amp; Bookings:</strong> While our new wing and digital portal refinements proceed, our main floor sanctuary remains warmly open for daily treatments, concierge consultations, and gift certificates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 3: PROGRESS / STATUS
+         ======================================================== -->
+    <section class="status-countdown-section" id="section-coming-status" aria-label="Sanctuary Upgrade Status &amp; Countdown">
+      <div class="container text-center">
+        <span class="section-tag">Grand Unveiling Countdown</span>
+        <h2 class="section-title" style="margin-bottom:0.5rem;">Anticipated Opening Date</h2>
+        <p class="section-subtitle">Mark your calendar for Spring Equinox — March 25, 2026</p>
+
+        <!-- Live Countdown Timer -->
+        <div class="countdown-grid" id="sanctuaryCountdown">
+          <div class="countdown-box">
+            <div class="countdown-num" id="countDays">128</div>
+            <div class="countdown-lbl">Days</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="countHours">14</div>
+            <div class="countdown-lbl">Hours</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="countMinutes">42</div>
+            <div class="countdown-lbl">Minutes</div>
+          </div>
+          <div class="countdown-box">
+            <div class="countdown-num" id="countSeconds">18</div>
+            <div class="countdown-lbl">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Upgrade Progress Bar -->
+        <div class="upgrade-progress-wrap">
+          <div class="progress-header">
+            <span style="font-weight:600; font-size:0.95rem; color:var(--color-forest);">Sanctuary Upgrade: 92% Complete</span>
+            <span style="font-size:0.85rem; font-weight:600; color:var(--color-champagne-dark);">Final Polish</span>
+          </div>
+
+          <div class="progress-bar-outer" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar-inner"></div>
+          </div>
+
+          <div class="progress-milestones">
+            <div class="milestone-item">
+              <span class="milestone-name">Architectural Millwork</span>
+              <span class="milestone-status">✓ 100% Complete</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-name">Botanical Greenhouse</span>
+              <span class="milestone-status">✓ 100% Complete</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-name">Hydrothermal Suites</span>
+              <span class="milestone-status">✓ 95% Testing</span>
+            </div>
+            <div class="milestone-item">
+              <span class="milestone-name">Digital Concierge Portal</span>
+              <span class="milestone-status" style="color:var(--color-champagne-dark);">● 92% Finalizing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 4: UPCOMING SPA FEATURES
+         ======================================================== -->
+    <section class="upcoming-features-section" id="section-coming-features" aria-label="Upcoming Spa Features">
+      <div class="container">
+        <div class="section-header text-center" style="max-width:640px; margin:0 auto;">
+          <span class="section-tag">Sanctuary Teasers</span>
+          <h2 class="section-title">New Spaces Opening Soon</h2>
+          <p class="section-subtitle">An exclusive preview of the refined facilities awaiting your next visit.</p>
+        </div>
+
+        <div class="upcoming-grid">
+          <!-- Teaser 1: Private Hydrotherapy Suite -->
+          <div class="feature-card">
+            <div class="feature-card-media">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Private Hydrotherapy Suite with thermal plunge pool" loading="lazy">
+              <span class="feature-badge-tag">Hydro Suite</span>
+            </div>
+            <div class="feature-card-body">
+              <div>
+                <h3 class="feature-title">Private Hydrotherapy Suite</h3>
+                <p class="feature-desc">
+                  Submerge in magnesium-infused thermal plunge pools, custom Hinoki cedar steam chambers, and therapeutic vichy shower rain bars designed to deeply reset peripheral circulation and lymphatic flow.
+                </p>
+              </div>
+              <div class="feature-highlight-pills">
+                <span class="feature-pill">Thermal Plunge</span>
+                <span class="feature-pill">Cedar Steam</span>
+                <span class="feature-pill">Vichy Rain Bar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teaser 2: Couples Botanical Sanctuary -->
+          <div class="feature-card">
+            <div class="feature-card-media">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Couples Botanical Sanctuary with carved stone soaking tubs" loading="lazy">
+              <span class="feature-badge-tag">Couples Retreat</span>
+            </div>
+            <div class="feature-card-body">
+              <div>
+                <h3 class="feature-title">Couples Botanical Sanctuary</h3>
+                <p class="feature-desc">
+                  An intimate secluded oasis featuring side-by-side hand-carved stone soaking tubs, dual fireplace relaxation lounges, and synchronized aromatherapeutic massage rituals tailored for shared tranquility.
+                </p>
+              </div>
+              <div class="feature-highlight-pills">
+                <span class="feature-pill">Stone Soaking Tubs</span>
+                <span class="feature-pill">Dual Fireplace</span>
+                <span class="feature-pill">Shared Rituals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teaser 3: Personalized Aromatherapy Bar -->
+          <div class="feature-card">
+            <div class="feature-card-media">
+              <img src="https://images.unsplash.com/photo-1608248597359-53e32e85a5a3?w=800&q=80" alt="Personalized Aromatherapy Apothecary Bar at Kora Spa" loading="lazy">
+              <span class="feature-badge-tag">Apothecary</span>
+            </div>
+            <div class="feature-card-body">
+              <div>
+                <h3 class="feature-title">Personalized Aromatherapy Bar</h3>
+                <p class="feature-desc">
+                  Work one-on-one with our certified master herbalists to custom-blend rare therapeutic essential oils, botanical salt scrubs, and organic bath infusions attuned to your seasonal circadian rhythms.
+                </p>
+              </div>
+              <div class="feature-highlight-pills">
+                <span class="feature-pill">Bespoke Formulations</span>
+                <span class="feature-pill">Master Herbalist</span>
+                <span class="feature-pill">Organic Tinctures</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 5: EMAIL NOTIFICATION FORM
+         ======================================================== -->
+    <section class="notify-form-section" id="section-coming-notify" aria-label="Early Access &amp; Launch Invitations">
+      <div class="container">
+        <div class="notify-card">
+          <div style="width:54px; height:54px; border-radius:50%; background:rgba(201,169,110,0.15); color:var(--color-champagne-dark); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h2 style="font-family:var(--font-serif); font-size:clamp(1.75rem, 3vw, 2.3rem); color:var(--color-forest); margin-bottom:0.5rem;">
+            Receive Priority Preview Invitations
+          </h2>
+          <p style="font-size:0.95rem; color:var(--color-text-muted); line-height:1.6; max-width:480px; margin:0 auto;">
+            Be among the first to experience our new hydrotherapy wing. Early registrants receive complimentary eucalyptus steam passes and launch privileges.
+          </p>
+
+          <form id="comingSoonNotifyForm" novalidate>
+            <div class="notify-input-row">
+              <input type="email" id="notifyEmailInput" class="form-control" placeholder="Enter your email address" required autocomplete="email">
+              <button type="submit" id="notifySubmitBtn" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.4rem;">
+                <span>Request Early Access</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </button>
+            </div>
+            <div class="form-error-msg" id="notifyEmailError" style="display:none; text-align:left; margin-left:1rem;"></div>
+
+            <!-- VIP pass checkbox -->
+            <label class="form-check" style="cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:var(--color-text-muted); margin-top:0.5rem;">
+              <input type="checkbox" id="notifyVipPass" class="form-check-input" checked>
+              <span>Include complimentary opening week private bath ritual pass</span>
+            </label>
+          </form>
+
+          <!-- Success Alert -->
+          <div class="notify-success-box" id="notifySuccessBox">
+            <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A32" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <div>
+                <strong style="color:var(--color-forest); display:block; font-size:0.95rem; margin-bottom:0.25rem;">You Are on Our Private Preview List</strong>
+                <p style="font-size:0.86rem; color:var(--color-text); margin:0; line-height:1.5;">
+                  Thank you! An exclusive invitation and digital preview guide will be sent to <strong id="notifyDisplayEmail">your email</strong> prior to our public unveiling.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION 6: CONTACT / SUPPORT CTA
+         ======================================================== -->
+    <section class="coming-support-section" id="section-coming-contact" aria-label="Current Bookings &amp; Concierge Support">
+      <div class="container">
+        <div class="coming-support-wrap">
+          <div>
+            <span style="display:inline-block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--color-champagne-light); margin-bottom:0.75rem; font-weight:600;">Flagship Sanctuary Open Daily</span>
+            <h2 class="coming-support-title">Reservations Remain Fully Active</h2>
+            <p class="coming-support-desc">
+              Looking to reserve a session today? Our current signature therapy suites, relaxation lounges, and certified massage therapists are welcoming guests 7 days a week.
+            </p>
+            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+              <a href="tel:+15551234567" class="btn-primary" style="background:var(--color-champagne); color:#1A1A1A; border:none; display:inline-flex; align-items:center; gap:0.5rem; font-weight:600;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Call +1 (555) 123-4567
+              </a>
+              <a href="services.html" class="btn-secondary" style="border-color:rgba(255,255,255,0.4); color:#fff;">
+                Book Current Treatments
+              </a>
+            </div>
+          </div>
+
+          <div class="coming-contact-list">
+            <div class="coming-contact-item">
+              <div class="coming-contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Direct Concierge Email</span>
+                <a href="mailto:hello@koraspa.com">hello@koraspa.com</a>
+              </div>
+            </div>
+
+            <div class="coming-contact-item">
+              <div class="coming-contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Sanctuary Operating Hours</span>
+                <span>Mon–Fri: 9:00 AM – 8:00 PM<br>Sat–Sun: 10:00 AM – 6:00 PM EST</span>
+              </div>
+            </div>
+
+            <div class="coming-contact-item">
+              <div class="coming-contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Location</span>
+                <span>123 Serenity Lane, Tribeca, New York, NY 10001</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
+            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
+            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
+            <li><a href="services.html#swedish">Swedish Massage</a></li>
+            <li><a href="services.html#body">Body Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+            <p>Mon–Fri: 9AM–8PM | Sat–Sun: 10AM–6PM</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved. · <em>Sanctuary Preview</em></p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- SCRIPTS -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- PAGE-SPECIFIC COUNTDOWN & NOTIFICATION LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* ----------------------------------------------------
+         1. COUNTDOWN TIMER TO MARCH 25, 2026
+         ---------------------------------------------------- */
+      const targetDate = new Date('2026-03-25T09:00:00').getTime();
+      const countDays = document.getElementById('countDays');
+      const countHours = document.getElementById('countHours');
+      const countMinutes = document.getElementById('countMinutes');
+      const countSeconds = document.getElementById('countSeconds');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          countDays.textContent = '0';
+          countHours.textContent = '00';
+          countMinutes.textContent = '00';
+          countSeconds.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        if (countDays) countDays.textContent = days;
+        if (countHours) countHours.textContent = String(hours).padStart(2, '0');
+        if (countMinutes) countMinutes.textContent = String(minutes).padStart(2, '0');
+        if (countSeconds) countSeconds.textContent = String(seconds).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      /* ----------------------------------------------------
+         2. NOTIFICATION FORM SUBMISSION
+         ---------------------------------------------------- */
+      const notifyForm = document.getElementById('comingSoonNotifyForm');
+      if (notifyForm) {
+        notifyForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const emailInput = document.getElementById('notifyEmailInput');
+          const emailErr = document.getElementById('notifyEmailError');
+          const submitBtn = document.getElementById('notifySubmitBtn');
+          const successBox = document.getElementById('notifySuccessBox');
+          const displayEmail = document.getElementById('notifyDisplayEmail');
+
+          const emailVal = emailInput.value.trim();
+          if (!emailVal || (typeof validateEmail === 'function' && !validateEmail(emailVal))) {
+            emailErr.textContent = 'Please enter a valid email address.';
+            emailErr.style.display = 'block';
+            emailInput.classList.add('error');
+            return;
+          }
+
+          emailErr.style.display = 'none';
+          emailInput.classList.remove('error');
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `
+            <span class="spinner" style="width:16px; height:16px; border:2px solid #fff; border-top-color:transparent; border-radius:50%; animation:spin 0.7s linear infinite;"></span>
+            <span>Registering VIP Pass...</span>
+          `;
+
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<span>Request Early Access</span>`;
+            displayEmail.textContent = emailVal;
+            successBox.style.display = 'block';
+            emailInput.value = '';
+
+            if (typeof showToast === 'function') {
+              showToast('VIP invitation reserved! You are on our private preview guest list.', 'success');
+            }
+          }, 850);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

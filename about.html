@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Kora Spa — Our Story &amp; Wellness Philosophy</title>
+  <meta name="description" content="Learn about Kora Spa, founded in 2018 with a belief in deeply personalized wellness, expert therapists, and an environment crafted for true restoration.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dark-mode.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    /* =============================================
+       ABOUT US PAGE SPECIFIC STYLES
+    ============================================= */
+
+    /* BREADCRUMB */
+    .about-breadcrumb {
+      background: var(--color-beige, #F5EFE7);
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-border, #E8DDD4);
+    }
+    .breadcrumb-list {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+    .breadcrumb-item a {
+      color: var(--color-text-muted, #7A6E65);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .breadcrumb-item a:hover {
+      color: var(--color-forest, #2D4A32);
+    }
+    .breadcrumb-separator {
+      color: var(--color-text-muted, #7A6E65);
+      opacity: 0.6;
+    }
+    .breadcrumb-item.active {
+      color: var(--color-forest, #2D4A32);
+      font-weight: 500;
+    }
+
+    /* SECTION 1: STORY HEADER & CONTENT */
+    .about-story-header {
+      position: relative;
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background-image: url('https://images.unsplash.com/photo-1617381654651-a6e73b646e0a?w=1920&q=85');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .about-story-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20,30,20,0.75) 0%, rgba(45,74,50,0.85) 100%);
+    }
+    .about-story-header-content {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 1.5rem;
+      max-width: 800px;
+      color: #fff;
+    }
+    .about-tag {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-champagne, #C9A96E);
+      border: 1px solid rgba(201,169,110,0.5);
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(6px);
+      background: rgba(201,169,110,0.1);
+    }
+    .about-story-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .about-story-body {
+      padding: 6rem 0;
+      background: var(--color-ivory, #FAF8F3);
+    }
+    .about-story-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .about-story-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--color-text, #3D3530);
+      margin-bottom: 1.5rem;
+    }
+    .about-story-text p.lead {
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: var(--font-serif);
+      color: var(--color-forest, #2D4A32);
+      line-height: 1.7;
+    }
+    .about-story-visual {
+      position: relative;
+    }
+    .about-story-image {
+      width: 100%;
+      border-radius: var(--radius-xl, 24px);
+      box-shadow: var(--shadow-lg, 0 8px 32px rgba(45,74,50,0.12));
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4/5;
+    }
+    .about-stats-container {
+      display: flex;
+      gap: 1rem;
+      position: absolute;
+      bottom: -2rem;
+      left: -1.5rem;
+      right: -1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-bubble {
+      background: var(--color-white, #FFFFFF);
+      border: 1px solid var(--color-border, #E8DDD4);
+      border-radius: 50px;
+      padding: 0.75rem 1.4rem;
+      box-shadow: var(--shadow-md, 0 4px 16px rgba(45,74,50,0.10));
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .stat-bubble strong {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      color: var(--color-forest, #2D4A32);
+    }
+    .stat-bubble span {
+      font-size: 0.8rem;
+      color: var(--color-text-muted, #7A6E65);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SECTION 2: PHILOSOPHY */
+    .philosophy-section {
+      padding: 7rem 0 6rem;
+      background: var(--color-ivory, #FAF8F3);
+      position: relative;
+      text-align: center;
+    }
+    .philosophy-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      background-image: radial-gradient(#2D4A32 1.5px, transparent 1.5px), radial-gradient(#2D4A32 1.5px, #FAF8F3 1.5px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      pointer-events: none;
+    }
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin: 4rem 0 4.5rem;
+    }
+    .philosophy-card {
+      background: var(--color-white, #FFFFFF);
+      border-radius: var(--radius-lg, 16px);
+      padding: 2.5rem 1.5rem;
+      box-shadow: var(--shadow-sm, 0 1px 3px rgba(45,74,50,0.08));
+      border: 1px solid var(--color-border, #E8DDD4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .philosophy-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md, 0 4px 16px rgba(45,74,50,0.10));
+    }
+    .philosophy-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.25rem;
+      display: inline-block;
+    }
+    .philosophy-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-forest, #2D4A32);
+      margin-bottom: 0.75rem;
+    }
+    .philosophy-card p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted, #7A6E65);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .philosophy-quote {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      border-top: 1px solid var(--color-border, #E8DDD4);
+      border-bottom: 1px solid var(--color-border, #E8DDD4);
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      font-style: italic;
+      color: var(--color-forest, #2D4A32);
+      line-height: 1.6;
+    }
+
+    /* SECTION 3: OUR ENVIRONMENT */
+    .environment-section {
+      padding: 7rem 0;
+      background: var(--color-white, #FFFFFF);
+    }
+    .env-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3.5rem 0 3.5rem;
+    }
+    .env-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .env-image-wrap {
+      border-radius: var(--radius-lg, 16px);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm, 0 1px 3px rgba(45,74,50,0.08));
+    }
+    .env-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .env-item:hover .env-image {
+      transform: scale(1.05);
+    }
+    .env-item h3 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-forest, #2D4A32);
+      margin-bottom: 0.4rem;
+    }
+    .env-item p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted, #7A6E65);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .env-feature-bar {
+      background: var(--color-beige, #F5EFE7);
+      border-radius: 50px;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border: 1px solid var(--color-border, #E8DDD4);
+    }
+    .env-feature-point {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-forest, #2D4A32);
+    }
+    .env-feature-point::before {
+      content: '✦';
+      color: var(--color-champagne, #C9A96E);
+    }
+
+    /* SECTION 4: OUR THERAPISTS */
+    .about-therapists-section {
+      padding: 7rem 0;
+      background: var(--color-beige, #F5EFE7);
+    }
+    .about-therapists-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+    }
+    .about-therapist-card {
+      background: var(--color-white, #FFFFFF);
+      border-radius: var(--radius-xl, 24px);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      box-shadow: var(--shadow-sm, 0 1px 3px rgba(45,74,50,0.08));
+      border: 1px solid var(--color-border, #E8DDD4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about-therapist-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md, 0 4px 16px rgba(45,74,50,0.10));
+    }
+    .about-therapist-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .about-therapist-details {
+      padding: 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+    }
+    .about-therapist-name {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-forest, #2D4A32);
+      margin-bottom: 0.2rem;
+    }
+    .about-therapist-role {
+      font-size: 0.85rem;
+      color: var(--color-champagne-dark, #A07840);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .about-therapist-exp {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-text-muted, #7A6E65);
+      margin-bottom: 0.75rem;
+    }
+    .about-therapist-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    .about-chip {
+      background: rgba(143,168,135,0.15);
+      color: var(--color-forest, #2D4A32);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+    .about-therapist-training {
+      font-size: 0.78rem;
+      color: var(--color-taupe, #8B7355);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .about-therapist-bio {
+      font-size: 0.88rem;
+      color: var(--color-text, #3D3530);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* SECTION 5: OUR APPROACH */
+    .approach-section {
+      padding: 7rem 0;
+      background: var(--color-white, #FFFFFF);
+    }
+    .approach-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
+      margin-top: 4rem;
+    }
+    .approach-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5rem;
+      align-items: center;
+    }
+    .approach-row.reverse {
+      direction: rtl;
+    }
+    .approach-row.reverse > * {
+      direction: ltr;
+    }
+    .approach-visual {
+      position: relative;
+    }
+    .approach-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--radius-xl, 24px);
+      box-shadow: var(--shadow-md, 0 4px 16px rgba(45,74,50,0.10));
+    }
+    .approach-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--color-champagne-light, #E8D5B0);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .step-title {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      color: var(--color-forest, #2D4A32);
+      margin-bottom: 1rem;
+    }
+    .step-desc {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text, #3D3530);
+      margin: 0;
+    }
+    .approach-card-lone {
+      background: var(--color-ivory, #FAF8F3);
+      padding: 3rem;
+      border-radius: var(--radius-xl, 24px);
+      border: 1px solid var(--color-border, #E8DDD4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+    .lone-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* SECTION 6: COMMITMENT */
+    .commitment-section {
+      padding: 7rem 0;
+      background: var(--color-forest, #2D4A32);
+      color: var(--color-ivory, #FAF8F3);
+      text-align: center;
+    }
+    .commitment-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--color-ivory, #FAF8F3);
+      margin-bottom: 1rem;
+    }
+    .commitment-subtitle {
+      max-width: 600px;
+      margin: 0 auto 4rem;
+      font-size: 1rem;
+      color: var(--color-sage-light, #B5C4B1);
+      line-height: 1.7;
+    }
+    .commitment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      text-align: left;
+      margin-bottom: 4rem;
+    }
+    .commitment-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg, 16px);
+      padding: 2.2rem 1.8rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .commitment-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.09);
+    }
+    .commitment-num {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--color-champagne, #C9A96E);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .commitment-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--color-ivory, #FAF8F3);
+      margin-bottom: 0.6rem;
+    }
+    .commitment-card p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .commitment-cta-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .commitment-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--color-champagne, #C9A96E);
+      color: #fff;
+      text-decoration: none;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      transition: all 0.25s ease;
+    }
+    .commitment-btn:hover {
+      background: var(--color-champagne-dark, #A07840);
+      transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .philosophy-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-therapists-grid { grid-template-columns: 1fr; }
+      .commitment-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .about-story-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-stats-container { position: static; margin-top: 1.5rem; }
+      .env-gallery { grid-template-columns: 1fr; }
+      .about-therapist-card { grid-template-columns: 1fr; }
+      .about-therapist-photo { aspect-ratio: 16/9; }
+      .approach-row, .approach-row.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 2rem;
+      }
+      .commitment-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body data-page="about">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
+        <svg class="nav-logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.5 2 4 7 4 12C4 14.5 5 16.5 7 18L12 22L17 18C19 16.5 20 14.5 20 12C20 7 17.5 2 12 2Z" fill="currentColor" opacity="0.3"/><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+        Kora Spa
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link">Journal</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="nav-link">Membership</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR" title="Toggle direction">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg>
+        </button>
+        <a href="login.html" class="btn-primary nav-cta">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link">Home 1 — General</a></li>
+        <li><a href="home2.html" class="mobile-nav-link">Home 2 — Wellness</a></li>
+        <li><a href="about.html" class="mobile-nav-link active">About Us</a></li>
+        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="service-details.html" class="mobile-nav-link">Service Details</a></li>
+        <li><a href="blog.html" class="mobile-nav-link">Journal</a></li>
+        <li><a href="blog-details.html" class="mobile-nav-link">Blog Article</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li><a href="pricing.html" class="mobile-nav-link">Membership</a></li>
+        <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
+      </ul>
+      <div style="padding: 1rem 2rem; display:flex; gap:1rem; border-top: 1px solid var(--color-border);">
+        <button class="theme-toggle btn-outline" style="flex:1;">🌙 Dark Mode</button>
+        <button class="dir-toggle btn-outline" style="flex:1;">↔ RTL/LTR</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="about-breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator">/</li>
+        <li class="breadcrumb-item active" aria-current="page">About Us</li>
+      </ol>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ===================== SECTION 1: OUR STORY ===================== -->
+    <header class="about-story-header" aria-label="About Kora Spa Story Header">
+      <div class="about-story-overlay" aria-hidden="true"></div>
+      <div class="about-story-header-content" data-animate="fade-up">
+        <span class="about-tag">ABOUT US</span>
+        <h1 class="about-story-title">Our Story of Serenity</h1>
+      </div>
+    </header>
+
+    <section class="about-story-body" aria-label="Our Story Content">
+      <div class="container">
+        <div class="about-story-grid">
+          <div class="about-story-text" data-animate="fade-right">
+            <p class="lead">Founded in 2018, Kora Spa was born from a belief that true wellness is deeply personal — not a standardized luxury, but an intentional sanctuary crafted around the individual.</p>
+            <p>In a world characterized by relentless speed and digital sensory overload, we saw an urgent necessity for spaces that cultivate stillness. Kora Spa was envisioned as an architectural and sensory refuge where time slows, breathing deepens, and your nervous system is invited to reset.</p>
+            <p>From our sustainably sourced aromatic botanical essences to our handcrafted treatment rituals, every touchpoint reflects reverence for therapeutic mastery. We don't believe in rushed appointments or assembly-line hospitality; every guest is welcomed as an honored individual whose journey to equilibrium is singular and sacred.</p>
+          </div>
+          <div class="about-story-visual" data-animate="fade-left">
+            <img class="about-story-image" src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Serene Kora Spa interior with natural textures and calm lighting" loading="lazy">
+            <div class="about-stats-container" role="list">
+              <div class="stat-bubble" role="listitem">
+                <strong>8+</strong>
+                <span>Years of Serenity</span>
+              </div>
+              <div class="stat-bubble" role="listitem">
+                <strong>500+</strong>
+                <span>Devoted Clients</span>
+              </div>
+              <div class="stat-bubble" role="listitem">
+                <strong>4</strong>
+                <span>Master Therapists</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 2: OUR WELLNESS PHILOSOPHY ===================== -->
+    <section class="philosophy-section" aria-label="Our Wellness Philosophy">
+      <div class="philosophy-pattern" aria-hidden="true"></div>
+      <div class="container" style="position:relative; z-index:2;">
+        <div class="section-header" style="text-align:center;" data-animate="fade-up">
+          <span class="section-tag">OUR PHILOSOPHY</span>
+          <h2 class="section-title">Wellness That Begins with You</h2>
+          <p class="section-subtitle" style="max-width:540px; margin: 1rem auto 0;">True healing is not applied from the outside in — it is unlocked through listening, attunement, and gentle mastery.</p>
+        </div>
+
+        <div class="philosophy-grid" role="list">
+          <!-- Item 1 -->
+          <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="0">
+            <span class="philosophy-icon" aria-hidden="true">🌿</span>
+            <h3>Personalized Care</h3>
+            <p>Each treatment is thoughtfully customized around your physical state, emotional tension, and healing goals.</p>
+          </div>
+          <!-- Item 2 -->
+          <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="100">
+            <span class="philosophy-icon" aria-hidden="true">🧘</span>
+            <h3>Deep Relaxation</h3>
+            <p>Creating unconditional space for genuine restorative stillness, quietening the conscious mind completely.</p>
+          </div>
+          <!-- Item 3 -->
+          <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="200">
+            <span class="philosophy-icon" aria-hidden="true">💆</span>
+            <h3>Comfort First</h3>
+            <p>Your physical ease, personal boundaries, and peace of mind guide every nuance of our practice.</p>
+          </div>
+          <!-- Item 4 -->
+          <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="300">
+            <span class="philosophy-icon" aria-hidden="true">✨</span>
+            <h3>Thoughtful Touch</h3>
+            <p>Mindful, evidence-informed modalities executed with purposeful precision for lasting relief.</p>
+          </div>
+        </div>
+
+        <blockquote class="philosophy-quote" data-animate="fade-up">
+          “We don't just treat the body — we nourish the whole person.”
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 3: OUR SPA ENVIRONMENT ===================== -->
+    <section class="environment-section" aria-label="Our Spa Environment">
+      <div class="container">
+        <div class="section-header" style="text-align:center;" data-animate="fade-up">
+          <span class="section-tag">OUR ENVIRONMENT</span>
+          <h2 class="section-title">A Space Designed for Restoration</h2>
+          <p class="section-subtitle" style="max-width:560px; margin: 1rem auto 0;">Architected with minimalist warmth, natural organic textures, and peaceful acoustic dampening.</p>
+        </div>
+
+        <div class="env-gallery">
+          <!-- Room 1 -->
+          <article class="env-item" data-animate="fade-up" data-delay="0">
+            <div class="env-image-wrap">
+              <img class="env-image" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80" alt="Private, serene, immaculately maintained treatment suite" loading="lazy">
+            </div>
+            <h3>Treatment Rooms</h3>
+            <p>Private, serene, immaculately maintained treatment suites tailored with ambient lighting and temperature regulation.</p>
+          </article>
+
+          <!-- Room 2 -->
+          <article class="env-item" data-animate="fade-up" data-delay="120">
+            <div class="env-image-wrap">
+              <img class="env-image" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Relaxation Lounge with herbal teas and serene ambiance" loading="lazy">
+            </div>
+            <h3>Relaxation Lounge</h3>
+            <p>Pre and post-treatment spaces with herbal teas, quiet seating, and calm ambiance to help you transition gently.</p>
+          </article>
+
+          <!-- Room 3 -->
+          <article class="env-item" data-animate="fade-up" data-delay="240">
+            <div class="env-image-wrap">
+              <img class="env-image" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Cleanliness and care with fresh linen and botanical amenities" loading="lazy">
+            </div>
+            <h3>Cleanliness &amp; Care</h3>
+            <p>Every surface, every linen, and every organic botanical product is thoroughly sanitized and refreshed between sessions.</p>
+          </article>
+        </div>
+
+        <div class="env-feature-bar" data-animate="fade-up">
+          <div class="env-feature-point">Fresh linens every session</div>
+          <div class="env-feature-point">Sanitized between clients</div>
+          <div class="env-feature-point">Natural aromatherapy</div>
+          <div class="env-feature-point">Temperature-controlled rooms</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 4: OUR THERAPISTS ===================== -->
+    <section class="about-therapists-section" aria-label="Our Therapists Team">
+      <div class="container">
+        <div class="section-header" style="text-align:center;" data-animate="fade-up">
+          <span class="section-tag">THE TEAM</span>
+          <h2 class="section-title">Expert Hands, Caring Hearts</h2>
+          <p class="section-subtitle" style="max-width:540px; margin: 1rem auto 0;">Meet the licensed therapists who dedicate their wisdom, empathy, and craft to your rejuvenation.</p>
+        </div>
+
+        <div class="about-therapists-grid">
+          <!-- Sarah Chen -->
+          <div class="about-therapist-card" data-animate="fade-up" data-delay="0">
+            <img class="about-therapist-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Sarah Chen, Senior Wellness Therapist" loading="lazy">
+            <div class="about-therapist-details">
+              <div class="about-therapist-name">Sarah Chen</div>
+              <div class="about-therapist-role">Senior Wellness Therapist</div>
+              <div class="about-therapist-exp">8 Years Clinical Experience</div>
+              <div class="about-therapist-chips">
+                <span class="about-chip">Deep Tissue</span>
+                <span class="about-chip">Hot Stone</span>
+                <span class="about-chip">Swedish</span>
+              </div>
+              <div class="about-therapist-training">Certified Myofascial Release &amp; Acupressure</div>
+              <p class="about-therapist-bio">Sarah balances technical anatomical mastery with intuitive touch, delivering transformative sessions that release deep-seated physical stress.</p>
+            </div>
+          </div>
+
+          <!-- Maya Patel -->
+          <div class="about-therapist-card" data-animate="fade-up" data-delay="100">
+            <img class="about-therapist-photo" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=80" alt="Maya Patel, Aromatherapy Specialist" loading="lazy">
+            <div class="about-therapist-details">
+              <div class="about-therapist-name">Maya Patel</div>
+              <div class="about-therapist-role">Aromatherapy Specialist</div>
+              <div class="about-therapist-exp">6 Years Clinical Experience</div>
+              <div class="about-therapist-chips">
+                <span class="about-chip">Aromatherapy</span>
+                <span class="about-chip">Relaxation</span>
+                <span class="about-chip">Ayurvedic</span>
+              </div>
+              <div class="about-therapist-training">Certified Clinical Aromatherapist</div>
+              <p class="about-therapist-bio">Maya weaves bespoke botanical infusions into gentle flowing bodywork, offering clients deep neurological calm and restorative sensory bliss.</p>
+            </div>
+          </div>
+
+          <!-- James Okafor -->
+          <div class="about-therapist-card" data-animate="fade-up" data-delay="200">
+            <img class="about-therapist-photo" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=80" alt="James Okafor, Sports & Deep Tissue Therapist" loading="lazy">
+            <div class="about-therapist-details">
+              <div class="about-therapist-name">James Okafor</div>
+              <div class="about-therapist-role">Sports &amp; Deep Tissue Therapist</div>
+              <div class="about-therapist-exp">5 Years Clinical Experience</div>
+              <div class="about-therapist-chips">
+                <span class="about-chip">Sports</span>
+                <span class="about-chip">Deep Tissue</span>
+                <span class="about-chip">Trigger Point</span>
+              </div>
+              <div class="about-therapist-training">Kinesiology &amp; Neuromuscular Therapy</div>
+              <p class="about-therapist-bio">James works with dedicated athletes and desk professionals alike, applying targeted pressure to undo chronic tightness and enhance mobility.</p>
+            </div>
+          </div>
+
+          <!-- Lisa Tanaka -->
+          <div class="about-therapist-card" data-animate="fade-up" data-delay="300">
+            <img class="about-therapist-photo" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80" alt="Lisa Tanaka, Relaxation & Hot Stone Therapist" loading="lazy">
+            <div class="about-therapist-details">
+              <div class="about-therapist-name">Lisa Tanaka</div>
+              <div class="about-therapist-role">Relaxation &amp; Hot Stone Therapist</div>
+              <div class="about-therapist-exp">7 Years Clinical Experience</div>
+              <div class="about-therapist-chips">
+                <span class="about-chip">Hot Stone</span>
+                <span class="about-chip">Relaxation</span>
+                <span class="about-chip">Prenatal</span>
+              </div>
+              <div class="about-therapist-training">Master Hot Stone Practitioner &amp; Prenatal Specialist</div>
+              <p class="about-therapist-bio">Lisa crafts grounding therapies that combine heated basalt stones with mindful breathwork, creating a gentle haven for total physical rest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 5: OUR APPROACH TO TREATMENTS ===================== -->
+    <section class="approach-section" aria-label="Our Approach to Treatments">
+      <div class="container">
+        <div class="section-header" style="text-align:center;" data-animate="fade-up">
+          <span class="section-tag">OUR METHOD</span>
+          <h2 class="section-title">The Kora Journey</h2>
+          <p class="section-subtitle" style="max-width:520px; margin: 1rem auto 0;">From arrival to aftercare, every stage is structured to guarantee absolute peace of mind.</p>
+        </div>
+
+        <div class="approach-steps">
+          <!-- Step 1 -->
+          <div class="approach-row" data-animate="fade-up">
+            <div class="approach-visual">
+              <img class="approach-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Therapist welcoming and consulting with spa guest" loading="lazy">
+            </div>
+            <div class="approach-text">
+              <div class="step-number">01</div>
+              <h3 class="step-title">Consultation</h3>
+              <p class="step-desc">We begin with a quiet, unhurried conversation exploring your physical tension, health history, and intentions for the day. This intake allows us to tailor rhythm, focus areas, and aromatherapy notes to your specific comfort.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="approach-row reverse" data-animate="fade-up">
+            <div class="approach-visual">
+              <img class="approach-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Selection of soothing botanical treatment oils and warm stones" loading="lazy">
+            </div>
+            <div class="approach-text">
+              <div class="step-number">02</div>
+              <h3 class="step-title">Treatment Selection</h3>
+              <p class="step-desc">Our therapists recommend the ideal modalities and blends based on your personal assessment. We outline the treatment steps clearly, ensuring you feel completely informed, respected, and empowered in your choices.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="approach-row" data-animate="fade-up">
+            <div class="approach-card-lone">
+              <span class="lone-icon" aria-hidden="true">🕯️</span>
+              <div class="step-number">03</div>
+              <h3 class="step-title">Personalized Session</h3>
+              <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
+            </div>
+            <div class="approach-card-lone">
+              <span class="lone-icon" aria-hidden="true">🍵</span>
+              <div class="step-number">04</div>
+              <h3 class="step-title">Aftercare Guidance</h3>
+              <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SECTION 6: OUR COMMITMENT ===================== -->
+    <section class="commitment-section" aria-label="Our Commitment and Promise">
+      <div class="container">
+        <h2 class="commitment-title" data-animate="fade-up">Our Promise to You</h2>
+        <p class="commitment-subtitle" data-animate="fade-up">Uncompromising standards in hospitality, hygiene, and ethical practice ensure you can let go in complete confidence.</p>
+
+        <div class="commitment-grid" role="list">
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="0">
+            <div class="commitment-num">01</div>
+            <h3>Genuine Hospitality</h3>
+            <p>Warm, attentive, and respectful welcoming from the very moment you step across our threshold.</p>
+          </div>
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="60">
+            <div class="commitment-num">02</div>
+            <h3>Hygiene &amp; Safety</h3>
+            <p>Hospital-grade sanitization protocols and single-use organic linens maintained without compromise.</p>
+          </div>
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="120">
+            <div class="commitment-num">03</div>
+            <h3>Professionalism</h3>
+            <p>Fully licensed, background-vetted, respectful, and discreet therapists who hold the highest credentials.</p>
+          </div>
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="180">
+            <div class="commitment-num">04</div>
+            <h3>Your Comfort</h3>
+            <p>We continuously adapt pressure, temperature, and focus points to your personal preferences at every turn.</p>
+          </div>
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="240">
+            <div class="commitment-num">05</div>
+            <h3>Consistency</h3>
+            <p>An uncompromising standard of tranquility, therapeutic excellence, and thoughtful detail on every visit.</p>
+          </div>
+          <div class="commitment-card" role="listitem" data-animate="fade-up" data-delay="300">
+            <div class="commitment-num">06</div>
+            <h3>Confidentiality</h3>
+            <p>Your privacy, personal preferences, and health disclosures are held in strictest confidence at all times.</p>
+          </div>
+        </div>
+
+        <div class="commitment-cta-wrap" data-animate="fade-up">
+          <a href="contact.html" class="commitment-btn">
+            Experience Our Commitment
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Kora Spa</div>
+          <p class="footer-tagline">Where serenity meets sophistication</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Pinterest" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.45.84-2.53 1.88-2.53.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.87 3.48-.25 1.04.52 1.88 1.54 1.88 1.85 0 3.27-1.95 3.27-4.77 0-2.49-1.79-4.23-4.35-4.23-2.96 0-4.7 2.22-4.7 4.52 0 .9.35 1.86.78 2.38.09.11.1.2.07.31-.08.33-.25 1.04-.29 1.18-.05.19-.16.23-.37.14-1.39-.65-2.26-2.68-2.26-4.32 0-3.51 2.55-6.74 7.35-6.74 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.9-5.76 6.9-1.13 0-2.19-.59-2.55-1.28l-.69 2.59c-.25.97-.93 2.18-1.39 2.92.09.03.19.05.28.07A10 10 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Wellness Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="service-details.html">Relaxation Massage</a></li>
+            <li><a href="services.html">Deep Tissue Massage</a></li>
+            <li><a href="services.html">Aromatherapy Massage</a></li>
+            <li><a href="services.html">Hot Stone Therapy</a></li>
+            <li><a href="services.html">Swedish Massage</a></li>
+            <li><a href="services.html">Body Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane<br>Wellness District, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+            <p style="margin-top:0.5rem;">Mon–Fri: 9AM – 8PM<br>Sat–Sun: 10AM – 6PM</p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <div class="footer-newsletter-content">
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for subscribing!', 'success');">
+          <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved. <span style="opacity:0.5;">·</span> <em>Demo Website</em></p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cancellation Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
