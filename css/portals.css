@@ -330,6 +330,7 @@
   flex-shrink: 0;
   margin-inline-start: auto;
 }
+.portal-actions .profile-menu { display: none !important; }
 .portal-actions .profile-toggle,
 .portal-actions .theme-toggle,
 .portal-actions .dir-toggle { width: 2.45rem; height: 2.45rem; }
