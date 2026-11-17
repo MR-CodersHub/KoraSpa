@@ -590,7 +590,10 @@
   .nav-logo-name { font-size: 1.95rem; }
   .nav-logo-tagline { font-size: 0.65rem; }
   .nav-container { gap: 1.5rem; }
-  .nav-links { gap: 1.5rem; }
+  .nav-links { gap: 1rem; }
+  .nav-link { font-size: 0.8rem; }
+  .nav-actions { gap: 0.5rem; }
+  .nav-cta { padding: 0.6rem 1rem; font-size: 0.78rem; }
 }
 
 @media (max-width: 900px) {

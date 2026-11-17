@@ -182,6 +182,29 @@
       color: var(--color-text);
     }
     .nav-theme-toggle:hover { border-color: var(--color-champagne); color: var(--color-champagne); }
+    .nav-dir-toggle {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.4);
+      border-radius: var(--radius-circle);
+      width: 36px;
+      min-width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      cursor: pointer;
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: border-color var(--transition-fast), color var(--transition-fast);
+    }
+    .site-nav.scrolled .nav-dir-toggle {
+      border-color: var(--color-border);
+      color: var(--color-text);
+    }
+    .nav-dir-toggle:hover { border-color: var(--color-champagne); color: var(--color-champagne); }
     .site-nav:not(.scrolled) .profile-toggle {
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba(255, 255, 255, 0.55);
@@ -227,16 +250,37 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 2rem;
+      gap: 1rem;
       padding: 2rem;
+      overflow-y: auto;
     }
     .nav-mobile-menu.open { display: flex; }
-    .nav-mobile-menu a {
+    .nav-mobile-menu > a {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: clamp(1.4rem, 5vw, 2rem);
       color: var(--color-forest);
       text-decoration: none;
     }
+    .nav-mobile-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      width: 100%;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border);
+    }
+    .nav-mobile-actions .theme-toggle,
+    .nav-mobile-actions .dir-toggle {
+      width: auto;
+      height: auto;
+      min-width: 2.5rem;
+      padding: 0.65rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+    }
+    .nav-mobile-actions .nav-btn-book { font-family: var(--font-sans); font-size: 0.8125rem; }
     .nav-mobile-close {
       position: absolute;
       top: 1.5rem;
@@ -1251,6 +1295,10 @@
       .nav-logo-mark { width: 3.1rem; height: 3.1rem; }
       .nav-logo-name { font-size: 2rem; }
       .nav-logo-tagline { font-size: 0.62rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.78rem; }
+      .nav-actions { gap: 0.6rem; }
+      .nav-btn-book { padding: 0.55rem 1rem; }
     }
     @media (max-width: 1024px) {
       .nav-links { display: none; }
@@ -1351,12 +1399,14 @@
       </a>
 
         <!-- Desktop Links -->
-        <ul class="nav-links" role="list">
-          <li><a href="index.html" aria-current="page">Home</a></li>
-          <li><a href="pages/services.html">Services</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/pricing.html">Pricing</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
+                <ul class="nav-links" role="list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="pages/home2.html" class="nav-link">Home2</a></li>
+          <li><a href="pages/about.html" class="nav-link">About</a></li>
+          <li><a href="pages/services.html" class="nav-link">Services</a></li>
+          <li><a href="pages/blog.html" class="nav-link">Blog</a></li>
+          <li><a href="pages/pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
         </ul>
 
         <!-- Actions -->
@@ -1375,6 +1425,7 @@
             </div>
           </div>
           <button class="nav-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button class="dir-toggle nav-dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
           <a href="pages/login.html" class="nav-btn-book" aria-label="Book an appointment">Book Now</a>
           <button class="nav-hamburger" id="navHamburger" aria-label="Open mobile menu" aria-expanded="false">
             <span></span>
@@ -1387,13 +1438,32 @@
 
     <!-- Mobile Menu -->
     <div class="nav-mobile-menu" id="navMobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-      <button class="nav-mobile-close" id="navMobileClose" aria-label="Close mobile menu"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-      <a href="index.html">Home</a>
-      <a href="pages/services.html">Services</a>
-      <a href="pages/about.html">About</a>
-      <a href="pages/pricing.html">Pricing</a>
-      <a href="pages/contact.html">Contact</a>
-      <a href="pages/login.html" style="color: var(--color-champagne);">Book Now</a>
+  <button class="nav-mobile-close" id="navMobileClose" aria-label="Close mobile menu"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <a href="index.html" aria-current="page">Home</a>
+  <a href="pages/home2.html">Home2</a>
+  <a href="pages/about.html">About</a>
+  <a href="pages/services.html">Services</a>
+  <a href="pages/blog.html">Blog</a>
+  <a href="pages/pricing.html">Pricing</a>
+  <a href="pages/contact.html">Contact</a>
+            <div class="nav-mobile-actions">
+                <div class="profile-menu">
+                <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobileProfileDropdown">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </button>
+                <div class="profile-dropdown" id="mobileProfileDropdown" role="menu" aria-label="Account menu">
+                  <div class="profile-dropdown-head">
+                    <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                    <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
+                  </div>
+                  <a href="pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
+                  <a href="pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
+                </div>
+              </div>
+              <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode"><span class="theme-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</span></button>
+              <button class="dir-toggle nav-dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
+              <a href="pages/login.html" class="nav-btn-book">Book Now</a>
+            </div>
     </div>
   </header>
 
