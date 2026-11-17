@@ -122,7 +122,7 @@ table {
   padding-inline: 2rem;
 }
 
-section {
+body:not([data-portal]) section {
   padding-block: 6rem;
 }
 
