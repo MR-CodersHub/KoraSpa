@@ -299,8 +299,12 @@
       color: var(--color-forest, #2D4A32);
     }
     .env-feature-point::before {
-      content: '✦';
-      color: var(--color-champagne, #C9A96E);
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      flex-shrink: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C9A96E'%3E%3Cpath d='m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 18.1l-6.2 3 1.2-6.9-5-4.9 6.9-1z'/%3E%3C/svg%3E") center/contain no-repeat;
     }
 
     /* SECTION 4: OUR THERAPISTS */
@@ -604,8 +608,8 @@
         <li><a href="login.html" class="mobile-nav-link">Login / Register</a></li>
       </ul>
       <div style="padding: 1rem 2rem; display:flex; gap:1rem; border-top: 1px solid var(--color-border);">
-        <button class="theme-toggle btn-outline" style="flex:1;">🌙 Dark Mode</button>
-        <button class="dir-toggle btn-outline" style="flex:1;">↔ RTL/LTR</button>
+        <button class="theme-toggle btn-outline" style="flex:1;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</button>
+        <button class="dir-toggle btn-outline" style="flex:1;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8l4 4-4 4M7 8l-4 4 4 4M3 12h18"/></svg> RTL/LTR</button>
       </div>
     </div>
   </nav>
@@ -674,25 +678,25 @@
         <div class="philosophy-grid" role="list">
           <!-- Item 1 -->
           <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="0">
-            <span class="philosophy-icon" aria-hidden="true">🌿</span>
+            <span class="philosophy-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13C4 9 8 4 20 4c0 12-5 16-9 16z"/><path d="M4 20c3-6 7-9 12-11"/></svg></span>
             <h3>Personalized Care</h3>
             <p>Each treatment is thoughtfully customized around your physical state, emotional tension, and healing goals.</p>
           </div>
           <!-- Item 2 -->
           <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="100">
-            <span class="philosophy-icon" aria-hidden="true">🧘</span>
+            <span class="philosophy-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="2.5"/><path d="M12 9v6M6 15c2-2 4-3 6-3s4 1 6 3M5 18c2 2 4 3 7 3s5-1 7-3"/></svg></span>
             <h3>Deep Relaxation</h3>
             <p>Creating unconditional space for genuine restorative stillness, quietening the conscious mind completely.</p>
           </div>
           <!-- Item 3 -->
           <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="200">
-            <span class="philosophy-icon" aria-hidden="true">💆</span>
+            <span class="philosophy-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/><path d="M7 11c-1 1-1 3 0 4M17 11c1 1 1 3 0 4"/></svg></span>
             <h3>Comfort First</h3>
             <p>Your physical ease, personal boundaries, and peace of mind guide every nuance of our practice.</p>
           </div>
           <!-- Item 4 -->
           <div class="philosophy-card" role="listitem" data-animate="fade-up" data-delay="300">
-            <span class="philosophy-icon" aria-hidden="true">✨</span>
+            <span class="philosophy-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/><path d="M19 3v4M17 5h4"/></svg></span>
             <h3>Thoughtful Touch</h3>
             <p>Mindful, evidence-informed modalities executed with purposeful precision for lasting relief.</p>
           </div>
@@ -869,13 +873,13 @@
           <!-- Step 3 -->
           <div class="approach-row" data-animate="fade-up">
             <div class="approach-card-lone">
-              <span class="lone-icon" aria-hidden="true">🕯️</span>
+              <span class="lone-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c1.5 2 2.5 3.5 2.5 5a2.5 2.5 0 0 1-5 0C9.5 5.5 10.5 4 12 2z"/><path d="M9 8h6v12H9z"/><path d="M12 8v12"/></svg></span>
               <div class="step-number">03</div>
               <h3 class="step-title">Personalized Session</h3>
               <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
             </div>
             <div class="approach-card-lone">
-              <span class="lone-icon" aria-hidden="true">🍵</span>
+              <span class="lone-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2M7 3c-.7 1 .7 2 0 3M11 3c-.7 1 .7 2 0 3"/></svg></span>
               <div class="step-number">04</div>
               <h3 class="step-title">Aftercare Guidance</h3>
               <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>

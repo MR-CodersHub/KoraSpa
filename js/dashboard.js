@@ -207,9 +207,9 @@ const Dashboard = {
                 <span class="badge badge-confirmed">Confirmed</span>
               </div>
               <div class="booking-meta">
-                <span class="booking-meta-item">📅 ${typeof formatDate === 'function' ? formatDate(b.date) : b.date}</span>
-                <span class="booking-meta-item">⏰ ${b.time} (${b.duration})</span>
-                <span class="booking-meta-item">🔖 Ref: ${b.id}</span>
+                <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> ${typeof formatDate === 'function' ? formatDate(b.date) : b.date}</span>
+                <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M5 3 3 5M19 3l2 2M12 3v2"/></svg> ${b.time} (${b.duration})</span>
+                <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg> Ref: ${b.id}</span>
               </div>
             </div>
           </div>
@@ -228,7 +228,7 @@ const Dashboard = {
     if (bookings.length === 0) {
       container.innerHTML = `
         <div class="empty-state">
-          <div class="empty-state-icon">🌿</div>
+          <div class="empty-state-icon"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 4 13C4 9 8 4 20 4c0 12-5 16-9 16z"/><path d="M4 20c3-6 7-9 12-11"/></svg></div>
           <h3 class="empty-state-title">No Appointments Yet</h3>
           <p class="empty-state-desc">You do not have any upcoming wellness sessions reserved.</p>
           <button class="btn-primary" onclick="Dashboard.loadSection('book')">Schedule Your First Treatment</button>
@@ -253,11 +253,11 @@ const Dashboard = {
               <span class="badge ${statusBadgeClass}">${b.status.toUpperCase()}</span>
             </div>
             <div class="booking-meta">
-              <span class="booking-meta-item">📅 ${typeof formatDate === 'function' ? formatDate(b.date) : b.date}</span>
-              <span class="booking-meta-item">⏰ ${b.time}</span>
+              <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> ${typeof formatDate === 'function' ? formatDate(b.date) : b.date}</span>
+              <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M5 3 3 5M19 3l2 2M12 3v2"/></svg> ${b.time}</span>
               <span class="booking-meta-item">⌛ ${b.duration}</span>
-              <span class="booking-meta-item">💰 ${typeof formatCurrency === 'function' ? formatCurrency(b.price) : '$' + b.price}</span>
-              <span class="booking-meta-item">🔖 Ref: ${b.id}</span>
+              <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15 9c-.8-1-2-1.5-3-1.5-1.7 0-3 1-3 2.5s1.3 2.5 3 2.5c1.2 0 2.4.6 3 1.5M12 6v12"/></svg> ${typeof formatCurrency === 'function' ? formatCurrency(b.price) : '$' + b.price}</span>
+              <span class="booking-meta-item"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg> Ref: ${b.id}</span>
             </div>
             ${b.notes ? `<p class="text-muted" style="font-size:0.85rem;margin-top:0.4rem;"><em>Note: ${b.notes}</em></p>` : ''}
             <div class="booking-actions mt-sm">
@@ -353,7 +353,7 @@ const Dashboard = {
         <ul class="membership-features">
           ${plan.features.map(f => `
             <li class="membership-feature">
-              <span class="membership-feature-check">✓</span>
+              <span class="membership-feature-check"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span>
               <span>${f}</span>
             </li>
           `).join('')}
@@ -400,7 +400,7 @@ const Dashboard = {
     container.innerHTML = notifications.map(n => `
       <div class="notification-item ${!n.read ? 'unread' : ''}" onclick="Dashboard.markNotificationRead('${n.id}')">
         <div class="notification-icon ${n.type}">
-          ${n.type === 'confirmation' ? '✓' : n.type === 'reminder' ? '⏰' : n.type === 'promotion' ? '🎁' : 'ℹ'}
+          ${n.type === 'confirmation' ? '<svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>' : n.type === 'reminder' ? '<svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M5 3 3 5M19 3l2 2M12 3v2"/></svg>' : n.type === 'promotion' ? '<svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 13h18M12 9v12M12 9c-3 0-5-1-5-3s3-2 5 3c2-5 5-5 5-3s-2 3-5 3z"/></svg>' : '<svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>'}
         </div>
         <div class="notification-content">
           <div class="notification-title">${n.title}</div>

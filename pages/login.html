@@ -1270,9 +1270,9 @@
         }
         matchIndicator.style.display = 'block';
         if (p1 === p2) {
-          matchIndicator.innerHTML = '<span style="color:var(--color-forest); font-weight:600;">✓ Passwords match</span>';
+          matchIndicator.innerHTML = '<span style="color:var(--color-forest); font-weight:600;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg> Passwords match</span>';
         } else {
-          matchIndicator.innerHTML = '<span style="color:#d9534f; font-weight:600;">✕ Passwords do not match yet</span>';
+          matchIndicator.innerHTML = '<span style="color:#d9534f; font-weight:600;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Passwords do not match yet</span>';
         }
       }
 

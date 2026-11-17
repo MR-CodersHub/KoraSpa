@@ -312,3 +312,12 @@ p:last-child { margin-bottom: 0; }
 
 /* ── Page Padding for Fixed Nav ─────────────────────────── */
 .page-offset { padding-top: var(--nav-height); }
+
+/* ── Inline SVG icons (emoji replacements) ─────────────────────── */
+.inline-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+}
