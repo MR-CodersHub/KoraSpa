@@ -17,7 +17,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   margin-bottom: var(--space-sm);
 }
 

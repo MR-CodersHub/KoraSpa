@@ -148,7 +148,7 @@
       align-items: center;
       gap: 0.5rem;
       background: var(--color-champagne);
-      color: var(--color-forest);
+      color: var(--color-text-on-gold);
       font-family: var(--font-sans);
       font-size: 0.875rem;
       font-weight: 600;
@@ -263,7 +263,7 @@
       font-weight: 600;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--color-champagne);
+      color: var(--color-accent-text);
       margin-bottom: 1rem;
       position: relative;
       padding: 0 1rem;
@@ -284,7 +284,7 @@
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-text);
       margin-bottom: 1rem;
       line-height: 1.2;
     }
@@ -336,7 +336,7 @@
       top: 1rem;
       right: 1rem;
       background: rgba(26, 42, 22, 0.85);
-      color: var(--color-champagne);
+      color: var(--color-accent-on-dark);
       font-family: var(--font-sans);
       font-size: 0.6875rem;
       font-weight: 600;
@@ -352,7 +352,7 @@
       font-family: var(--font-serif);
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-text);
       margin-bottom: 0.5rem;
       line-height: 1.3;
     }
@@ -384,7 +384,7 @@
       font-family: var(--font-serif);
       font-size: 1.375rem;
       font-weight: 600;
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
     }
     .treatment-view-link {
       display: inline-flex;
@@ -395,7 +395,7 @@
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: var(--color-forest);
+      color: var(--color-text);
       text-decoration: none;
       transition: color var(--transition-fast), gap var(--transition-fast);
     }
@@ -505,7 +505,7 @@
       font-family: var(--font-serif);
       font-size: 1rem;
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-text);
       margin-bottom: 0.25rem;
     }
     .experience-point-desc {
@@ -519,7 +519,7 @@
       align-items: center;
       gap: 0.5rem;
       background: transparent;
-      color: var(--color-forest);
+      color: var(--color-text);
       font-family: var(--font-sans);
       font-size: 0.875rem;
       font-weight: 600;
@@ -528,7 +528,7 @@
       padding: 0.85rem 2rem;
       border-radius: var(--radius-pill);
       text-decoration: none;
-      border: 2px solid var(--color-forest);
+      border: 2px solid var(--color-text);
       transition: background var(--transition-base), color var(--transition-base), transform var(--transition-fast);
     }
     .btn-secondary:hover {
@@ -595,7 +595,7 @@
       font-family: var(--font-serif);
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-text);
       margin-bottom: 0.6rem;
     }
     .benefit-desc {
@@ -647,6 +647,7 @@
       position: relative;
       z-index: 1;
     }
+    .section-booking .section-tag,
     .section-booking .section-title {
       color: var(--color-champagne-light);
     }
@@ -693,7 +694,7 @@
       font-family: var(--font-serif);
       font-size: 1.375rem;
       font-weight: 700;
-      color: var(--color-forest);
+      color: var(--color-text-on-gold);
       margin-bottom: 1.25rem;
       flex-shrink: 0;
       position: relative;
@@ -729,7 +730,7 @@
       align-items: center;
       gap: 0.6rem;
       background: var(--color-champagne);
-      color: var(--color-forest);
+      color: var(--color-text-on-gold);
       font-family: var(--font-sans);
       font-size: 0.9375rem;
       font-weight: 600;
@@ -798,14 +799,14 @@
       font-weight: 600;
       letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--color-champagne);
+      color: var(--color-accent-text);
       margin-bottom: 1.25rem;
     }
     .cta-headline {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3.25rem);
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-text);
       line-height: 1.2;
       margin-bottom: 1.25rem;
     }
@@ -843,7 +844,7 @@
     }
     .btn-primary:hover {
       background: transparent;
-      color: var(--color-forest);
+      color: var(--color-text);
       transform: translateY(-2px);
     }
     .btn-outline {
@@ -861,12 +862,12 @@
       border-radius: var(--radius-pill);
       text-decoration: none;
       border: 2px solid var(--color-champagne);
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       transition: background var(--transition-base), color var(--transition-base), transform var(--transition-fast);
     }
     .btn-outline:hover {
       background: var(--color-champagne);
-      color: var(--color-forest);
+      color: var(--color-text-on-gold);
       transform: translateY(-2px);
     }
 
@@ -992,6 +993,25 @@
         letter-spacing: 0.04em;
       }
     }
+
+    /* ── Contrast fixes: dark theme home ── */
+    [data-theme="dark"] .section-tag,
+    [data-theme="dark"] .cta-eyebrow {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="dark"] .treatment-price-value,
+    [data-theme="dark"] .btn-outline {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="dark"] .experience-point {
+      background: #1E2A1E;
+      border-color: var(--color-border);
+    }
+    [data-theme="dark"] .experience-point:hover { background: #263626; }
+    [data-theme="dark"] .experience-point-icon { color: var(--color-champagne-light); }
+    [data-theme="dark"] .experience-image-badge { background: rgba(30, 42, 30, 0.95); }
+    [data-theme="dark"] .experience-badge-icon,
+    [data-theme="dark"] .experience-badge-text { color: var(--color-champagne-light); }
   </style>
 </head>
 <body data-page="home1">
@@ -1488,7 +1508,7 @@
          ══════════════════════════════════════════════════════ -->
     <section class="section-booking" id="how-it-works" aria-labelledby="booking-title">
       <div class="section-header reveal" style="max-width:var(--container-max,1280px); margin:0 auto 4rem; padding:0 2rem;">
-        <span class="section-tag" style="color:var(--color-champagne);">How It Works</span>
+        <span class="section-tag">How It Works</span>
         <h2 class="section-title" id="booking-title" style="color:var(--color-champagne-light);">Your Journey to Relaxation</h2>
         <p class="section-subtitle" style="color:rgba(255,255,255,0.65);">From your first click to your last moment of calm, we've made every step of your Kora Spa experience seamless and effortless.</p>
       </div>

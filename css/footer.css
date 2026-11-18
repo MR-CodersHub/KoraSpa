@@ -84,7 +84,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: var(--color-accent-on-dark);
   margin-bottom: 1.25rem;
 }
 
@@ -107,7 +107,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--color-champagne);
+  color: var(--color-accent-on-dark);
   transform: translateX(3px);
 }
 
@@ -231,7 +231,7 @@
 
 .footer-bottom > p {
   font-size: 0.85rem;
-  color: rgba(250, 248, 243, 0.5);
+  color: rgba(250, 248, 243, 0.75);
   margin: 0;
 }
 
@@ -244,12 +244,12 @@
 
 .footer-legal a {
   font-size: 0.82rem;
-  color: rgba(250, 248, 243, 0.5);
+  color: rgba(250, 248, 243, 0.75);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-.footer-legal a:hover { color: var(--color-champagne); }
+.footer-legal a:hover { color: var(--color-accent-on-dark); }
 
 /* ── Responsive Footer ───────────────────────────────────── */
 @media (max-width: 1024px) {
