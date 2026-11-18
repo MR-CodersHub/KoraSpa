@@ -589,7 +589,8 @@
     .benefit-icon svg {
       width: 26px;
       height: 26px;
-      stroke: var(--color-champagne-dark);
+      stroke: var(--color-text-on-gold);
+      stroke-width: 2;
     }
     .benefit-title {
       font-family: var(--font-serif);
@@ -624,7 +625,7 @@
       background: linear-gradient(to left, transparent, var(--color-champagne));
     }
     .ornamental-divider-icon {
-      color: var(--color-champagne);
+      color: var(--color-accent-text);
       font-size: 1rem;
     }
 
@@ -1012,6 +1013,10 @@
     [data-theme="dark"] .experience-image-badge { background: rgba(30, 42, 30, 0.95); }
     [data-theme="dark"] .experience-badge-icon,
     [data-theme="dark"] .experience-badge-text { color: var(--color-champagne-light); }
+    [data-theme="dark"] .benefit-icon {
+      background: linear-gradient(135deg, #3A4B36, rgba(143, 168, 135, 0.12));
+    }
+    [data-theme="dark"] .benefit-icon svg { stroke: var(--color-accent-on-dark); }
   </style>
 </head>
 <body data-page="home1">
