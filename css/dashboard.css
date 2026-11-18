@@ -49,14 +49,14 @@
   font-family: var(--font-serif);
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   letter-spacing: -0.01em;
 }
 
 .sidebar-logo-icon {
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   flex-shrink: 0;
 }
 
@@ -95,7 +95,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -157,7 +157,7 @@
 
 .sidebar-nav-item.active {
   background: rgba(201, 169, 110, 0.15);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   border-left-color: var(--color-champagne);
 }
 
@@ -287,7 +287,7 @@
 
 .topbar-btn:hover {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
@@ -409,9 +409,9 @@
   font-size: 1.5rem;
 }
 
-.stat-icon.champagne { background: rgba(201, 169, 110, 0.15); color: var(--color-champagne-dark); }
-.stat-icon.sage      { background: rgba(143, 168, 135, 0.15); color: var(--color-sage-dark); }
-.stat-icon.forest    { background: rgba(45, 74, 50, 0.1);     color: var(--color-forest); }
+.stat-icon.champagne { background: rgba(201, 169, 110, 0.15); color: var(--color-accent-text); }
+.stat-icon.sage      { background: rgba(143, 168, 135, 0.15); color: var(--color-sage-text); }
+.stat-icon.forest    { background: rgba(45, 74, 50, 0.1);     color: var(--color-forest-text); }
 .stat-icon.taupe     { background: rgba(139, 115, 85, 0.15);  color: var(--color-taupe); }
 
 .stat-info { flex: 1; }
@@ -436,7 +436,7 @@
   margin-top: 0.4rem;
 }
 
-.stat-change.up   { color: var(--color-success); }
+.stat-change.up   { color: var(--color-success-text); }
 .stat-change.down { color: var(--color-error); }
 
 /* ── Booking Card ────────────────────────────────────────── */
@@ -550,7 +550,7 @@
 .calendar-nav-btn:hover {
   background: var(--color-beige);
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
 }
 
 .calendar-month-label {
@@ -613,7 +613,7 @@
 
 .calendar-day.today {
   font-weight: 700;
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 .calendar-day.today::after {
@@ -630,7 +630,7 @@
 
 .calendar-day.selected {
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-forest-text);
   font-weight: 700;
 }
 
@@ -660,14 +660,14 @@
 
 .time-slot:hover:not(.unavailable) {
   border-color: var(--color-champagne);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
   background: rgba(201, 169, 110, 0.07);
 }
 
 .time-slot.selected {
   background: var(--color-champagne);
   border-color: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-forest-text);
   font-weight: 700;
 }
 
@@ -755,7 +755,7 @@
 
 .step-dot.active {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: rgba(201, 169, 110, 0.1);
 }
 
@@ -785,7 +785,7 @@
   color: var(--color-text-muted);
 }
 
-.step-dot.active .step-label { color: var(--color-champagne-dark); }
+.step-dot.active .step-label { color: var(--color-accent-text); }
 
 /* ── Membership Cards ────────────────────────────────────── */
 .membership-plans-grid {
@@ -820,7 +820,7 @@
   top: 1.25rem;
   right: 1.25rem;
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-forest-text);
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -835,7 +835,7 @@
   margin-bottom: 0.5rem;
 }
 
-.membership-card.featured .membership-plan-name { color: var(--color-champagne); }
+.membership-card.featured .membership-plan-name { color: var(--color-accent-text); }
 
 .membership-price-wrap {
   margin-bottom: 1.5rem;
@@ -851,11 +851,11 @@
   font-family: var(--font-serif);
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
   line-height: 1;
 }
 
-.membership-card.featured .membership-price { color: var(--color-champagne); }
+.membership-card.featured .membership-price { color: var(--color-accent-text); }
 
 .membership-price-period {
   font-size: 0.85rem;
@@ -897,7 +897,7 @@
 
 .membership-card.featured .membership-feature-check {
   background: rgba(201, 169, 110, 0.2);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
 }
 
 .membership-status-chip {
@@ -915,7 +915,7 @@
 
 .membership-status-chip.active {
   background: rgba(39, 174, 96, 0.15);
-  color: var(--color-success);
+  color: var(--color-success-text);
 }
 
 .membership-status-chip.inactive {
@@ -1235,7 +1235,7 @@
 
 .bottom-nav-item.active,
 .bottom-nav-item:hover {
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
-.bottom-nav-item.active svg { color: var(--color-champagne); }
+.bottom-nav-item.active svg { color: var(--color-accent-text); }

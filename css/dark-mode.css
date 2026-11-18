@@ -38,7 +38,7 @@
 [data-theme="dark"] .profile-dropdown-head { border-color: var(--color-border); }
 [data-theme="dark"] .profile-dropdown-avatar {
   background: rgba(201, 169, 110, 0.14);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
 }
 [data-theme="dark"] .profile-dropdown-meta strong,
 [data-theme="dark"] .profile-dropdown a { color: var(--color-text); }
@@ -226,4 +226,83 @@
 /* ── Scroll progress bar dark ────────────────────────────── */
 [data-theme="dark"] #scroll-progress {
   background: linear-gradient(to right, var(--color-champagne), var(--color-sage-light));
+}
+
+/* ── Contrast: cards that stay dark in dark mode ─────────── */
+[data-theme="dark"] .therapist-card-h2 {
+  background: var(--color-white);
+  border-color: var(--color-border);
+}
+
+/* ── Contrast: fixed light / gold surfaces ───────────────── */
+html[data-theme] .massage-card-btn,
+html[data-theme] .popular-badge,
+html[data-theme] .step-number-badge,
+html[data-theme] .newsletter-cta-btn,
+html[data-theme] .duration-badge-top,
+html[data-theme] .btn-demo-quick,
+html[data-theme] .popular-ribbon,
+html[data-theme] .btn-luminary,
+html[data-theme] .sidebar-book,
+html[data-theme] .body-card-cta,
+html[data-theme] .treatment-ctas .btn-primary,
+html[data-theme] .nav-cta,
+html[data-theme] .reserve-actions .btn-primary,
+html[data-theme] .portal-btn:not(.secondary):not(.ghost):not(.danger),
+html[data-theme] .book-progress-step.active span {
+  color: var(--color-text-on-gold);
+}
+
+html[data-theme] .nav-cta {
+  background: var(--color-champagne);
+  border-color: var(--color-champagne);
+  color: var(--color-text-on-gold);
+}
+
+html[data-theme] .nav-cta:hover {
+  background: var(--color-champagne-dark);
+  border-color: var(--color-champagne-dark);
+  color: var(--color-text-on-gold);
+}
+
+/* Badges and pills that keep a light background in both themes */
+html[data-theme] .therapist-availability,
+html[data-theme] .duration-badge-top {
+  color: var(--color-text-on-gold);
+}
+
+/* Light-theme dark gold text on pale gold chips */
+html[data-theme="light"] .coming-badge,
+html[data-theme="light"] .auth-hero-badge,
+html[data-theme="light"] .treatment-tag {
+  color: #6F4E1E;
+}
+
+/* Auth tabs: forest in light mode, gold in dark mode */
+html[data-theme="light"] .auth-tab-btn.active {
+  background: var(--color-forest);
+  color: var(--color-text-on-dark);
+}
+
+html[data-theme="dark"] .auth-tab-btn.active {
+  background: var(--color-champagne);
+  color: var(--color-text-on-gold);
+}
+
+/* ── Contrast: always-dark surfaces ──────────────────────── */
+html[data-theme] .hero-eyebrow,
+html[data-theme] .btn-hero-primary:hover,
+html[data-theme] .btn-booking:hover,
+html[data-theme] .thumb-item:hover,
+html[data-theme] .author-bio-role,
+html[data-theme] .reserve-eyebrow,
+html[data-theme] .ambient-overlay .section-tag,
+html[data-theme] .cta-action-card .section-tag {
+  color: var(--color-accent-on-dark);
+}
+
+/* ── Contrast: breadcrumb separators ─────────────────────── */
+html[data-theme] .breadcrumb-sep {
+  color: var(--color-text-muted);
+  opacity: 0.8;
 }

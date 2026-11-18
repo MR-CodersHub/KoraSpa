@@ -165,7 +165,7 @@
 
 .nav-dropdown a:hover {
   background: var(--color-beige);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 /* ── Nav Actions ─────────────────────────────────────────── */
@@ -195,7 +195,7 @@
 
 .theme-toggle:hover {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
@@ -229,7 +229,7 @@
 
 .dir-toggle:hover {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
@@ -280,7 +280,7 @@
 .profile-toggle:hover,
 .profile-menu.open .profile-toggle {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
@@ -337,7 +337,7 @@
   height: 2.25rem;
   border-radius: var(--radius-circle);
   background: var(--color-beige);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
   flex-shrink: 0;
 }
 
@@ -379,13 +379,13 @@
 .profile-dropdown a svg {
   width: 1.05rem;
   height: 1.05rem;
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
   flex-shrink: 0;
 }
 
 .profile-dropdown a:hover {
   background: var(--color-beige);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 /* Keep the dropdown inside the viewport on small phones. */
@@ -495,7 +495,7 @@
 
 .mobile-nav-link:hover {
   background: var(--color-beige);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 .mobile-nav-link.btn-primary {
@@ -557,7 +557,7 @@
 .nav-logo-mark {
   width: 3.6rem;
   height: 3.6rem;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   flex-shrink: 0;
   filter: drop-shadow(0 2px 8px rgba(201, 169, 110, 0.4));
   transition: transform var(--transition-fast), filter var(--transition-fast);

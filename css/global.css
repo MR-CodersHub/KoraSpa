@@ -34,12 +34,12 @@ body {
 ul, ol { list-style: none; }
 
 a {
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-a:hover { color: var(--color-champagne); }
+a:hover { color: var(--color-accent-text); }
 
 a:focus-visible {
   outline: 2px solid var(--color-champagne);
@@ -76,12 +76,12 @@ table {
 /* ── Selection ───────────────────────────────────────────── */
 ::selection {
   background-color: var(--color-champagne-light);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
 }
 
 ::-moz-selection {
   background-color: var(--color-champagne-light);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
 }
 
 /* ── Scrollbar ───────────────────────────────────────────── */
@@ -101,7 +101,7 @@ table {
   z-index: 9999;
   padding: 0.75rem 1.5rem;
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
   font-weight: 600;
   border-radius: var(--radius-md);
   transition: top var(--transition-fast);
@@ -183,27 +183,27 @@ p:last-child { margin-bottom: 0; }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-forest);
+  color: var(--color-forest-text);
   border: 2px solid var(--color-forest);
 }
 
 .btn-secondary:hover {
   background: var(--color-forest);
-  color: var(--color-ivory);
+  color: var(--color-text-on-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   border: 2px solid transparent;
   padding: 0.875rem 1.5rem;
 }
 
 .btn-ghost:hover {
   border-color: var(--color-champagne);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 .btn-sm {
@@ -224,9 +224,9 @@ p:last-child { margin-bottom: 0; }
 .text-serif  { font-family: var(--font-serif); }
 .text-sans   { font-family: var(--font-sans); }
 .text-muted  { color: var(--color-text-muted); }
-.text-champagne { color: var(--color-champagne); }
-.text-forest    { color: var(--color-forest); }
-.text-sage      { color: var(--color-sage); }
+.text-champagne { color: var(--color-accent-text); }
+.text-forest    { color: var(--color-forest-text); }
+.text-sage      { color: var(--color-sage-text); }
 
 .font-light  { font-weight: 300; }
 .font-normal { font-weight: 400; }

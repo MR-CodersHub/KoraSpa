@@ -144,7 +144,7 @@
 
     .annual-discount-pill {
       background: rgba(201, 169, 110, 0.2);
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -168,7 +168,7 @@
       gap: 0.6rem;
       font-size: 0.95rem;
       font-weight: 600;
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       background: rgba(143, 168, 135, 0.15);
       padding: 0.5rem 1.25rem;
       border-radius: var(--radius-pill);
@@ -290,16 +290,16 @@
     }
 
     .section-serenity .plan-tagline {
-      color: var(--color-sage-dark);
+      color: var(--color-sage-text);
     }
 
     .section-serenity .plan-price-num {
-      color: var(--color-forest);
+      color: var(--color-forest-text);
     }
 
     .section-serenity .feature-check {
       background: rgba(39, 174, 96, 0.15);
-      color: var(--color-success);
+      color: var(--color-success-text);
     }
 
     /* Section 3: Harmony Specifics */
@@ -313,7 +313,7 @@
       align-items: center;
       gap: 0.4rem;
       background: var(--color-champagne);
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -325,16 +325,16 @@
     }
 
     .section-harmony .plan-tagline {
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
     }
 
     .section-harmony .plan-price-num {
-      color: var(--color-forest);
+      color: var(--color-forest-text);
     }
 
     .section-harmony .feature-check {
       background: rgba(39, 174, 96, 0.15);
-      color: var(--color-success);
+      color: var(--color-success-text);
     }
 
     .btn-harmony-prominent {
@@ -346,7 +346,7 @@
 
     .btn-harmony-prominent:hover {
       background: var(--color-forest-light);
-      color: var(--color-white);
+      color: var(--color-text-on-dark);
       border-color: var(--color-forest-light);
       transform: translateY(-2px);
       box-shadow: var(--shadow-lg);
@@ -355,7 +355,7 @@
     /* Section 4: Luminary Specifics */
     .section-luminary {
       background: var(--color-forest);
-      color: var(--color-ivory);
+      color: var(--color-text-on-dark);
       position: relative;
       overflow: hidden;
     }
@@ -376,11 +376,11 @@
     }
 
     .section-luminary .plan-title {
-      color: var(--color-white);
+      color: var(--color-text-on-dark);
     }
 
     .section-luminary .plan-price-num {
-      color: var(--color-champagne);
+      color: var(--color-accent-on-dark);
     }
 
     .section-luminary .plan-price-period {
@@ -402,7 +402,7 @@
 
     .btn-luminary {
       background: var(--color-champagne);
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       border: 2px solid var(--color-champagne);
       font-weight: 700;
     }
@@ -410,7 +410,7 @@
     .btn-luminary:hover {
       background: var(--color-champagne-dark);
       border-color: var(--color-champagne-dark);
-      color: var(--color-white);
+      color: var(--color-text-on-gold);
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(201, 169, 110, 0.35);
     }
@@ -471,7 +471,7 @@
       font-family: var(--font-sans);
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       margin-top: 0.25rem;
     }
 
@@ -487,8 +487,28 @@
       background: rgba(45, 74, 50, 0.03);
     }
 
+    [data-theme="dark"] .comparison-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    [data-theme="dark"] .comparison-table tr:hover td {
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    [data-theme="dark"] .comparison-table td:last-child {
+      background: rgba(201, 169, 110, 0.06);
+    }
+
+    [data-theme="dark"] .comparison-table td {
+      color: var(--color-text);
+    }
+
+    [data-theme="dark"] .table-dash {
+      color: var(--color-text-muted);
+    }
+
     .table-check {
-      color: var(--color-success);
+      color: var(--color-success-text);
       font-weight: bold;
       font-size: 1.1rem;
     }
@@ -506,13 +526,13 @@
     }
 
     .table-cta-callout a {
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       font-weight: 600;
       text-decoration: underline;
     }
 
     .table-cta-callout a:hover {
-      color: var(--color-forest);
+      color: var(--color-forest-text);
     }
 
     /* Section 6: FAQ & CTA */
@@ -536,27 +556,39 @@
 
     .pricing-cta-card {
       margin-top: 4.5rem;
-      background: linear-gradient(135deg, var(--color-beige) 0%, #ecdcc8 100%);
+      background: linear-gradient(135deg, #F5EFE7 0%, #ECDCC8 100%);
       border: 1px solid var(--color-champagne-light);
       border-radius: var(--radius-xl);
       padding: 3.5rem 2rem;
       text-align: center;
       box-shadow: var(--shadow-lg);
+      color: var(--color-text-on-gold);
     }
 
     .pricing-cta-card h2 {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4.5vw, 2.75rem);
-      color: var(--color-text);
+      color: var(--color-text-on-gold);
       margin-bottom: 0.75rem;
     }
 
     .pricing-cta-card p {
       font-size: 1.1rem;
-      color: var(--color-text-muted);
+      color: var(--color-text-on-gold);
       max-width: 560px;
       margin: 0 auto 2.25rem;
       line-height: 1.7;
+    }
+
+    .pricing-cta-card .btn-secondary {
+      color: var(--color-text-on-gold);
+      border-color: var(--color-text-on-gold);
+    }
+
+    .pricing-cta-card .btn-secondary:hover {
+      background: var(--color-forest);
+      border-color: var(--color-forest);
+      color: var(--color-text-on-dark);
     }
 
     .pricing-cta-buttons {

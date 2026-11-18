@@ -70,13 +70,13 @@
       margin-bottom: 1.5rem;
       font-family: var(--font-sans);
     }
-    .services-hero .breadcrumb a { color: var(--color-champagne); text-decoration: none; }
+    .services-hero .breadcrumb a { color: var(--color-accent-text); text-decoration: none; }
     .services-hero .breadcrumb a:hover { text-decoration: underline; }
     .services-hero .breadcrumb-sep { color: var(--color-border); }
     .services-hero h1 {
       font-family: var(--font-serif);
       font-size: clamp(2.5rem, 5vw, 4rem);
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       margin-bottom: 1rem;
       font-weight: 600;
     }
@@ -104,7 +104,7 @@
       font-size: 0.85rem;
       font-weight: 500;
       font-family: var(--font-sans);
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       text-decoration: none;
       background: var(--color-white);
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
@@ -112,7 +112,7 @@
     }
     .hero-scroll-links a:hover {
       border-color: var(--color-forest);
-      color: var(--color-white);
+      color: var(--color-text-on-dark);
       background: var(--color-forest);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(45, 74, 50, 0.18);
@@ -177,14 +177,14 @@
     }
     .sidebar-nav a:hover,
     .sidebar-nav a.active {
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       font-weight: 600;
       background: rgba(201,169,110,0.12);
       border-left-color: var(--color-champagne-dark);
     }
     [data-theme="dark"] .sidebar-nav a:hover,
     [data-theme="dark"] .sidebar-nav a.active {
-      color: var(--color-champagne);
+      color: var(--color-accent-text);
       background: rgba(201,169,110,0.16);
       border-left-color: var(--color-champagne);
     }
@@ -198,7 +198,7 @@
       text-align: center;
       padding: 0.6rem 1rem;
       background: var(--color-champagne);
-      color: white;
+      color: var(--color-text-on-gold);
       border-radius: var(--radius-pill);
       font-size: 0.8rem;
       font-family: var(--font-sans);
@@ -263,7 +263,7 @@
       padding: 0.3rem 0.9rem;
       border-radius: var(--radius-pill);
       background: rgba(201,169,110,0.15);
-      color: var(--color-champagne-dark);
+      color: var(--color-accent-text);
       font-family: var(--font-sans);
       font-size: 0.7rem;
       font-weight: 600;
@@ -281,7 +281,7 @@
     .treatment-content h2 {
       font-family: var(--font-serif);
       font-size: clamp(1.9rem, 3vw, 2.6rem);
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       margin-bottom: 1.2rem;
       line-height: 1.2;
     }
@@ -310,8 +310,8 @@
       font-size: 0.82rem;
       color: var(--color-text);
     }
-    .detail-chip svg { color: var(--color-champagne); flex-shrink: 0; }
-    .detail-chip strong { color: var(--color-forest); }
+    .detail-chip svg { color: var(--color-accent-text); flex-shrink: 0; }
+    .detail-chip strong { color: var(--color-forest-text); }
 
     .treatment-benefits {
       list-style: none;
@@ -330,7 +330,7 @@
     .benefit-icon {
       width: 20px; height: 20px;
       flex-shrink: 0;
-      color: var(--color-sage);
+      color: var(--color-sage-text);
     }
 
     .treatment-ctas {
@@ -345,7 +345,7 @@
       gap: 0.5rem;
       padding: 0.75rem 1.75rem;
       background: var(--color-champagne);
-      color: white;
+      color: var(--color-text-on-gold);
       border-radius: var(--radius-pill);
       font-family: var(--font-sans);
       font-size: 0.88rem;
@@ -367,7 +367,7 @@
       gap: 0.5rem;
       padding: 0.75rem 1.75rem;
       background: transparent;
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       border-radius: var(--radius-pill);
       font-family: var(--font-sans);
       font-size: 0.88rem;
@@ -433,7 +433,7 @@
     .body-card-body h3 {
       font-family: var(--font-serif);
       font-size: 1.3rem;
-      color: var(--color-forest);
+      color: var(--color-forest-text);
       margin-bottom: 0.5rem;
     }
     .body-card-body p {
@@ -456,7 +456,7 @@
     .body-card-price {
       font-family: var(--font-serif);
       font-size: 1.1rem;
-      color: var(--color-champagne);
+      color: var(--color-accent-text);
       font-weight: 600;
     }
     .body-card-cta {
@@ -464,7 +464,7 @@
       text-align: center;
       padding: 0.6rem 1.2rem;
       background: var(--color-champagne);
-      color: white;
+      color: var(--color-text-on-gold);
       border-radius: var(--radius-pill);
       font-family: var(--font-sans);
       font-size: 0.82rem;
@@ -979,7 +979,7 @@
       <div class="container">
         <div class="body-treatments-header animate-on-scroll">
           <span class="treatment-tag" style="margin:0 auto 1rem; display:inline-flex;">Luxury Rituals</span>
-          <h2 id="body-title" style="font-family:var(--font-serif); font-size:clamp(1.9rem,3vw,2.6rem); color:var(--color-forest); margin-bottom:1rem;">Body &amp; Wellness Treatments</h2>
+          <h2 id="body-title" style="font-family:var(--font-serif); font-size:clamp(1.9rem,3vw,2.6rem); color: var(--color-forest-text); margin-bottom:1rem;">Body &amp; Wellness Treatments</h2>
           <p>Beyond massage, our body care collection offers transformative rituals that nourish from skin to soul. Each treatment is thoughtfully curated using the finest natural ingredients — sea salts, mineral-rich clays, and botanical extracts — to leave you feeling profoundly renewed.</p>
         </div>
 

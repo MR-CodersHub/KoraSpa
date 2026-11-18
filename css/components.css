@@ -114,7 +114,7 @@
   top: 1rem;
   right: 1rem;
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
   font-weight: 700;
   font-size: 0.95rem;
   padding: 0.3rem 0.85rem;
@@ -127,7 +127,7 @@
   bottom: 1rem;
   left: 1rem;
   background: rgba(255, 255, 255, 0.92);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
@@ -144,7 +144,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-sage);
+  color: var(--color-sage-text);
   margin-bottom: 0.5rem;
 }
 
@@ -242,7 +242,7 @@
   letter-spacing: 0.05em;
   padding: 0.25rem 0.75rem;
   background: var(--color-beige);
-  color: var(--color-forest);
+  color: var(--color-forest-text);
   border-radius: var(--radius-pill);
 }
 
@@ -339,7 +339,7 @@
   display: block;
   margin-top: 0.4rem;
   font-size: 0.8rem;
-  color: var(--color-success);
+  color: var(--color-success-text);
 }
 
 .form-hint {
@@ -565,7 +565,7 @@
 .accordion-arrow {
   width: 1.5rem;
   height: 1.5rem;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   transition: transform var(--transition-base);
   flex-shrink: 0;
 }
@@ -687,17 +687,17 @@
 
 .badge-confirmed {
   background: rgba(143, 168, 135, 0.2);
-  color: var(--color-sage-dark);
+  color: var(--color-sage-text);
 }
 
 .badge-pending {
   background: rgba(201, 169, 110, 0.2);
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 .badge-completed {
   background: rgba(45, 74, 50, 0.15);
-  color: var(--color-forest);
+  color: var(--color-forest-text);
 }
 
 .badge-cancelled {
@@ -707,7 +707,7 @@
 
 .badge-active {
   background: rgba(39, 174, 96, 0.15);
-  color: var(--color-success);
+  color: var(--color-success-text);
 }
 
 /* ── Price Tag ───────────────────────────────────────────── */
@@ -715,7 +715,7 @@
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-champagne-dark);
+  color: var(--color-accent-text);
 }
 
 .price-tag-sm {
@@ -737,11 +737,11 @@
 .stars {
   display: inline-flex;
   gap: 0.15rem;
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   font-size: 1rem;
 }
 
-.stars .star-filled  { color: var(--color-champagne); }
+.stars .star-filled  { color: var(--color-accent-text); }
 .stars .star-empty   { color: var(--color-border); }
 .stars .star-half    { color: var(--color-champagne-light); }
 
@@ -773,7 +773,7 @@
 }
 
 .divider-leaf-icon {
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   font-size: 1.25rem;
   flex-shrink: 0;
 }
@@ -788,7 +788,7 @@
   height: 3rem;
   border-radius: var(--radius-circle);
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -830,7 +830,7 @@
   transition: color var(--transition-fast);
 }
 
-.breadcrumb a:hover { color: var(--color-champagne); }
+.breadcrumb a:hover { color: var(--color-accent-text); }
 
 .breadcrumb-sep {
   color: var(--color-border);
@@ -944,14 +944,14 @@
 
 .page-btn:hover {
   border-color: var(--color-champagne);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
 .page-btn.active {
   background: var(--color-champagne);
   border-color: var(--color-champagne);
-  color: var(--color-forest);
+  color: var(--color-text-on-gold);
   font-weight: 700;
 }
 
@@ -990,14 +990,14 @@
   transition: color var(--transition-fast);
 }
 
-.faq-question:hover { color: var(--color-champagne-dark); }
+.faq-question:hover { color: var(--color-accent-text); }
 
 .faq-question-icon {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: var(--radius-circle);
   background: var(--color-beige);
-  color: var(--color-champagne);
+  color: var(--color-accent-text);
   font-size: 1.25rem;
   display: flex;
   align-items: center;
@@ -1009,7 +1009,7 @@
 .faq-item.open .faq-question-icon {
   transform: rotate(45deg);
   background: var(--color-champagne);
-  color: var(--color-white);
+  color: var(--color-text-on-gold);
 }
 
 .faq-answer {
