@@ -256,6 +256,10 @@
       color: var(--color-champagne, #C9A96E);
     }
     .pw-content {}
+    .pw-title-accent {
+      font-style: italic;
+      color: var(--color-accent-text, #8A642F);
+    }
     .pw-promises {
       display: flex;
       flex-direction: column;
@@ -303,6 +307,16 @@
       border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
     }
 
+    /* DARK THEME CONTRAST OVERRIDES */
+    [data-theme="dark"] .pw-title-accent,
+    [data-theme="dark"] .pw-promise-text h4,
+    [data-theme="dark"] .pw-quote {
+      color: var(--color-accent-on-dark);
+    }
+    [data-theme="dark"] .pw-quote {
+      background: rgba(201, 169, 110, 0.12);
+    }
+
     /* THERAPISTS */
     .therapists-section {
       padding: 7rem 0;
@@ -333,6 +347,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       transition: transform 0.5s ease;
     }
     .therapist-card-h2:hover .therapist-photo { transform: scale(1.06); }
@@ -873,7 +888,7 @@
       <div class="container">
         <div class="pw-grid">
           <div class="pw-image-wrap" data-animate="fade-right">
-            <img class="pw-image" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" alt="Therapist providing personalized massage treatment" loading="lazy">
+            <img class="pw-image" src="https://i.pinimg.com/1200x/c2/72/3c/c2723c716e54d0f85055120654801e9f.jpg" alt="Personalized wellness treatment at Kora Spa" loading="lazy">
             <div class="pw-image-badge">
               <strong>8+</strong>
               Years of Healing Excellence
@@ -881,7 +896,7 @@
           </div>
           <div class="pw-content" data-animate="fade-left">
             <span class="section-tag">OUR PROMISE</span>
-            <h2 class="section-title" style="margin-top:0.75rem; font-size:clamp(1.8rem,3.5vw,2.5rem); line-height:1.2;">Wellness That's Truly <em style="font-style:italic; color:var(--color-champagne,#C9A96E);">Personal</em></h2>
+            <h2 class="section-title" style="margin-top:0.75rem; font-size:clamp(1.8rem,3.5vw,2.5rem); line-height:1.2;">Wellness That's Truly <em class="pw-title-accent">Personal</em></h2>
             <p style="color:var(--color-text-muted,#7A6E65); font-size:0.95rem; line-height:1.8; margin: 1rem 0 0;">We believe no two bodies are alike. Every treatment at Kora Spa begins with understanding <em>you</em> — your tension, your preferences, your goals.</p>
             <div class="pw-promises" role="list">
               <div class="pw-promise-item" role="listitem">
