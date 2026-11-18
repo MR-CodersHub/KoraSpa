@@ -45,253 +45,6 @@
     }
     .skip-link:focus { top: 1rem; }
 
-    /* ── NAVIGATION ── */
-    .site-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      height: var(--nav-height, 80px);
-      display: flex;
-      align-items: center;
-      padding: 0 2rem;
-      transition: background var(--transition-base), box-shadow var(--transition-base);
-    }
-    .site-nav.transparent { background: transparent; }
-    .site-nav.scrolled {
-      background: rgba(250, 248, 243, 0.97);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: var(--shadow-md);
-    }
-    [data-theme="dark"] .site-nav.scrolled {
-      background: rgba(17, 24, 16, 0.97);
-    }
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: var(--container-max, 1280px);
-      margin: 0 auto;
-    }
-    .nav-logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 0.9rem;
-      text-decoration: none;
-      line-height: 1;
-      min-width: 0;
-    }
-    .nav-logo-mark {
-      width: 3.6rem;
-      height: 3.6rem;
-      filter: drop-shadow(0 2px 8px rgba(201, 169, 110, 0.4));
-    }
-    .nav-logo-name {
-      font-family: var(--font-serif);
-      font-size: 2.3rem;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 0.02em;
-      transition: color var(--transition-fast);
-    }
-    .site-nav.scrolled .nav-logo-name { color: var(--color-forest); }
-    .nav-logo-tagline {
-      font-family: var(--font-sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--color-champagne);
-      margin-top: 3px;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    .nav-links a {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      font-weight: 500;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.9);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-      position: relative;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
-      background: var(--color-champagne);
-      transition: width var(--transition-base);
-    }
-    .nav-links a:hover::after { width: 100%; }
-    .nav-links a:hover { color: var(--color-champagne); }
-    .site-nav.scrolled .nav-links a { color: var(--color-text); }
-    .site-nav.scrolled .nav-links a:hover { color: var(--color-champagne); }
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .nav-btn-book {
-      background: var(--color-champagne);
-      color: var(--color-forest);
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.6rem 1.4rem;
-      border-radius: var(--radius-pill);
-      text-decoration: none;
-      border: 2px solid var(--color-champagne);
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
-    .nav-btn-book:hover {
-      background: transparent;
-      color: var(--color-champagne);
-    }
-    .nav-theme-toggle {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: var(--radius-circle);
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #fff;
-      font-size: 1rem;
-      transition: border-color var(--transition-fast), color var(--transition-fast);
-    }
-    .site-nav.scrolled .nav-theme-toggle {
-      border-color: var(--color-border);
-      color: var(--color-text);
-    }
-    .nav-theme-toggle:hover { border-color: var(--color-champagne); color: var(--color-champagne); }
-    .nav-dir-toggle {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: var(--radius-circle);
-      width: 36px;
-      min-width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      cursor: pointer;
-      color: #fff;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      transition: border-color var(--transition-fast), color var(--transition-fast);
-    }
-    .site-nav.scrolled .nav-dir-toggle {
-      border-color: var(--color-border);
-      color: var(--color-text);
-    }
-    .nav-dir-toggle:hover { border-color: var(--color-champagne); color: var(--color-champagne); }
-    .site-nav:not(.scrolled) .profile-toggle {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.55);
-      color: #fff;
-      width: 36px;
-      height: 36px;
-    }
-    .site-nav.scrolled .profile-toggle {
-      background: var(--color-white);
-      border-color: var(--color-border);
-      color: var(--color-text);
-      width: 36px;
-      height: 36px;
-    }
-    .site-nav:not(.scrolled) .profile-toggle:hover {
-      border-color: var(--color-champagne);
-      color: var(--color-champagne);
-    }
-    .nav-hamburger {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      flex-direction: column;
-      gap: 5px;
-      padding: 4px;
-    }
-    .nav-hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: #fff;
-      transition: transform var(--transition-base), opacity var(--transition-base);
-      border-radius: 2px;
-    }
-    .site-nav.scrolled .nav-hamburger span { background: var(--color-text); }
-    .nav-mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: var(--color-ivory);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
-      overflow-y: auto;
-    }
-    .nav-mobile-menu.open { display: flex; }
-    .nav-mobile-menu > a {
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 5vw, 2rem);
-      color: var(--color-forest);
-      text-decoration: none;
-    }
-    .nav-mobile-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      width: 100%;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--color-border);
-    }
-    .nav-mobile-actions .theme-toggle,
-    .nav-mobile-actions .dir-toggle {
-      width: auto;
-      height: auto;
-      min-width: 2.5rem;
-      padding: 0.65rem 1rem;
-      border-radius: var(--radius-md);
-      font-size: 0.85rem;
-    }
-    .nav-mobile-actions .nav-btn-book { font-family: var(--font-sans); font-size: 0.8125rem; }
-    .nav-mobile-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--color-text);
-    }
-
     /* ── HERO SECTION ── */
     .hero {
       position: relative;
@@ -1117,133 +870,6 @@
       transform: translateY(-2px);
     }
 
-    /* ── FOOTER ── */
-    .site-footer {
-      background: var(--color-forest);
-      color: rgba(255,255,255,0.75);
-      padding: 5rem 0 2rem;
-    }
-    .footer-inner {
-      max-width: var(--container-max, 1280px);
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    .footer-top {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      margin-bottom: 2.5rem;
-    }
-    .footer-brand-name {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-    .footer-brand-tagline {
-      font-family: var(--font-sans);
-      font-size: 0.6875rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--color-champagne);
-      margin-bottom: 1rem;
-    }
-    .footer-brand-desc {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.6);
-      max-width: 320px;
-      margin-bottom: 1.5rem;
-    }
-    .footer-social {
-      display: flex;
-      gap: 0.75rem;
-    }
-    .footer-social-link {
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-circle);
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
-    }
-    .footer-social-link:hover {
-      border-color: var(--color-champagne);
-      color: var(--color-champagne);
-      background: rgba(201,169,110,0.1);
-    }
-    .footer-col-title {
-      font-family: var(--font-sans);
-      font-size: 0.6875rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--color-champagne);
-      margin-bottom: 1.25rem;
-    }
-    .footer-col-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-    .footer-col-links a {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.65);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-    }
-    .footer-col-links a:hover { color: var(--color-champagne); }
-    .footer-contact-item {
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
-      margin-bottom: 0.6rem;
-    }
-    .footer-contact-icon { font-size: 0.875rem; color: var(--color-champagne); flex-shrink: 0; margin-top: 2px; }
-    .footer-contact-text {
-      font-family: var(--font-sans);
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.5;
-    }
-    .footer-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .footer-copyright {
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.4);
-    }
-    .footer-legal {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .footer-legal a {
-      font-family: var(--font-sans);
-      font-size: 0.8125rem;
-      color: rgba(255,255,255,0.4);
-      text-decoration: none;
-      transition: color var(--transition-fast);
-    }
-    .footer-legal a:hover { color: var(--color-champagne); }
-
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -1323,10 +949,6 @@
         gap: 3rem;
       }
       .experience-image-wrap img { height: 400px; }
-      .footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
       .booking-timeline {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -1337,7 +959,6 @@
     @media (max-width: 768px) {
       .treatments-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
-      .footer-top { grid-template-columns: 1fr; }
       .booking-timeline { grid-template-columns: 1fr; }
       .hero-trust-bar {
         flex-direction: column;
@@ -1381,11 +1002,10 @@
   <!-- ══════════════════════════════════════════════════════
        NAVIGATION
        ══════════════════════════════════════════════════════ -->
-  <header>
-    <nav class="site-nav transparent" id="siteNav" role="navigation" aria-label="Main navigation">
-      <div class="nav-inner">
-        <!-- Logo -->
-        <a href="index.html" class="nav-logo" aria-label="Kora Spa — Home">
+  <div id="scroll-progress" aria-hidden="true"></div>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="index.html" class="nav-logo">
         <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
           <g fill="currentColor">
             <path d="M40 66c-11-7-17-18-13-29 5 6 9 11 13 16 4-5 8-10 13-16 4 11-2 22-13 29z"/>
@@ -1397,75 +1017,70 @@
           <span class="nav-logo-tagline">Serenity, Elevated.</span>
         </span>
       </a>
-
-        <!-- Desktop Links -->
-                <ul class="nav-links" role="list">
-          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-          <li><a href="pages/home2.html" class="nav-link">Home2</a></li>
-          <li><a href="pages/about.html" class="nav-link">About</a></li>
-          <li><a href="pages/services.html" class="nav-link">Services</a></li>
-          <li><a href="pages/blog.html" class="nav-link">Blog</a></li>
-          <li><a href="pages/pricing.html" class="nav-link">Pricing</a></li>
-          <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
-        </ul>
-
-        <!-- Actions -->
-        <div class="nav-actions">
-          <div class="profile-menu">
-            <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="profileDropdown">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </button>
-            <div class="profile-dropdown" id="profileDropdown" role="menu" aria-label="Account menu">
-              <div class="profile-dropdown-head">
-                <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
-              </div>
-              <a href="pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
-              <a href="pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
-            </div>
-          </div>
-          <button class="nav-theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-          <button class="dir-toggle nav-dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
-          <a href="pages/login.html" class="nav-btn-book" aria-label="Book an appointment">Book Now</a>
-          <button class="nav-hamburger" id="navHamburger" aria-label="Open mobile menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
+            <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+        <li><a href="pages/home2.html" class="nav-link">Home2</a></li>
+        <li><a href="pages/about.html" class="nav-link">About</a></li>
+        <li><a href="pages/services.html" class="nav-link">Services</a></li>
+        <li><a href="pages/blog.html" class="nav-link">Blog</a></li>
+        <li><a href="pages/pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="profile-menu">
+          <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="profileDropdown">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
           </button>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="nav-mobile-menu" id="navMobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-  <button class="nav-mobile-close" id="navMobileClose" aria-label="Close mobile menu"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-  <a href="index.html" aria-current="page">Home</a>
-  <a href="pages/home2.html">Home2</a>
-  <a href="pages/about.html">About</a>
-  <a href="pages/services.html">Services</a>
-  <a href="pages/blog.html">Blog</a>
-  <a href="pages/pricing.html">Pricing</a>
-  <a href="pages/contact.html">Contact</a>
-            <div class="nav-mobile-actions">
-                <div class="profile-menu">
-                <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobileProfileDropdown">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                </button>
-                <div class="profile-dropdown" id="mobileProfileDropdown" role="menu" aria-label="Account menu">
-                  <div class="profile-dropdown-head">
-                    <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-                    <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
-                  </div>
-                  <a href="pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
-                  <a href="pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
-                </div>
-              </div>
-              <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode"><span class="theme-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</span></button>
-              <button class="dir-toggle nav-dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
-              <a href="pages/login.html" class="nav-btn-book">Book Now</a>
+          <div class="profile-dropdown" id="profileDropdown" role="menu" aria-label="Account menu">
+            <div class="profile-dropdown-head">
+              <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+              <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
             </div>
+            <a href="pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
+            <a href="pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
+          </div>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR"><span class="dir-label">RTL</span></button>
+        <a href="pages/login.html" class="btn-primary nav-cta">Book Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html" class="mobile-nav-link active" aria-current="page">Home</a></li>
+        <li><a href="pages/home2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="pages/about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="pages/services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="pages/blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="pages/pricing.html" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="pages/contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+          <div class="profile-menu">
+          <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobileProfileDropdown">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+          <div class="profile-dropdown" id="mobileProfileDropdown" role="menu" aria-label="Account menu">
+            <div class="profile-dropdown-head">
+              <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+              <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
+            </div>
+            <a href="pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
+            <a href="pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
+          </div>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode"><span class="theme-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</span></button>
+        <button class="dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
+        <a href="pages/login.html" class="btn-primary mobile-nav-link">Book Now</a>
+      </div>
+    </div>
+  </nav>
 
   <main id="main-content">
 
@@ -1975,88 +1590,65 @@
   <!-- ══════════════════════════════════════════════════════
        FOOTER
        ══════════════════════════════════════════════════════ -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-top">
-
-        <!-- Brand Column -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="logo-light.svg" alt="Kora Spa — Serenity, Elevated.">
-          <p class="footer-brand-desc">A sanctuary of serenity offering premium massage therapy, aromatherapy, and personalized wellness experiences crafted to restore, renew, and revive.</p>
-          <div class="footer-social" role="list" aria-label="Social media links">
-            <a href="#" class="footer-social-link" role="listitem" aria-label="Instagram">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            </a>
-            <a href="#" class="footer-social-link" role="listitem" aria-label="Facebook">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-            </a>
-            <a href="#" class="footer-social-link" role="listitem" aria-label="Twitter / X">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-            </a>
-            <a href="#" class="footer-social-link" role="listitem" aria-label="Pinterest">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.17 1.22-5.17s-.31-.62-.31-1.54c0-1.44.84-2.52 1.88-2.52.89 0 1.32.67 1.32 1.47 0 .9-.57 2.24-.86 3.48-.25 1.04.51 1.88 1.52 1.88 1.83 0 3.23-1.93 3.23-4.71 0-2.46-1.77-4.19-4.29-4.19-2.92 0-4.63 2.19-4.63 4.45 0 .88.34 1.83.76 2.34.08.1.09.19.07.3-.08.32-.25 1.04-.28 1.18-.05.19-.16.23-.37.14C5.76 15.33 5 13.75 5 12c0-3.87 2.81-7.42 8.1-7.42 4.25 0 7.56 3.03 7.56 7.08 0 4.22-2.66 7.62-6.36 7.62-1.24 0-2.41-.65-2.81-1.41l-.76 2.86c-.28 1.07-1.02 2.4-1.52 3.22.46.14.94.21 1.44.21 5.52 0 10-4.48 10-10S17.52 2 12 2z"></path></svg>
-            </a>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           </div>
         </div>
-
-        <!-- Services Column -->
-        <div>
-          <h3 class="footer-col-title">Services</h3>
-          <ul class="footer-col-links" role="list">
-            <li><a href="pages/service-details.html">Relaxation Massage</a></li>
-            <li><a href="pages/service-details.html">Deep Tissue Massage</a></li>
-            <li><a href="pages/service-details.html">Aromatherapy</a></li>
-            <li><a href="pages/service-details.html">Hot Stone Therapy</a></li>
-            <li><a href="pages/service-details.html">Swedish Massage</a></li>
-            <li><a href="pages/service-details.html">Luxury Body Ritual</a></li>
-          </ul>
-        </div>
-
-        <!-- Quick Links Column -->
-        <div>
-          <h3 class="footer-col-title">Quick Links</h3>
-          <ul class="footer-col-links" role="list">
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="pages/services.html">All Services</a></li>
             <li><a href="pages/about.html">About Us</a></li>
-            <li><a href="pages/pricing.html">Pricing & Membership</a></li>
-            <li><a href="pages/login.html">Book Now</a></li>
-            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="pages/services.html">Services</a></li>
+            <li><a href="pages/blog.html">Journal</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+            <li><a href="pages/pricing.html">Membership</a></li>
           </ul>
         </div>
-
-        <!-- Contact Column -->
-        <div>
-          <h3 class="footer-col-title">Contact</h3>
-          <div class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <span class="footer-contact-text">24 Serenity Lane, Wellness District<br>San Francisco, CA 94105</span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19 19 0 0 1-8.3-3 19 19 0 0 1-5.9-5.9 19 19 0 0 1-3-8.3A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></span>
-            <span class="footer-contact-text"><a href="tel:+14155550182" style="color:inherit; text-decoration:none;">(415) 555-0182</a></span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-            <span class="footer-contact-text"><a href="mailto:hello@koraspa.com" style="color:inherit; text-decoration:none;">hello@koraspa.com</a></span>
-          </div>
-          <div class="footer-contact-item">
-            <span class="footer-contact-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-            <span class="footer-contact-text">Mon–Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</span>
-          </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="pages/service-details.html">Relaxation Massage</a></li>
+            <li><a href="pages/services.html">Deep Tissue Massage</a></li>
+            <li><a href="pages/services.html">Aromatherapy Massage</a></li>
+            <li><a href="pages/services.html">Hot Stone Therapy</a></li>
+            <li><a href="pages/services.html">Swedish Massage</a></li>
+          </ul>
         </div>
-
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+          </address>
+        </div>
       </div>
-
-      <!-- Footer Bottom -->
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); if(typeof showToast === 'function') { showToast('Thank you for subscribing!','success'); } else { alert('Thank you for subscribing!'); }">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2024 Kora Spa. All rights reserved.</p>
-        <nav class="footer-legal" aria-label="Legal links">
+        <p>&copy; 2026 Kora Spa. All rights reserved.</p>
+        <div class="footer-legal">
           <a href="pages/privacy-policy.html">Privacy Policy</a>
           <a href="pages/terms-conditions.html">Terms &amp; Conditions</a>
-          <a href="pages/privacy-policy.html#cookies">Cookie Policy</a>
+          <a href="pages/terms-conditions.html#cancellation">Cancellation Policy</a>
           <a href="pages/sitemap.html">Sitemap</a>
-        </nav>
+        </div>
       </div>
     </div>
   </footer>
@@ -2076,54 +1668,7 @@
     (function () {
       'use strict';
 
-      /* ----- Navigation scroll behaviour ----- */
-      var nav = document.getElementById('siteNav');
-      function onScroll() {
-        if (window.scrollY > 60) {
-          nav.classList.remove('transparent');
-          nav.classList.add('scrolled');
-        } else {
-          nav.classList.remove('scrolled');
-          nav.classList.add('transparent');
-        }
-      }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-
-      /* ----- Mobile menu ----- */
-      var hamburger = document.getElementById('navHamburger');
-      var mobileMenu = document.getElementById('navMobileMenu');
-      var mobileClose = document.getElementById('navMobileClose');
-
-      hamburger.addEventListener('click', function () {
-        mobileMenu.classList.add('open');
-        hamburger.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
-      });
-      mobileClose.addEventListener('click', function () {
-        mobileMenu.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-
-      /* ----- Theme toggle (fallback if theme.js not loaded) ----- */
-      var themeToggle = document.getElementById('themeToggle');
-      themeToggle.addEventListener('click', function () {
-        var html = document.documentElement;
-        var current = html.getAttribute('data-theme');
-        var next = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        themeToggle.innerHTML = next === 'dark' ? "<svg class=\"inline-icon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg>" : "<svg class=\"inline-icon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>";
-        try { localStorage.setItem('kora-theme', next); } catch(e) {}
-      });
-      /* Restore saved theme */
-      try {
-        var saved = localStorage.getItem('kora-theme');
-        if (saved) {
-          document.documentElement.setAttribute('data-theme', saved);
-          themeToggle.innerHTML = saved === 'dark' ? "<svg class=\"inline-icon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41\"/></svg>" : "<svg class=\"inline-icon\" width=\"1em\" height=\"1em\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z\"/></svg>";
-        }
-      } catch(e) {}
+      /* Navigation, theme, and mobile menu are handled by shared JS. */
 
       /* ----- Scroll-reveal observer ----- */
       if ('IntersectionObserver' in window) {

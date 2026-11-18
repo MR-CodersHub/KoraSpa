@@ -4,107 +4,81 @@
      ============================================================ -->
 
 <div id="scroll-progress" aria-hidden="true"></div>
-
-<nav class="site-nav" id="siteNav" aria-label="Main navigation">
-  <div class="nav-container container">
-    <!-- Brand Logo -->
-    <a href="../index.html" class="nav-logo" aria-label="Kora Spa - Home">
-      <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
-        <g fill="currentColor">
-          <path d="M40 66c-11-7-17-18-13-29 5 6 9 11 13 16 4-5 8-10 13-16 4 11-2 22-13 29z"/>
-          <path d="M40 68c-14-3-22-13-22-25 8 4 16 12 22 20 6-8 14-16 22-20 0 12-8 22-22 25z" opacity="0.5"/>
-        </g>
-      </svg>
-      <span class="nav-logo-stack">
-        <span class="nav-logo-name">Kora Spa</span>
-        <span class="nav-logo-tagline">Serenity, Elevated.</span>
-      </span>
-    </a>
-
-    <!-- Desktop Navigation Links -->
-        <ul class="nav-links" role="list">
-      <li><a href="../index.html" class="nav-link">Home</a></li>
-      <li><a href="../pages/home2.html" class="nav-link">Home2</a></li>
-      <li><a href="../pages/about.html" class="nav-link">About</a></li>
-      <li><a href="../pages/services.html" class="nav-link">Services</a></li>
-      <li><a href="../pages/blog.html" class="nav-link">Blog</a></li>
-      <li><a href="../pages/pricing.html" class="nav-link">Pricing</a></li>
-      <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
-    </ul>
-
-    <!-- Nav Actions (Theme, Direction & Booking CTA) -->
-    <div class="nav-actions">
-      <div class="profile-menu">
-        <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="profileDropdown">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <div class="profile-dropdown" id="profileDropdown" role="menu" aria-label="Account menu">
-          <div class="profile-dropdown-head">
-            <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-            <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
-          </div>
-          <a href="../pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
-          <a href="../pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
-        </div>
-      </div>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="5"></circle>
-          <line x1="12" y1="1" x2="12" y2="3"></line>
-          <line x1="12" y1="21" x2="12" y2="23"></line>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-          <line x1="1" y1="12" x2="3" y2="12"></line>
-          <line x1="21" y1="12" x2="23" y2="12"></line>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-container container">
+      <a href="../index.html" class="nav-logo">
+        <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M40 66c-11-7-17-18-13-29 5 6 9 11 13 16 4-5 8-10 13-16 4 11-2 22-13 29z"/>
+            <path d="M40 68c-14-3-22-13-22-25 8 4 16 12 22 20 6-8 14-16 22-20 0 12-8 22-22 25z" opacity="0.5"/>
+          </g>
         </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-      </button>
-
-      <button class="dir-toggle" type="button" aria-label="Toggle text direction" title="Toggle RTL/LTR"><span class="dir-label">RTL</span></button>
-
-      <a href="../pages/login.html" class="btn-primary nav-cta" id="navAuthBtn">Book Now</a>
-    </div>
-
-    <!-- Mobile Hamburger Toggle -->
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-
-  <!-- Mobile Dropdown Menu -->
-  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
-    <ul>
-      <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
-      <li><a href="../pages/home2.html" class="mobile-nav-link">Home2</a></li>
-      <li><a href="../pages/about.html" class="mobile-nav-link">About</a></li>
-      <li><a href="../pages/services.html" class="mobile-nav-link">Services</a></li>
-      <li><a href="../pages/blog.html" class="mobile-nav-link">Blog</a></li>
-      <li><a href="../pages/pricing.html" class="mobile-nav-link">Pricing</a></li>
-      <li><a href="../pages/contact.html" class="mobile-nav-link">Contact</a></li>
-    </ul>
-    <div class="mobile-menu-footer">
+        <span class="nav-logo-stack">
+          <span class="nav-logo-name">Kora Spa</span>
+          <span class="nav-logo-tagline">Serenity, Elevated.</span>
+        </span>
+      </a>
+            <ul class="nav-links" role="list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="../pages/home2.html" class="nav-link">Home2</a></li>
+        <li><a href="../pages/about.html" class="nav-link">About</a></li>
+        <li><a href="../pages/services.html" class="nav-link">Services</a></li>
+        <li><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+        <li><a href="../pages/pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
         <div class="profile-menu">
-        <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobileProfileDropdown">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <div class="profile-dropdown" id="mobileProfileDropdown" role="menu" aria-label="Account menu">
-          <div class="profile-dropdown-head">
-            <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-            <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
+          <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="profileDropdown">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+          <div class="profile-dropdown" id="profileDropdown" role="menu" aria-label="Account menu">
+            <div class="profile-dropdown-head">
+              <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+              <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
+            </div>
+            <a href="../pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
+            <a href="../pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
           </div>
-          <a href="../pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
-          <a href="../pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
         </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR"><span class="dir-label">RTL</span></button>
+        <a href="../pages/login.html" class="btn-primary nav-cta">Book Now</a>
       </div>
-      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode"><span class="theme-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</span></button>
-      <button class="dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
-      <a href="../pages/login.html" class="btn-primary mobile-nav-link">Book Now</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</nav>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="../pages/home2.html" class="mobile-nav-link">Home2</a></li>
+        <li><a href="../pages/about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="../pages/services.html" class="mobile-nav-link">Services</a></li>
+        <li><a href="../pages/blog.html" class="mobile-nav-link">Blog</a></li>
+        <li><a href="../pages/pricing.html" class="mobile-nav-link">Pricing</a></li>
+        <li><a href="../pages/contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+          <div class="profile-menu">
+          <button class="profile-toggle" type="button" aria-label="Open account menu" aria-haspopup="true" aria-expanded="false" aria-controls="mobileProfileDropdown">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+          <div class="profile-dropdown" id="mobileProfileDropdown" role="menu" aria-label="Account menu">
+            <div class="profile-dropdown-head">
+              <span class="profile-dropdown-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+              <span class="profile-dropdown-meta"><strong>My Account</strong><small>Welcome back, Alexandra</small></span>
+            </div>
+            <a href="../pages/dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span>User Dashboard</span></a>
+            <a href="../pages/admin-dashboard.html" role="menuitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Admin Dashboard</span></a>
+          </div>
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark/light mode"><span class="theme-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg> Dark Mode</span></button>
+        <button class="dir-toggle" type="button" aria-label="Toggle RTL/LTR" title="Toggle direction"><span class="dir-label">RTL</span></button>
+        <a href="../pages/login.html" class="btn-primary mobile-nav-link">Book Now</a>
+      </div>
+    </div>
+  </nav>

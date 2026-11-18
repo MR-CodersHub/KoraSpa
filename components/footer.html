@@ -3,103 +3,68 @@
      Copy or include this component at the bottom of any page.
      ============================================================ -->
 
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Brand & Social Column -->
-      <div class="footer-brand">
-        <img class="footer-logo-img" src="../logo-light.svg" alt="Kora Spa — Serenity, Elevated.">
-        <div class="footer-social" aria-label="Social media channels">
-          <!-- Instagram -->
-          <a href="https://instagram.com" class="social-link" aria-label="Kora Spa on Instagram" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <!-- Facebook -->
-          <a href="https://facebook.com" class="social-link" aria-label="Kora Spa on Facebook" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-          <!-- Pinterest -->
-          <a href="https://pinterest.com" class="social-link" aria-label="Kora Spa on Pinterest" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="12" y1="8" x2="12" y2="16"></line>
-              <line x1="8" y1="12" x2="16" y2="12"></line>
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-          </a>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="../logo-light.svg" alt="Kora Spa — Serenity, Elevated.">
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Facebook" class="social-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/services.html">Services</a></li>
+            <li><a href="../pages/blog.html">Journal</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+            <li><a href="../pages/pricing.html">Membership</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Treatments</h4>
+          <ul class="footer-links">
+            <li><a href="../pages/service-details.html">Relaxation Massage</a></li>
+            <li><a href="../pages/services.html">Deep Tissue Massage</a></li>
+            <li><a href="../pages/services.html">Aromatherapy Massage</a></li>
+            <li><a href="../pages/services.html">Hot Stone Therapy</a></li>
+            <li><a href="../pages/services.html">Swedish Massage</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Visit Us</h4>
+          <address style="font-style:normal; line-height:1.8;">
+            <p>123 Serenity Lane, NY 10001</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
+          </address>
         </div>
       </div>
-
-      <!-- Navigation Links -->
-      <div class="footer-col">
-        <h4 class="footer-heading">Navigate</h4>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../pages/about.html">About Us</a></li>
-          <li><a href="../pages/services.html">Services</a></li>
-          <li><a href="../pages/service-details.html">Service Details</a></li>
-          <li><a href="../pages/blog.html">Wellness Journal</a></li>
-          <li><a href="../pages/contact.html">Contact</a></li>
-          <li><a href="../pages/pricing.html">Membership Plans</a></li>
-        </ul>
+      <div class="footer-newsletter">
+        <div>
+          <h4>Wellness Inspiration, Delivered</h4>
+          <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); if(typeof showToast === 'function') { showToast('Thank you for subscribing!','success'); } else { alert('Thank you for subscribing!'); }">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn-primary">Subscribe</button>
+        </form>
       </div>
-
-      <!-- Treatments Links -->
-      <div class="footer-col">
-        <h4 class="footer-heading">Treatments</h4>
-        <ul class="footer-links">
-          <li><a href="../pages/service-details.html">Relaxation Massage</a></li>
-          <li><a href="../pages/services.html">Deep Tissue Massage</a></li>
-          <li><a href="../pages/services.html">Aromatherapy Massage</a></li>
-          <li><a href="../pages/services.html">Hot Stone Therapy</a></li>
-          <li><a href="../pages/services.html">Swedish Massage</a></li>
-          <li><a href="../pages/services.html">Body Treatments</a></li>
-        </ul>
-      </div>
-
-      <!-- Visit Us / Contact Details -->
-      <div class="footer-col">
-        <h4 class="footer-heading">Visit Us</h4>
-        <address>
-          <p>123 Serenity Lane<br>Wellness District<br>New York, NY 10001</p>
-          <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-          <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
-        </address>
-        <div class="footer-hours">
-          <p>Mon–Fri: 9:00 AM – 8:00 PM</p>
-          <p>Sat–Sun: 10:00 AM – 6:00 PM</p>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kora Spa. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="../pages/privacy-policy.html">Privacy Policy</a>
+          <a href="../pages/terms-conditions.html">Terms &amp; Conditions</a>
+          <a href="../pages/terms-conditions.html#cancellation">Cancellation Policy</a>
+          <a href="../pages/sitemap.html">Sitemap</a>
         </div>
       </div>
     </div>
-
-    <!-- Newsletter Subscription Box -->
-    <div class="footer-newsletter">
-      <h4>Wellness Inspiration Delivered</h4>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Your email address" aria-label="Email for newsletter" required>
-        <button type="submit" class="btn-primary">Subscribe</button>
-      </form>
-    </div>
-
-    <div class="footer-divider"></div>
-
-    <!-- Copyright & Legal -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Kora Spa. All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="../pages/privacy-policy.html">Privacy Policy</a>
-        <a href="../pages/terms-conditions.html">Terms &amp; Conditions</a>
-        <a href="../pages/terms-conditions.html#cancellation">Cancellation Policy</a>
-        <a href="../pages/sitemap.html">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 <!-- Back to Top Button -->
 <button id="back-to-top" aria-label="Back to top" title="Back to top">

@@ -493,8 +493,6 @@
 <body data-page="coming-soon">
 
   <div id="scroll-progress" aria-hidden="true"></div>
-
-  <!-- NAVIGATION -->
   <nav class="site-nav" id="siteNav">
     <div class="nav-container container">
       <a href="../index.html" class="nav-logo">
@@ -537,7 +535,7 @@
           <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
         <button class="dir-toggle" aria-label="Toggle RTL/LTR"><span class="dir-label">RTL</span></button>
-        <a href="login.html" class="btn-primary nav-cta" id="navAuthBtn">Book Now</a>
+        <a href="login.html" class="btn-primary nav-cta">Book Now</a>
       </div>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -894,11 +892,10 @@
           <h4 class="footer-heading">Treatments</h4>
           <ul class="footer-links">
             <li><a href="service-details.html">Relaxation Massage</a></li>
-            <li><a href="services.html#deep-tissue">Deep Tissue Massage</a></li>
-            <li><a href="services.html#aromatherapy">Aromatherapy Massage</a></li>
-            <li><a href="services.html#hot-stone">Hot Stone Therapy</a></li>
-            <li><a href="services.html#swedish">Swedish Massage</a></li>
-            <li><a href="services.html#body">Body Treatments</a></li>
+            <li><a href="services.html">Deep Tissue Massage</a></li>
+            <li><a href="services.html">Aromatherapy Massage</a></li>
+            <li><a href="services.html">Hot Stone Therapy</a></li>
+            <li><a href="services.html">Swedish Massage</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -907,7 +904,6 @@
             <p>123 Serenity Lane, NY 10001</p>
             <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
             <p><a href="mailto:hello@koraspa.com">hello@koraspa.com</a></p>
-            <p>Mon–Fri: 9AM–8PM | Sat–Sun: 10AM–6PM</p>
           </address>
         </div>
       </div>
@@ -916,14 +912,14 @@
           <h4>Wellness Inspiration, Delivered</h4>
           <p>Receive spa updates, wellness guides, and member-exclusive offers.</p>
         </div>
-        <form class="newsletter-form">
+        <form class="newsletter-form" onsubmit="event.preventDefault(); if(typeof showToast === 'function') { showToast('Thank you for subscribing!','success'); } else { alert('Thank you for subscribing!'); }">
           <input type="email" placeholder="Your email address" required>
           <button type="submit" class="btn-primary">Subscribe</button>
         </form>
       </div>
       <div class="footer-divider"></div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Kora Spa. All rights reserved. · <em>Sanctuary Preview</em></p>
+        <p>&copy; 2026 Kora Spa. All rights reserved.</p>
         <div class="footer-legal">
           <a href="privacy-policy.html">Privacy Policy</a>
           <a href="terms-conditions.html">Terms &amp; Conditions</a>
