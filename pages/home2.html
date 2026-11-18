@@ -31,9 +31,9 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: center;
+      padding-top: var(--nav-height, 80px);
       overflow: hidden;
-      text-align: center;
+      text-align: left;
     }
     .h2-hero-bg {
       position: absolute;
@@ -41,87 +41,218 @@
       background-image: url('https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=1920&q=85');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      transform: scale(1.05);
+      transform: scale(1.06);
       transition: transform 8s ease;
     }
     .h2-hero:hover .h2-hero-bg { transform: scale(1); }
     .h2-hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(160deg, rgba(20,30,20,0.72) 0%, rgba(45,74,50,0.60) 50%, rgba(10,15,10,0.80) 100%);
+      background:
+        linear-gradient(90deg, rgba(11, 19, 12, 0.92) 0%, rgba(11, 19, 12, 0.68) 46%, rgba(11, 19, 12, 0.24) 100%),
+        linear-gradient(180deg, rgba(26, 42, 22, 0.42) 0%, rgba(11, 19, 12, 0.2) 55%, rgba(11, 19, 12, 0.62) 100%);
     }
     .h2-hero-content {
       position: relative;
       z-index: 2;
-      max-width: 820px;
+      max-width: var(--container-max, 1280px);
+      margin: 0 auto;
       padding: 0 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+      align-items: center;
       color: var(--color-white, #fff);
     }
+    .h2-hero-copy { max-width: 620px; }
     .h2-hero-tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.65rem;
       font-family: var(--font-sans);
       font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--color-champagne, #C9A96E);
-      border: 1px solid rgba(201,169,110,0.4);
-      padding: 0.45rem 1.2rem;
+      color: var(--color-champagne-light, #E8D5B0);
+      border: 1px solid rgba(201, 169, 110, 0.45);
+      padding: 0.5rem 1.25rem;
       border-radius: 50px;
       margin-bottom: 1.8rem;
       backdrop-filter: blur(8px);
-      background: rgba(201,169,110,0.08);
+      background: rgba(201, 169, 110, 0.1);
     }
     .h2-hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(3.2rem, 6.4vw, 6rem);
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
       color: #fff;
-      margin-bottom: 1.4rem;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.28);
     }
     .h2-hero-title em {
+      display: block;
       font-style: italic;
-      color: var(--color-champagne, #C9A96E);
+      font-weight: 500;
+      color: var(--color-champagne-light, #E8D5B0);
     }
     .h2-hero-subtitle {
       font-family: var(--font-sans);
-      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-size: clamp(1rem, 1.6vw, 1.125rem);
       font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.88);
-      max-width: 620px;
-      margin: 0 auto 2.5rem;
+      line-height: 1.85;
+      color: rgba(250, 248, 243, 0.88);
+      max-width: 540px;
+      margin: 0 0 2.2rem;
     }
     .h2-hero-actions {
       display: flex;
-      gap: 1rem;
-      justify-content: center;
+      gap: 0.9rem;
       flex-wrap: wrap;
+    }
+    .h2-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 52px;
+      padding: 0.9rem 1.8rem;
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-decoration: none;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .h2-hero-btn:hover { transform: translateY(-2px); }
+    .h2-hero-btn-primary {
+      background: var(--color-champagne, #C9A96E);
+      border: 1px solid var(--color-champagne, #C9A96E);
+      color: #111810;
+      box-shadow: 0 12px 30px rgba(201, 169, 110, 0.22);
+    }
+    .h2-hero-btn-primary:hover {
+      background: var(--color-champagne-light, #E8D5B0);
+      border-color: var(--color-champagne-light, #E8D5B0);
+    }
+    .h2-hero-btn-secondary {
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+    .h2-hero-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+    .h2-hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2.4rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: rgba(250, 248, 243, 0.78);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+    .h2-hero-trust-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .h2-hero-trust-item svg {
+      color: var(--color-champagne-light, #E8D5B0);
+      flex-shrink: 0;
+    }
+    .h2-hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .h2-hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 118%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(201, 169, 110, 0.32);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .h2-hero-image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: h2FadeUp 1s ease 0.65s forwards;
+    }
+    .h2-hero-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border: 1px solid rgba(201, 169, 110, 0.6);
+      border-radius: calc(var(--radius-xl, 24px) + 8px);
+      pointer-events: none;
+    }
+    .h2-hero-image {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius-xl, 24px);
+      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.5);
+    }
+    .h2-hero-image-caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.7rem 1.05rem;
+      background: rgba(17, 24, 16, 0.82);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      border-radius: 50px;
+      color: var(--color-champagne-light, #E8D5B0);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .h2-hero-image-caption-line {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--color-champagne, #C9A96E);
+      flex-shrink: 0;
     }
     .h2-hero-scroll {
       position: absolute;
       bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: max(2rem, calc((100vw - var(--container-max, 1280px)) / 2 + 2rem));
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
+      color: rgba(250, 248, 243, 0.7);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       z-index: 2;
-      animation: bounce 2s ease infinite;
+      animation: h2Scroll 2s ease infinite;
     }
-    .h2-hero-scroll svg { animation: fadeDown 2s ease infinite; }
-    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
-    @keyframes fadeDown { 0%,100%{opacity:0.4} 50%{opacity:1} }
+    @keyframes h2Scroll { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+    @keyframes h2FadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 
     /* MASSAGE COLLECTION */
     .massage-collection {
@@ -658,12 +789,36 @@
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
+      .h2-hero {
+        min-height: auto;
+        padding: calc(var(--nav-height, 80px) + 3rem) 0 4rem;
+      }
+      .h2-hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .h2-hero-copy { max-width: 100%; }
+      .h2-hero-visual { justify-content: center; }
+      .h2-hero-visual::before { width: 105%; }
+      .h2-hero-image-frame { max-width: 360px; }
+      .h2-hero-scroll { display: none; }
       .massage-scroll-track { grid-template-columns: repeat(3, 1fr); }
       .therapists-grid { grid-template-columns: repeat(2, 1fr); }
       .membership-grid { grid-template-columns: 1fr; }
       .membership-card.popular { transform: none; }
     }
     @media (max-width: 768px) {
+      .h2-hero-content { padding: 0 1.5rem; }
+      .h2-hero-image-frame { max-width: 100%; }
+      .h2-hero-image { aspect-ratio: 4 / 3; }
+      .h2-hero-visual::before { display: none; }
+      .h2-hero-image-caption {
+        bottom: 1rem;
+        left: 1rem;
+        font-size: 0.6rem;
+        padding: 0.55rem 0.85rem;
+      }
+      .h2-hero-trust { gap: 1rem; flex-wrap: wrap; }
       .pw-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .pw-image-badge { right: 1rem; bottom: -1rem; }
       .massage-scroll-track {
@@ -673,6 +828,10 @@
       .reserve-contacts { gap: 1.5rem; }
     }
     @media (max-width: 480px) {
+      .h2-hero-title { font-size: clamp(2.6rem, 12vw, 3.4rem); }
+      .h2-hero-actions { flex-direction: column; align-items: stretch; }
+      .h2-hero-btn { width: 100%; }
+      .h2-hero-trust { font-size: 0.72rem; }
       .massage-scroll-track { grid-template-columns: 1fr; }
     }
   </style>
@@ -765,26 +924,53 @@
     <section class="h2-hero" aria-label="Massage Therapy Hero">
       <div class="h2-hero-bg" aria-hidden="true"></div>
       <div class="h2-hero-overlay" aria-hidden="true"></div>
-      <div class="h2-hero-content" data-animate="fade-up">
-        <div class="h2-hero-tag">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-          Massage Therapy · Personalized Wellness
+      <div class="h2-hero-content">
+        <div class="h2-hero-copy" data-animate="fade-up">
+          <div class="h2-hero-tag">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 15 9l7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
+            Massage Therapy · Personalized Wellness
+          </div>
+          <h1 class="h2-hero-title">Restore.<br><em>Revive.</em><br>Renew.</h1>
+          <p class="h2-hero-subtitle">Every session at Kora Spa is a deeply personalized journey into relaxation, guided by certified therapists who understand your body's unique needs.</p>
+          <div class="h2-hero-actions">
+            <a href="services.html" class="h2-hero-btn h2-hero-btn-primary">
+              Discover Our Treatments
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#therapists" class="h2-hero-btn h2-hero-btn-secondary">Meet Our Therapists</a>
+          </div>
+          <div class="h2-hero-trust" role="list">
+            <div class="h2-hero-trust-item" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              Certified Therapists
+            </div>
+            <div class="h2-hero-trust-item" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 15 9l7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
+              Personalized Care
+            </div>
+            <div class="h2-hero-trust-item" role="listitem">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              Est. 2018
+            </div>
+          </div>
         </div>
-        <h1 class="h2-hero-title">Restore. <em>Revive.</em> Renew.</h1>
-        <p class="h2-hero-subtitle">Every session at Kora Spa is a deeply personalized journey into relaxation, guided by certified therapists who understand your body's unique needs.</p>
-        <div class="h2-hero-actions">
-          <a href="services.html" class="btn-primary" style="background:var(--color-champagne,#C9A96E); border-color:var(--color-champagne,#C9A96E); color:#fff; padding: 0.9rem 2rem; border-radius: 50px; text-decoration:none; font-weight:600; font-size:0.95rem; letter-spacing:0.04em; display:inline-flex; align-items:center; gap:0.5rem; transition: all 0.25s ease;">
-            Discover Our Treatments
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#therapists" class="btn-secondary" style="border: 2px solid rgba(255,255,255,0.5); color:#fff; padding: 0.9rem 2rem; border-radius: 50px; text-decoration:none; font-weight:600; font-size:0.95rem; letter-spacing:0.04em; display:inline-flex; align-items:center; gap:0.5rem; transition: all 0.25s ease; backdrop-filter:blur(8px); background:rgba(255,255,255,0.08);">
-            Meet Our Therapists
-          </a>
+
+        <div class="h2-hero-visual">
+          <div class="h2-hero-image-frame">
+            <img class="h2-hero-image"
+                 src="https://i.pinimg.com/1200x/21/57/f4/2157f4a276dfccbbb9cc5c4f404f961f.jpg"
+                 alt="Serene spa setting at Kora Spa"
+                 loading="eager" fetchpriority="high" decoding="async">
+            <div class="h2-hero-image-caption" aria-hidden="true">
+              <span class="h2-hero-image-caption-line"></span>
+              <span>Serenity, Elevated.</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="h2-hero-scroll" aria-hidden="true">
-        <span>Scroll</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        <span>Scroll to explore</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
       </div>
     </section>
 
