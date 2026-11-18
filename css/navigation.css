@@ -612,3 +612,12 @@
     height: 2.25rem;
   }
 }
+
+/* Keep the lockup, actions, and hamburger inside the viewport on 320px phones. */
+@media (max-width: 380px) {
+  .nav-container { gap: 0.5rem; }
+  .nav-logo { gap: 0.55rem; }
+  .nav-logo-mark { width: 2.35rem; height: 2.35rem; }
+  .nav-logo-name { font-size: 1.4rem; }
+  .nav-actions { gap: 0.3rem; }
+}
