@@ -68,12 +68,9 @@
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(26, 42, 22, 0.72) 0%,
-        rgba(26, 42, 22, 0.55) 50%,
-        rgba(26, 42, 22, 0.35) 100%
-      );
+      background:
+        linear-gradient(90deg, rgba(11, 19, 12, 0.9) 0%, rgba(11, 19, 12, 0.64) 44%, rgba(11, 19, 12, 0.22) 100%),
+        linear-gradient(180deg, rgba(26, 42, 22, 0.45) 0%, rgba(26, 42, 22, 0.2) 55%, rgba(11, 19, 12, 0.55) 100%);
     }
     .hero-content {
       position: relative;
@@ -83,8 +80,8 @@
       padding: 0 2rem;
       width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-      gap: clamp(2rem, 5vw, 5rem);
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
       align-items: center;
     }
     .hero-inner {
@@ -94,16 +91,70 @@
       position: relative;
       display: flex;
       justify-content: center;
+      align-items: center;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 118%;
+      aspect-ratio: 1;
+      border: 1px solid rgba(201, 169, 110, 0.32);
+      border-radius: 50%;
+      opacity: 0.65;
+      pointer-events: none;
+    }
+    .hero-image-frame {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: fadeUp 1s ease 0.85s forwards;
+    }
+    .hero-image-frame::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border: 1px solid rgba(201, 169, 110, 0.55);
+      border-radius: calc(var(--radius-xl, 24px) + 8px);
+      pointer-events: none;
     }
     .hero-image {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      max-width: 420px;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 3 / 4;
       object-fit: cover;
       object-position: center;
       border-radius: var(--radius-xl, 24px);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      box-shadow: var(--shadow-xl);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.48);
+    }
+    .hero-image-caption {
+      position: absolute;
+      z-index: 2;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1.1rem;
+      background: rgba(17, 24, 16, 0.82);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 169, 110, 0.38);
+      border-radius: 50px;
+      color: var(--color-champagne-light);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hero-image-caption-line {
+      width: 1.6rem;
+      height: 1px;
+      background: var(--color-champagne);
+      flex-shrink: 0;
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -131,22 +182,29 @@
     }
     .hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-size: clamp(3rem, 6.2vw, 5.6rem);
       font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
       color: #fff;
       margin-bottom: 1.5rem;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeUp 0.9s ease 0.5s forwards;
     }
+    .hero-title-accent {
+      display: block;
+      color: var(--color-champagne-light);
+      font-style: italic;
+      font-weight: 500;
+    }
     .hero-subtitle {
       font-family: var(--font-sans);
-      font-size: 1.0625rem;
+      font-size: 1.125rem;
       font-weight: 300;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.85);
-      max-width: 520px;
+      line-height: 1.8;
+      color: rgba(250, 248, 243, 0.88);
+      max-width: 540px;
       margin-bottom: 2.5rem;
       opacity: 0;
       transform: translateY(20px);
@@ -956,8 +1014,10 @@
         grid-template-columns: 1fr;
         gap: 2.5rem;
       }
-      .hero-visual { justify-content: flex-start; }
-      .hero-image { max-width: 320px; aspect-ratio: 4 / 3; }
+      .hero-visual { justify-content: center; }
+      .hero-visual::before { width: 105%; }
+      .hero-image-frame { max-width: 340px; }
+      .hero-image { aspect-ratio: 4 / 5; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-btn-book { display: none; }
@@ -988,7 +1048,15 @@
       .booking-step:not(:last-child)::after { display: none; }
     }
     @media (max-width: 768px) {
-      .hero-image { max-width: 100%; aspect-ratio: 4 / 3; }
+      .hero-image-frame { max-width: 100%; }
+      .hero-image { aspect-ratio: 4 / 3; }
+      .hero-visual::before { display: none; }
+      .hero-image-caption {
+        bottom: 1rem;
+        left: 1rem;
+        font-size: 0.6rem;
+        padding: 0.55rem 0.85rem;
+      }
       .treatments-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
       .booking-timeline { grid-template-columns: 1fr; }
@@ -1152,7 +1220,7 @@
           <div class="hero-eyebrow" aria-hidden="true">Kora Spa · Est. 2018</div>
 
           <!-- Headline -->
-          <h1>A Moment of<br>Pure Tranquility</h1>
+          <h1>A Moment of<span class="hero-title-accent">Pure Tranquility</span></h1>
 
           <!-- Subtitle -->
           <p class="hero-subtitle">
@@ -1191,10 +1259,16 @@
         </div>
 
         <div class="hero-visual">
-          <img class="hero-image"
-               src="https://i.pinimg.com/1200x/00/77/7f/00777f19aae544e134e7ac6a36bf0dcf.jpg"
-               alt="Serene spa setting at Kora Spa"
-               loading="eager" fetchpriority="high" decoding="async">
+          <div class="hero-image-frame">
+            <img class="hero-image"
+                 src="https://i.pinimg.com/1200x/00/77/7f/00777f19aae544e134e7ac6a36bf0dcf.jpg"
+                 alt="Serene spa setting at Kora Spa"
+                 loading="eager" fetchpriority="high" decoding="async">
+            <div class="hero-image-caption" aria-hidden="true">
+              <span class="hero-image-caption-line"></span>
+              <span>Serenity, Elevated.</span>
+            </div>
+          </div>
         </div>
       </div>
 
