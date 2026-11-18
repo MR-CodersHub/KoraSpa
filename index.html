@@ -57,11 +57,10 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
+      background-image: url('https://i.pinimg.com/1200x/0c/d8/32/0cd8327afa7fab5bd6fa43ce74962eae.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       transform: scale(1.04);
       transition: transform 8s ease;
     }
@@ -83,9 +82,28 @@
       margin: 0 auto;
       padding: 0 2rem;
       width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
     }
     .hero-inner {
       max-width: 680px;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      border-radius: var(--radius-xl, 24px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      box-shadow: var(--shadow-xl);
     }
     .hero-eyebrow {
       display: inline-flex;
@@ -930,6 +948,16 @@
       .nav-btn-book { padding: 0.55rem 1rem; }
     }
     @media (max-width: 1024px) {
+      .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height, 80px) + 3rem) 0 4rem;
+      }
+      .hero-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-visual { justify-content: flex-start; }
+      .hero-image { max-width: 320px; aspect-ratio: 4 / 3; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
       .nav-btn-book { display: none; }
@@ -960,6 +988,7 @@
       .booking-step:not(:last-child)::after { display: none; }
     }
     @media (max-width: 768px) {
+      .hero-image { max-width: 100%; aspect-ratio: 4 / 3; }
       .treatments-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
       .booking-timeline { grid-template-columns: 1fr; }
@@ -1114,10 +1143,7 @@
          SECTION 1: HERO
          ══════════════════════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero — A Moment of Tranquility">
-      <img class="hero-bg"
-           src="https://i.pinimg.com/1200x/00/77/7f/00777f19aae544e134e7ac6a36bf0dcf.jpg"
-           alt="Serene spa environment"
-           loading="eager" fetchpriority="high" decoding="async">
+      <div class="hero-bg" role="img" aria-label="Serene spa environment"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="hero-content">
@@ -1162,6 +1188,13 @@
               <span class="hero-trust-text">Est. 2018</span>
             </div>
           </div>
+        </div>
+
+        <div class="hero-visual">
+          <img class="hero-image"
+               src="https://i.pinimg.com/1200x/00/77/7f/00777f19aae544e134e7ac6a36bf0dcf.jpg"
+               alt="Serene spa setting at Kora Spa"
+               loading="eager" fetchpriority="high" decoding="async">
         </div>
       </div>
 
