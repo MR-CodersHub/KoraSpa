@@ -500,7 +500,7 @@
 
 .mobile-nav-link.btn-primary {
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: #111810;
   text-align: center;
   border-radius: var(--radius-pill);
   font-weight: 700;

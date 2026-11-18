@@ -46,14 +46,14 @@
       transition: color 0.2s ease;
     }
     .breadcrumb-item a:hover {
-      color: var(--color-forest, #2D4A32);
+      color: var(--color-accent-text, #8A642F);
     }
     .breadcrumb-separator {
       color: var(--color-text-muted, #7A6E65);
       opacity: 0.6;
     }
     .breadcrumb-item.active {
-      color: var(--color-forest, #2D4A32);
+      color: var(--color-accent-text, #8A642F);
       font-weight: 500;
     }
 
@@ -353,7 +353,7 @@
     }
     .about-therapist-role {
       font-size: 0.85rem;
-      color: var(--color-champagne-dark, #A07840);
+      color: var(--color-accent-text, #8A642F);
       font-weight: 500;
       margin-bottom: 0.75rem;
     }
@@ -379,7 +379,7 @@
     }
     .about-therapist-training {
       font-size: 0.78rem;
-      color: var(--color-taupe, #8B7355);
+      color: var(--color-text-muted, #7A6E65);
       font-style: italic;
       margin-bottom: 0.5rem;
     }
@@ -431,7 +431,7 @@
       font-family: var(--font-serif);
       font-size: 3rem;
       font-weight: 700;
-      color: var(--color-champagne-light, #E8D5B0);
+      color: var(--color-accent-text, #8A642F);
       line-height: 1;
       margin-bottom: 0.5rem;
     }
@@ -529,7 +529,7 @@
       align-items: center;
       gap: 0.6rem;
       background: var(--color-champagne, #C9A96E);
-      color: #fff;
+      color: #111810;
       text-decoration: none;
       padding: 1rem 2.5rem;
       border-radius: 50px;
@@ -541,6 +541,32 @@
     .commitment-btn:hover {
       background: var(--color-champagne-dark, #A07840);
       transform: translateY(-2px);
+    }
+
+    /* DARK THEME CONTRAST OVERRIDES */
+    [data-theme="dark"] .breadcrumb-item a:hover,
+    [data-theme="dark"] .breadcrumb-item.active,
+    [data-theme="dark"] .about-story-text p.lead,
+    [data-theme="dark"] .stat-bubble strong,
+    [data-theme="dark"] .philosophy-card h3,
+    [data-theme="dark"] .philosophy-quote,
+    [data-theme="dark"] .env-item h3,
+    [data-theme="dark"] .env-feature-point,
+    [data-theme="dark"] .about-therapist-name,
+    [data-theme="dark"] .about-chip,
+    [data-theme="dark"] .step-title {
+      color: var(--color-accent-on-dark);
+    }
+    [data-theme="dark"] .step-number {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="dark"] .commitment-section,
+    [data-theme="dark"] .commitment-title,
+    [data-theme="dark"] .commitment-card h3 {
+      color: #FAF8F3;
+    }
+    [data-theme="dark"] .commitment-subtitle {
+      color: var(--color-champagne-light);
     }
 
     /* RESPONSIVE */

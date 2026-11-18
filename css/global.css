@@ -167,14 +167,14 @@ p:last-child { margin-bottom: 0; }
 
 .btn-primary {
   background: var(--color-champagne);
-  color: var(--color-forest);
+  color: #111810;
   border: 2px solid var(--color-champagne);
 }
 
 .btn-primary:hover {
   background: var(--color-champagne-dark);
   border-color: var(--color-champagne-dark);
-  color: var(--color-white);
+  color: #111810;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
