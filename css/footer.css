@@ -58,6 +58,20 @@
   margin-bottom: 1.15rem;
 }
 
+.footer-logo {
+  display: inline-flex;
+  margin-bottom: 1.15rem;
+}
+
+.footer-logo,
+.site-footer .nav-logo:hover {
+  color: var(--color-champagne-light);
+}
+
+.site-footer .nav-logo-tagline {
+  color: rgba(250, 248, 243, 0.72);
+}
+
 .footer-brand-desc {
   font-size: 0.88rem;
   line-height: 1.65;
@@ -127,7 +141,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-champagne);
+  color: var(--color-accent-on-dark);
   margin: 0 0 1.35rem;
 }
 
@@ -150,7 +164,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--color-champagne);
+  color: var(--color-accent-on-dark);
   transform: translateX(3px);
 }
 
@@ -277,7 +291,7 @@
 }
 
 .footer-legal a:hover {
-  color: var(--color-champagne);
+  color: var(--color-accent-on-dark);
 }
 
 /* ── Floating Back to Top Button ── */
