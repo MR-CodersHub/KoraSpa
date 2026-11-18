@@ -25,43 +25,38 @@
        ABOUT US PAGE SPECIFIC STYLES
     ============================================= */
 
-    /* BREADCRUMB */
-    .about-breadcrumb {
-      background: var(--color-beige, #F5EFE7);
-      margin-top: var(--nav-height);
-      padding: 1rem 0;
-      border-bottom: 1px solid var(--color-border, #E8DDD4);
-    }
-    .breadcrumb-list {
+    /* HERO BREADCRUMB */
+    .about-story-header .breadcrumb {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
       font-size: 0.85rem;
+      font-family: var(--font-sans);
+      margin-bottom: 1.25rem;
     }
-    .breadcrumb-item a {
-      color: var(--color-text-muted, #7A6E65);
+    .about-story-header .breadcrumb a {
+      color: rgba(250, 248, 243, 0.75);
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color var(--transition-fast);
     }
-    .breadcrumb-item a:hover {
-      color: var(--color-accent-text, #8A642F);
+    .about-story-header .breadcrumb a:hover {
+      color: var(--color-champagne);
+      text-decoration: underline;
     }
-    .breadcrumb-separator {
-      color: var(--color-text-muted, #7A6E65);
-      opacity: 0.6;
+    .about-story-header .breadcrumb-separator {
+      color: rgba(250, 248, 243, 0.45);
+      user-select: none;
     }
-    .breadcrumb-item.active {
-      color: var(--color-accent-text, #8A642F);
+    .about-story-header .breadcrumb-current {
+      color: #FAF8F3;
       font-weight: 500;
     }
 
     /* SECTION 1: STORY HEADER & CONTENT */
     .about-story-header {
       position: relative;
-      min-height: 50vh;
+      min-height: 52vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -70,6 +65,8 @@
       background-size: cover;
       background-position: center;
       overflow: hidden;
+      padding-top: calc(var(--nav-height) + 2.5rem);
+      padding-bottom: 4rem;
     }
     .about-story-overlay {
       position: absolute;
@@ -545,8 +542,8 @@
     }
 
     /* DARK THEME CONTRAST OVERRIDES */
-    [data-theme="dark"] .breadcrumb-item a:hover,
-    [data-theme="dark"] .breadcrumb-item.active,
+    [data-theme="dark"] .about-story-header .breadcrumb a:hover,
+    [data-theme="dark"] .about-story-header .breadcrumb-current,
     [data-theme="dark"] .about-story-text p.lead,
     [data-theme="dark"] .stat-bubble strong,
     [data-theme="dark"] .philosophy-card h3,
@@ -677,23 +674,17 @@
     </div>
   </nav>
 
-  <!-- BREADCRUMB -->
-  <div class="about-breadcrumb" aria-label="Breadcrumb">
-    <div class="container">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
-        <li class="breadcrumb-separator">/</li>
-        <li class="breadcrumb-item active" aria-current="page">About Us</li>
-      </ol>
-    </div>
-  </div>
-
   <main>
 
     <!-- ===================== SECTION 1: OUR STORY ===================== -->
     <header class="about-story-header" aria-label="About Kora Spa Story Header">
       <div class="about-story-overlay" aria-hidden="true"></div>
       <div class="about-story-header-content" data-animate="fade-up">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">About Us</span>
+        </nav>
         <span class="about-tag">ABOUT US</span>
         <h1 class="about-story-title">Our Story of Serenity</h1>
       </div>
