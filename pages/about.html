@@ -25,88 +25,276 @@
        ABOUT US PAGE SPECIFIC STYLES
     ============================================= */
 
-    /* HERO BREADCRUMB */
-    .about-story-header .breadcrumb {
+    /* =============================================
+       HERO
+    ============================================= */
+    .about-hero {
+      position: relative;
+      padding: calc(var(--nav-height) + 2.5rem) 0 5rem;
+      background: var(--color-ivory, #FAF8F3);
+      overflow: hidden;
+    }
+    .about-hero-glow {
+      position: absolute;
+      top: -20rem;
+      inset-inline-end: -14rem;
+      width: 48rem;
+      height: 48rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.22) 0%, rgba(201, 169, 110, 0.08) 42%, transparent 70%);
+      pointer-events: none;
+    }
+    .about-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .about-hero .breadcrumb {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
+      flex-wrap: wrap;
+      gap: 0.55rem;
       font-family: var(--font-sans);
-      margin-bottom: 1.25rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+      margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
     }
-    .about-story-header .breadcrumb a {
-      color: rgba(250, 248, 243, 0.75);
+    [dir="rtl"] .about-hero .breadcrumb {
+      flex-direction: row;
+    }
+    .about-hero .breadcrumb a {
+      color: var(--color-text-muted);
       text-decoration: none;
       transition: color var(--transition-fast);
     }
-    .about-story-header .breadcrumb a:hover {
-      color: var(--color-champagne);
-      text-decoration: underline;
+    .about-hero .breadcrumb a:hover {
+      color: var(--color-accent-text);
     }
-    .about-story-header .breadcrumb-separator {
-      color: rgba(250, 248, 243, 0.45);
+    .about-hero .breadcrumb-separator {
+      color: var(--color-accent-text);
       user-select: none;
     }
-    .about-story-header .breadcrumb-current {
-      color: #FAF8F3;
+    .about-hero .breadcrumb-current {
+      color: var(--color-forest-text);
       font-weight: 500;
     }
-
-    /* SECTION 1: STORY HEADER & CONTENT */
-    .about-story-header {
-      position: relative;
-      min-height: 52vh;
-      display: flex;
+    .about-hero-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: end;
+      margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+    }
+    .about-hero-kicker {
+      display: inline-flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      background-image: url('https://images.unsplash.com/photo-1617381654651-a6e73b646e0a?w=1920&q=85');
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-      padding-top: calc(var(--nav-height) + 2.5rem);
-      padding-bottom: 4rem;
-    }
-    .about-story-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(20,30,20,0.75) 0%, rgba(45,74,50,0.85) 100%);
-    }
-    .about-story-header-content {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 1.5rem;
-      max-width: 800px;
-      color: #fff;
-    }
-    .about-tag {
-      display: inline-block;
+      gap: 0.9rem;
       font-family: var(--font-sans);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--color-accent-text);
-      border: 1px solid rgba(201,169,110,0.5);
-      padding: 0.4rem 1.2rem;
-      border-radius: 50px;
-      margin-bottom: 1.5rem;
-      backdrop-filter: blur(6px);
-      background: rgba(201,169,110,0.1);
+      margin-bottom: 1.35rem;
     }
-    .about-story-title {
+    .about-hero-kicker::before {
+      content: '';
+      width: 2.6rem;
+      height: 1px;
+      background: var(--color-champagne);
+      flex-shrink: 0;
+    }
+    .about-hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 700;
-      color: #fff;
+      font-size: clamp(2.75rem, 6.2vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      color: var(--color-forest-text);
       margin: 0;
-      line-height: 1.2;
+    }
+    .about-hero-title em {
+      display: block;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--color-accent-text);
+    }
+    .about-hero-intro {
+      padding-bottom: 0.35rem;
+    }
+    .about-hero-intro p {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--color-text-muted);
+      margin: 0 0 1.5rem;
+      max-width: 36ch;
+    }
+    .about-hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--color-forest-text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-champagne);
+      padding-bottom: 0.4rem;
+      transition: gap var(--transition-fast), color var(--transition-fast);
+    }
+    .about-hero-link:hover {
+      gap: 0.95rem;
+      color: var(--color-accent-text);
+    }
+    .about-hero-link svg {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+    [dir="rtl"] .about-hero-link svg {
+      transform: scaleX(-1);
+    }
+    .about-hero-media {
+      position: relative;
+      border-radius: 28px;
+      box-shadow: 0 28px 70px rgba(45, 74, 50, 0.18);
+    }
+    .about-hero-media::before {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border: 1px solid rgba(201, 169, 110, 0.45);
+      border-radius: 42px;
+      pointer-events: none;
+    }
+    .about-hero-media img {
+      display: block;
+      width: 100%;
+      height: clamp(240px, 38vw, 480px);
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+    }
+    .about-hero-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(17, 24, 16, 0) 52%, rgba(17, 24, 16, 0.6) 100%);
+      pointer-events: none;
+    }
+    .about-hero-badge {
+      position: absolute;
+      z-index: 2;
+      inset-inline-start: 1.5rem;
+      bottom: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.7rem 1.15rem;
+      background: rgba(17, 24, 16, 0.72);
+      border: 1px solid rgba(201, 169, 110, 0.38);
+      border-radius: 50px;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--color-text-on-dark);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .about-hero-badge-line {
+      width: 1.6rem;
+      height: 1px;
+      background: var(--color-champagne);
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .about-hero-media {
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.5);
+    }
+    [data-theme="dark"] .about-hero-glow {
+      opacity: 0.6;
+    }
+    @media (max-width: 900px) {
+      .about-hero {
+        padding: calc(var(--nav-height) + 1.75rem) 0 3.5rem;
+      }
+      .about-hero .breadcrumb {
+        margin-bottom: 2rem;
+      }
+      .about-hero-top {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+      .about-hero-intro p {
+        max-width: 54ch;
+      }
+      .about-hero-media img {
+        height: clamp(280px, 52vw, 420px);
+      }
+      .about-hero-media::before {
+        inset: -10px;
+        border-radius: 36px;
+      }
+    }
+    @media (max-width: 480px) {
+      .about-hero {
+        padding: calc(var(--nav-height) + 1.25rem) 0 3rem;
+      }
+      .about-hero .breadcrumb {
+        font-size: 0.74rem;
+        margin-bottom: 1.75rem;
+      }
+      .about-hero-kicker {
+        font-size: 0.62rem;
+        letter-spacing: 0.22em;
+        gap: 0.65rem;
+      }
+      .about-hero-kicker::before {
+        width: 1.8rem;
+      }
+      .about-hero-title {
+        font-size: clamp(2.35rem, 11vw, 3.1rem);
+      }
+      .about-hero-intro p {
+        font-size: 0.95rem;
+      }
+      .about-hero-media {
+        border-radius: 22px;
+      }
+      .about-hero-media img {
+        height: 62vw;
+        min-height: 220px;
+        border-radius: 22px;
+      }
+      .about-hero-media::after {
+        border-radius: 22px;
+      }
+      .about-hero-media::before {
+        display: none;
+      }
+      .about-hero-badge {
+        inset-inline-start: 1rem;
+        bottom: 1rem;
+        padding: 0.6rem 0.9rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.14em;
+      }
+      .about-hero-badge-line {
+        width: 1.1rem;
+      }
     }
 
     .about-story-body {
       padding: 6rem 0;
       background: var(--color-ivory, #FAF8F3);
+      scroll-margin-top: calc(var(--nav-height) + 1.5rem);
     }
     .about-story-grid {
       display: grid;
@@ -542,8 +730,6 @@
     }
 
     /* DARK THEME CONTRAST OVERRIDES */
-    [data-theme="dark"] .about-story-header .breadcrumb a:hover,
-    [data-theme="dark"] .about-story-header .breadcrumb-current,
     [data-theme="dark"] .about-story-text p.lead,
     [data-theme="dark"] .stat-bubble strong,
     [data-theme="dark"] .philosophy-card h3,
@@ -677,20 +863,40 @@
   <main>
 
     <!-- ===================== SECTION 1: OUR STORY ===================== -->
-    <header class="about-story-header" aria-label="About Kora Spa Story Header">
-      <div class="about-story-overlay" aria-hidden="true"></div>
-      <div class="about-story-header-content" data-animate="fade-up">
+    <header class="about-hero" aria-label="About Kora Spa">
+      <div class="about-hero-glow" aria-hidden="true"></div>
+      <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <a href="../index.html">Home</a>
           <span class="breadcrumb-separator">/</span>
           <span class="breadcrumb-current">About Us</span>
         </nav>
-        <span class="about-tag">ABOUT US</span>
-        <h1 class="about-story-title">Our Story of Serenity</h1>
+
+        <div class="about-hero-top">
+          <div class="about-hero-heading" data-animate="fade-up">
+            <span class="about-hero-kicker">Our Story · Est. 2018</span>
+            <h1 class="about-hero-title">Our Story of <em>Serenity</em></h1>
+          </div>
+          <div class="about-hero-intro" data-animate="fade-up" data-delay="120">
+            <p>A sanctuary where intentional care, quiet luxury, and deeply personal wellness come together.</p>
+            <a href="#our-story" class="about-hero-link">
+              Discover Our Story
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="about-hero-media" data-animate="fade-up" data-delay="200">
+          <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1920&q=85" alt="Serene Kora Spa interior with warm natural light and calm textures" width="1920" height="1280" fetchpriority="high">
+          <div class="about-hero-badge">
+            <span class="about-hero-badge-line" aria-hidden="true"></span>
+            <span>Serenity, Elevated.</span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <section class="about-story-body" aria-label="Our Story Content">
+    <section class="about-story-body" id="our-story" aria-label="Our Story Content">
       <div class="container">
         <div class="about-story-grid">
           <div class="about-story-text" data-animate="fade-right">
