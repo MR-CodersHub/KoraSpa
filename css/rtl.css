@@ -26,6 +26,8 @@
 
 /* ── Navigation RTL ──────────────────────────────────────── */
 [dir="rtl"] .nav-container { flex-direction: row-reverse; }
+[dir="rtl"] .utility-header-container { flex-direction: row-reverse; }
+[dir="rtl"] .utility-header-actions { flex-direction: row-reverse; }
 [dir="rtl"] .nav-links { flex-direction: row-reverse; }
 [dir="rtl"] .nav-actions { flex-direction: row-reverse; }
 

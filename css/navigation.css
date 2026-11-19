@@ -887,3 +887,41 @@ body.menu-open .mobile-menu.active {
     padding: 0.65rem 0.85rem;
   }
 }
+
+/* ── Minimal Utility Header (Login/Signup, 404, Maintenance) ── */
+.utility-header {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: transparent;
+  z-index: 50;
+}
+
+.utility-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.utility-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .utility-header {
+    padding: 1rem 0;
+  }
+  .utility-header .nav-logo-mark {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+  .utility-header .nav-logo-name {
+    font-size: 1.7rem;
+  }
+  .utility-header .nav-logo-tagline {
+    font-size: 0.62rem;
+  }
+}
