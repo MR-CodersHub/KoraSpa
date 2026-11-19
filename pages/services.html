@@ -30,8 +30,8 @@
       position: relative;
       display: flex;
       align-items: center;
-      min-height: clamp(640px, 86vh, 860px);
-      padding: calc(var(--nav-height) + 4rem) 0 7rem;
+      min-height: clamp(660px, 88vh, 880px);
+      padding: calc(var(--nav-height) + 4.5rem) 0 8.5rem;
       overflow: hidden;
       isolation: isolate;
       background-color: #0B130C;
@@ -90,7 +90,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      height: 100px;
+      height: 90px;
       z-index: 1;
       background: linear-gradient(180deg, transparent 0%, var(--color-ivory) 100%);
       pointer-events: none;
@@ -184,6 +184,7 @@
       gap: 0.65rem;
       justify-content: flex-start;
       margin-top: 2rem;
+      margin-bottom: 2rem;
     }
     .hero-scroll-links a {
       display: inline-flex;
@@ -246,6 +247,16 @@
     /* Services Layout */
     .services-wrapper {
       position: relative;
+      padding-top: 5rem;
+    }
+
+    .services-main .treatment-section:first-child {
+      padding-top: 0;
+    }
+
+    .treatment-section,
+    .body-treatments-section {
+      scroll-margin-top: calc(var(--nav-height) + 2rem);
     }
 
     /* Sticky Sidebar */
@@ -635,6 +646,7 @@
 
     /* Mobile treatment layout */
     @media (max-width: 768px) {
+      .services-wrapper { padding-top: 3.5rem; }
       .treatment-layout {
         grid-template-columns: 1fr;
         gap: 2.5rem;
