@@ -676,6 +676,31 @@ body.menu-open .mobile-menu.active {
   .nav-actions { gap: 0.3rem; }
 }
 
+/* Keep the 320px header compact and balanced. */
+@media (max-width: 360px) {
+  .nav-container { gap: 0.35rem; }
+  .nav-logo { gap: 0.45rem; }
+  .nav-logo-mark { width: 2rem; height: 2rem; }
+  .nav-logo-name { font-size: 1.25rem; }
+  .nav-actions { gap: 0.2rem; }
+  .profile-toggle,
+  .theme-toggle,
+  .nav-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
+  .profile-toggle > svg:first-child,
+  .theme-toggle svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  .nav-toggle {
+    gap: 4px;
+    padding: 0.3rem;
+  }
+  .nav-toggle span { width: 1.05rem; }
+}
+
 /* Compact the menu on short screens so every link stays reachable. */
 @media (max-width: 1024px) and (max-height: 640px) {
   .mobile-menu ul {
