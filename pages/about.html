@@ -817,8 +817,8 @@
     .approach-header .section-subtitle {
       max-width: 52ch;
       margin: 0;
-      justify-self: end;
-      text-align: end;
+      justify-self: start;
+      text-align: start;
       font-size: clamp(1rem, 1.1vw + 0.6rem, 1.125rem);
       text-wrap: balance;
     }
@@ -834,7 +834,7 @@
       position: absolute;
       top: 2rem;
       bottom: 2rem;
-      left: 50%;
+      inset-inline-start: 2.5rem;
       width: 1px;
       transform: translateX(-50%);
       background: linear-gradient(180deg, transparent 0%, rgba(201, 169, 110, 0.42) 8%, rgba(201, 169, 110, 0.42) 92%, transparent 100%);
@@ -845,13 +845,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
-      grid-template-areas: "text marker visual";
+      grid-template-columns: 5rem minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-areas: "marker text visual";
       column-gap: 2rem;
       align-items: center;
     }
     .journey-step.reverse {
-      grid-template-areas: "visual marker text";
+      grid-template-areas: "marker visual text";
     }
     .journey-text,
     .journey-visual {
@@ -861,14 +861,7 @@
       grid-area: text;
       width: 100%;
       max-width: 30rem;
-    }
-    .journey-step:not(.reverse) .journey-text {
-      justify-self: end;
-      padding-inline-end: 1.5rem;
-    }
-    .journey-step.reverse .journey-text {
       justify-self: start;
-      padding-inline-start: 1.5rem;
     }
     .journey-text::before {
       content: '';
@@ -1059,8 +1052,6 @@
       .about-therapists-grid { grid-template-columns: 1fr; }
       .commitment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .journey-step { column-gap: 1.5rem; }
-      .journey-step:not(.reverse) .journey-text { padding-inline-end: 1rem; }
-      .journey-step.reverse .journey-text { padding-inline-start: 1rem; }
     }
     @media (max-width: 900px) {
       .approach-section { padding: 5.5rem 0; }
