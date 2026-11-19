@@ -513,9 +513,7 @@
               showToast('Welcome back to Kora Spa! Entering sanctuary...', 'success');
             }
             setTimeout(() => {
-              const urlParams = new URLSearchParams(window.location.search);
-              const redirect = urlParams.get('redirect');
-              window.location.href = redirect || 'dashboard.html';
+              window.location.href = '../index.html';
             }, 800);
           }, 850);
         });
