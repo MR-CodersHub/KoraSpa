@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Your Sanctuary Account — Kora Spa</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../favicon.svg">
+  <meta name="theme-color" content="#2D4A32">
+  <meta name="description" content="Create your personal Kora Spa guest account to receive personalized wellness rituals, tailored therapist recommendations, and privileged reservations.">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/navigation.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/dark-mode.css">
+  <link rel="stylesheet" href="../css/rtl.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    /* ============================================================
+       STANDALONE SIGNUP PAGE STYLES
+       ============================================================ */
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--color-ivory);
+      color: var(--color-text);
+      overflow-x: hidden;
+    }
+
+    [data-theme="dark"] body {
+      background: #0B130C;
+    }
+
+    .auth-page-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem 3.5rem;
+      position: relative;
+    }
+
+    .auth-page-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 25%, rgba(143,168,135,0.14) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(201,169,110,0.12) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .auth-card {
+      position: relative;
+      z-index: 1;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2.75rem 2.5rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+      max-width: 580px;
+      width: 100%;
+      margin: 0 auto;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    [data-theme="dark"] .auth-card {
+      background: #141f16;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
+    }
+
+    .auth-card-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .auth-card-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      color: var(--color-forest-text);
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+
+    [data-theme="dark"] .auth-card-title {
+      color: var(--color-champagne-light);
+    }
+
+    .auth-card-subtitle {
+      font-size: 0.92rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.2rem;
+      text-align: start;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-forest-text);
+      margin-bottom: 0.4rem;
+    }
+
+    [data-theme="dark"] .form-label {
+      color: var(--color-cream);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.82rem 1rem;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-white);
+      color: var(--color-text);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      box-sizing: border-box;
+    }
+
+    [data-theme="dark"] .form-control {
+      background: #1a271c;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--color-text-on-dark);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-champagne);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.2);
+    }
+
+    .form-control.error {
+      border-color: #d9534f;
+    }
+
+    .form-error-msg {
+      font-size: 0.8rem;
+      color: #d9534f;
+      margin-top: 0.35rem;
+    }
+
+    /* Password Input with Show/Hide */
+    .password-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .password-input-wrap .form-control {
+      padding-inline-end: 2.75rem;
+    }
+
+    .password-toggle-btn {
+      position: absolute;
+      inset-inline-end: 0.75rem;
+      background: transparent;
+      border: none;
+      color: var(--color-text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem;
+      transition: color var(--transition-fast);
+    }
+
+    .password-toggle-btn:hover {
+      color: var(--color-accent-text);
+    }
+
+    /* Live Password Strength Meter */
+    .password-meter-wrap {
+      margin-top: 0.6rem;
+    }
+
+    .password-meter-bar {
+      height: 4px;
+      background: var(--color-border);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      margin-bottom: 0.45rem;
+    }
+
+    .password-meter-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 0.3s ease, background-color 0.3s ease;
+      border-radius: var(--radius-pill);
+    }
+
+    .password-strength-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .password-req-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.3rem 0.6rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.76rem;
+      color: var(--color-text-muted);
+    }
+
+    .password-req-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color var(--transition-fast);
+    }
+
+    .password-req-item.met {
+      color: var(--color-forest);
+      font-weight: 600;
+    }
+
+    [data-theme="dark"] .password-req-item.met {
+      color: var(--color-sage-light);
+    }
+
+    /* Submit Button */
+    .btn-submit-loading {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      height: 3.25rem;
+      min-height: 3.25rem;
+      max-height: 3.25rem;
+      padding: 0 1.75rem;
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: var(--radius-pill);
+      box-sizing: border-box;
+      line-height: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit-loading.is-loading {
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .btn-submit-loading svg,
+    .btn-submit-loading .btn-arrow {
+      width: 18px !important;
+      height: 18px !important;
+      min-width: 18px !important;
+      min-height: 18px !important;
+      max-width: 18px !important;
+      max-height: 18px !important;
+      flex-shrink: 0 !important;
+      display: inline-block !important;
+    }
+
+    .btn-submit-loading .btn-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Responsive */
+    @media (max-width: 580px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .password-req-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-card {
+        padding: 2rem 1.25rem;
+      }
+      .auth-card-title {
+        font-size: 1.55rem;
+      }
+      .btn-submit-loading {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body data-page="signup">
+
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- MINIMAL UTILITY HEADER -->
+  <header class="utility-header">
+    <div class="utility-header-container container">
+      <a href="../index.html" class="nav-logo" aria-label="Kora Spa — Return to Home">
+        <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
+          <g fill="currentColor">
+            <path d="M40 66c-11-7-17-18-13-29 5 6 9 11 13 16 4-5 8-10 13-16 4 11-2 22-13 29z"/>
+            <path d="M40 68c-14-3-22-13-22-25 8 4 16 12 22 20 6-8 14-16 22-20 0 12-8 22-22 25z" opacity="0.5"/>
+          </g>
+        </svg>
+        <span class="nav-logo-stack">
+          <span class="nav-logo-name">Kora Spa</span>
+          <span class="nav-logo-tagline">Serenity, Elevated.</span>
+        </span>
+      </a>
+      <div class="utility-header-actions">
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="dir-toggle" aria-label="Toggle RTL/LTR"><span class="dir-label">RTL</span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN SIGNUP CONTENT -->
+  <main class="auth-page-wrapper" id="main-content">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1 class="auth-card-title">Begin Your Sanctuary Journey</h1>
+        <p class="auth-card-subtitle">Create your personal guest account to receive personalized rituals and reservations.</p>
+      </div>
+
+      <!-- In-card feedback / alert banner -->
+      <div id="registerAlertBox" class="alert-box" style="display:none; margin-bottom:1.5rem; padding:0.9rem 1.1rem; border-radius:var(--radius-md); font-size:0.88rem;"></div>
+
+      <!-- REGISTRATION FORM -->
+      <form id="clientRegisterForm" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="regFullName" class="form-label">Full Name <span class="text-champagne">*</span></label>
+          <input type="text" id="regFullName" class="form-control" placeholder="e.g. Jacqueline Vance" autocomplete="name" required>
+          <div class="form-error-msg" id="regNameError" style="display:none;"></div>
+        </div>
+
+        <!-- Email & Phone Grid -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regEmail" class="form-label">Email Address <span class="text-champagne">*</span></label>
+            <input type="email" id="regEmail" class="form-control" placeholder="jacqueline@example.com" autocomplete="email" required>
+            <div class="form-error-msg" id="regEmailError" style="display:none;"></div>
+          </div>
+          <div class="form-group">
+            <label for="regPhone" class="form-label">Phone Number <span class="text-champagne">*</span></label>
+            <input type="tel" id="regPhone" class="form-control" placeholder="+1 (555) 019-2834" autocomplete="tel" required>
+            <div class="form-error-msg" id="regPhoneError" style="display:none;"></div>
+          </div>
+        </div>
+
+        <!-- Password & Live Strength -->
+        <div class="form-group">
+          <label for="regPassword" class="form-label">Password <span class="text-champagne">*</span></label>
+          <div class="password-input-wrap">
+            <input type="password" id="regPassword" class="form-control" placeholder="Create a secure password" autocomplete="new-password" required>
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('regPassword', this)">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <!-- Live Strength Meter -->
+          <div class="password-meter-wrap">
+            <div class="password-meter-bar">
+              <div class="password-meter-fill" id="passStrengthFill"></div>
+            </div>
+            <div class="password-strength-label">
+              <span>Security Strength:</span>
+              <span id="passStrengthText" style="font-weight:600;">None</span>
+            </div>
+            <ul class="password-req-list">
+              <li class="password-req-item" id="reqLen"><span>•</span> At least 8 characters</li>
+              <li class="password-req-item" id="reqLetter"><span>•</span> Letters (A–Z, a–z)</li>
+              <li class="password-req-item" id="reqNum"><span>•</span> At least 1 number</li>
+              <li class="password-req-item" id="reqSpecial"><span>•</span> Special symbol (!@#$)</li>
+            </ul>
+          </div>
+          <div class="form-error-msg" id="regPasswordError" style="display:none;"></div>
+        </div>
+
+        <!-- Confirm Password & Match Check -->
+        <div class="form-group">
+          <label for="regConfirmPassword" class="form-label">Confirm Password <span class="text-champagne">*</span></label>
+          <div class="password-input-wrap">
+            <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-type your password" autocomplete="new-password" required>
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('regConfirmPassword', this)">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div id="passMatchIndicator" style="font-size:0.8rem; margin-top:0.35rem; display:none;"></div>
+          <div class="form-error-msg" id="regConfirmError" style="display:none;"></div>
+        </div>
+
+        <!-- Terms & Privacy Agreement -->
+        <div class="form-group">
+          <label class="form-check" style="cursor:pointer; display:flex; align-items:flex-start; gap:0.6rem; font-size:0.85rem; line-height:1.5;">
+            <input type="checkbox" id="regTerms" class="form-check-input" required style="margin-top:0.2rem;">
+            <span class="form-check-label">
+              I agree to the Kora Spa <a href="terms-conditions.html" class="text-champagne" style="text-decoration:underline;">Terms of Service</a>, <a href="privacy-policy.html" class="text-champagne" style="text-decoration:underline;">Privacy Policy</a>, and sanctuary hygiene etiquette.
+            </span>
+          </label>
+          <div class="form-error-msg" id="regTermsError" style="display:none;"></div>
+        </div>
+
+        <!-- Register Submit Button -->
+        <button type="submit" id="registerSubmitBtn" class="btn-primary btn-submit-loading">
+          <span class="btn-text">Create Guest Account &amp; Access Dashboard</span>
+          <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+
+        <!-- Bottom Link to Login -->
+        <p style="text-align:center; font-size:0.88rem; color:var(--color-text-muted); margin-top:1.5rem; margin-bottom:0;">
+          Already have an account?
+          <a href="login.html" class="text-champagne font-weight-600" style="text-decoration:none;">Sign in here</a>.
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="../js/data.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/animations.js"></script>
+
+  <script>
+    function togglePasswordVisibility(inputId, btn) {
+      const input = document.getElementById(inputId);
+      if (!input) return;
+      const isPass = input.type === 'password';
+      input.type = isPass ? 'text' : 'password';
+      btn.innerHTML = isPass
+        ? '<svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+        : '<svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof ThemeManager !== 'undefined') ThemeManager.init();
+
+      const regPass = document.getElementById('regPassword');
+      const regConfirm = document.getElementById('regConfirmPassword');
+      const passFill = document.getElementById('passStrengthFill');
+      const passText = document.getElementById('passStrengthText');
+      const reqLen = document.getElementById('reqLen');
+      const reqLetter = document.getElementById('reqLetter');
+      const reqNum = document.getElementById('reqNum');
+      const reqSpecial = document.getElementById('reqSpecial');
+      const matchIndicator = document.getElementById('passMatchIndicator');
+
+      function checkPasswordStrength(val) {
+        let score = 0;
+        const hasLen = val.length >= 8;
+        const hasLetter = /[a-zA-Z]/.test(val);
+        const hasNum = /[0-9]/.test(val);
+        const hasSpecial = /[^a-zA-Z0-9]/.test(val);
+
+        reqLen.classList.toggle('met', hasLen);
+        reqLetter.classList.toggle('met', hasLetter);
+        reqNum.classList.toggle('met', hasNum);
+        reqSpecial.classList.toggle('met', hasSpecial);
+
+        if (hasLen) score++;
+        if (hasLetter) score++;
+        if (hasNum) score++;
+        if (hasSpecial) score++;
+
+        if (val.length === 0) {
+          passFill.style.width = '0%';
+          passFill.style.backgroundColor = 'transparent';
+          passText.textContent = 'None';
+          passText.style.color = 'var(--color-text-muted)';
+        } else if (score <= 1) {
+          passFill.style.width = '25%';
+          passFill.style.backgroundColor = '#e05656';
+          passText.textContent = 'Weak';
+          passText.style.color = '#e05656';
+        } else if (score === 2) {
+          passFill.style.width = '50%';
+          passFill.style.backgroundColor = '#e5a33c';
+          passText.textContent = 'Fair';
+          passText.style.color = '#e5a33c';
+        } else if (score === 3) {
+          passFill.style.width = '75%';
+          passFill.style.backgroundColor = 'var(--color-champagne)';
+          passText.textContent = 'Good';
+          passText.style.color = 'var(--color-champagne)';
+        } else {
+          passFill.style.width = '100%';
+          passFill.style.backgroundColor = 'var(--color-sage)';
+          passText.textContent = 'Strong & Secure';
+          passText.style.color = 'var(--color-sage)';
+        }
+      }
+
+      if (regPass) {
+        regPass.addEventListener('input', () => {
+          checkPasswordStrength(regPass.value);
+          checkPasswordMatch();
+        });
+      }
+
+      function checkPasswordMatch() {
+        if (!regConfirm || !regPass) return;
+        if (!regConfirm.value) {
+          matchIndicator.style.display = 'none';
+          return;
+        }
+        matchIndicator.style.display = 'block';
+        if (regPass.value === regConfirm.value) {
+          matchIndicator.style.color = 'var(--color-sage)';
+          matchIndicator.innerHTML = '&#10003; Passwords match perfectly.';
+        } else {
+          matchIndicator.style.color = '#e05656';
+          matchIndicator.innerHTML = '&#10007; Passwords do not match.';
+        }
+      }
+
+      if (regConfirm) {
+        regConfirm.addEventListener('input', checkPasswordMatch);
+      }
+
+      // Registration Form Submission
+      const regForm = document.getElementById('clientRegisterForm');
+      if (regForm) {
+        regForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const nameInput = document.getElementById('regFullName');
+          const emailInput = document.getElementById('regEmail');
+          const phoneInput = document.getElementById('regPhone');
+          const termsInput = document.getElementById('regTerms');
+          const regAlert = document.getElementById('registerAlertBox');
+
+          const nameErr = document.getElementById('regNameError');
+          const emailErr = document.getElementById('regEmailError');
+          const phoneErr = document.getElementById('regPhoneError');
+          const passErr = document.getElementById('regPasswordError');
+          const confirmErr = document.getElementById('regConfirmError');
+          const termsErr = document.getElementById('regTermsError');
+
+          let valid = true;
+
+          // Name
+          if (!nameInput.value.trim()) {
+            nameErr.textContent = 'Please enter your full name.';
+            nameErr.style.display = 'block';
+            nameInput.classList.add('error');
+            valid = false;
+          } else {
+            nameErr.style.display = 'none';
+            nameInput.classList.remove('error');
+          }
+
+          // Email
+          const emailVal = emailInput.value.trim();
+          if (!emailVal || (typeof validateEmail === 'function' && !validateEmail(emailVal))) {
+            emailErr.textContent = 'Please provide a valid email address.';
+            emailErr.style.display = 'block';
+            emailInput.classList.add('error');
+            valid = false;
+          } else {
+            emailErr.style.display = 'none';
+            emailInput.classList.remove('error');
+          }
+
+          // Phone
+          if (!phoneInput.value.trim()) {
+            phoneErr.textContent = 'Please enter your phone number.';
+            phoneErr.style.display = 'block';
+            phoneInput.classList.add('error');
+            valid = false;
+          } else {
+            phoneErr.style.display = 'none';
+            phoneInput.classList.remove('error');
+          }
+
+          // Password
+          if (!regPass.value || regPass.value.length < 8) {
+            passErr.textContent = 'Password must be at least 8 characters long.';
+            passErr.style.display = 'block';
+            regPass.classList.add('error');
+            valid = false;
+          } else {
+            passErr.style.display = 'none';
+            regPass.classList.remove('error');
+          }
+
+          // Confirm Password
+          if (regPass.value !== regConfirm.value) {
+            confirmErr.textContent = 'Passwords do not match.';
+            confirmErr.style.display = 'block';
+            regConfirm.classList.add('error');
+            valid = false;
+          } else {
+            confirmErr.style.display = 'none';
+            regConfirm.classList.remove('error');
+          }
+
+          // Terms
+          if (!termsInput.checked) {
+            termsErr.textContent = 'Please agree to the Terms of Service & Privacy Policy to continue.';
+            termsErr.style.display = 'block';
+            valid = false;
+          } else {
+            termsErr.style.display = 'none';
+          }
+
+          if (!valid) return;
+
+          const submitBtn = document.getElementById('registerSubmitBtn');
+          submitBtn.classList.add('is-loading');
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `
+            <span class="spinner" style="width:16px; height:16px; border:2px solid #fff; border-top-color:transparent; border-radius:50%; animation:spin 0.7s linear infinite;"></span>
+            <span>Crafting Your Sanctuary Profile...</span>
+          `;
+
+          setTimeout(() => {
+            const newUser = {
+              name: nameInput.value.trim(),
+              email: emailInput.value.trim(),
+              phone: phoneInput.value.trim(),
+              membershipPlan: 'radiance',
+              membershipPlanName: 'Radiance Tier Guest'
+            };
+
+            if (typeof Auth !== 'undefined') {
+              Auth.register(newUser);
+            }
+
+            regAlert.style.display = 'block';
+            regAlert.style.background = 'rgba(143,168,135,0.2)';
+            regAlert.style.border = '1px solid var(--color-sage)';
+            regAlert.style.color = 'var(--color-forest)';
+            regAlert.textContent = `Welcome to Kora Spa, ${newUser.name}! Your account is active. Redirecting...`;
+
+            if (typeof showToast === 'function') {
+              showToast('Account registered successfully! Redirecting...', 'success');
+            }
+            setTimeout(() => {
+              window.location.href = 'dashboard.html';
+            }, 900);
+          }, 950);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

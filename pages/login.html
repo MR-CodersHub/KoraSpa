@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Client Portal &amp; Sanctuary Access — Kora Spa</title>
+  <title>Sign In to Your Sanctuary — Kora Spa</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../favicon.svg">
   <meta name="theme-color" content="#2D4A32">
-  <meta name="description" content="Access your personalized Kora Spa client sanctuary. Manage treatment reservations, therapist notes, membership privileges, and exclusive botanical rituals.">
+  <meta name="description" content="Access your personalized Kora Spa client sanctuary. Manage treatment reservations, therapist notes, and exclusive botanical rituals.">
 
   <!-- Preconnect for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="../css/global.css">
   <link rel="stylesheet" href="../css/components.css">
   <link rel="stylesheet" href="../css/navigation.css">
-  <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="../css/animations.css">
   <link rel="stylesheet" href="../css/dark-mode.css">
   <link rel="stylesheet" href="../css/rtl.css">
@@ -27,276 +26,229 @@
 
   <style>
     /* ============================================================
-       LOGIN / REGISTER PAGE SPECIFIC STYLES
+       STANDALONE LOGIN PAGE STYLES
        ============================================================ */
-
-    /* Hero Section */
-    .auth-hero-section {
-      background: linear-gradient(135deg, var(--color-beige) 0%, var(--color-ivory) 100%);
-      padding: 3rem 0 3.5rem;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      border-bottom: 1px solid var(--color-border);
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      background: var(--color-ivory);
+      color: var(--color-text);
+      overflow-x: hidden;
     }
-    .auth-hero-section::before {
+
+    [data-theme="dark"] body {
+      background: #0B130C;
+    }
+
+    .auth-page-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem 1rem 3.5rem;
+      position: relative;
+    }
+
+    .auth-page-wrapper::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        radial-gradient(circle at 15% 40%, rgba(143,168,135,0.18) 0%, transparent 45%),
-        radial-gradient(circle at 85% 60%, rgba(201,169,110,0.15) 0%, transparent 40%);
+        radial-gradient(circle at 15% 25%, rgba(143,168,135,0.14) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(201,169,110,0.12) 0%, transparent 40%);
       pointer-events: none;
     }
-    .auth-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1.1rem;
-      background: rgba(201,169,110,0.12);
-      border: 1px solid rgba(201,169,110,0.3);
-      border-radius: var(--radius-pill);
-      color: var(--color-accent-text);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 1.25rem;
-    }
-    [data-theme="dark"] .auth-hero-badge {
-      color: var(--color-champagne-light);
-      background: rgba(201,169,110,0.18);
-    }
-    .auth-hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
-      color: var(--color-forest-text);
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    [data-theme="dark"] .auth-hero-title {
-      color: var(--color-text-on-dark);
-    }
-    .auth-hero-desc {
-      font-size: 1.05rem;
-      color: var(--color-text-muted);
-      max-width: 620px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.7;
-    }
-    .auth-breadcrumb {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--color-text-muted);
-    }
-    .auth-breadcrumb a {
-      color: var(--color-accent-text);
-      text-decoration: none;
-    }
-    [data-theme="dark"] .auth-breadcrumb a {
-      color: var(--color-accent-text);
-    }
 
-    /* Tab Switcher for Sections 2 & 3 */
-    .auth-tabs-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: -1.75rem auto 2.5rem;
-      position: relative;
-      z-index: 5;
-    }
-    .auth-tabs {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      padding: 0.35rem;
-      border-radius: var(--radius-pill);
-      display: inline-flex;
-      gap: 0.35rem;
-      box-shadow: var(--shadow-md);
-    }
-    [data-theme="dark"] .auth-tabs {
-      background: var(--color-beige);
-    }
-    .auth-tab-btn {
-      padding: 0.65rem 1.75rem;
-      border-radius: var(--radius-pill);
-      border: none;
-      background: transparent;
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: var(--color-text-muted);
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .auth-tab-btn.active {
-      background: var(--color-forest);
-      color: #fff;
-      font-weight: 600;
-      box-shadow: var(--shadow-sm);
-    }
-    [data-theme="dark"] .auth-tab-btn.active {
-      background: var(--color-champagne);
-      color: var(--color-dark);
-    }
-
-    /* Shared Auth Form Cards */
     .auth-card {
+      position: relative;
+      z-index: 1;
       background: var(--color-white);
       border: 1px solid var(--color-border);
       border-radius: var(--radius-xl);
       padding: 2.75rem 2.5rem;
-      box-shadow: var(--shadow-lg);
-      max-width: 600px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+      max-width: 520px;
+      width: 100%;
       margin: 0 auto;
-      position: relative;
       transition: transform var(--transition-base), box-shadow var(--transition-base);
     }
+
     [data-theme="dark"] .auth-card {
-      background: var(--color-beige);
+      background: #141f16;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.4);
     }
+
     .auth-card-header {
       text-align: center;
       margin-bottom: 2rem;
     }
+
     .auth-card-title {
       font-family: var(--font-serif);
       font-size: 1.85rem;
       color: var(--color-forest-text);
       margin-bottom: 0.5rem;
+      line-height: 1.25;
     }
+
     [data-theme="dark"] .auth-card-title {
       color: var(--color-champagne-light);
     }
+
     .auth-card-subtitle {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--color-text-muted);
+      line-height: 1.5;
+      margin-bottom: 0;
     }
 
     /* Demo Quick-Fill Bar */
     .demo-login-box {
-      background: rgba(201,169,110,0.1);
+      background: rgba(201,169,110,0.12);
       border: 1px dashed var(--color-champagne);
-      border-radius: var(--radius-lg);
-      padding: 1.15rem 1.4rem;
-      margin-bottom: 2rem;
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.75rem;
     }
+
     .demo-login-text {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--color-forest-text);
       line-height: 1.4;
-      color: var(--color-text);
     }
+
+    [data-theme="dark"] .demo-login-text {
+      color: var(--color-cream);
+    }
+
     .demo-login-text strong {
       display: block;
       color: var(--color-accent-text);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
-    [data-theme="dark"] .demo-login-text strong {
-      color: var(--color-champagne-light);
-    }
+
     .btn-demo-quick {
-      background: var(--color-champagne);
+      background: var(--color-forest);
       color: #fff;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 0.55rem 1.1rem;
-      border-radius: var(--radius-pill);
       border: none;
+      border-radius: var(--radius-pill);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       cursor: pointer;
-      white-space: nowrap;
-      transition: background var(--transition-fast), transform var(--transition-fast);
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
+      flex-shrink: 0;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
     }
+
     .btn-demo-quick:hover {
-      background: var(--color-champagne-dark);
+      background: var(--color-forest-light);
       transform: translateY(-1px);
     }
 
-    /* Password Input with Visibility Toggle */
+    [data-theme="dark"] .btn-demo-quick {
+      background: var(--color-champagne);
+      color: var(--color-dark);
+    }
+
+    [data-theme="dark"] .btn-demo-quick:hover {
+      background: var(--color-champagne-light);
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 1.25rem;
+      text-align: start;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-forest-text);
+      margin-bottom: 0.4rem;
+    }
+
+    [data-theme="dark"] .form-label {
+      color: var(--color-cream);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.82rem 1rem;
+      font-size: 0.95rem;
+      font-family: var(--font-sans);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-white);
+      color: var(--color-text);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      box-sizing: border-box;
+    }
+
+    [data-theme="dark"] .form-control {
+      background: #1a271c;
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--color-text-on-dark);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-champagne);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.2);
+    }
+
+    .form-control.error {
+      border-color: #d9534f;
+    }
+
+    .form-error-msg {
+      font-size: 0.8rem;
+      color: #d9534f;
+      margin-top: 0.35rem;
+    }
+
+    /* Password Input with Show/Hide */
     .password-input-wrap {
       position: relative;
+      display: flex;
+      align-items: center;
     }
+
     .password-input-wrap .form-control {
-      padding-right: 3rem;
+      padding-inline-end: 2.75rem;
     }
+
     .password-toggle-btn {
       position: absolute;
-      right: 0.85rem;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
+      inset-inline-end: 0.75rem;
+      background: transparent;
       border: none;
       color: var(--color-text-muted);
       cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.4rem;
+      padding: 0.25rem;
       transition: color var(--transition-fast);
     }
+
     .password-toggle-btn:hover {
       color: var(--color-accent-text);
     }
 
-    /* Password Strength Indicator */
-    .password-meter-wrap {
-      margin-top: 0.6rem;
-    }
-    .password-meter-bar {
-      height: 5px;
-      width: 100%;
-      background: var(--color-border);
-      border-radius: var(--radius-pill);
-      overflow: hidden;
-      margin-bottom: 0.4rem;
-    }
-    .password-meter-fill {
-      height: 100%;
-      width: 0%;
-      transition: width var(--transition-fast), background-color var(--transition-fast);
-    }
-    .password-strength-label {
-      font-size: 0.78rem;
-      color: var(--color-text-muted);
-      display: flex;
-      justify-content: space-between;
-    }
-    .password-req-list {
-      list-style: none;
-      margin: 0.5rem 0 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.35rem;
-      font-size: 0.75rem;
-      color: var(--color-text-muted);
-    }
-    .password-req-item {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-    }
-    .password-req-item.met {
-      color: var(--color-forest-text);
-      font-weight: 500;
-    }
-    [data-theme="dark"] .password-req-item.met {
-      color: var(--color-sage-light);
-    }
-
-    /* Submit Button Loading State & Dimension Lock */
+    /* Submit Button */
     .btn-submit-loading {
       position: relative;
       display: inline-flex;
@@ -317,11 +269,14 @@
       line-height: 1;
       overflow: hidden;
       white-space: nowrap;
+      margin-top: 0.5rem;
     }
+
     .btn-submit-loading.is-loading {
       pointer-events: none;
       opacity: 0.85;
     }
+
     .btn-submit-loading svg,
     .btn-submit-loading .btn-arrow {
       width: 18px !important;
@@ -333,214 +288,28 @@
       flex-shrink: 0 !important;
       display: inline-block !important;
     }
+
     .btn-submit-loading .btn-text {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    /* Responsive */
     @media (max-width: 480px) {
-      .btn-submit-loading {
-        font-size: 0.8rem;
-        padding: 0 1rem;
-      }
-    }
-
-    /* Password Reset Section (Section 4) */
-    .reset-section {
-      background: var(--color-ivory);
-      padding: 5rem 0;
-      border-top: 1px solid var(--color-border);
-      border-bottom: 1px solid var(--color-border);
-    }
-    .reset-card {
-      max-width: 580px;
-      margin: 0 auto;
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-md);
-      text-align: center;
-    }
-    [data-theme="dark"] .reset-card {
-      background: var(--color-beige);
-    }
-    .reset-icon-circle {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 1.25rem;
-      border-radius: var(--radius-circle);
-      background: rgba(201,169,110,0.14);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--color-accent-text);
-    }
-    [data-theme="dark"] .reset-icon-circle {
-      color: var(--color-champagne-light);
-    }
-    .reset-success-box {
-      display: none;
-      background: rgba(143,168,135,0.15);
-      border: 1px solid var(--color-sage);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      margin-top: 1.5rem;
-      text-align: left;
-    }
-    .reset-success-box.visible {
-      display: block;
-      animation: fadeIn 0.4s ease;
-    }
-
-    /* Benefits Grid (Section 5) */
-    .benefits-section {
-      padding: 6rem 0;
-      background: var(--color-beige);
-    }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.75rem;
-      margin-top: 3rem;
-    }
-    .benefit-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: 2.25rem 1.75rem;
-      text-align: center;
-      transition: transform var(--transition-base), box-shadow var(--transition-base);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    [data-theme="dark"] .benefit-card {
-      background: var(--color-ivory);
-    }
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--color-champagne);
-    }
-    .benefit-icon-wrap {
-      width: 60px;
-      height: 60px;
-      border-radius: var(--radius-circle);
-      background: rgba(45,74,50,0.08);
-      color: var(--color-forest-text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.25rem;
-      transition: background var(--transition-fast), color var(--transition-fast);
-    }
-    [data-theme="dark"] .benefit-icon-wrap {
-      background: rgba(201,169,110,0.12);
-      color: var(--color-accent-text);
-    }
-    .benefit-card:hover .benefit-icon-wrap {
-      background: var(--color-champagne);
-      color: var(--color-text-on-gold);
-    }
-    .benefit-title {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-      color: var(--color-forest-text);
-    }
-    [data-theme="dark"] .benefit-title {
-      color: var(--color-text-on-dark);
-    }
-    .benefit-desc {
-      font-size: 0.88rem;
-      color: var(--color-text-muted);
-      line-height: 1.6;
-    }
-
-    /* Support CTA Section (Section 6) */
-    .auth-support-section {
-      background: var(--color-forest);
-      color: #fff;
-      padding: 5.5rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-    .auth-support-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .support-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius-xl);
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
-    .support-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-    .support-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.95rem;
-    }
-    .support-item-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-circle);
-      background: rgba(201,169,110,0.2);
-      color: var(--color-champagne-light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .support-item a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition-fast);
-    }
-    .support-item a:hover {
-      color: var(--color-champagne-light);
-    }
-
-    @media (max-width: 992px) {
-      .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .support-card {
-        grid-template-columns: 1fr;
-        padding: 2rem;
-      }
-    }
-    @media (max-width: 600px) {
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
       .auth-card {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1.25rem;
+      }
+      .auth-card-title {
+        font-size: 1.55rem;
       }
       .demo-login-box {
         flex-direction: column;
         align-items: flex-start;
       }
-      .password-req-list {
-        grid-template-columns: 1fr;
+      .btn-submit-loading {
+        font-size: 0.82rem;
+        padding: 0 1rem;
       }
     }
   </style>
@@ -549,8 +318,7 @@
 
   <div id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- NAVIGATION -->
-    <!-- MINIMAL UTILITY HEADER -->
+  <!-- MINIMAL UTILITY HEADER -->
   <header class="utility-header">
     <div class="utility-header-container container">
       <a href="../index.html" class="nav-logo" aria-label="Kora Spa — Return to Home">
@@ -575,561 +343,161 @@
     </div>
   </header>
 
-  <main id="main-content">
-
-    <!-- ========================================================
-         SECTION 1: AUTHENTICATION HERO
-         ======================================================== -->
-    <section class="auth-hero-section" id="auth-hero" aria-label="Authentication hero">
-      <div class="container">
-        <div class="auth-breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span aria-hidden="true">&rsaquo;</span>
-          <span aria-current="page">Sanctuary Portal</span>
-        </div>
-        <div style="height: 1rem;"></div>
-        <div class="auth-hero-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          Client Sanctuary Portal
-        </div>
-        <h1 class="auth-hero-title">Welcome to Your Personal Sanctuary</h1>
-        <p class="auth-hero-desc">Access your curated treatment journal, manage upcoming restorative sessions, view bespoke therapist notes, and unlock exclusive sanctuary privileges.</p>
+  <!-- MAIN LOGIN CONTENT -->
+  <main class="auth-page-wrapper" id="main-content">
+    <div class="auth-card">
+      <div class="auth-card-header">
+        <h1 class="auth-card-title">Sign In to Your Sanctuary</h1>
+        <p class="auth-card-subtitle">Enter your registered email and password to access your dashboard.</p>
       </div>
-    </section>
 
-    <!-- SECTION SWITCHER BUTTONS -->
-    <div class="container">
-      <div class="auth-tabs-wrapper">
-        <div class="auth-tabs" role="tablist" aria-label="Authentication Mode">
-          <button class="auth-tab-btn active" id="tabBtnLogin" role="tab" aria-selected="true" aria-controls="section-login" onclick="switchToSection('login')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/></svg>
-            Client Sign In
-          </button>
-          <button class="auth-tab-btn" id="tabBtnRegister" role="tab" aria-selected="false" aria-controls="section-register" onclick="switchToSection('register')">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-            Create Account
-          </button>
+      <!-- DEMO LOGIN QUICK-FILL BAR -->
+      <div class="demo-login-box">
+        <div class="demo-login-text">
+          <strong>Quick Demo Access</strong>
+          <span>Pre-load demo credentials for Alexandra Rivers.</span>
         </div>
+        <button type="button" class="btn-demo-quick" id="btnQuickDemoLogin">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Demo Login
+        </button>
       </div>
+
+      <!-- Alert Banner -->
+      <div id="loginAlertBox" class="alert-box" style="display:none; margin-bottom:1.5rem; padding:0.9rem 1.1rem; border-radius:var(--radius-md); font-size:0.88rem;"></div>
+
+      <!-- LOGIN FORM -->
+      <form id="clientLoginForm" novalidate>
+        <!-- Email -->
+        <div class="form-group">
+          <label for="loginEmail" class="form-label">Email Address <span class="text-champagne">*</span></label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="e.g. alexandra@example.com" autocomplete="email" required>
+          <div class="form-error-msg" id="loginEmailError" style="display:none;"></div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+            <label for="loginPassword" class="form-label" style="margin-bottom:0;">Password <span class="text-champagne">*</span></label>
+            <a href="#" id="forgotPassLink" class="text-champagne" style="font-size:0.82rem; text-decoration:none;">Forgot Password?</a>
+          </div>
+          <div class="password-input-wrap">
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••••" autocomplete="current-password" required>
+            <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('loginPassword', this)">
+              <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <div class="form-error-msg" id="loginPasswordError" style="display:none;"></div>
+        </div>
+
+        <!-- Remember Me -->
+        <div class="form-group" style="display:flex; align-items:center; justify-content:space-between;">
+          <label class="form-check" style="cursor:pointer; display:flex; align-items:center; gap:0.5rem; font-size:0.88rem;">
+            <input type="checkbox" id="loginRememberMe" class="form-check-input" checked>
+            <span class="form-check-label">Remember my device</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="loginSubmitBtn" class="btn-primary btn-submit-loading">
+          <span class="btn-text">Enter Sanctuary Portal</span>
+          <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+
+        <!-- Bottom Link to Signup -->
+        <p style="text-align:center; font-size:0.88rem; color:var(--color-text-muted); margin-top:1.5rem; margin-bottom:0;">
+          New to Kora Spa?
+          <a href="signup.html" class="text-champagne font-weight-600" style="text-decoration:none;">Create an account here</a>.
+        </p>
+      </form>
     </div>
-
-    <!-- ========================================================
-         SECTION 2: CLIENT LOGIN FORM
-         ======================================================== -->
-    <section class="auth-section" id="section-login" aria-label="Client Login" style="padding: 1rem 0 5rem;">
-      <div class="container">
-        <div class="auth-card">
-          <div class="auth-card-header">
-            <h2 class="auth-card-title">Sign In to Your Sanctuary</h2>
-            <p class="auth-card-subtitle">Enter your registered email and password to access your dashboard.</p>
-          </div>
-
-          <!-- DEMO LOGIN QUICK-FILL BAR -->
-          <div class="demo-login-box">
-            <div class="demo-login-text">
-              <strong>Quick Demo Access</strong>
-              <span>Pre-load demo credentials for guest Alexandra Rivers (Radiance Tier).</span>
-            </div>
-            <button type="button" class="btn-demo-quick" id="btnQuickDemoLogin">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-              Demo Login
-            </button>
-          </div>
-
-          <!-- In-card feedback / alert banner -->
-          <div id="loginAlertBox" class="alert-box" style="display:none; margin-bottom:1.5rem; padding:0.9rem 1.1rem; border-radius:var(--radius-md); font-size:0.88rem;"></div>
-
-          <!-- LOGIN FORM -->
-          <form id="clientLoginForm" novalidate>
-            <!-- Email -->
-            <div class="form-group">
-              <label for="loginEmail" class="form-label">Email Address <span class="text-champagne">*</span></label>
-              <input type="email" id="loginEmail" class="form-control" placeholder="e.g. alexandra@example.com" autocomplete="email" required>
-              <div class="form-error-msg" id="loginEmailError" style="display:none;"></div>
-            </div>
-
-            <!-- Password -->
-            <div class="form-group">
-              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
-                <label for="loginPassword" class="form-label" style="margin-bottom:0;">Password <span class="text-champagne">*</span></label>
-                <a href="#section-password-reset" class="text-champagne" style="font-size:0.82rem; text-decoration:none;" onclick="smoothScrollToReset(event)">Forgot Password?</a>
-              </div>
-              <div class="password-input-wrap">
-                <input type="password" id="loginPassword" class="form-control" placeholder="••••••••••••" autocomplete="current-password" required>
-                <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('loginPassword', this)">
-                  <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </button>
-              </div>
-              <div class="form-error-msg" id="loginPasswordError" style="display:none;"></div>
-            </div>
-
-            <!-- Remember Me -->
-            <div class="form-group" style="display:flex; align-items:center; justify-content:space-between;">
-              <label class="form-check" style="cursor:pointer; display:flex; align-items:center; gap:0.5rem; font-size:0.88rem;">
-                <input type="checkbox" id="loginRememberMe" class="form-check-input" checked>
-                <span class="form-check-label">Remember my device</span>
-              </label>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" id="loginSubmitBtn" class="btn-primary btn-submit-loading">
-              <span class="btn-text">Enter Sanctuary Portal</span>
-              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-
-            <!-- Bottom helper -->
-            <p style="text-align:center; font-size:0.88rem; color:var(--color-text-muted); margin-top:1.5rem; margin-bottom:0;">
-              New to Kora Spa?
-              <a href="#section-register" class="text-champagne font-weight-600" style="text-decoration:none;" onclick="switchToSection('register'); event.preventDefault();">Create an account here</a>.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SECTION 3: CLIENT REGISTRATION FORM
-         ======================================================== -->
-    <section class="auth-section" id="section-register" aria-label="Client Registration" style="padding: 1rem 0 5rem;">
-      <div class="container">
-        <div class="auth-card">
-          <div class="auth-card-header">
-            <h2 class="auth-card-title">Begin Your Sanctuary Journey</h2>
-            <p class="auth-card-subtitle">Create your personal guest account to receive personalized rituals and reservations.</p>
-          </div>
-
-          <!-- In-card feedback / alert banner -->
-          <div id="registerAlertBox" class="alert-box" style="display:none; margin-bottom:1.5rem; padding:0.9rem 1.1rem; border-radius:var(--radius-md); font-size:0.88rem;"></div>
-
-          <!-- REGISTRATION FORM -->
-          <form id="clientRegisterForm" novalidate>
-            <!-- Full Name -->
-            <div class="form-group">
-              <label for="regFullName" class="form-label">Full Name <span class="text-champagne">*</span></label>
-              <input type="text" id="regFullName" class="form-control" placeholder="e.g. Jacqueline Vance" autocomplete="name" required>
-              <div class="form-error-msg" id="regNameError" style="display:none;"></div>
-            </div>
-
-            <!-- Email & Phone Grid -->
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
-              <div class="form-group">
-                <label for="regEmail" class="form-label">Email Address <span class="text-champagne">*</span></label>
-                <input type="email" id="regEmail" class="form-control" placeholder="jacqueline@example.com" autocomplete="email" required>
-                <div class="form-error-msg" id="regEmailError" style="display:none;"></div>
-              </div>
-              <div class="form-group">
-                <label for="regPhone" class="form-label">Phone Number <span class="text-champagne">*</span></label>
-                <input type="tel" id="regPhone" class="form-control" placeholder="+1 (555) 019-2834" autocomplete="tel" required>
-                <div class="form-error-msg" id="regPhoneError" style="display:none;"></div>
-              </div>
-            </div>
-
-            <!-- Password & Live Strength -->
-            <div class="form-group">
-              <label for="regPassword" class="form-label">Password <span class="text-champagne">*</span></label>
-              <div class="password-input-wrap">
-                <input type="password" id="regPassword" class="form-control" placeholder="Create a secure password" autocomplete="new-password" required>
-                <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('regPassword', this)">
-                  <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </button>
-              </div>
-
-              <!-- Live Strength Meter -->
-              <div class="password-meter-wrap">
-                <div class="password-meter-bar">
-                  <div class="password-meter-fill" id="passStrengthFill"></div>
-                </div>
-                <div class="password-strength-label">
-                  <span>Security Strength:</span>
-                  <span id="passStrengthText" style="font-weight:600;">None</span>
-                </div>
-                <ul class="password-req-list">
-                  <li class="password-req-item" id="reqLen"><span>•</span> At least 8 characters</li>
-                  <li class="password-req-item" id="reqLetter"><span>•</span> Letters (A–Z, a–z)</li>
-                  <li class="password-req-item" id="reqNum"><span>•</span> At least 1 number</li>
-                  <li class="password-req-item" id="reqSpecial"><span>•</span> Special symbol (!@#$)</li>
-                </ul>
-              </div>
-              <div class="form-error-msg" id="regPasswordError" style="display:none;"></div>
-            </div>
-
-            <!-- Confirm Password & Match Check -->
-            <div class="form-group">
-              <label for="regConfirmPassword" class="form-label">Confirm Password <span class="text-champagne">*</span></label>
-              <div class="password-input-wrap">
-                <input type="password" id="regConfirmPassword" class="form-control" placeholder="Re-type your password" autocomplete="new-password" required>
-                <button type="button" class="password-toggle-btn" aria-label="Show password" onclick="togglePasswordVisibility('regConfirmPassword', this)">
-                  <svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </button>
-              </div>
-              <div id="passMatchIndicator" style="font-size:0.8rem; margin-top:0.35rem; display:none;"></div>
-              <div class="form-error-msg" id="regConfirmError" style="display:none;"></div>
-            </div>
-
-            <!-- Terms & Privacy Agreement -->
-            <div class="form-group">
-              <label class="form-check" style="cursor:pointer; display:flex; align-items:flex-start; gap:0.6rem; font-size:0.85rem; line-height:1.5;">
-                <input type="checkbox" id="regTerms" class="form-check-input" required style="margin-top:0.2rem;">
-                <span class="form-check-label">
-                  I agree to the Kora Spa <a href="#" class="text-champagne" style="text-decoration:underline;">Terms of Service</a>, <a href="#" class="text-champagne" style="text-decoration:underline;">Privacy Policy</a>, and sanctuary hygiene etiquette.
-                </span>
-              </label>
-              <div class="form-error-msg" id="regTermsError" style="display:none;"></div>
-            </div>
-
-            <!-- Register Submit Button -->
-            <button type="submit" id="registerSubmitBtn" class="btn-primary btn-submit-loading">
-              <span class="btn-text">Create Guest Account &amp; Access Dashboard</span>
-              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </button>
-
-            <!-- Bottom helper -->
-            <p style="text-align:center; font-size:0.88rem; color:var(--color-text-muted); margin-top:1.5rem; margin-bottom:0;">
-              Already have an account?
-              <a href="#section-login" class="text-champagne font-weight-600" style="text-decoration:none;" onclick="switchToSection('login'); event.preventDefault();">Sign in here</a>.
-            </p>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SECTION 4: PASSWORD RESET SECTION
-         ======================================================== -->
-    <section class="reset-section" id="section-password-reset" aria-label="Password Recovery">
-      <div class="container">
-        <div class="reset-card">
-          <div class="reset-icon-circle">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-          </div>
-          <h2 class="auth-card-title">Sanctuary Access Recovery</h2>
-          <p class="auth-card-subtitle" style="max-width:440px; margin:0 auto 1.75rem;">
-            Enter your registered email address below. We will send you a confidential link to reset your credentials.
-          </p>
-
-          <form id="passwordResetForm" novalidate style="max-width:420px; margin:0 auto;">
-            <div class="form-group" style="text-align:left;">
-              <label for="resetEmail" class="form-label">Account Email <span class="text-champagne">*</span></label>
-              <input type="email" id="resetEmail" class="form-control" placeholder="e.g. alexandra@example.com" required>
-              <div class="form-error-msg" id="resetEmailError" style="display:none;"></div>
-            </div>
-
-            <button type="submit" id="resetSubmitBtn" class="btn-secondary btn-submit-loading" style="width:100%;">
-              <span class="btn-text">Send Reset Link</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            </button>
-          </form>
-
-          <!-- Success Feedback Banner -->
-          <div class="reset-success-box" id="resetSuccessBox">
-            <div style="display:flex; align-items:flex-start; gap:0.75rem;">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2D4A32" stroke-width="2" style="flex-shrink:0; margin-top:2px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <div>
-                <strong style="color: var(--color-forest-text); display:block; font-size:0.95rem; margin-bottom:0.25rem;">Recovery Link Dispatched</strong>
-                <p style="font-size:0.86rem; color:var(--color-text); margin:0; line-height:1.5;">
-                  A secure one-time password reset link has been dispatched to <strong id="resetTargetEmail">your email</strong>. Please check your inbox and spam folder within the next 30 minutes.
-                </p>
-                <div style="margin-top:0.75rem;">
-                  <button type="button" class="btn-ghost" style="padding:0.3rem 0; font-size:0.8rem; color: var(--color-forest-text); text-decoration:underline;" onclick="simulateQuickLogin()">
-                    Simulate Quick Recovery &amp; Log In
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SECTION 5: CLIENT PORTAL BENEFITS
-         ======================================================== -->
-    <section class="benefits-section" id="section-portal-benefits" aria-label="Client Portal Benefits">
-      <div class="container">
-        <div class="section-header text-center" style="max-width:680px; margin:0 auto;">
-          <span class="section-tag">Sanctuary Privileges</span>
-          <h2 class="section-title">Why Create a Kora Spa Profile?</h2>
-          <p class="section-subtitle">Experience a seamless bridge between your daily lifestyle and restorative sanctuary visits.</p>
-        </div>
-
-        <div class="benefits-grid">
-          <!-- Card 1 -->
-          <div class="benefit-card">
-            <div class="benefit-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3 class="benefit-title">Instant 24/7 Booking</h3>
-            <p class="benefit-desc">Reserve your favorite therapists, treatment suites, and preferred time slots in real time with instant digital confirmation.</p>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="benefit-card">
-            <div class="benefit-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <h3 class="benefit-title">Treatment History &amp; Notes</h3>
-            <p class="benefit-desc">Access post-treatment therapist recommendations, personalized botanical oil formulations, and somatic progress records.</p>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="benefit-card">
-            <div class="benefit-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <h3 class="benefit-title">Membership Privileges</h3>
-            <p class="benefit-desc">Track active Radiance or Essence tier credits, complimentary sauna guest passes, and seasonal ritual invitations in one place.</p>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="benefit-card">
-            <div class="benefit-icon-wrap">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
-            </div>
-            <h3 class="benefit-title">Exclusive Member Perks</h3>
-            <p class="benefit-desc">Enjoy priority waitlists during peak weekend hours, complimentary eucalyptus bath rituals, and celebratory birthday gifts.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================================
-         SECTION 6: BOOKING / SUPPORT CTA
-         ======================================================== -->
-    <section class="auth-support-section" id="section-booking-support" aria-label="Booking and Concierge Support">
-      <div class="container">
-        <div class="support-card">
-          <div>
-            <span style="display:inline-block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.18em; color:var(--color-champagne-light); margin-bottom:0.75rem; font-weight:600;">Personal Concierge Desk</span>
-            <h2 style="font-family:var(--font-serif); font-size:clamp(1.8rem, 3vw, 2.5rem); margin-bottom:1rem; color:#fff;">Need Immediate Assistance or Group Bookings?</h2>
-            <p style="color:rgba(255,255,255,0.85); font-size:1rem; line-height:1.7; margin-bottom:1.5rem; max-width:540px;">
-              Our dedicated sanctuary concierge is on hand to arrange bespoke corporate retreats, bridal packages, multi-treatment itineraries, or custom acoustic suites.
-            </p>
-            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-              <a href="tel:+15551234567" class="btn-primary" style="background:var(--color-champagne); color:#1A1A1A; border:none; display:inline-flex; align-items:center; gap:0.5rem; font-weight:600;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                Call +1 (555) 123-4567
-              </a>
-              <a href="contact.html" class="btn-secondary" style="border-color:rgba(255,255,255,0.4); color:#fff;">
-                Inquire With Concierge
-              </a>
-            </div>
-          </div>
-
-          <div class="support-details">
-            <div class="support-item">
-              <div class="support-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Direct Concierge Email</span>
-                <a href="mailto:concierge@koraspa.com">concierge@koraspa.com</a>
-              </div>
-            </div>
-
-            <div class="support-item">
-              <div class="support-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div>
-                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Concierge Operating Hours</span>
-                <span>Mon–Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM EST</span>
-              </div>
-            </div>
-
-            <div class="support-item">
-              <div class="support-item-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--color-champagne-light);">Sanctuary Address</span>
-                <span>123 Serenity Lane, Tribeca, New York, NY 10001</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
-
-  
 
   <!-- SCRIPTS -->
   <script src="../js/data.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/theme.js"></script>
   <script src="../js/auth.js"></script>
-  <script src="../js/navigation.js"></script>
   <script src="../js/animations.js"></script>
-  <script src="../js/app.js"></script>
 
-  <!-- PAGE-SPECIFIC LOGIC -->
   <script>
-    /* Toggle between Section 2 (Login) and Section 3 (Register) */
-    function switchToSection(mode) {
-      const loginSection = document.getElementById('section-login');
-      const registerSection = document.getElementById('section-register');
-      const tabLogin = document.getElementById('tabBtnLogin');
-      const tabRegister = document.getElementById('tabBtnRegister');
-
-      if (mode === 'login') {
-        loginSection.style.display = 'block';
-        registerSection.style.display = 'none';
-        tabLogin.classList.add('active');
-        tabLogin.setAttribute('aria-selected', 'true');
-        tabRegister.classList.remove('active');
-        tabRegister.setAttribute('aria-selected', 'false');
-      } else {
-        loginSection.style.display = 'none';
-        registerSection.style.display = 'block';
-        tabRegister.classList.add('active');
-        tabRegister.setAttribute('aria-selected', 'true');
-        tabLogin.classList.remove('active');
-        tabLogin.setAttribute('aria-selected', 'false');
-      }
-    }
-
-    /* Password visibility toggle */
     function togglePasswordVisibility(inputId, btn) {
       const input = document.getElementById(inputId);
       if (!input) return;
       const isPass = input.type === 'password';
       input.type = isPass ? 'text' : 'password';
-      btn.setAttribute('aria-label', isPass ? 'Hide password' : 'Show password');
       btn.innerHTML = isPass
-        ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
-        : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
-    }
-
-    /* Smooth scroll to password recovery */
-    function smoothScrollToReset(e) {
-      if (e) e.preventDefault();
-      const el = document.getElementById('section-password-reset');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        const input = document.getElementById('resetEmail');
-        if (input) {
-          const loginEmail = document.getElementById('loginEmail');
-          if (loginEmail && loginEmail.value) input.value = loginEmail.value;
-          input.focus();
-        }
-      }
-    }
-
-    /* Simulate quick login from recovery */
-    function simulateQuickLogin() {
-      if (typeof Auth !== 'undefined') {
-        Auth.login('alexandra@example.com', 'demo');
-        showToast('Password reset authenticated. Redirecting to home page...', 'success');
-        setTimeout(() => { window.location.href = '../index.html'; }, 900);
-      }
+        ? '<svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>'
+        : '<svg class="eye-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      // Default initial display state
-      switchToSection('login');
+      if (typeof ThemeManager !== 'undefined') ThemeManager.init();
 
-      // Check query parameter if #register or ?tab=register
-      if (window.location.hash === '#section-register' || window.location.search.includes('tab=register')) {
-        switchToSection('register');
-      }
-
-      /* ----------------------------------------------------
-         1. DEMO LOGIN BUTTON
-         ---------------------------------------------------- */
+      // Quick Demo Button
       const demoBtn = document.getElementById('btnQuickDemoLogin');
-      const loginForm = document.getElementById('clientLoginForm');
-      const loginEmail = document.getElementById('loginEmail');
-      const loginPass = document.getElementById('loginPassword');
-      const loginSubmit = document.getElementById('loginSubmitBtn');
-      const loginAlert = document.getElementById('loginAlertBox');
-
       if (demoBtn) {
         demoBtn.addEventListener('click', () => {
-          loginEmail.value = 'alexandra@example.com';
-          loginPass.value = 'Serenity2026!';
-          loginEmail.classList.remove('error');
-          loginPass.classList.remove('error');
-
-          // Highlight fields briefly
-          loginEmail.style.borderColor = 'var(--color-champagne)';
-          loginPass.style.borderColor = 'var(--color-champagne)';
-
-          showToast('Demo credentials populated for Alexandra Rivers', 'info', 2500);
-
-          // Trigger submit immediately
-          loginSubmit.classList.add('is-loading');
-          loginSubmit.innerHTML = `
-            <span class="spinner" style="width:16px; height:16px; border:2px solid #fff; border-top-color:transparent; border-radius:50%; animation:spin 0.7s linear infinite;"></span>
-            <span>Verifying Sanctuary Pass...</span>
-          `;
-
-          setTimeout(() => {
-            if (typeof Auth !== 'undefined') {
-              Auth.login('alexandra@example.com', 'Serenity2026!');
-            }
-            loginAlert.style.display = 'block';
-            loginAlert.style.background = 'rgba(143,168,135,0.2)';
-            loginAlert.style.border = '1px solid var(--color-sage)';
-            loginAlert.style.color = 'var(--color-forest)';
-            loginAlert.textContent = 'Welcome back, Alexandra! Redirecting to home page...';
-
-            showToast('Authentication verified. Welcome to Kora Spa!', 'success');
-            setTimeout(() => {
-              window.location.href = '../index.html';
-            }, 1000);
-          }, 800);
+          document.getElementById('loginEmail').value = 'alexandra@example.com';
+          document.getElementById('loginPassword').value = 'Serenity2026!';
+          if (typeof showToast === 'function') {
+            showToast('Loaded demo credentials for Alexandra Rivers', 'info');
+          }
         });
       }
 
-      /* ----------------------------------------------------
-         2. CLIENT LOGIN FORM SUBMIT
-         ---------------------------------------------------- */
+      // Forgot Password helper
+      const forgotPass = document.getElementById('forgotPassLink');
+      if (forgotPass) {
+        forgotPass.addEventListener('click', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('loginEmail').value.trim();
+          if (!email) {
+            alert('Please enter your email address in the field above to receive a password reset link.');
+            document.getElementById('loginEmail').focus();
+          } else {
+            alert(`A password recovery token has been sent to: ${email}`);
+          }
+        });
+      }
+
+      // Login Form Submission
+      const loginForm = document.getElementById('clientLoginForm');
       if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
           e.preventDefault();
-          let valid = true;
-
-          const emailVal = loginEmail.value.trim();
-          const passVal = loginPass.value;
+          const emailInput = document.getElementById('loginEmail');
+          const passInput = document.getElementById('loginPassword');
           const emailErr = document.getElementById('loginEmailError');
           const passErr = document.getElementById('loginPasswordError');
+          const loginSubmit = document.getElementById('loginSubmitBtn');
 
-          // Validate email
-          if (!emailVal) {
-            emailErr.textContent = 'Please enter your registered email address.';
+          let valid = true;
+          const emailVal = emailInput.value.trim();
+          const passVal = passInput.value;
+
+          if (!emailVal || (typeof validateEmail === 'function' && !validateEmail(emailVal))) {
+            emailErr.textContent = 'Please provide a valid email address.';
             emailErr.style.display = 'block';
-            loginEmail.classList.add('error');
-            valid = false;
-          } else if (typeof validateEmail === 'function' && !validateEmail(emailVal)) {
-            emailErr.textContent = 'Please enter a valid email format (e.g. name@domain.com).';
-            emailErr.style.display = 'block';
-            loginEmail.classList.add('error');
+            emailInput.classList.add('error');
             valid = false;
           } else {
             emailErr.style.display = 'none';
-            loginEmail.classList.remove('error');
+            emailInput.classList.remove('error');
           }
 
-          // Validate password
           if (!passVal) {
-            passErr.textContent = 'Please enter your account password.';
+            passErr.textContent = 'Password is required.';
             passErr.style.display = 'block';
-            loginPass.classList.add('error');
-            valid = false;
-          } else if (passVal.length < 6) {
-            passErr.textContent = 'Password must be at least 6 characters.';
-            passErr.style.display = 'block';
-            loginPass.classList.add('error');
+            passInput.classList.add('error');
             valid = false;
           } else {
             passErr.style.display = 'none';
-            loginPass.classList.remove('error');
+            passInput.classList.remove('error');
           }
 
           if (!valid) return;
 
-          // Proceed with login
           loginSubmit.classList.add('is-loading');
           loginSubmit.disabled = true;
           loginSubmit.innerHTML = `
@@ -1141,258 +509,14 @@
             if (typeof Auth !== 'undefined') {
               Auth.login(emailVal, passVal);
             }
-            showToast('Welcome back to Kora Spa! Entering sanctuary...', 'success');
-            setTimeout(() => {
-              window.location.href = '../index.html';
-            }, 850);
-          }, 900);
-        });
-      }
-
-      /* ----------------------------------------------------
-         3. REGISTRATION LIVE PASSWORD VALIDATION
-         ---------------------------------------------------- */
-      const regPass = document.getElementById('regPassword');
-      const regConfirm = document.getElementById('regConfirmPassword');
-      const passFill = document.getElementById('passStrengthFill');
-      const passText = document.getElementById('passStrengthText');
-      const reqLen = document.getElementById('reqLen');
-      const reqLetter = document.getElementById('reqLetter');
-      const reqNum = document.getElementById('reqNum');
-      const reqSpecial = document.getElementById('reqSpecial');
-      const matchIndicator = document.getElementById('passMatchIndicator');
-
-      function checkPasswordStrength(val) {
-        let score = 0;
-        const hasLen = val.length >= 8;
-        const hasLetter = /[a-zA-Z]/.test(val);
-        const hasNum = /[0-9]/.test(val);
-        const hasSpecial = /[^a-zA-Z0-9]/.test(val);
-
-        reqLen.classList.toggle('met', hasLen);
-        reqLetter.classList.toggle('met', hasLetter);
-        reqNum.classList.toggle('met', hasNum);
-        reqSpecial.classList.toggle('met', hasSpecial);
-
-        if (hasLen) score++;
-        if (hasLetter) score++;
-        if (hasNum) score++;
-        if (hasSpecial) score++;
-
-        if (val.length === 0) {
-          passFill.style.width = '0%';
-          passFill.style.backgroundColor = 'transparent';
-          passText.textContent = 'None';
-          passText.style.color = 'var(--color-text-muted)';
-        } else if (score <= 1) {
-          passFill.style.width = '25%';
-          passFill.style.backgroundColor = '#e05656';
-          passText.textContent = 'Weak';
-          passText.style.color = '#e05656';
-        } else if (score === 2) {
-          passFill.style.width = '50%';
-          passFill.style.backgroundColor = '#e5a33c';
-          passText.textContent = 'Fair';
-          passText.style.color = '#e5a33c';
-        } else if (score === 3) {
-          passFill.style.width = '75%';
-          passFill.style.backgroundColor = 'var(--color-champagne)';
-          passText.textContent = 'Good';
-          passText.style.color = 'var(--color-champagne-dark)';
-        } else {
-          passFill.style.width = '100%';
-          passFill.style.backgroundColor = 'var(--color-forest)';
-          passText.textContent = 'Exceptional';
-          passText.style.color = 'var(--color-forest)';
-        }
-      }
-
-      function checkPasswordMatch() {
-        const p1 = regPass.value;
-        const p2 = regConfirm.value;
-        if (!p2) {
-          matchIndicator.style.display = 'none';
-          return;
-        }
-        matchIndicator.style.display = 'block';
-        if (p1 === p2) {
-          matchIndicator.innerHTML = '<span style="color: var(--color-forest-text); font-weight:600;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg> Passwords match</span>';
-        } else {
-          matchIndicator.innerHTML = '<span style="color:#d9534f; font-weight:600;"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg> Passwords do not match yet</span>';
-        }
-      }
-
-      if (regPass) {
-        regPass.addEventListener('input', () => {
-          checkPasswordStrength(regPass.value);
-          checkPasswordMatch();
-        });
-      }
-      if (regConfirm) {
-        regConfirm.addEventListener('input', checkPasswordMatch);
-      }
-
-      /* ----------------------------------------------------
-         4. REGISTRATION FORM SUBMISSION
-         ---------------------------------------------------- */
-      const regForm = document.getElementById('clientRegisterForm');
-      if (regForm) {
-        regForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          let valid = true;
-
-          const nameInput = document.getElementById('regFullName');
-          const emailInput = document.getElementById('regEmail');
-          const phoneInput = document.getElementById('regPhone');
-          const termsInput = document.getElementById('regTerms');
-
-          const nameErr = document.getElementById('regNameError');
-          const emailErr = document.getElementById('regEmailError');
-          const phoneErr = document.getElementById('regPhoneError');
-          const passErr = document.getElementById('regPasswordError');
-          const confirmErr = document.getElementById('regConfirmError');
-          const termsErr = document.getElementById('regTermsError');
-          const regAlert = document.getElementById('registerAlertBox');
-
-          // Full Name
-          if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
-            nameErr.textContent = 'Please provide your full legal or preferred name.';
-            nameErr.style.display = 'block';
-            nameInput.classList.add('error');
-            valid = false;
-          } else {
-            nameErr.style.display = 'none';
-            nameInput.classList.remove('error');
-          }
-
-          // Email
-          if (!emailInput.value.trim() || (typeof validateEmail === 'function' && !validateEmail(emailInput.value.trim()))) {
-            emailErr.textContent = 'Please enter a valid email address.';
-            emailErr.style.display = 'block';
-            emailInput.classList.add('error');
-            valid = false;
-          } else {
-            emailErr.style.display = 'none';
-            emailInput.classList.remove('error');
-          }
-
-          // Phone
-          if (!phoneInput.value.trim() || (typeof validatePhone === 'function' && !validatePhone(phoneInput.value))) {
-            phoneErr.textContent = 'Please enter a valid phone number (at least 10 digits).';
-            phoneErr.style.display = 'block';
-            phoneInput.classList.add('error');
-            valid = false;
-          } else {
-            phoneErr.style.display = 'none';
-            phoneInput.classList.remove('error');
-          }
-
-          // Password
-          if (!regPass.value || regPass.value.length < 8) {
-            passErr.textContent = 'Password must contain at least 8 characters.';
-            passErr.style.display = 'block';
-            regPass.classList.add('error');
-            valid = false;
-          } else {
-            passErr.style.display = 'none';
-            regPass.classList.remove('error');
-          }
-
-          // Confirm Password
-          if (regPass.value !== regConfirm.value) {
-            confirmErr.textContent = 'Passwords do not match.';
-            confirmErr.style.display = 'block';
-            regConfirm.classList.add('error');
-            valid = false;
-          } else {
-            confirmErr.style.display = 'none';
-            regConfirm.classList.remove('error');
-          }
-
-          // Terms
-          if (!termsInput.checked) {
-            termsErr.textContent = 'Please agree to the Terms of Service & Privacy Policy to continue.';
-            termsErr.style.display = 'block';
-            valid = false;
-          } else {
-            termsErr.style.display = 'none';
-          }
-
-          if (!valid) return;
-
-          const submitBtn = document.getElementById('registerSubmitBtn');
-          submitBtn.classList.add('is-loading');
-          submitBtn.disabled = true;
-          submitBtn.innerHTML = `
-            <span class="spinner" style="width:16px; height:16px; border:2px solid #fff; border-top-color:transparent; border-radius:50%; animation:spin 0.7s linear infinite;"></span>
-            <span>Crafting Your Sanctuary Profile...</span>
-          `;
-
-          setTimeout(() => {
-            const newUser = {
-              name: nameInput.value.trim(),
-              email: emailInput.value.trim(),
-              phone: phoneInput.value.trim(),
-              membershipPlan: 'radiance',
-              membershipPlanName: 'Radiance Tier Guest'
-            };
-
-            if (typeof Auth !== 'undefined') {
-              Auth.register(newUser);
+            if (typeof showToast === 'function') {
+              showToast('Welcome back to Kora Spa! Entering sanctuary...', 'success');
             }
-
-            regAlert.style.display = 'block';
-            regAlert.style.background = 'rgba(143,168,135,0.2)';
-            regAlert.style.border = '1px solid var(--color-sage)';
-            regAlert.style.color = 'var(--color-forest)';
-            regAlert.textContent = `Welcome to Kora Spa, ${newUser.name}! Your account is active. Redirecting to home page...`;
-
-            showToast('Account registered successfully! Redirecting to home page...', 'success');
             setTimeout(() => {
-              window.location.href = '../index.html';
-            }, 1000);
-          }, 950);
-        });
-      }
-
-      /* ----------------------------------------------------
-         5. PASSWORD RESET FORM
-         ---------------------------------------------------- */
-      const resetForm = document.getElementById('passwordResetForm');
-      if (resetForm) {
-        resetForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const emailInput = document.getElementById('resetEmail');
-          const emailErr = document.getElementById('resetEmailError');
-          const resetBtn = document.getElementById('resetSubmitBtn');
-          const successBox = document.getElementById('resetSuccessBox');
-          const targetEmail = document.getElementById('resetTargetEmail');
-
-          const emailVal = emailInput.value.trim();
-          if (!emailVal || (typeof validateEmail === 'function' && !validateEmail(emailVal))) {
-            emailErr.textContent = 'Please provide a valid email address.';
-            emailErr.style.display = 'block';
-            emailInput.classList.add('error');
-            return;
-          }
-
-          emailErr.style.display = 'none';
-          emailInput.classList.remove('error');
-
-          resetBtn.classList.add('is-loading');
-          resetBtn.disabled = true;
-          resetBtn.innerHTML = `
-            <span class="spinner" style="width:16px; height:16px; border:2px solid var(--color-champagne); border-top-color:transparent; border-radius:50%; animation:spin 0.7s linear infinite;"></span>
-            <span>Dispatching Sanctuary Token...</span>
-          `;
-
-          setTimeout(() => {
-            resetBtn.classList.remove('is-loading');
-            resetBtn.disabled = false;
-            resetBtn.innerHTML = `<span>Send Reset Link</span>`;
-            targetEmail.textContent = emailVal;
-            successBox.classList.add('visible');
-            showToast(`Reset link dispatched to ${emailVal}`, 'success');
+              const urlParams = new URLSearchParams(window.location.search);
+              const redirect = urlParams.get('redirect');
+              window.location.href = redirect || 'dashboard.html';
+            }, 800);
           }, 850);
         });
       }
