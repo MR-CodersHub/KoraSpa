@@ -851,19 +851,31 @@
       color: var(--color-text, #3D3530);
       margin: 0;
     }
+    .approach-row-cards {
+      align-items: stretch;
+    }
     .approach-card-lone {
       background: var(--color-ivory, #FAF8F3);
-      padding: 3rem;
       border-radius: var(--radius-xl, 24px);
       border: 1px solid var(--color-border, #E8DDD4);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       height: 100%;
+      overflow: hidden;
     }
-    .lone-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1.25rem;
+    .approach-card-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .approach-card-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 2.25rem 2.5rem 2.5rem;
     }
 
     /* SECTION 6: COMMITMENT */
@@ -980,6 +992,7 @@
     @media (max-width: 480px) {
       .philosophy-grid { grid-template-columns: 1fr; }
       .commitment-grid { grid-template-columns: 1fr; }
+      .approach-card-body { padding: 1.75rem 1.5rem 2rem; }
     }
     @media (max-width: 768px) {
       .about-story-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1340,7 +1353,7 @@
           <!-- Step 1 -->
           <div class="approach-row" data-animate="fade-up">
             <div class="approach-visual">
-              <img class="approach-img" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Therapist welcoming and consulting with spa guest" loading="lazy">
+              <img class="approach-img" src="https://i.pinimg.com/1200x/a4/36/1a/a4361a37b613a1733cbec31e6ac1237b.jpg" alt="Therapist welcoming and consulting with spa guest" loading="lazy">
             </div>
             <div class="approach-text">
               <div class="step-number">01</div>
@@ -1352,7 +1365,7 @@
           <!-- Step 2 -->
           <div class="approach-row reverse" data-animate="fade-up">
             <div class="approach-visual">
-              <img class="approach-img" src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80" alt="Selection of soothing botanical treatment oils and warm stones" loading="lazy">
+              <img class="approach-img" src="https://i.pinimg.com/1200x/bc/9f/62/bc9f6242b2be92a4d7be65ebfc4efd3d.jpg" alt="Selection of soothing botanical treatment oils and warm stones" loading="lazy">
             </div>
             <div class="approach-text">
               <div class="step-number">02</div>
@@ -1362,18 +1375,22 @@
           </div>
 
           <!-- Step 3 -->
-          <div class="approach-row" data-animate="fade-up">
+          <div class="approach-row approach-row-cards" data-animate="fade-up">
             <div class="approach-card-lone">
-              <span class="lone-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2c1.5 2 2.5 3.5 2.5 5a2.5 2.5 0 0 1-5 0C9.5 5.5 10.5 4 12 2z"/><path d="M9 8h6v12H9z"/><path d="M12 8v12"/></svg></span>
-              <div class="step-number">03</div>
-              <h3 class="step-title">Personalized Session</h3>
-              <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
+              <img class="approach-card-img" src="https://i.pinimg.com/1200x/d3/1a/3f/d31a3fe7bf653566d56b40126e315638.jpg" alt="Therapist adjusting a personalized treatment session" loading="lazy">
+              <div class="approach-card-body">
+                <div class="step-number">03</div>
+                <h3 class="step-title">Personalized Session</h3>
+                <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
+              </div>
             </div>
             <div class="approach-card-lone">
-              <span class="lone-icon" aria-hidden="true"><svg class="inline-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h2a2 2 0 0 1 0 4h-2M7 3c-.7 1 .7 2 0 3M11 3c-.7 1 .7 2 0 3"/></svg></span>
-              <div class="step-number">04</div>
-              <h3 class="step-title">Aftercare Guidance</h3>
-              <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>
+              <img class="approach-card-img" src="https://i.pinimg.com/1200x/35/dc/c2/35dcc2825b1ad5a0a838a9e4529ebb14.jpg" alt="Herbal infusion and aftercare guidance after treatment" loading="lazy">
+              <div class="approach-card-body">
+                <div class="step-number">04</div>
+                <h3 class="step-title">Aftercare Guidance</h3>
+                <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>
+              </div>
             </div>
           </div>
 
