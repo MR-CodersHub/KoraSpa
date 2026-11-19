@@ -29,65 +29,170 @@
     /* ── Hero Section ────────────────────────────────────────── */
     .blog-hero {
       position: relative;
-      background: linear-gradient(180deg, var(--color-beige) 0%, var(--color-ivory) 100%);
-      padding: calc(var(--nav-height) + 4rem) 0 4rem;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      min-height: clamp(680px, 88vh, 900px);
+      padding: calc(var(--nav-height) + 4rem) 0 6rem;
       overflow: hidden;
-      border-bottom: 1px solid var(--color-border);
+      isolation: isolate;
+      background-color: #0B130C;
+      color: var(--color-text-on-dark);
+      text-align: start;
     }
 
-    .blog-hero::before {
-      content: '';
+    .blog-hero-media {
       position: absolute;
       inset: 0;
-      background-image: 
-        radial-gradient(circle at 15% 25%, rgba(143, 168, 135, 0.14) 0%, transparent 45%),
-        radial-gradient(circle at 85% 75%, rgba(201, 169, 110, 0.12) 0%, transparent 50%);
+      z-index: -3;
+      background-image: url('https://i.pinimg.com/736x/b3/91/a8/b391a81f430776cd31a413e0b7dc457d.jpg');
+      background-size: cover;
+      background-position: center 35%;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      animation: blogHeroZoom 8s ease-out forwards;
+    }
+    @keyframes blogHeroZoom {
+      to { transform: scale(1); }
+    }
+
+    .blog-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg,
+          rgba(8, 15, 9, 0.95) 0%,
+          rgba(8, 15, 9, 0.88) 26%,
+          rgba(8, 15, 9, 0.62) 52%,
+          rgba(8, 15, 9, 0.32) 76%,
+          rgba(8, 15, 9, 0.18) 100%),
+        linear-gradient(180deg,
+          rgba(8, 15, 9, 0.82) 0%,
+          rgba(8, 15, 9, 0.30) 20%,
+          rgba(8, 15, 9, 0.18) 52%,
+          rgba(8, 15, 9, 0.78) 100%);
+      pointer-events: none;
+    }
+    [dir="rtl"] .blog-hero-scrim {
+      background:
+        linear-gradient(270deg,
+          rgba(8, 15, 9, 0.95) 0%,
+          rgba(8, 15, 9, 0.88) 26%,
+          rgba(8, 15, 9, 0.62) 52%,
+          rgba(8, 15, 9, 0.32) 76%,
+          rgba(8, 15, 9, 0.18) 100%),
+        linear-gradient(180deg,
+          rgba(8, 15, 9, 0.82) 0%,
+          rgba(8, 15, 9, 0.30) 20%,
+          rgba(8, 15, 9, 0.18) 52%,
+          rgba(8, 15, 9, 0.78) 100%);
+    }
+    .blog-hero::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 90px;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, var(--color-ivory) 100%);
       pointer-events: none;
     }
 
-    .blog-hero-pattern {
-      position: absolute;
-      right: -40px;
-      top: 10%;
-      width: 280px;
-      height: 280px;
-      opacity: 0.05;
-      pointer-events: none;
-      transform: rotate(25deg);
+    .blog-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
 
-    .blog-hero-pattern-left {
+    .blog-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+
+    .blog-hero-copy {
+      max-width: 680px;
+    }
+
+    .blog-hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .blog-hero-visual::before {
+      content: '';
       position: absolute;
-      left: -50px;
-      bottom: 5%;
-      width: 240px;
-      height: 240px;
-      opacity: 0.04;
+      inset: -14px;
+      border: 1px solid rgba(201, 169, 110, 0.48);
+      border-radius: clamp(1.75rem, 3vw, 2.75rem);
+      transform: rotate(4deg);
       pointer-events: none;
-      transform: rotate(-15deg);
+    }
+    [dir="rtl"] .blog-hero-visual::before {
+      transform: rotate(-4deg);
+    }
+    .blog-hero-visual img {
+      position: relative;
+      width: 100%;
+      max-width: clamp(300px, 32vw, 440px);
+      height: clamp(360px, 48vh, 540px);
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: clamp(1.5rem, 3vw, 2.5rem);
+      border: 1px solid rgba(250, 248, 243, 0.28);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
     }
 
     .blog-hero .section-tag {
       margin-bottom: 1rem;
+      color: var(--color-champagne-light);
     }
 
     .blog-hero-title {
       font-family: var(--font-serif);
-      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      font-size: clamp(2.6rem, 6vw, 4.4rem);
       font-weight: 600;
-      color: var(--color-text);
-      line-height: 1.2;
+      color: var(--color-text-on-dark);
+      line-height: 1.25;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      text-wrap: balance;
     }
 
     .blog-hero-subtitle {
       font-size: 1.125rem;
-      color: var(--color-text-muted);
-      max-width: 620px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      color: rgba(250, 248, 243, 0.86);
+      max-width: 560px;
+      margin: 0;
+      line-height: 1.75;
+    }
+
+    .blog-hero .blog-controls {
+      margin-top: clamp(2rem, 4vw, 3.25rem);
+    }
+
+    /* Keep the nav readable over the image hero until it gains its scrolled background */
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
+      color: var(--color-text-on-dark);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
+      color: rgba(250, 248, 243, 0.68);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link:hover,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link.active {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
+      border-color: rgba(250, 248, 243, 0.42);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
+      background: var(--color-text-on-dark);
     }
 
     /* ── Search & Filter Controls ────────────────────────────── */
@@ -815,6 +920,21 @@
 
     /* ── Responsive Refinements ──────────────────────────────── */
     @media (max-width: 992px) {
+      .blog-hero {
+        min-height: 0;
+        padding: calc(var(--nav-height) + 3rem) 0 5rem;
+      }
+      .blog-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .blog-hero-copy {
+        max-width: 760px;
+      }
+      .blog-hero-visual img {
+        max-width: clamp(280px, 50vw, 380px);
+        height: clamp(320px, 46vh, 460px);
+      }
       .featured-card {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       }
@@ -857,6 +977,22 @@
     }
 
     @media (max-width: 640px) {
+      .blog-hero {
+        padding: calc(var(--nav-height) + 2.5rem) 0 4rem;
+      }
+      .blog-hero-title {
+        font-size: clamp(2.2rem, 10vw, 3rem);
+      }
+      .blog-hero-subtitle {
+        font-size: 1rem;
+      }
+      .blog-hero-visual img {
+        max-width: 100%;
+        height: 360px;
+      }
+      .blog-hero .blog-controls {
+        margin-top: 2rem;
+      }
       .article-grid {
         grid-template-columns: 1fr;
       }
@@ -891,7 +1027,7 @@
 
   <!-- Scroll Progress & Navigation -->
   <div id="scroll-progress" aria-hidden="true"></div>
-  <nav class="site-nav" id="siteNav">
+  <nav class="site-nav nav-over-dark" id="siteNav">
     <div class="nav-container container">
       <a href="../index.html" class="nav-logo">
         <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
@@ -973,19 +1109,27 @@
   <!-- ==========================================================
        SECTION 1: BLOG HERO
        ========================================================== -->
-  <section class="blog-hero" id="blogHero">
-    <!-- Subtle Botanical Vector Backgrounds -->
-    <svg class="blog-hero-pattern" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
-      <path d="M50 0 C60 30, 90 40, 100 50 C70 60, 60 90, 50 100 C40 70, 10 60, 0 50 C30 40, 40 10, 50 0 Z"/>
-    </svg>
-    <svg class="blog-hero-pattern-left" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.2">
-      <path d="M50 0 C60 30, 90 40, 100 50 C70 60, 60 90, 50 100 C40 70, 10 60, 0 50 C30 40, 40 10, 50 0 Z"/>
-    </svg>
+  <section class="blog-hero" id="blogHero" aria-label="Journal hero">
+    <div class="blog-hero-media" aria-hidden="true"></div>
+    <div class="blog-hero-scrim" aria-hidden="true"></div>
 
-    <div class="container">
-      <div class="section-tag">The Wellness Journal</div>
-      <h1 class="blog-hero-title">Insights for a More Serene Life</h1>
-      <p class="blog-hero-subtitle">Explore our collection of wellness guides, spa inspiration, and mindful living articles curated by holistic therapists.</p>
+    <div class="container blog-hero-inner">
+      <div class="blog-hero-grid">
+        <div class="blog-hero-copy">
+          <div class="section-tag">The Wellness Journal</div>
+          <h1 class="blog-hero-title">Insights for a More Serene Life</h1>
+          <p class="blog-hero-subtitle">Explore our collection of wellness guides, spa inspiration, and mindful living articles curated by holistic therapists.</p>
+        </div>
+
+        <div class="blog-hero-visual">
+          <img
+            src="https://i.pinimg.com/736x/44/6c/91/446c916fb3eb94da3024179f8d7ad6a6.jpg"
+            alt="Serene spa ritual prepared for a restorative wellness session"
+            fetchpriority="high"
+            width="736" height="1104"
+          >
+        </div>
+      </div>
 
       <div class="blog-controls">
         <!-- Search bar with icon -->
