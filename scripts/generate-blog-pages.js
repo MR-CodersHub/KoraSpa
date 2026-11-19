@@ -224,6 +224,7 @@ function buildPage(template, article, articles) {
   html = replaceInnerById(html, 'authorBioName', esc(article.author + (suffix ? ', ' + suffix : '')));
   html = replaceInnerById(html, 'authorBioRole', esc(article.authorRole));
   html = replaceInnerById(html, 'authorBioText', esc(article.authorBio));
+  html = html.replace('Book with Sarah', 'Book with ' + article.author.split(' ')[0]);
 
   html = html.replace(/<script src="\.\.\/js\/blog-details\.js"><\/script>\n?/i, '');
 

@@ -494,7 +494,7 @@ window.SpaData = {
       imageAlt: 'Essential aromatherapy oils and dried botanicals',
       excerpt: `Aromatherapy pairs therapeutic botanical essences with rhythmic bodywork to stimulate olfactory pathways and soothe nervous tension. Learn how pure lavender, eucalyptus, and bergamot can reset your inner equilibrium.`,
       pullquote: `Scent bypasses logic and speaks directly to the nervous system — a quiet, elegant pathway back to balance.`,
-      lead: `A single breath can change the tone of an entire afternoon. Aromatherapy works at the meeting point of chemistry and emotion, using volatile plant compounds to gently influence mood, muscular tension, and the pace of breathing. At Kora Spa, essential oils are never an Afterthought; they are selected with the same care as the massage technique itself.`,
+      lead: `A single breath can change the tone of an entire afternoon. Aromatherapy works at the meeting point of chemistry and emotion, using volatile plant compounds to gently influence mood, muscular tension, and the pace of breathing. At Kora Spa, essential oils are never an afterthought; they are selected with the same care as the massage technique itself.`,
       toc: [
         { id: 'how-scent-works', label: 'How Scent Talks to the Brain' },
         { id: 'key-oils', label: 'Three Oils Worth Knowing' },
