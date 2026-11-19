@@ -798,84 +798,155 @@
     .approach-section {
       padding: 7rem 0;
       background: var(--color-white, #FFFFFF);
+      position: relative;
     }
-    .approach-steps {
+    .approach-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 5rem;
+    }
+    .approach-header .section-tag {
+      margin-bottom: 1rem;
+    }
+    .approach-header .section-title {
+      max-width: 12ch;
+      margin-bottom: 0;
+      text-wrap: balance;
+    }
+    .approach-header .section-subtitle {
+      max-width: 38ch;
+      margin: 0;
+      justify-self: end;
+    }
+    .journey {
+      list-style: none;
+      position: relative;
       display: flex;
       flex-direction: column;
       gap: 5rem;
-      margin-top: 4rem;
     }
-    .approach-row {
+    .journey::before {
+      content: '';
+      position: absolute;
+      top: 2rem;
+      bottom: 2rem;
+      left: 50%;
+      width: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent 0%, rgba(201, 169, 110, 0.42) 8%, rgba(201, 169, 110, 0.42) 92%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .journey-step {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4.5rem;
+      grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
+      grid-template-areas: "text marker visual";
+      column-gap: 2rem;
       align-items: center;
     }
-    .approach-row.reverse {
-      direction: rtl;
+    .journey-step.reverse {
+      grid-template-areas: "visual marker text";
     }
-    .approach-row.reverse > * {
-      direction: ltr;
+    .journey-text,
+    .journey-visual {
+      min-width: 0;
     }
-    .approach-visual {
-      position: relative;
-    }
-    .approach-img {
+    .journey-text {
+      grid-area: text;
       width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
+      max-width: 30rem;
+    }
+    .journey-step:not(.reverse) .journey-text {
+      justify-self: end;
+      padding-inline-end: 1.5rem;
+    }
+    .journey-step.reverse .journey-text {
+      justify-self: start;
+      padding-inline-start: 1.5rem;
+    }
+    .journey-text::before {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      margin-bottom: 1.25rem;
+      background: var(--color-champagne, #C9A96E);
+    }
+    .journey-visual {
+      grid-area: visual;
+      position: relative;
+      overflow: hidden;
       border-radius: var(--radius-xl, 24px);
-      box-shadow: var(--shadow-md, 0 4px 16px rgba(45,74,50,0.10));
+      background: var(--color-beige, #F5EFE7);
+      box-shadow: var(--shadow-lg, 0 8px 32px rgba(45,74,50,0.12));
     }
-    .approach-text {
-      display: flex;
-      flex-direction: column;
+    .journey-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(201, 169, 110, 0.18);
+      border-radius: inherit;
+      pointer-events: none;
     }
-    .step-number {
-      font-family: var(--font-serif);
-      font-size: 3rem;
-      font-weight: 700;
+    .journey-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .journey-marker {
+      grid-area: marker;
+      justify-self: center;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 110, 0.45);
+      background: var(--color-white, #FFFFFF);
+      box-shadow: 0 0 0 10px var(--color-white, #FFFFFF);
       color: var(--color-accent-text, #8A642F);
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 600;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+      font-variant-numeric: tabular-nums;
     }
     .step-title {
       font-family: var(--font-serif);
-      font-size: 1.75rem;
+      font-size: clamp(1.75rem, 2.5vw, 2.1rem);
+      line-height: 1.2;
       color: var(--color-forest-text);
       margin-bottom: 1rem;
+      text-wrap: balance;
     }
     .step-desc {
-      font-size: 1rem;
-      line-height: 1.75;
-      color: var(--color-text, #3D3530);
+      max-width: 36ch;
       margin: 0;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text, #3D3530);
     }
-    .approach-row-cards {
-      align-items: stretch;
+    @media (hover: hover) {
+      .journey-visual:hover .journey-img {
+        transform: scale(1.03);
+      }
     }
-    .approach-card-lone {
-      background: var(--color-ivory, #FAF8F3);
-      border-radius: var(--radius-xl, 24px);
-      border: 1px solid var(--color-border, #E8DDD4);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      height: 100%;
-      overflow: hidden;
-    }
-    .approach-card-img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 4/3;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-    .approach-card-body {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      padding: 2.25rem 2.5rem 2.5rem;
+    @media (prefers-reduced-motion: reduce) {
+      .journey-img {
+        transition: none;
+      }
+      .journey-visual:hover .journey-img {
+        transform: none;
+      }
     }
 
     /* SECTION 6: COMMITMENT */
@@ -971,9 +1042,6 @@
     [data-theme="dark"] .step-title {
       color: var(--color-accent-on-dark);
     }
-    [data-theme="dark"] .step-number {
-      color: var(--color-champagne-light);
-    }
     [data-theme="dark"] .commitment-section,
     [data-theme="dark"] .commitment-title,
     [data-theme="dark"] .commitment-card h3 {
@@ -988,11 +1056,66 @@
       .philosophy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .about-therapists-grid { grid-template-columns: 1fr; }
       .commitment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .approach-header { gap: 3rem; }
+      .journey-step { column-gap: 1.5rem; }
+      .journey-step:not(.reverse) .journey-text { padding-inline-end: 1rem; }
+      .journey-step.reverse .journey-text { padding-inline-start: 1rem; }
+    }
+    @media (max-width: 900px) {
+      .approach-section { padding: 5.5rem 0; }
+      .approach-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+      }
+      .approach-header .section-title { max-width: none; }
+      .approach-header .section-subtitle {
+        max-width: 46ch;
+        justify-self: start;
+      }
+      .journey { gap: 3.5rem; }
+      .journey::before { display: none; }
+      .journey-step,
+      .journey-step.reverse {
+        grid-template-columns: 1fr;
+        grid-template-areas: "visual" "text";
+        row-gap: 1.75rem;
+      }
+      .journey-marker {
+        grid-area: auto;
+        position: absolute;
+        top: 1rem;
+        inset-inline-start: 1rem;
+        width: 3.25rem;
+        height: 3.25rem;
+        font-size: 1.05rem;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+      }
+      .journey-step:not(.reverse) .journey-text,
+      .journey-step.reverse .journey-text {
+        justify-self: stretch;
+        width: 100%;
+        max-width: none;
+        padding-inline: 0;
+      }
+      .journey-text::before { margin-bottom: 1rem; }
+      .step-desc { max-width: 58ch; }
     }
     @media (max-width: 480px) {
       .philosophy-grid { grid-template-columns: 1fr; }
       .commitment-grid { grid-template-columns: 1fr; }
-      .approach-card-body { padding: 1.75rem 1.5rem 2rem; }
+      .approach-section { padding: 4.5rem 0; }
+      .approach-header { margin-bottom: 2.5rem; }
+      .journey { gap: 3rem; }
+      .journey-step,
+      .journey-step.reverse { row-gap: 1.5rem; }
+      .journey-marker {
+        top: 0.875rem;
+        inset-inline-start: 0.875rem;
+        width: 3rem;
+        height: 3rem;
+        font-size: 1rem;
+      }
     }
     @media (max-width: 768px) {
       .about-story-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -1000,11 +1123,6 @@
       .env-gallery { grid-template-columns: 1fr; }
       .about-therapist-card { grid-template-columns: 1fr; }
       .about-therapist-photo { aspect-ratio: 16/9; }
-      .approach-row, .approach-row.reverse {
-        grid-template-columns: 1fr;
-        direction: ltr;
-        gap: 2rem;
-      }
       .commitment-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -1343,58 +1461,63 @@
     <!-- ===================== SECTION 5: OUR APPROACH TO TREATMENTS ===================== -->
     <section class="approach-section" aria-label="Our Approach to Treatments">
       <div class="container">
-        <div class="section-header" style="text-align:center;" data-animate="fade-up">
-          <span class="section-tag">OUR METHOD</span>
-          <h2 class="section-title">The Kora Journey</h2>
-          <p class="section-subtitle" style="max-width:520px; margin: 1rem auto 0;">From arrival to aftercare, every stage is structured to guarantee absolute peace of mind.</p>
+        <div class="approach-header" data-animate="fade-up">
+          <div>
+            <span class="section-tag">OUR METHOD</span>
+            <h2 class="section-title">The Kora Journey</h2>
+          </div>
+          <p class="section-subtitle">From arrival to aftercare, every stage is structured to guarantee absolute peace of mind.</p>
         </div>
 
-        <div class="approach-steps">
+        <ol class="journey">
           <!-- Step 1 -->
-          <div class="approach-row" data-animate="fade-up">
-            <div class="approach-visual">
-              <img class="approach-img" src="https://i.pinimg.com/1200x/a4/36/1a/a4361a37b613a1733cbec31e6ac1237b.jpg" alt="Therapist welcoming and consulting with spa guest" loading="lazy">
+          <li class="journey-step" data-animate="fade-up">
+            <div class="journey-marker">01</div>
+            <div class="journey-visual">
+              <img class="journey-img" src="https://i.pinimg.com/1200x/a4/36/1a/a4361a37b613a1733cbec31e6ac1237b.jpg" alt="Therapist welcoming and consulting with spa guest" loading="lazy" decoding="async">
             </div>
-            <div class="approach-text">
-              <div class="step-number">01</div>
+            <div class="journey-text">
               <h3 class="step-title">Consultation</h3>
               <p class="step-desc">We begin with a quiet, unhurried conversation exploring your physical tension, health history, and intentions for the day. This intake allows us to tailor rhythm, focus areas, and aromatherapy notes to your specific comfort.</p>
             </div>
-          </div>
+          </li>
 
           <!-- Step 2 -->
-          <div class="approach-row reverse" data-animate="fade-up">
-            <div class="approach-visual">
-              <img class="approach-img" src="https://i.pinimg.com/1200x/bc/9f/62/bc9f6242b2be92a4d7be65ebfc4efd3d.jpg" alt="Selection of soothing botanical treatment oils and warm stones" loading="lazy">
+          <li class="journey-step reverse" data-animate="fade-up">
+            <div class="journey-marker">02</div>
+            <div class="journey-visual">
+              <img class="journey-img" src="https://i.pinimg.com/1200x/bc/9f/62/bc9f6242b2be92a4d7be65ebfc4efd3d.jpg" alt="Selection of soothing botanical treatment oils and warm stones" loading="lazy" decoding="async">
             </div>
-            <div class="approach-text">
-              <div class="step-number">02</div>
+            <div class="journey-text">
               <h3 class="step-title">Treatment Selection</h3>
               <p class="step-desc">Our therapists recommend the ideal modalities and blends based on your personal assessment. We outline the treatment steps clearly, ensuring you feel completely informed, respected, and empowered in your choices.</p>
             </div>
-          </div>
+          </li>
 
           <!-- Step 3 -->
-          <div class="approach-row approach-row-cards" data-animate="fade-up">
-            <div class="approach-card-lone">
-              <img class="approach-card-img" src="https://i.pinimg.com/1200x/d3/1a/3f/d31a3fe7bf653566d56b40126e315638.jpg" alt="Therapist adjusting a personalized treatment session" loading="lazy">
-              <div class="approach-card-body">
-                <div class="step-number">03</div>
-                <h3 class="step-title">Personalized Session</h3>
-                <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
-              </div>
+          <li class="journey-step" data-animate="fade-up">
+            <div class="journey-marker">03</div>
+            <div class="journey-visual">
+              <img class="journey-img" src="https://i.pinimg.com/1200x/d3/1a/3f/d31a3fe7bf653566d56b40126e315638.jpg" alt="Therapist adjusting a personalized treatment session" loading="lazy" decoding="async">
             </div>
-            <div class="approach-card-lone">
-              <img class="approach-card-img" src="https://i.pinimg.com/1200x/35/dc/c2/35dcc2825b1ad5a0a838a9e4529ebb14.jpg" alt="Herbal infusion and aftercare guidance after treatment" loading="lazy">
-              <div class="approach-card-body">
-                <div class="step-number">04</div>
-                <h3 class="step-title">Aftercare Guidance</h3>
-                <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>
-              </div>
+            <div class="journey-text">
+              <h3 class="step-title">Personalized Session</h3>
+              <p class="step-desc">Your treatment is tailored in real time — from stroke depth and pressure adjustments to ambient light, thermal blanket temperature, and acoustic frequency. Your sanctuary is configured solely around your comfort.</p>
             </div>
-          </div>
+          </li>
 
-        </div>
+          <!-- Step 4 -->
+          <li class="journey-step reverse" data-animate="fade-up">
+            <div class="journey-marker">04</div>
+            <div class="journey-visual">
+              <img class="journey-img" src="https://i.pinimg.com/1200x/35/dc/c2/35dcc2825b1ad5a0a838a9e4529ebb14.jpg" alt="Herbal infusion and aftercare guidance after treatment" loading="lazy" decoding="async">
+            </div>
+            <div class="journey-text">
+              <h3 class="step-title">Aftercare Guidance</h3>
+              <p class="step-desc">We provide mindful post-treatment hydration, organic herbal infusions, and personalized somatic recommendations to help prolong your state of lightness and vitality well beyond our doors.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
