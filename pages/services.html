@@ -27,107 +27,220 @@
 
     /* Hero */
     .services-hero {
-      background: var(--color-beige);
-      padding: 8rem 0 5rem;
       position: relative;
+      display: flex;
+      align-items: center;
+      min-height: clamp(640px, 86vh, 860px);
+      padding: calc(var(--nav-height) + 4rem) 0 7rem;
       overflow: hidden;
-      text-align: center;
+      isolation: isolate;
+      background-color: #0B130C;
+      color: var(--color-text-on-dark);
+      text-align: start;
     }
-    .services-hero::before {
-      content: '';
+    .services-hero-media {
       position: absolute;
       inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 50%, rgba(143,168,135,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(201,169,110,0.10) 0%, transparent 40%);
+      z-index: -3;
+      background-image: url('https://i.pinimg.com/1200x/d1/53/69/d1536970521eab2e3ced9e5fb25e9bf8.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1.04);
+      animation: servicesHeroZoom 8s ease-out forwards;
+    }
+    @keyframes servicesHeroZoom {
+      to { transform: scale(1); }
+    }
+    .services-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg,
+          rgba(8, 15, 9, 0.94) 0%,
+          rgba(8, 15, 9, 0.86) 28%,
+          rgba(8, 15, 9, 0.62) 55%,
+          rgba(8, 15, 9, 0.30) 78%,
+          rgba(8, 15, 9, 0.16) 100%),
+        linear-gradient(180deg,
+          rgba(8, 15, 9, 0.82) 0%,
+          rgba(8, 15, 9, 0.28) 18%,
+          rgba(8, 15, 9, 0.12) 48%,
+          rgba(8, 15, 9, 0.74) 100%);
       pointer-events: none;
     }
-    .services-hero .botanical-bg {
-      position: absolute;
-      right: -60px;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.08;
-      pointer-events: none;
+    [dir="rtl"] .services-hero-scrim {
+      background:
+        linear-gradient(270deg,
+          rgba(8, 15, 9, 0.94) 0%,
+          rgba(8, 15, 9, 0.86) 28%,
+          rgba(8, 15, 9, 0.62) 55%,
+          rgba(8, 15, 9, 0.30) 78%,
+          rgba(8, 15, 9, 0.16) 100%),
+        linear-gradient(180deg,
+          rgba(8, 15, 9, 0.82) 0%,
+          rgba(8, 15, 9, 0.28) 18%,
+          rgba(8, 15, 9, 0.12) 48%,
+          rgba(8, 15, 9, 0.74) 100%);
     }
-    .services-hero .botanical-bg-left {
+    .services-hero::after {
+      content: '';
       position: absolute;
-      left: -60px;
+      left: 0;
+      right: 0;
       bottom: 0;
-      opacity: 0.06;
+      height: 100px;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 0%, var(--color-ivory) 100%);
       pointer-events: none;
-      transform: scaleX(-1);
+    }
+    .services-hero .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+    }
+    .services-hero-content {
+      max-width: 680px;
+    }
+    .services-hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .services-hero-visual::before {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border: 1px solid rgba(201, 169, 110, 0.48);
+      border-radius: clamp(1.75rem, 3vw, 2.75rem);
+      transform: rotate(4deg);
+      pointer-events: none;
+    }
+    [dir="rtl"] .services-hero-visual::before {
+      transform: rotate(-4deg);
+    }
+    .services-hero-visual img {
+      position: relative;
+      width: 100%;
+      max-width: clamp(300px, 34vw, 480px);
+      height: clamp(360px, 48vh, 560px);
+      object-fit: cover;
+      border-radius: clamp(1.5rem, 3vw, 2.5rem);
+      border: 1px solid rgba(250, 248, 243, 0.28);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
     }
     .services-hero .breadcrumb {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: 1.5rem;
+      color: rgba(250, 248, 243, 0.68);
+      margin-bottom: 1.75rem;
       font-family: var(--font-sans);
     }
-    .services-hero .breadcrumb a { color: var(--color-accent-text); text-decoration: none; }
-    .services-hero .breadcrumb a:hover { text-decoration: underline; }
-    .services-hero .breadcrumb-sep { color: var(--color-border); }
+    .services-hero .breadcrumb a {
+      color: var(--color-champagne-light);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+    .services-hero .breadcrumb a:hover {
+      color: var(--color-text-on-dark);
+      text-decoration: underline;
+      text-underline-offset: 0.25em;
+    }
+    .services-hero .breadcrumb-sep { color: rgba(250, 248, 243, 0.52); }
     .services-hero h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      color: var(--color-forest-text);
-      margin-bottom: 1rem;
+      font-size: clamp(2.8rem, 6.2vw, 4.8rem);
       font-weight: 600;
+      line-height: 1.24;
+      letter-spacing: -0.02em;
+      color: var(--color-text-on-dark);
+      margin: 0 0 1.5rem;
+      max-width: 14ch;
+      text-wrap: balance;
     }
     .services-hero .hero-subtitle {
-      font-size: 1.1rem;
-      color: var(--color-text-muted);
-      max-width: 520px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.7;
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: rgba(250, 248, 243, 0.86);
+      max-width: 540px;
+      margin: 0 0 2.5rem;
+      line-height: 1.8;
     }
     .hero-scroll-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
-      justify-content: center;
+      justify-content: flex-start;
       margin-top: 2rem;
     }
     .hero-scroll-links a {
       display: inline-flex;
       align-items: center;
       gap: 0.45rem;
-      padding: 0.5rem 1.15rem;
+      padding: 0.55rem 1.15rem;
       border-radius: var(--radius-pill);
-      border: 1.5px solid var(--color-border);
+      border: 1px solid rgba(250, 248, 243, 0.34);
       font-size: 0.85rem;
       font-weight: 500;
       font-family: var(--font-sans);
-      color: var(--color-forest-text);
+      color: var(--color-text-on-dark);
       text-decoration: none;
-      background: var(--color-white);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      background: rgba(8, 15, 9, 0.42);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
       transition: all var(--transition-fast);
     }
     .hero-scroll-links a:hover {
-      border-color: var(--color-forest);
-      color: var(--color-text-on-dark);
-      background: var(--color-forest);
+      border-color: var(--color-champagne-light);
+      color: #111810;
+      background: var(--color-champagne-light);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(45, 74, 50, 0.18);
+      box-shadow: 0 4px 14px rgba(201, 169, 110, 0.3);
     }
     [data-theme="dark"] .hero-scroll-links a {
-      background: #222E21;
-      border-color: rgba(201, 169, 110, 0.3);
+      background: rgba(8, 15, 9, 0.58);
+      border-color: rgba(201, 169, 110, 0.38);
       color: #FAF8F3;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
     }
     [data-theme="dark"] .hero-scroll-links a:hover {
       background: var(--color-champagne);
       border-color: var(--color-champagne);
       color: #111810;
       box-shadow: 0 4px 16px rgba(201, 169, 110, 0.35);
+    }
+
+    /* Keep the nav readable over the image hero until it gains its scrolled background */
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
+      color: var(--color-text-on-dark);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
+      color: rgba(250, 248, 243, 0.68);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link:hover,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link.active {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
+      border-color: rgba(250, 248, 243, 0.42);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
+      background: var(--color-text-on-dark);
     }
 
     /* Services Layout */
@@ -474,6 +587,46 @@
     }
     .body-card-cta:hover { background: var(--color-champagne-dark); }
 
+    @media (max-width: 1024px) {
+      .services-hero { min-height: clamp(600px, 84vh, 780px); }
+      .services-hero .container { gap: clamp(1.5rem, 4vw, 3rem); }
+      .services-hero h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); }
+    }
+    @media (max-width: 900px) {
+      .services-hero {
+        min-height: 0;
+        padding: calc(var(--nav-height) + 3.5rem) 0 5rem;
+      }
+      .services-hero-scrim {
+        background:
+          linear-gradient(180deg,
+            rgba(8, 15, 9, 0.9) 0%,
+            rgba(8, 15, 9, 0.76) 38%,
+            rgba(8, 15, 9, 0.84) 100%),
+          linear-gradient(90deg,
+            rgba(8, 15, 9, 0.5) 0%,
+            rgba(8, 15, 9, 0.3) 100%);
+      }
+      [dir="rtl"] .services-hero-scrim {
+        background:
+          linear-gradient(180deg,
+            rgba(8, 15, 9, 0.9) 0%,
+            rgba(8, 15, 9, 0.76) 38%,
+            rgba(8, 15, 9, 0.84) 100%),
+          linear-gradient(270deg,
+            rgba(8, 15, 9, 0.5) 0%,
+            rgba(8, 15, 9, 0.3) 100%);
+      }
+      .services-hero .container { grid-template-columns: 1fr; }
+      .services-hero-content { max-width: 720px; }
+      .services-hero-visual { margin-top: 1rem; }
+      .services-hero-visual img {
+        max-width: min(78vw, 420px);
+        height: clamp(300px, 58vw, 440px);
+        margin-inline: auto;
+      }
+    }
+
     /* Sidebar on desktop only */
     @media (max-width: 1100px) {
       .services-sidebar { display: none; }
@@ -491,18 +644,35 @@
         grid-template-columns: 1fr;
       }
       .treatment-section { padding: 4rem 0; }
-      .services-hero { padding: 6rem 0 4rem; }
+      .services-hero { padding: calc(var(--nav-height) + 3rem) 0 5rem; }
+      .services-hero h1 {
+        font-size: clamp(2.4rem, 9vw, 3.6rem);
+        max-width: 12ch;
+      }
+      .services-hero .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
     }
     @media (max-width: 600px) {
       .treatment-ctas { flex-direction: column; }
       .treatment-ctas a { text-align: center; justify-content: center; }
+      .hero-scroll-links { gap: 0.5rem; }
+      .hero-scroll-links a {
+        font-size: 0.78rem;
+        padding: 0.5rem 0.9rem;
+      }
+      .services-hero-visual img {
+        max-width: 88vw;
+        height: clamp(260px, 74vw, 340px);
+      }
     }
   </style>
 </head>
 <body data-page="services">
 
   <div id="scroll-progress" aria-hidden="true"></div>
-  <nav class="site-nav" id="siteNav">
+  <nav class="site-nav nav-over-dark" id="siteNav">
     <div class="nav-container container">
       <a href="../index.html" class="nav-logo">
         <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
@@ -587,54 +757,54 @@
          HERO
          ============================== -->
     <header class="services-hero" aria-label="Services hero">
-      <!-- Botanical SVG decorations -->
-      <svg class="botanical-bg" width="420" height="520" viewBox="0 0 420 520" fill="none" aria-hidden="true">
-        <ellipse cx="210" cy="260" rx="120" ry="200" fill="#8FA887" opacity="0.5" transform="rotate(-20 210 260)"/>
-        <ellipse cx="210" cy="260" rx="60" ry="150" fill="#8FA887" opacity="0.4" transform="rotate(10 210 260)"/>
-        <path d="M210 460 Q230 350 280 220 Q320 120 360 60" stroke="#8FA887" stroke-width="3" fill="none" opacity="0.5"/>
-        <path d="M210 460 Q190 360 150 240 Q120 140 90 70" stroke="#8FA887" stroke-width="2" fill="none" opacity="0.3"/>
-        <circle cx="310" cy="140" r="30" fill="#C9A96E" opacity="0.25"/>
-        <circle cx="130" cy="200" r="20" fill="#C9A96E" opacity="0.2"/>
-      </svg>
-      <svg class="botanical-bg-left" width="300" height="400" viewBox="0 0 300 400" fill="none" aria-hidden="true">
-        <ellipse cx="150" cy="200" rx="80" ry="150" fill="#8FA887" opacity="0.5" transform="rotate(-15 150 200)"/>
-        <path d="M150 380 Q170 280 220 180" stroke="#8FA887" stroke-width="2" fill="none" opacity="0.4"/>
-      </svg>
+      <div class="services-hero-media" aria-hidden="true"></div>
+      <div class="services-hero-scrim" aria-hidden="true"></div>
 
-      <div class="container" style="position:relative; z-index:1;">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span class="breadcrumb-sep" aria-hidden="true">›</span>
-          <span aria-current="page">Services</span>
-        </nav>
-        <h1>Our Signature Treatments</h1>
-        <p class="hero-subtitle">Six thoughtfully crafted therapies for body, mind, and spirit</p>
+      <div class="container">
+        <div class="services-hero-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">›</span>
+            <span aria-current="page">Services</span>
+          </nav>
+          <h1>Our Signature Treatments</h1>
+          <p class="hero-subtitle">Six thoughtfully crafted therapies for body, mind, and spirit</p>
 
-        <div class="hero-scroll-links">
-          <a href="#relaxation">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
-            Relaxation
-          </a>
-          <a href="#deep-tissue">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-            Deep Tissue
-          </a>
-          <a href="#aromatherapy">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.5 4.5L18 8l-3.5 3 1 4.5L12 13l-3.5 2.5 1-4.5L6 8l4.5-1.5z"/></svg>
-            Aromatherapy
-          </a>
-          <a href="#hot-stone">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 4 7 4 12s3 8 8 8 8-3 8-8-2.5-10-8-10z" fill="currentColor" opacity="0.5"/></svg>
-            Hot Stone
-          </a>
-          <a href="#swedish">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="12" cy="12" r="2"/></svg>
-            Swedish
-          </a>
-          <a href="#body">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-            Body Treatments
-          </a>
+          <div class="hero-scroll-links">
+            <a href="#relaxation">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 8 8 8 13C8 15.8 9.8 18 12 18C14.2 18 16 15.8 16 13C16 8 12 2 12 2Z" fill="currentColor"/></svg>
+              Relaxation
+            </a>
+            <a href="#deep-tissue">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              Deep Tissue
+            </a>
+            <a href="#aromatherapy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l1.5 4.5L18 8l-3.5 3 1 4.5L12 13l-3.5 2.5 1-4.5L6 8l4.5-1.5z"/></svg>
+              Aromatherapy
+            </a>
+            <a href="#hot-stone">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 4 7 4 12s3 8 8 8 8-3 8-8-2.5-10-8-10z" fill="currentColor" opacity="0.5"/></svg>
+              Hot Stone
+            </a>
+            <a href="#swedish">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5z"/><circle cx="12" cy="12" r="2"/></svg>
+              Swedish
+            </a>
+            <a href="#body">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+              Body Treatments
+            </a>
+          </div>
+        </div>
+
+        <div class="services-hero-visual">
+          <img
+            src="https://i.pinimg.com/736x/bd/bb/2d/bdbb2d84184e88020c46cbc2cea7bc28.jpg"
+            alt="Calm treatment room prepared for a signature spa therapy"
+            fetchpriority="high"
+            width="736" height="1104"
+          >
         </div>
       </div>
     </header>
