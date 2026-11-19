@@ -543,15 +543,8 @@ body.menu-open .mobile-menu.active {
   margin-top: 0.5rem;
 }
 
-.mobile-menu-footer .theme-toggle,
-.mobile-menu-footer .dir-toggle {
-  flex: 1;
-  width: auto;
-  border-radius: var(--radius-md);
-  gap: 0.5rem;
-  font-size: 0.85rem;
-  padding: 0.65rem 1rem;
-  font-weight: 500;
+.mobile-menu-footer .btn-primary.mobile-nav-link {
+  flex: 1 1 100%;
 }
 
 /* ── Show/Hide by screen ─────────────────────────────────── */
