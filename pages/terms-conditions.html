@@ -25,12 +25,55 @@
     /* INFORMATION PAGE STYLES                                       */
     /* ============================================================ */
     .info-hero {
+      min-height: clamp(300px, 42vh, 440px);
+      display: flex;
+      align-items: center;
       padding-top: calc(var(--nav-height) + 3.5rem);
       padding-bottom: 3rem;
-      background: linear-gradient(180deg, var(--color-beige) 0%, var(--color-ivory) 100%);
-      border-bottom: 1px solid var(--color-border);
+      background-color: #0B130C;
+      background-image:
+        linear-gradient(180deg,
+          rgba(8, 15, 9, 0.86) 0%,
+          rgba(8, 15, 9, 0.64) 48%,
+          rgba(8, 15, 9, 0.82) 100%),
+        url('https://i.pinimg.com/1200x/31/62/f4/3162f4e125a9920f8747fcd7171d3bff.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-bottom: 1px solid rgba(250, 248, 243, 0.16);
+      color: var(--color-text-on-dark);
     }
+    .info-hero h1,
+    .info-hero p,
+    .info-hero .breadcrumb,
+    .info-hero .breadcrumb a,
+    .info-hero .breadcrumb-current,
+    .info-hero .section-tag { color: var(--color-text-on-dark); }
+    .info-hero .breadcrumb-sep { color: rgba(250, 248, 243, 0.55); }
+    .info-hero .section-tag::before,
+    .info-hero .section-tag::after { background: var(--color-champagne-light); }
     .info-hero .breadcrumb { margin-bottom: 1.5rem; }
+
+    /* Keep the nav readable over the hero until it gains its scrolled background */
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
+      color: var(--color-text-on-dark);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
+      color: rgba(250, 248, 243, 0.68);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link:hover,
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link.active {
+      color: var(--color-champagne-light);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
+      border-color: rgba(250, 248, 243, 0.42);
+    }
+    [data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
+      background: var(--color-text-on-dark);
+    }
     .info-hero h1 { margin-bottom: 1rem; }
     .info-hero p { max-width: 720px; margin: 0 auto; }
     .info-content { padding: 4rem 0 5rem; }
@@ -83,7 +126,7 @@
 <body>
 <!-- Scroll Progress -->
 <div id="scroll-progress" aria-hidden="true"></div>
-  <nav class="site-nav" id="siteNav">
+  <nav class="site-nav nav-over-dark" id="siteNav">
     <div class="nav-container container">
       <a href="../index.html" class="nav-logo">
         <svg class="nav-logo-mark" viewBox="14 34 52 37" fill="none" aria-hidden="true">
