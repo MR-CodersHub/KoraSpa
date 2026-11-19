@@ -556,14 +556,14 @@ body.menu-open .mobile-menu.active {
   }
   .nav-toggle {
     display: flex;
-    order: 2;
-    margin-inline-start: auto;
+    order: 3;
+    margin-inline-start: 0;
   }
   .nav-cta { display: none; }
   .site-nav .nav-actions {
     display: flex;
-    order: 3;
-    margin-inline-start: 0;
+    order: 2;
+    margin-inline-start: auto;
     gap: 0.5rem;
   }
 }
