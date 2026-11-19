@@ -482,7 +482,8 @@
 }
 
 .mobile-menu.active {
-  max-height: 90vh;
+  max-height: calc(100vh - var(--nav-height));
+  max-height: calc(100dvh - var(--nav-height));
   opacity: 1;
   visibility: visible;
   overflow-y: auto;
@@ -493,6 +494,33 @@
 /* Prevent the page behind the mobile menu from scrolling */
 body.menu-open {
   overflow: hidden;
+}
+
+body.menu-open .site-nav {
+  background: var(--color-ivory);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Keep the header readable on the solid menu-open background. */
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
+  color: var(--color-text);
+}
+
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
+  color: var(--color-text-muted);
+}
+
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
+  border-color: var(--color-border);
+}
+
+body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
+  background: var(--color-text);
 }
 
 body.menu-open .mobile-menu.active {
