@@ -136,14 +136,14 @@ const SiteNav = {
   },
 
   updateNavAuth() {
-    const authBtn = document.getElementById('navAuthBtn');
+    const authBtn = document.getElementById('navAuthBtn') || document.querySelector('.nav-cta');
     if (!authBtn || typeof Auth === 'undefined') return;
 
     if (Auth.isLoggedIn()) {
       authBtn.textContent = 'Dashboard';
       authBtn.href = pageUrl('dashboard.html');
     } else {
-      authBtn.textContent = 'Book Now';
+      authBtn.textContent = 'Login';
       authBtn.href = pageUrl('login.html');
     }
   }

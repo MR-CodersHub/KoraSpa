@@ -253,7 +253,7 @@
 [data-theme="dark"] .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 [data-theme="dark"] .icon-sun  { opacity: 0; transform: rotate(-90deg) scale(0.5); }
 
-/* Book Now CTA */
+/* Login CTA */
 .nav-cta {
   font-size: 0.8rem;
   padding: 0.65rem 1.5rem;
