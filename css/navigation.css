@@ -486,6 +486,17 @@
   opacity: 1;
   visibility: visible;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent the page behind the mobile menu from scrolling */
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open .mobile-menu.active {
+  touch-action: pan-y;
 }
 
 .mobile-menu ul {
