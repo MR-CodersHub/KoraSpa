@@ -56,7 +56,7 @@
 [dir="rtl"] .mobile-menu ul { text-align: right; }
 [dir="rtl"] .mobile-nav-link { text-align: right; }
 
-[dir="rtl"] .mobile-menu-controls { flex-direction: row-reverse; }
+[dir="rtl"] .mobile-menu-footer { flex-direction: row-reverse; }
 
 /* ── Footer RTL ──────────────────────────────────────────── */
 [dir="rtl"] .footer-grid { direction: rtl; }

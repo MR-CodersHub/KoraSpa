@@ -382,24 +382,14 @@
   }
 }
 
-/* The mobile menu profile button sits in mobile controls, so open its dropdown inward and centered. */
-@media (max-width: 1024px) {
-  .mobile-menu .profile-menu {
-    position: relative;
-  }
-  .mobile-menu .profile-dropdown {
+/* Keep the profile dropdown aligned beneath the button on tablet and mobile viewports. */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .site-nav .profile-dropdown {
     position: absolute;
-    top: auto;
-    bottom: calc(100% + 0.75rem);
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) translateY(8px);
-    width: min(280px, calc(100vw - 3rem));
-    max-width: 280px;
-    z-index: 1005;
-  }
-  .mobile-menu .profile-menu.open .profile-dropdown {
-    transform: translateX(-50%) translateY(0);
+    top: calc(100% + 0.85rem);
+    right: 0;
+    left: auto;
+    width: 250px;
   }
 }
 
@@ -547,38 +537,46 @@ body.menu-open .mobile-menu.active {
 
 .mobile-menu-footer {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 1.15rem;
-  padding: 1.25rem 2rem 1.75rem;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem 1.5rem;
   border-top: 1px solid var(--color-border);
   margin-top: 0.5rem;
 }
 
-.mobile-menu-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.25rem;
-  width: 100%;
-}
-
 .mobile-menu-footer .btn-primary.mobile-nav-link {
-  width: 100%;
-  text-align: center;
-  padding: 0.85rem 1.5rem;
+  flex: 1 1 100%;
 }
 
 /* ── Show/Hide by screen ─────────────────────────────────── */
 @media (max-width: 1024px) {
   .nav-links { display: none; }
-  .nav-toggle { display: flex; }
-  .nav-cta    { display: none; }
-  .site-nav .nav-actions { display: none; }
+  .nav-container {
+    gap: 0.5rem;
+  }
+  .nav-toggle {
+    display: flex;
+    order: 2;
+    margin-inline-start: auto;
+  }
+  .nav-cta { display: none; }
+  .site-nav .nav-actions {
+    display: flex;
+    order: 3;
+    margin-inline-start: 0;
+    gap: 0.5rem;
+  }
 }
 
 @media (min-width: 1025px) {
   .mobile-menu { display: none; }
+  .nav-toggle {
+    order: initial;
+    margin-inline-start: 0;
+  }
+  .site-nav .nav-actions {
+    order: initial;
+  }
 }
 
 /* ── Brand Lockup ────────────────────────────────────────── */
@@ -667,11 +665,12 @@ body.menu-open .mobile-menu.active {
   }
   .dir-toggle { font-size: 0.68rem; }
   .mobile-menu-footer {
-    gap: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
     padding: 1rem 1.25rem 1.5rem;
   }
   .mobile-menu-footer .btn-primary.mobile-nav-link {
-    width: 100%;
+    flex: 1 1 100%;
   }
 }
 
