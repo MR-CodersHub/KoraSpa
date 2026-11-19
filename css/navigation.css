@@ -2,7 +2,7 @@
    KORA SPA — Navigation Styles
    ============================================================ */
 
-/* ── Site Nav Container ──────────────────────────────────── */
+/* ── Site Nav Container (Solid / Non-Transparent Throughout Website) ── */
 .site-nav {
   position: fixed;
   top: 0;
@@ -12,40 +12,29 @@
   height: var(--nav-height);
   display: flex;
   align-items: center;
+  background: var(--color-ivory, #FAF8F3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: background var(--transition-base),
-              backdrop-filter var(--transition-base),
               box-shadow var(--transition-base);
 }
 
+[data-theme="dark"] .site-nav {
+  background: var(--color-ivory, #111810);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
 .site-nav.nav-scrolled {
-  background: rgba(250, 248, 243, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: var(--color-ivory, #FAF8F3);
   box-shadow: var(--shadow-sm);
-  border-bottom: 1px solid rgba(61, 53, 48, 0.08);
 }
 
 [data-theme="dark"] .site-nav.nav-scrolled {
-  background: rgba(17, 24, 16, 0.95);
-  border-bottom: 1px solid rgba(232, 221, 212, 0.08);
-}
-
-/* Frosted glass background for light-hero pages when not scrolled */
-.site-nav:not(.nav-over-dark):not(.nav-scrolled) {
-  background: rgba(250, 248, 243, 0.90);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(61, 53, 48, 0.08);
-}
-
-[data-theme="dark"] .site-nav:not(.nav-over-dark):not(.nav-scrolled) {
-  background: rgba(17, 24, 16, 0.90);
-  border-bottom: 1px solid rgba(232, 221, 212, 0.08);
-}
-
-/* Subtle top scrim on dark-hero pages when not scrolled to guarantee contrast */
-.site-nav.nav-over-dark:not(.nav-scrolled) {
-  background: linear-gradient(180deg, rgba(8, 15, 9, 0.55) 0%, rgba(8, 15, 9, 0.2) 65%, transparent 100%);
+  background: var(--color-ivory, #111810);
+  box-shadow: var(--shadow-sm);
 }
 
 /* ── Nav Container ───────────────────────────────────────── */
@@ -500,105 +489,46 @@ body.menu-open .site-nav {
   box-shadow: var(--shadow-sm);
 }
 
-/* Keep the nav readable over dark heroes in the light theme. */
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
-  color: var(--color-text-on-dark);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-}
-
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
-  color: rgba(250, 248, 243, 0.85);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-}
-
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link:hover,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link.active {
-  color: var(--color-champagne-light);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
-}
-
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
-  border-color: rgba(250, 248, 243, 0.5);
-  background: rgba(8, 15, 9, 0.35);
-}
-
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
-  background: var(--color-text-on-dark);
-}
-
-/* Glassmorphism pill styling for action toggles on dark heroes */
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .profile-toggle,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .theme-toggle,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .dir-toggle {
-  background: rgba(250, 248, 243, 0.16);
-  border-color: rgba(250, 248, 243, 0.38);
-  color: #FAF8F3;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .profile-toggle:hover,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .theme-toggle:hover,
-[data-theme="light"] .site-nav.nav-over-dark:not(.nav-scrolled) .dir-toggle:hover {
-  background: rgba(201, 169, 110, 0.35);
-  border-color: var(--color-champagne);
-  color: var(--color-champagne-light);
-}
-
-/* Guarantee crisp contrast on light-hero pages */
-.site-nav:not(.nav-over-dark) .nav-link {
+/* ── Universal Navigation Colors (Solid Background) ──────── */
+.site-nav .nav-link {
   color: var(--color-text);
   font-weight: 500;
 }
 
-.site-nav:not(.nav-over-dark) .nav-link:hover,
-.site-nav:not(.nav-over-dark) .nav-link.active {
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
   color: var(--color-accent-text);
 }
 
-.site-nav:not(.nav-over-dark) .nav-logo {
-  color: var(--color-forest);
+.site-nav .nav-logo {
+  color: var(--color-forest, #2D4A32);
 }
 
-.site-nav:not(.nav-over-dark) .nav-logo-mark {
-  color: var(--color-forest);
+.site-nav .nav-logo-mark {
+  color: var(--color-forest, #2D4A32);
 }
 
-.site-nav:not(.nav-over-dark) .nav-logo-name {
-  color: var(--color-forest);
+.site-nav .nav-logo-name {
+  color: var(--color-forest, #2D4A32);
 }
 
-.site-nav:not(.nav-over-dark) .nav-logo-tagline {
+.site-nav .nav-logo-tagline {
   color: var(--color-text-muted);
 }
 
-[data-theme="dark"] .site-nav:not(.nav-over-dark) .nav-logo,
-[data-theme="dark"] .site-nav:not(.nav-over-dark) .nav-logo-mark,
-[data-theme="dark"] .site-nav:not(.nav-over-dark) .nav-logo-name {
-  color: var(--color-accent-text);
-}
-
-/* Keep the header readable on the solid menu-open background. */
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo,
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-mark,
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link,
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-link .nav-arrow {
-  color: var(--color-text);
-}
-
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-logo-tagline {
-  color: var(--color-text-muted);
-}
-
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle {
+.site-nav .nav-toggle {
   border-color: var(--color-border);
+  background: var(--color-white);
 }
 
-body.menu-open .site-nav.nav-over-dark:not(.nav-scrolled) .nav-toggle span {
+.site-nav .nav-toggle span {
   background: var(--color-text);
+}
+
+[data-theme="dark"] .site-nav .nav-logo,
+[data-theme="dark"] .site-nav .nav-logo-mark,
+[data-theme="dark"] .site-nav .nav-logo-name {
+  color: var(--color-accent-text, #E8D5B0);
 }
 
 body.menu-open .mobile-menu.active {
@@ -813,11 +743,12 @@ body.menu-open .mobile-menu.active {
   .nav-toggle {
     display: flex;
     order: 2;
-    margin-inline-start: auto;
   }
   .nav-cta { display: none; }
   .site-nav .nav-actions {
     display: flex !important;
+    margin-inline-start: auto;
+    order: 1;
   }
 }
 
