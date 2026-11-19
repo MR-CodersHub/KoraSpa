@@ -613,7 +613,7 @@
 
     .news-image {
       width: 100%;
-      height: 160px;
+      aspect-ratio: 3 / 2;
       border-radius: var(--radius-md);
       overflow: hidden;
       margin-bottom: 1.25rem;
@@ -623,6 +623,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 35%;
       transition: transform var(--transition-slow);
     }
 
@@ -1168,9 +1169,9 @@
         <!-- 2 Horizontal Cards Column -->
         <div class="horizontal-cards-col">
           <!-- Horizontal Card 1 -->
-          <article class="horizontal-article-card filterable-item" data-category="self-care" data-title="Building a Mindful Self-Care Routine That Actually Works" data-excerpt="Move past fleeting wellness trends. Craft a grounded daily self-care framework built on gentle habits, breath awareness, and boundaries that honor your personal energy.">
+          <article class="horizontal-article-card filterable-item" data-category="self-care" data-title="Building a Mindful Self-Care Routine That Actually Works" data-excerpt="Craft a sustainable rhythm rooted in nervous-system regulation, gentle morning rituals, and restorative downtime that renews your vitality.">
             <div class="horizontal-media">
-              <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80" alt="Person practicing morning mindfulness in natural sunlit room" loading="lazy">
+              <img src="https://i.pinimg.com/1200x/7a/ec/47/7aec478d1df759cb2df0103bc4edfbcf.jpg" alt="Person practicing morning mindfulness in natural sunlit room" loading="lazy">
             </div>
             <div class="horizontal-content">
               <div class="article-meta-row" style="margin-bottom: 0.75rem;">
@@ -1192,9 +1193,9 @@
           </article>
 
           <!-- Horizontal Card 2 -->
-          <article class="horizontal-article-card filterable-item" data-category="seasonal" data-title="Winter Wellness: Nourishing Your Body Through the Colder Months" data-excerpt="As temperatures drop, embrace warming herbal infusions, nourishing botanical body oils, and restorative sleep habits to support immune resilience.">
+          <article class="horizontal-article-card filterable-item" data-category="seasonal" data-title="Winter Wellness: Nourishing Your Body Through the Colder Months" data-excerpt="Discover warming therapies, restorative herbal soaks, and deep skin hydration practices to stay radiant, grounded, and healthy all season.">
             <div class="horizontal-media">
-              <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=600&q=80" alt="Cozy herbal tea infusion with cinnamon and winter spices" loading="lazy">
+              <img src="https://i.pinimg.com/1200x/e0/1e/22/e01e2220b559769db89b508faa15956d.jpg" alt="Cozy herbal tea infusion with cinnamon and winter spices" loading="lazy">
             </div>
             <div class="horizontal-content">
               <div class="article-meta-row" style="margin-bottom: 0.75rem;">
@@ -1272,11 +1273,8 @@
       <div class="news-grid">
         <!-- News 1 -->
         <article class="news-card">
-          <div class="news-icon-placeholder">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
+          <div class="news-image">
+            <img src="https://i.pinimg.com/1200x/3c/84/e0/3c84e09b9d99638889e878f50db331b9.jpg" alt="Kora Spa treatment room prepared for twilight appointments" loading="lazy">
           </div>
           <div class="news-meta">Schedule Update &bull; Nov 14, 2026</div>
           <h3 class="news-title">New: Extended Weekend Hours</h3>
@@ -1307,10 +1305,8 @@
 
         <!-- News 3 -->
         <article class="news-card">
-          <div class="news-icon-placeholder">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M12 3v18M3 12h18M6.5 6.5l11 11M6.5 17.5l11-11"/>
-            </svg>
+          <div class="news-image">
+            <img src="https://i.pinimg.com/1200x/7b/ad/90/7bad90f15a7a812992b4251b4fb0afb0.jpg" alt="Winter spa treatments with cedarwood and eucalyptus" loading="lazy">
           </div>
           <div class="news-meta">Seasonal Treatment &bull; Nov 1, 2026</div>
           <h3 class="news-title">Winter Collection Launch</h3>
