@@ -70,14 +70,21 @@
 /* ── Footer RTL ──────────────────────────────────────────── */
 [dir="rtl"] .footer-grid { direction: rtl; }
 [dir="rtl"] .footer-col { text-align: right; }
+[dir="rtl"] .footer-brand-col,
 [dir="rtl"] .footer-brand { text-align: right; }
+[dir="rtl"] .footer-social-row,
 [dir="rtl"] .footer-social { flex-direction: row-reverse; }
 [dir="rtl"] .footer-links a { text-align: right; }
-[dir="rtl"] .footer-links a:hover { transform: translateX(-3px); }
+[dir="rtl"] .footer-links a:hover { transform: translateX(-4px); }
 [dir="rtl"] .footer-bottom { flex-direction: row-reverse; }
 [dir="rtl"] .footer-legal { flex-direction: row-reverse; }
-[dir="rtl"] .newsletter-form { flex-direction: row-reverse; }
-[dir="rtl"] .footer-newsletter { flex-direction: row-reverse; }
+[dir="rtl"] .footer-newsletter-banner { direction: rtl; text-align: right; }
+[dir="rtl"] .footer-input-group { padding: 0.35rem 1.15rem 0.35rem 0.4rem; }
+[dir="rtl"] .footer-input-icon { margin-right: 0; margin-left: 0.65rem; }
+[dir="rtl"] .footer-newsletter-btn svg { transform: rotate(180deg); }
+[dir="rtl"] .footer-newsletter-btn:hover svg { transform: translateX(-3px) rotate(180deg); }
+[dir="rtl"] .footer-form-note { padding-left: 0; padding-right: 0.5rem; text-align: right; }
+[dir="rtl"] .footer-contact-item { text-align: right; }
 
 /* ── Treatment Cards RTL ─────────────────────────────────── */
 [dir="rtl"] .treatment-card { text-align: right; }
