@@ -802,23 +802,24 @@
     }
     .approach-header {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-      gap: 4rem;
-      align-items: end;
-      margin-bottom: 5rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
     .approach-header .section-tag {
       margin-bottom: 1rem;
     }
     .approach-header .section-title {
-      max-width: 12ch;
+      font-size: clamp(2rem, 4.4vw, 3.25rem);
       margin-bottom: 0;
       text-wrap: balance;
     }
     .approach-header .section-subtitle {
-      max-width: 38ch;
+      max-width: 52ch;
       margin: 0;
-      justify-self: end;
+      justify-self: start;
+      font-size: clamp(1rem, 1.1vw + 0.6rem, 1.125rem);
+      text-wrap: balance;
     }
     .journey {
       list-style: none;
@@ -1052,27 +1053,28 @@
     }
 
     /* RESPONSIVE */
+    @media (min-width: 1200px) {
+      .approach-header {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 4rem;
+        align-items: end;
+        margin-bottom: 5rem;
+      }
+      .approach-header .section-subtitle {
+        max-width: 38ch;
+        justify-self: end;
+      }
+    }
     @media (max-width: 1024px) {
       .philosophy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .about-therapists-grid { grid-template-columns: 1fr; }
       .commitment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .approach-header { gap: 3rem; }
       .journey-step { column-gap: 1.5rem; }
       .journey-step:not(.reverse) .journey-text { padding-inline-end: 1rem; }
       .journey-step.reverse .journey-text { padding-inline-start: 1rem; }
     }
     @media (max-width: 900px) {
       .approach-section { padding: 5.5rem 0; }
-      .approach-header {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-bottom: 3rem;
-      }
-      .approach-header .section-title { max-width: none; }
-      .approach-header .section-subtitle {
-        max-width: 46ch;
-        justify-self: start;
-      }
       .journey { gap: 3.5rem; }
       .journey::before { display: none; }
       .journey-step,
@@ -1106,6 +1108,11 @@
       .commitment-grid { grid-template-columns: 1fr; }
       .approach-section { padding: 4.5rem 0; }
       .approach-header { margin-bottom: 2.5rem; }
+      .approach-header .section-subtitle {
+        max-width: none;
+        font-size: 1rem;
+        line-height: 1.65;
+      }
       .journey { gap: 3rem; }
       .journey-step,
       .journey-step.reverse { row-gap: 1.5rem; }
