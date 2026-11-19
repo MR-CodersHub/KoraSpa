@@ -226,6 +226,7 @@ function buildPage(template, article, articles) {
   html = replaceInnerById(html, 'authorBioText', esc(article.authorBio));
   html = html.replace('Book with Sarah', 'Book with ' + article.author.split(' ')[0]);
 
+  html = html.replace(/<script id="blogRedirect">[\s\S]*?<\/script>\n?/i, '');
   html = html.replace(/<script src="\.\.\/js\/blog-details\.js"><\/script>\n?/i, '');
 
   return html;

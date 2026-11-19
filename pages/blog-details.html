@@ -8,6 +8,23 @@
   <link rel="apple-touch-icon" href="../favicon.svg">
   <meta name="theme-color" content="#2D4A32">
   <meta name="description" content="Discover how incorporating regular massage therapy into your wellness routine profoundly transforms physical recovery, nervous system calm, and mental clarity.">
+  <script id="blogRedirect">
+    (function () {
+      var slugs = [
+        'regular-massage-therapy',
+        'aromatherapy-scents-that-heal',
+        'hot-stone-therapy-session',
+        'prepare-for-spa-visit',
+        'mindful-self-care-routine',
+        'winter-wellness-colder-months',
+        'morning-rituals-calm-energy',
+        'herbal-teas-deep-rest'
+      ];
+      var requested = new URLSearchParams(window.location.search).get('article');
+      var slug = slugs.indexOf(requested) !== -1 ? requested : slugs[0];
+      window.location.replace('blog-article-' + slug + '.html');
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1381,6 +1398,5 @@
   <script src="../js/navigation.js"></script>
   <script src="../js/animations.js"></script>
   <script src="../js/app.js"></script>
-  <script src="../js/blog-details.js"></script>
 </body>
 </html>
