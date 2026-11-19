@@ -294,6 +294,10 @@
   stroke: currentColor;
 }
 
+.footer-social-btn svg.icon-x {
+  stroke: none;
+}
+
 .footer-social-btn:hover {
   background: var(--color-champagne);
   border-color: var(--color-champagne);
