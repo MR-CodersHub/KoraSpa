@@ -817,7 +817,7 @@ body.menu-open .mobile-menu.active {
   }
   .nav-cta { display: none; }
   .site-nav .nav-actions {
-    display: none !important;
+    display: flex !important;
   }
 }
 
