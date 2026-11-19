@@ -30,6 +30,7 @@
 
 /* ── Nav Container ───────────────────────────────────────── */
 .nav-container {
+  --nav-control-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -176,65 +177,68 @@
   flex-shrink: 0;
 }
 
-/* Theme Toggle */
-.theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-circle);
-  border: 1.5px solid var(--color-border);
-  background: var(--color-white);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  position: relative;
-  overflow: hidden;
-}
-
-.theme-toggle:hover {
-  border-color: var(--color-champagne);
-  color: var(--color-accent-text);
-  background: var(--color-beige);
-}
-
-.theme-toggle svg {
-  width: 1.125rem;
-  height: 1.125rem;
-  flex-shrink: 0;
-}
-
-/* Direction Toggle — readable text instead of an icon */
+/* ── Nav Actions Toggles (Profile, Theme, RTL) ────────── */
+.profile-toggle,
+.theme-toggle,
 .dir-toggle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2.5rem;
-  min-width: 2.5rem;
   height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
   padding: 0;
+  margin: 0;
   border-radius: var(--radius-circle);
   border: 1.5px solid var(--color-border);
   background: var(--color-white);
   color: var(--color-text);
-  font-family: var(--font-sans);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1;
   cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
   transition: all var(--transition-fast);
 }
 
+.profile-toggle:hover,
+.profile-menu.open .profile-toggle,
+.theme-toggle:hover,
 .dir-toggle:hover {
   border-color: var(--color-champagne);
   color: var(--color-accent-text);
   background: var(--color-beige);
 }
 
+/* Equal icon size inside toggle buttons */
+.profile-toggle svg,
+.theme-toggle svg {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  max-width: 1.25rem !important;
+  max-height: 1.25rem !important;
+  flex-shrink: 0;
+}
+
+/* Direction Toggle */
+.dir-toggle {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .dir-label {
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 
 .icon-sun,
@@ -258,36 +262,8 @@
 /* ── Profile Menu ────────────────────────────────────────── */
 .profile-menu {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-}
-
-.profile-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-circle);
-  border: 1.5px solid var(--color-border);
-  background: var(--color-white);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.profile-toggle:hover,
-.profile-menu.open .profile-toggle {
-  border-color: var(--color-champagne);
-  color: var(--color-accent-text);
-  background: var(--color-beige);
-}
-
-.profile-toggle > svg:first-child {
-  width: 1.125rem;
-  height: 1.125rem;
-  flex-shrink: 0;
 }
 
 .profile-chevron {
@@ -658,8 +634,19 @@ body.menu-open .mobile-menu.active {
   .nav-toggle {
     width: 2.25rem;
     height: 2.25rem;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    max-width: 2.25rem;
+    max-height: 2.25rem;
   }
-  .dir-toggle { min-width: 2.25rem; }
+  .profile-toggle svg,
+  .theme-toggle svg {
+    width: 1.125rem !important;
+    height: 1.125rem !important;
+    max-width: 1.125rem !important;
+    max-height: 1.125rem !important;
+  }
+  .dir-toggle { font-size: 0.68rem; }
   .mobile-menu-footer {
     flex-wrap: wrap;
     gap: 0.75rem;
@@ -692,15 +679,20 @@ body.menu-open .mobile-menu.active {
   .nav-toggle {
     width: 2rem;
     height: 2rem;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
   }
   .dir-toggle {
-    min-width: 2rem;
     font-size: 0.65rem;
   }
-  .profile-toggle > svg:first-child,
+  .profile-toggle svg,
   .theme-toggle svg {
-    width: 1rem;
-    height: 1rem;
+    width: 1rem !important;
+    height: 1rem !important;
+    max-width: 1rem !important;
+    max-height: 1rem !important;
   }
   .nav-toggle {
     gap: 4px;
