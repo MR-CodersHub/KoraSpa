@@ -191,14 +191,24 @@
 
     /* ── Section 2: Featured Article ─────────────────────────── */
     .featured-card {
+      position: relative;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      background: var(--color-white);
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      background: var(--color-ivory);
       border-radius: var(--radius-xl);
       overflow: hidden;
       border: 1px solid var(--color-border);
       box-shadow: var(--shadow-lg);
       transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      z-index: 3;
+      background: linear-gradient(90deg, var(--color-forest), var(--color-champagne));
+      pointer-events: none;
     }
 
     .featured-card:hover {
@@ -209,13 +219,22 @@
     .featured-media {
       position: relative;
       overflow: hidden;
-      min-height: 420px;
+      min-height: 520px;
+    }
+    .featured-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 55%, rgba(8, 15, 9, 0.42) 100%);
+      pointer-events: none;
     }
 
     .featured-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 35%;
       transition: transform var(--transition-slow);
     }
 
@@ -225,15 +244,15 @@
 
     .featured-badge {
       position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
+      top: 1.75rem;
+      inset-inline-start: 1.75rem;
       background: var(--color-forest);
       color: #ffffff;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.15rem;
       border-radius: var(--radius-pill);
       box-shadow: var(--shadow-md);
       z-index: 2;
@@ -245,10 +264,20 @@
     }
 
     .featured-content {
-      padding: 3rem;
+      position: relative;
+      padding: clamp(2.25rem, 4vw, 3.5rem);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      border-inline-start: 1px solid var(--color-border);
+    }
+    .featured-content::before {
+      content: '';
+      width: 3rem;
+      height: 2px;
+      margin-bottom: 1.75rem;
+      background: var(--color-champagne);
+      border-radius: var(--radius-pill);
     }
 
     .article-meta-row {
@@ -279,11 +308,13 @@
 
     .featured-title {
       font-family: var(--font-serif);
-      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      font-size: clamp(2.1rem, 3.2vw, 3rem);
       font-weight: 600;
-      line-height: 1.3;
-      margin-bottom: 1.25rem;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
       color: var(--color-text);
+      text-wrap: balance;
       transition: color var(--transition-fast);
     }
 
@@ -297,10 +328,10 @@
     }
 
     .featured-excerpt {
-      font-size: 1.05rem;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.75;
       color: var(--color-text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 2.25rem;
     }
 
     .featured-footer {
@@ -368,7 +399,7 @@
     .article-media {
       position: relative;
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 3 / 4;
       overflow: hidden;
     }
 
@@ -784,13 +815,16 @@
     /* ── Responsive Refinements ──────────────────────────────── */
     @media (max-width: 992px) {
       .featured-card {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       }
       .featured-media {
-        min-height: 300px;
+        min-height: 460px;
       }
       .featured-content {
         padding: 2rem;
+      }
+      .featured-title {
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
       }
       .article-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -800,6 +834,24 @@
       }
       .news-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-card {
+        grid-template-columns: 1fr;
+      }
+      .featured-media {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+      }
+      .featured-content {
+        padding: 2rem;
+        border-inline-start: 0;
+        border-top: 1px solid var(--color-border);
+      }
+      .featured-content::before {
+        margin-bottom: 1.25rem;
       }
     }
 
@@ -1018,9 +1070,9 @@
 
       <div class="article-grid" id="guidesGrid">
         <!-- Card 1 -->
-        <article class="article-card filterable-item" data-category="treatment-guide" data-title="An Introduction to Aromatherapy: Scents That Heal" data-excerpt="Aromatherapy pairs botanical essential oils with soothing massage techniques to stimulate olfactory receptors and calm nervous tension. Discover how lavender, eucalyptus, and bergamot soothe the soul.">
+        <article class="article-card filterable-item" data-category="treatment-guide" data-title="An Introduction to Aromatherapy: Scents That Heal" data-excerpt="Aromatherapy pairs therapeutic botanical essences with rhythmic bodywork to stimulate olfactory pathways and soothe nervous tension. Learn how pure lavender, eucalyptus, and bergamot can reset your inner equilibrium.">
           <div class="article-media">
-            <img src="https://images.unsplash.com/photo-1608181831688-8e2e5b4b02dc?w=600&q=80" alt="Essential aromatherapy oils and dried botanicals" loading="lazy">
+            <img src="https://i.pinimg.com/1200x/34/1d/59/341d590120412424d54c25fd946f6a18.jpg" alt="Essential aromatherapy oils and dried botanicals" loading="lazy">
           </div>
           <div class="article-card-body">
             <div class="article-meta-row">
@@ -1042,9 +1094,9 @@
         </article>
 
         <!-- Card 2 -->
-        <article class="article-card filterable-item" data-category="treatment-guide" data-title="Hot Stone Therapy: What to Expect During Your Session" data-excerpt="Smooth heated basalt stones glide across muscle meridians, delivering penetrating warmth deep into tightened fascia. Explore how volcanic minerals dissolve stiffness and restore vitality.">
+        <article class="article-card filterable-item" data-category="treatment-guide" data-title="Hot Stone Therapy: What to Expect During Your Session" data-excerpt="Smooth heated basalt stones glide along muscle meridians, delivering gentle penetrating warmth directly into tightened fascia. Discover how this ancient geological therapy melts away stress and awakens circulation.">
           <div class="article-media">
-            <img src="https://images.unsplash.com/photo-1517637382994-f02da38c6728?w=600&q=80" alt="Smooth hot basalt massage stones resting beside white orchid" loading="lazy">
+            <img src="https://i.pinimg.com/736x/ae/2f/a3/ae2fa34170f51ab0c6db41edca7c14a3.jpg" alt="Smooth hot basalt massage stones resting beside white orchid" loading="lazy">
           </div>
           <div class="article-card-body">
             <div class="article-meta-row">
@@ -1066,9 +1118,9 @@
         </article>
 
         <!-- Card 3 -->
-        <article class="article-card filterable-item" data-category="spa-guide" data-title="How to Prepare for Your Spa Visit: A Complete Guide" data-excerpt="From proper hydration and light nourishment to arriving early for herbal infusions and breathing exercises, learn how intentional preparation unlocks the deepest benefits of your spa treatment.">
+        <article class="article-card filterable-item" data-category="spa-guide" data-title="How to Prepare for Your Spa Visit: A Complete Guide" data-excerpt="From mindful pre-hydration and comfortable attire to setting intentions and unhurried arrival, thoughtful preparation transforms your visit from a quick appointment into an immersive restorative retreat.">
           <div class="article-media">
-            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="Tranquil spa lounge with plush linen robe and slippers" loading="lazy">
+            <img src="https://i.pinimg.com/736x/ee/78/d7/ee78d7cbf8a7302305c6a55d5bdf41a8.jpg" alt="Tranquil spa lounge with plush linen robe and slippers" loading="lazy">
           </div>
           <div class="article-card-body">
             <div class="article-meta-row">
