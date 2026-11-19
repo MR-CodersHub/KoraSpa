@@ -13,7 +13,9 @@
 }
 
 html {
+  /* Fluid base size: compact phones → spacious desktop */
   font-size: 16px;
+  font-size: clamp(15px, calc(14px + 0.25vw), 18px);
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
