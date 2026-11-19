@@ -53,10 +53,19 @@
 [dir="rtl"] .profile-dropdown-head,
 [dir="rtl"] .profile-dropdown a { flex-direction: row-reverse; }
 
-[dir="rtl"] .mobile-menu ul { text-align: right; }
-[dir="rtl"] .mobile-nav-link { text-align: right; }
-
-[dir="rtl"] .mobile-menu-footer { flex-direction: row-reverse; }
+[dir="rtl"] .mobile-nav-link {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+[dir="rtl"] .mobile-nav-text { text-align: right; }
+[dir="rtl"] .mobile-nav-arrow { transform: rotate(180deg); }
+[dir="rtl"] .mobile-nav-link:hover .mobile-nav-arrow,
+[dir="rtl"] .mobile-nav-link:focus-visible .mobile-nav-arrow,
+[dir="rtl"] .mobile-nav-link.active .mobile-nav-arrow {
+  transform: translateX(-4px) rotate(180deg);
+}
+[dir="rtl"] .mobile-concierge-item { flex-direction: row-reverse; }
+[dir="rtl"] .mobile-menu-eyebrow { flex-direction: row-reverse; }
 
 /* ── Footer RTL ──────────────────────────────────────────── */
 [dir="rtl"] .footer-grid { direction: rtl; }
